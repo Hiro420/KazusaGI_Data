@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -12,62 +12,78 @@
           "OnBeginUncharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
+              "triggerID": "DoSkill"
             },
             {
               "$type": "SetAnimatorInt",
               "intID": "SkillID",
-              "value": 1,
+              "value": 1
             },
             {
               "$type": "ResetAnimatorTrigger",
-              "triggerID": "EndHoldTrigger",
-            },
+              "triggerID": "EndHoldTrigger"
+            }
           ],
-          "OnReleaseUncharged": [
-          ],
+          "OnReleaseUncharged": [],
           "OnBeginCharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
+              "triggerID": "DoSkill"
             },
             {
               "$type": "SetAnimatorInt",
               "intID": "SkillID",
-              "value": 6,
-            },
+              "value": 6
+            }
           ],
           "OnReleaseCharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "EndHoldTrigger",
+              "triggerID": "EndHoldTrigger"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "SetTrigger",
-            },
+              "modifierName": "SetTrigger"
+            }
           ],
           "OnBeginSecondCharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "EndHoldTrigger",
-            },
+              "triggerID": "EndHoldTrigger"
+            }
           ],
-          "chargeStateIDs": [ "Attack01_BS", "Attack01", "Attack02", "Attack03", "Attack04", "ExtraAttack", "ExtraAttack1" ],
+          "chargeStateIDs": [
+            "Attack01_BS",
+            "Attack01",
+            "Attack02",
+            "Attack03",
+            "Attack04",
+            "ExtraAttack",
+            "ExtraAttack1"
+          ]
         },
         {
           "$type": "AvatarSteerByCameraMixin",
-          "stateIDs": [ "ExtraAttack1" ],
-          "angularSpeed": 360,
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
+          "angularSpeed": 360
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "ExtraAttack", "ExtraAttack1", "ExtraAttack2", "ExtraAttack3" ],
+          "stateIDs": [
+            "ExtraAttack",
+            "ExtraAttack1",
+            "ExtraAttack2",
+            "ExtraAttack3"
+          ],
           "modifierName": "Camera"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "ExtraAttack1", ],
+          "stateIDs": [
+            "ExtraAttack1"
+          ],
           "modifierName": "Cost"
         }
       ],
@@ -77,23 +93,23 @@
           "onRemoved": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "EndHoldTrigger",
-            },
-          ],
+              "triggerID": "EndHoldTrigger"
+            }
+          ]
         },
         "Camera": {
           "onRemoved": [
             {
               "$type": "AvatarExitCameraShot",
-              "doOffStage": true,
-            },
+              "doOffStage": true
+            }
           ],
           "onAvatarOut": [
             {
               "$type": "AvatarExitCameraShot",
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
         "Cost": {
           "modifierMixins": [
@@ -103,60 +119,55 @@
               "onStaminaEmpty": [
                 {
                   "$type": "SetAnimatorTrigger",
-                  "triggerID": "EndHoldTrigger",
-                },
-              ],
-            },
-          ],
-        },
+                  "triggerID": "EndHoldTrigger"
+                }
+              ]
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "ExtraAttack_Claymore_Stamina_Cost": 0,
         "ExtraAttack_Claymore_MaxTime": 0,
-        "ExtraAttack_Claymore_Stamina_Cost_Talent_342": 0,
-      },
-    },
-  }, //Avatar_Noel_ExtraAttack
-
-  /**/
-  //==================================================================================================小技能（Avatar_Noel_Skill_S）
+        "ExtraAttack_Claymore_Stamina_Cost_Talent_342": 0
+      }
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Noel_Skill_S",
-      "abilityMixins": [
-      ],
-      "onAdded": [
-      ],
+      "abilityMixins": [],
+      "onAdded": [],
       "onAbilityStart": [
         {
           "$type": "AvatarSkillStart",
           "skillID": 10342,
-          "cdRatio": 1,
-        }, //AvatarSkillStart
+          "cdRatio": 1
+        },
         {
           "$type": "FireEffect",
           "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Once",
           "born": {
             "$type": "ConfigBornByAttachPoint",
-            "attachPointName": "FocusAnchor",
-          },
+            "attachPointName": "FocusAnchor"
+          }
         },
         {
           "$type": "ApplyModifier",
           "modifierName": "UNIQUE_Noel_Skill_S_Shield",
-          "target": "Team",
+          "target": "Team"
         },
         {
           "$type": "SendEffectTrigger",
           "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop",
           "target": "Team",
-          "parameter": "Eff_Ani_Noel_Skill_S_Loop_Show",
+          "parameter": "Eff_Ani_Noel_Skill_S_Loop_Show"
         },
         {
           "$type": "ApplyModifier",
-          "modifierName": "Skill_S_OnceAttack",
-        },
+          "modifierName": "Skill_S_OnceAttack"
+        }
       ],
       "modifiers": {
         "UNIQUE_Noel_Skill_S_Shield": {
@@ -164,15 +175,11 @@
           "stacking": "Refresh",
           "duration": 15,
           "onAdded": [
-            //{
-            //  "$type": "AttachEffect",
-            //  "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop",
-            //},
             {
               "$type": "AttachModifier",
               "target": "Caster",
-              "modifierName": "AttackHealth",
-            },
+              "modifierName": "AttackHealth"
+            }
           ],
           "modifierMixins": [
             {
@@ -180,17 +187,22 @@
               "shieldType": "Avatar_Rock",
               "shieldHP": "%AS_Skill_S_ShieldHp_DefRate_PS32_P1*%FIGHT_PROP_CUR_DEFENSE",
               "shieldEffectGlobalValueKey": "UNIQUE_Noel_Skill_S_Shield",
-              "shieldEffectValueSteps": [ -0.5, 0.5 ],
-              "shieldEffectNameSteps": [ "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop" ],
+              "shieldEffectValueSteps": [
+                -0.5,
+                0.5
+              ],
+              "shieldEffectNameSteps": [
+                "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop"
+              ],
               "showDamageText": "INFO_ELITE_DEFENCE",
-              "childShieldModifierName": "UNIQUE_Noel_Skill_S_Shield_Child", //天赋：护盾拥有受击治疗效果
+              "childShieldModifierName": "UNIQUE_Noel_Skill_S_Shield_Child",
               "onShieldBroken": [
                 {
                   "$type": "RemoveModifier",
                   "modifierName": "UNIQUE_Noel_Skill_S_Shield",
-                  "target": "Team",
-                },
-              ],
+                  "target": "Team"
+                }
+              ]
             },
             {
               "$type": "DoActionByTeamStatusMixin",
@@ -204,25 +216,24 @@
                       "$type": "ByCurTeamHasFeatureTag",
                       "featureTagID": 1096,
                       "number": 0,
-                      "logic": "Equal",
-                    },
-                  ],
-                },
+                      "logic": "Equal"
+                    }
+                  ]
+                }
               ]
-            },
+            }
           ],
-          "onRemoved": [
-          ],
+          "onRemoved": []
         },
         "UNIQUE_Noel_Skill_S_Shield_Child": {
           "isUnique": true,
-          "thinkInterval": 2.0,
+          "thinkInterval": 2,
           "onAdded": [
             {
               "$type": "AttachModifier",
               "modifierName": "UNIQUE_Noel_Skill_S_RockBuff",
-              "target": "CurLocalAvatar",
-            },
+              "target": "CurLocalAvatar"
+            }
           ],
           "onBeingHit": [
             {
@@ -232,25 +243,25 @@
                 {
                   "$type": "ByHitEnBreak",
                   "enBreak": 0,
-                  "logic": "Greater",
-                },
+                  "logic": "Greater"
+                }
               ],
               "successActions": [
                 {
                   "$type": "SendEffectTrigger",
                   "target": "Team",
                   "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_Loop",
-                  "parameter": "Eff_Ani_Noel_Skill_S_Loop_BeAttack",
-                },
-              ],
-            },
+                  "parameter": "Eff_Ani_Noel_Skill_S_Loop_BeAttack"
+                }
+              ]
+            }
           ],
           "onThinkInterval": [
             {
               "$type": "AttachModifier",
               "modifierName": "UNIQUE_Noel_Skill_S_RockBuff",
-              "target": "CurLocalAvatar",
-            },
+              "target": "CurLocalAvatar"
+            }
           ],
           "onRemoved": [
             {
@@ -258,38 +269,38 @@
               "targetPredicates": [
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Avatar_Noel_Talent_334",
-                },
+                  "talentParam": "Avatar_Noel_Talent_334"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
-                  "modifierName": "ShieldBrokenEevet",
-                },
+                  "modifierName": "ShieldBrokenEevet"
+                }
               ],
               "failActions": [
                 {
                   "$type": "FireEffect",
-                  "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_NormalBreak",
-                },
-              ],
-            },
+                  "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_NormalBreak"
+                }
+              ]
+            }
           ],
           "modifierMixins": [
             {
-              "$type": "GlobalSubShieldMixin",
-            },
+              "$type": "GlobalSubShieldMixin"
+            }
           ],
           "properties": {
-            "Actor_EndureDelta": 0,
-          },
+            "Actor_EndureDelta": 0
+          }
         },
         "UNIQUE_Noel_Skill_S_RockBuff": {
           "isUnique": true,
           "stacking": "Refresh",
-          "duration": 8.0,
+          "duration": 8,
           "elementType": "Rock",
-          "elementDurability": 25,
+          "elementDurability": 25
         },
         "AttackHealth": {
           "onAttackLanded": [
@@ -301,18 +312,18 @@
                   "$type": "ByEntityTypes",
                   "entityTypes": [
                     "Monster"
-                  ],
-                },
+                  ]
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "target": "Self",
-                  "modifierName": "UNIQUE_Noel_Skill_S_OnAttackLanded",
-                },
-              ],
-            },
-          ],
+                  "modifierName": "UNIQUE_Noel_Skill_S_OnAttackLanded"
+                }
+              ]
+            }
+          ]
         },
         "UNIQUE_Noel_Skill_S_OnAttackLanded": {
           "duration": 0.1,
@@ -323,22 +334,22 @@
               "$type": "SetRandomOverrideMapValue",
               "overrideMapKey": "OnAttack_HealthRate",
               "valueRangeMin": 0,
-              "valueRangeMax": 1,
+              "valueRangeMax": 1
             },
             {
               "$type": "Predicated",
               "targetPredicates": [
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Avatar_Noel_Talent_341",
+                  "talentParam": "Avatar_Noel_Talent_341"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "target": "Applier",
                   "key": "_NOEL_IS_SKILL_E",
                   "value": 1,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ],
               "successActions": [
                 {
@@ -350,10 +361,10 @@
                       "target": "Caster",
                       "targetKey": "OnAttack_HealthRate",
                       "targetValue": "%AS_Skill_S_HealthRate_Talent_341",
-                      "logic": "LesserOrEqual",
-                    },
-                  ],
-                },
+                      "logic": "LesserOrEqual"
+                    }
+                  ]
+                }
               ],
               "failActions": [
                 {
@@ -365,13 +376,13 @@
                       "target": "Caster",
                       "targetKey": "OnAttack_HealthRate",
                       "targetValue": "%AS_Skill_S_HealthRate_Base_PS32_P3",
-                      "logic": "LesserOrEqual",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+                      "logic": "LesserOrEqual"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         "Skill_S_OnceAttack": {
           "duration": 0.078,
@@ -384,18 +395,18 @@
                   "$type": "ConfigAttackCircle",
                   "triggerType": "TriggerNoRepeat",
                   "height": 2,
-                  "fanAngle": 360.0,
+                  "fanAngle": 360,
                   "radius": 2,
-                  "radiusRatio": 0.0,
+                  "radiusRatio": 0,
                   "detectDirection": "Clockwise",
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "attackTag": "Elemental_Art",
@@ -405,17 +416,15 @@
                     "elementType": "Rock",
                     "elementDurability": 0,
                     "enBreak": 100,
-                    "attackType": "Melee",
+                    "attackType": "Melee"
                   },
                   "hitPattern": {
                     "onHitEffectName": "default",
-                    "hitLevel": "Heavy", //hitlevel = 6
-                    "hitImpulseX": 200, //hitlevel = 6
-                    "hitImpulseY": 0, //hitlevel = 6
+                    "hitLevel": "Heavy",
+                    "hitImpulseX": 200,
+                    "hitImpulseY": 0,
                     "reboundRatio": 0,
                     "canBeDefenceHalt": true,
-                    //"hitHaltTime": 0.15,
-                    //"hitHaltTimeScale": 0.01,
                     "muteHitText": false
                   },
                   "forceCameraShake": false,
@@ -427,13 +436,13 @@
                     "shakeDir": {
                       "x": 1,
                       "y": -0.2,
-                      "z": 0,
-                    },
-                  },
-                },
-              },
-            },
-          ],
+                      "z": 0
+                    }
+                  }
+                }
+              }
+            }
+          ]
         },
         "DoHealth": {
           "stacking": "Multiple",
@@ -443,9 +452,9 @@
               "$type": "ApplyModifier",
               "doOffStage": true,
               "modifierName": "Heal",
-              "target": "CurTeamAvatars",
-            },
-          ],
+              "target": "CurTeamAvatars"
+            }
+          ]
         },
         "Heal": {
           "stacking": "Multiple",
@@ -455,9 +464,9 @@
             {
               "$type": "HealHP",
               "doOffStage": true,
-              "amount": "%AS_Skill_S_HealHp_DefRate_PS32_P2*%FIGHT_PROP_CUR_DEFENSE",
-            },
-          ],
+              "amount": "%AS_Skill_S_HealHp_DefRate_PS32_P2*%FIGHT_PROP_CUR_DEFENSE"
+            }
+          ]
         },
         "ShieldBrokenEevet": {
           "duration": 0.1,
@@ -470,18 +479,18 @@
                   "$type": "ConfigAttackCircle",
                   "triggerType": "TriggerNoRepeat",
                   "height": 2,
-                  "fanAngle": 360.0,
-                  "radius": 4, //5,
-                  "radiusRatio": 0.0,
+                  "fanAngle": 360,
+                  "radius": 4,
+                  "radiusRatio": 0,
                   "detectDirection": "Clockwise",
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "attackTag": "Elemental_Art",
@@ -491,13 +500,13 @@
                     "elementType": "Rock",
                     "elementDurability": 0,
                     "enBreak": 100,
-                    "attackType": "Melee",
+                    "attackType": "Melee"
                   },
                   "hitPattern": {
                     "onHitEffectName": "default",
-                    "hitLevel": "Heavy", //hitlevel = 6
-                    "hitImpulseX": 200, //hitlevel = 6
-                    "hitImpulseY": 0, //hitlevel = 6
+                    "hitLevel": "Heavy",
+                    "hitImpulseX": 200,
+                    "hitImpulseY": 0,
                     "reboundRatio": 0,
                     "canBeDefenceHalt": true,
                     "hitHaltTime": 0.15,
@@ -513,105 +522,70 @@
                     "shakeDir": {
                       "x": 1,
                       "y": -0.2,
-                      "z": 0,
-                    },
-                  },
-                },
-              },
+                      "z": 0
+                    }
+                  }
+                }
+              }
             },
             {
               "$type": "FireEffect",
               "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_S_TalentBreak",
               "born": {
-                "$type": "ConfigBornByTarget",
-              },
-            },
-          ],
-        },
+                "$type": "ConfigBornByTarget"
+              }
+            }
+          ]
+        }
       },
       "abilitySpecials": {
-        "AS_Skill_S_ShieldHp_DefRate_PS32_P1": 0, //防御转换百分比
-        "AS_Skill_S_HealHp_DefRate_PS32_P2": 0, //防御转换百分比
+        "AS_Skill_S_ShieldHp_DefRate_PS32_P1": 0,
+        "AS_Skill_S_HealHp_DefRate_PS32_P2": 0,
         "AS_Skill_S_HealthRate_Base_PS32_P3": 0,
         "AS_Skill_S_Time_PS32_P4": 0,
         "AS_Skill_S_OnceAttack_PS32_P6": 0,
-
         "AS_Skill_S_HealthRate_Talent_341": 0,
-        "AS_Skill_S_ShieldBrokenDamage_Talent_334": 0,
-      },
-    },
-  }, //Avatar_Noel_Skill_S
-
+        "AS_Skill_S_ShieldBrokenDamage_Talent_334": 0
+      }
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Noel_Skill_E",
-      "abilityMixins": [
-        //{
-        //  "$type": "AttachToNormalizedTimeMixin",
-        //  "stateID": "Attack01",
-        //  "modifierName": "DoNormalAttack",
-        //}, //AttachToStateIDMixin:ShootAimingArrow_Charge_Handler
-        //{
-        //  "$type": "AttachToNormalizedTimeMixin",
-        //  "stateID": "Attack02",
-        //  "modifierName": "DoNormalAttack",
-        //}, //AttachToStateIDMixin:ShootAimingArrow_Charge_Handler
-        //{
-        //  "$type": "AttachToNormalizedTimeMixin",
-        //  "stateID": "Attack03",
-        //  "modifierName": "DoNormalAttack",
-        //}, //AttachToStateIDMixin:ShootAimingArrow_Charge_Handler
-        //{
-        //  "$type": "AttachToNormalizedTimeMixin",
-        //  "stateID": "Attack04",
-        //  "modifierName": "DoNormalAttack",
-        //}, //AttachToStateIDMixin:ShootAimingArrow_Charge_Handler
-        //{
-        //  "$type": "AttachToStateIDMixin", //播放瞄准蓄力特效
-        //  "stateIDs": [
-        //    "Aim",
-        //    "AimShoot",
-        //    "FastAim",
-        //    "FastAimShoot"
-        //  ],
-        //  "modifierName": "ShowAimingEffect_Handler",
-        //}, //AttachToStateIDMixin:ShowAimingEffect_Handler
-      ],
-
-      "onAdded": [
-      ],
+      "abilityMixins": [],
+      "onAdded": [],
       "onAbilityStart": [
         {
           "$type": "AvatarSkillStart",
           "skillID": 10343,
-          "cdRatio": 1,
-        }, //AvatarSkillStart
-        {
-          "$type": "RemoveModifier",
-          "modifierName": "Buff",
+          "cdRatio": 1
         },
         {
           "$type": "RemoveModifier",
-          "modifierName": "Rock_Enhancement_Weapon_Checker",
+          "modifierName": "Buff"
+        },
+        {
+          "$type": "RemoveModifier",
+          "modifierName": "Rock_Enhancement_Weapon_Checker"
         },
         {
           "$type": "ApplyModifier",
-          "modifierName": "Buff",
+          "modifierName": "Buff"
         },
         {
           "$type": "ApplyModifier",
-          "modifierName": "Effect_Delay",
+          "modifierName": "Effect_Delay"
         },
         {
           "$type": "ApplyModifier",
-          "modifierName": "Invincible",
-        },
+          "modifierName": "Invincible"
+        }
       ],
       "onKill": [
         {
           "$type": "RemoveModifier",
-          "modifierName": "Buff",
+          "modifierName": "Buff"
         }
       ],
       "modifiers": {
@@ -620,16 +594,16 @@
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "AttackEvent",
+              "modifierName": "AttackEvent"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "AttackEvent_Art",
+              "modifierName": "AttackEvent_Art"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "AttackEffect",
-            },
+              "modifierName": "AttackEffect"
+            }
           ],
           "onRemoved": [
             {
@@ -640,11 +614,11 @@
                 "shakeTime": 0.18,
                 "shakeDistance": 30,
                 "extension": {
-                  "baseOnCamera": true,
-                },
-              },
-            },
-          ],
+                  "baseOnCamera": true
+                }
+              }
+            }
+          ]
         },
         "AttackEvent": {
           "duration": "%AS_DelayTime",
@@ -657,18 +631,18 @@
                   "$type": "ConfigAttackCircle",
                   "triggerType": "TriggerNoRepeat",
                   "height": 1.5,
-                  "fanAngle": 360.0,
-                  "radius": 6.5, //5,
-                  "radiusRatio": 0.0,
+                  "fanAngle": 360,
+                  "radius": 6.5,
+                  "radiusRatio": 0,
                   "detectDirection": "Clockwise",
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "attackTag": "Elemental_Burst",
@@ -679,7 +653,7 @@
                     "elementType": "Rock",
                     "elementDurability": 25,
                     "enBreak": 150,
-                    "attackType": "Melee",
+                    "attackType": "Melee"
                   },
                   "hitPattern": {
                     "onHitEffectName": "default",
@@ -701,13 +675,13 @@
                     "shakeDir": {
                       "x": 1,
                       "y": -0.2,
-                      "z": 0,
-                    },
-                  },
-                },
-              },
-            },
-          ],
+                      "z": 0
+                    }
+                  }
+                }
+              }
+            }
+          ]
         },
         "AttackEvent_Art": {
           "duration": "%AS_DelayTime_Art",
@@ -720,18 +694,18 @@
                   "$type": "ConfigAttackCircle",
                   "triggerType": "TriggerNoRepeat",
                   "height": 1.5,
-                  "fanAngle": 360.0,
-                  "radius": 4, //5,
-                  "radiusRatio": 0.0,
+                  "fanAngle": 360,
+                  "radius": 4,
+                  "radiusRatio": 0,
                   "detectDirection": "Clockwise",
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "attackTag": "Elemental_Burst",
@@ -742,7 +716,7 @@
                     "elementType": "Rock",
                     "elementDurability": 0,
                     "enBreak": 150,
-                    "attackType": "Melee",
+                    "attackType": "Melee"
                   },
                   "hitPattern": {
                     "onHitEffectName": "default",
@@ -754,50 +728,38 @@
                     "hitHaltTime": 0.15,
                     "hitHaltTimeScale": 0.01,
                     "muteHitText": false
-                  },
-                  //"forceCameraShake": true,
-                  //"cameraShake": {
-                  //  "shakeType": "CustomVector",
-                  //  "shakeRange": 0.36,
-                  //  "shakeTime": 0.3,
-                  //  "shakeDistance": 30,
-                  //  "shakeDir": {
-                  //    "x": 1,
-                  //    "y": -0.2,
-                  //    "z": 0,
-                  //  },
-                  //},
-                },
-              },
-            },
-          ],
+                  }
+                }
+              }
+            }
+          ]
         },
         "AttackEffect": {
           "duration": 0.2,
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Weather",
+              "modifierName": "Weather"
             },
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E",
-            },
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E"
+            }
           ],
           "onRemoved": [
             {
-              "$type": "SetEmissionScaler", //调整武器发光。配置文件为EquipElementStyle。可以参考神之眼AvatarElementStyle的配置进行配置
+              "$type": "SetEmissionScaler",
               "materialType": "Weapon",
               "useDefaultColor": false,
               "value": 4,
-              "duration": 0.15, //渐入渐出时间，这个需要配置在PlusSkillEmission里。
-            },
-          ],
+              "duration": 0.15
+            }
+          ]
         },
         "Invincible": {
           "duration": 1.6,
           "state": "Invincible",
-          "stacking": "Refresh",
+          "stacking": "Refresh"
         },
         "Weather": {
           "duration": 2,
@@ -807,11 +769,10 @@
               "$type": "TriggerWeatherMixin",
               "type": "Skill",
               "weatherPattern": "Beidou_ThunderCounter",
-              "transDuration": 0.3, //这个同时是渐入时长和渐出时长?
-              "duration": 1.5, //释放时变亮的参数
-              // "duration":1.4,//释放时仍然暗的参???变亮时间增长了?
-            },
-          ],
+              "transDuration": 0.3,
+              "duration": 1.5
+            }
+          ]
         },
         "Buff": {
           "duration": "%AS_Skill_E_Time_PS33_P4+%AS_Skill_E_MaxTimeUp_Talent_334_P2",
@@ -822,7 +783,7 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 1,
+              "minValue": 1
             },
             {
               "$type": "AddGlobalValue",
@@ -830,7 +791,7 @@
               "value": "%AS_Skill_E_Time_PS33_P4",
               "useLimitRange": true,
               "maxValue": "%AS_Skill_E_Time_PS33_P4+%AS_Skill_E_MaxTimeUp_Talent_334_P2",
-              "minValue": "%AS_Skill_E_Time_PS33_P4",
+              "minValue": "%AS_Skill_E_Time_PS33_P4"
             },
             {
               "$type": "AddGlobalValue",
@@ -838,20 +799,20 @@
               "value": "%AS_Skill_E_Time_PS33_P4",
               "useLimitRange": true,
               "maxValue": "%AS_Skill_E_Time_PS33_P4+%AS_Skill_E_MaxTimeUp_Talent_334_P2",
-              "minValue": "%AS_Skill_E_Time_PS33_P4",
+              "minValue": "%AS_Skill_E_Time_PS33_P4"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Buff_BaseTime",
+              "modifierName": "Buff_BaseTime"
             },
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_Once",
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_Once"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Rock_Enhancement_Weapon_Delay",
-            },
+              "modifierName": "Rock_Enhancement_Weapon_Delay"
+            }
           ],
           "onRemoved": [
             {
@@ -861,41 +822,40 @@
               "value": 0,
               "useLimitRange": true,
               "maxValue": 0,
-              "minValue": 0,
+              "minValue": 0
             },
             {
               "$type": "RemoveModifier",
               "doOffStage": true,
-              "modifierName": "Buff_BaseTime",
+              "modifierName": "Buff_BaseTime"
             },
             {
               "$type": "RemoveModifier",
               "doOffStage": true,
-              "modifierName": "Buff_RemoveTimeCheck_1",
+              "modifierName": "Buff_RemoveTimeCheck_1"
             },
             {
               "$type": "ClearGlobalValue",
               "doOffStage": true,
-              "key": "_NOEL_SKILL_E_BUFF_TIME",
+              "key": "_NOEL_SKILL_E_BUFF_TIME"
             },
             {
               "$type": "ClearGlobalValue",
               "doOffStage": true,
-              "key": "_NOEL_SKILL_E_BUFF_MAXTIME",
+              "key": "_NOEL_SKILL_E_BUFF_MAXTIME"
             },
             {
               "$type": "RemoveModifier",
               "doOffStage": true,
-              "modifierName": "Rock_Enhancement_Weapon_Checker",
-            },
+              "modifierName": "Rock_Enhancement_Weapon_Checker"
+            }
           ],
           "properties": {
-            "Actor_AttackDelta": "%AS_Skill_E_AttackUp_PS33_P3*%FIGHT_PROP_CUR_DEFENSE",
+            "Actor_AttackDelta": "%AS_Skill_E_AttackUp_PS33_P3*%FIGHT_PROP_CUR_DEFENSE"
           },
           "modifierMixins": [
             {
               "$type": "DoActionByKillingMixin",
-              //"attackTags": [ "Elemental_Burst", "Elemental_Art" ],
               "detectWindow": 0.5,
               "onKill": [
                 {
@@ -908,34 +868,68 @@
                   "predicates": [
                     {
                       "$type": "ByUnlockTalentParam",
-                      "talentParam": "Avatar_Noel_Talent_346",
-                    },
-                  ],
-                },
-              ],
+                      "talentParam": "Avatar_Noel_Talent_346"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "$type": "ReplaceEventPatternMixin",
-              "oldPatterns": [ "Noel_Attack01_BS", "Noel_Attack01", "Noel_Attack02", "Noel_Attack03", "Noel_Attack04", "Noel_ExtraAttack", "Noel_ExtraAttack1", "Noel_ExtraAttack2", "Audio_Girl_Claymore_Noel_Attack01", "Audio_Girl_Claymore_Noel_Attack02", "Audio_Girl_Claymore_Noel_Attack03", "Audio_Girl_Claymore_Noel_Attack04", "Audio_Girl_Noel_ExtraAttack", "Audio_Girl_Noel_ExtraAttack1", "Audio_Girl_Noel_ExtraAttack2", "Audio_Girl_Noel_ExtraAttack3" ],
-              "newPatterns": [ "Noel_Attack01_BS_Skill_E", "Noel_Attack01_Skill_E", "Noel_Attack02_Skill_E", "Noel_Attack03_Skill_E", "Noel_Attack04_Skill_E", "Noel_ExtraAttack_Skill_E", "Noel_ExtraAttack1_Skill_E", "Noel_ExtraAttack2_Skill_E", "Audio_Girl_Claymore_Noel_Skill_E_Attack01", "Audio_Girl_Claymore_Noel_Skill_E_Attack02", "Audio_Girl_Claymore_Noel_Skill_E_Attack03", "Audio_Girl_Claymore_Noel_Skill_E_Attack04", "Audio_Girl_Noel_Skill_E_ExtraAttack", "Audio_Girl_Noel_Skill_E_ExtraAttack1", "Audio_Girl_Noel_Skill_E_ExtraAttack2", "Audio_Girl_Noel_Skill_E_ExtraAttack3" ],
-            },
-          ],
+              "oldPatterns": [
+                "Noel_Attack01_BS",
+                "Noel_Attack01",
+                "Noel_Attack02",
+                "Noel_Attack03",
+                "Noel_Attack04",
+                "Noel_ExtraAttack",
+                "Noel_ExtraAttack1",
+                "Noel_ExtraAttack2",
+                "Audio_Girl_Claymore_Noel_Attack01",
+                "Audio_Girl_Claymore_Noel_Attack02",
+                "Audio_Girl_Claymore_Noel_Attack03",
+                "Audio_Girl_Claymore_Noel_Attack04",
+                "Audio_Girl_Noel_ExtraAttack",
+                "Audio_Girl_Noel_ExtraAttack1",
+                "Audio_Girl_Noel_ExtraAttack2",
+                "Audio_Girl_Noel_ExtraAttack3"
+              ],
+              "newPatterns": [
+                "Noel_Attack01_BS_Skill_E",
+                "Noel_Attack01_Skill_E",
+                "Noel_Attack02_Skill_E",
+                "Noel_Attack03_Skill_E",
+                "Noel_Attack04_Skill_E",
+                "Noel_ExtraAttack_Skill_E",
+                "Noel_ExtraAttack1_Skill_E",
+                "Noel_ExtraAttack2_Skill_E",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack01",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack02",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack03",
+                "Audio_Girl_Claymore_Noel_Skill_E_Attack04",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack1",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack2",
+                "Audio_Girl_Noel_Skill_E_ExtraAttack3"
+              ]
+            }
+          ]
         },
         "Rock_Enhancement_Weapon_Delay": {
           "duration": 0.17,
           "onRemoved": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Rock_Enhancement_Weapon_Checker",
-            },
-          ],
+              "modifierName": "Rock_Enhancement_Weapon_Checker"
+            }
+          ]
         },
         "Rock_Enhancement_Weapon": {
           "stacking": "Unique",
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon",
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon"
             },
             {
               "$type": "AddGlobalValue",
@@ -945,19 +939,19 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 0,
-            },
+              "minValue": 0
+            }
           ],
           "onRemoved": [
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_AS",
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_AS"
             },
             {
               "$type": "ClearGlobalValue",
               "doOffStage": true,
               "target": "Caster",
-              "key": "_NOEL_SKILL_E_BUFF_WEAPON",
+              "key": "_NOEL_SKILL_E_BUFF_WEAPON"
             },
             {
               "$type": "SetEmissionScaler",
@@ -965,9 +959,9 @@
               "target": "Caster",
               "materialType": "Weapon",
               "value": -1,
-              "duration": 0.3,
-            },
-          ],
+              "duration": 0.3
+            }
+          ]
         },
         "Rock_Enhancement_Weapon_Checker": {
           "thinkInterval": 0.5,
@@ -977,33 +971,39 @@
               "modifierName": "Rock_Enhancement_Weapon",
               "otherTargets": {
                 "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [ "equip01", "sheathPoint" ],
-              },
-            },
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              }
+            }
           ],
           "onThinkInterval": [
             {
-              "$type": "SetEmissionScaler", //调整武器发光。配置文件为EquipElementStyle。可以参考神之眼AvatarElementStyle的配置进行配置
+              "$type": "SetEmissionScaler",
               "materialType": "Weapon",
               "useDefaultColor": false,
               "value": 4,
-              "duration": 0.01, //渐入渐出时间，这个需要配置在PlusSkillEmission里。
+              "duration": 0.01,
               "predicates": [
                 {
                   "$type": "ByTargetGlobalValue",
                   "forceByCaster": true,
                   "key": "_NOEL_SKILL_E_BUFF_WEAPON",
                   "value": 1,
-                  "compareType": "Equal",
-                },
-              ],
+                  "compareType": "Equal"
+                }
+              ]
             },
             {
               "$type": "AttachModifier",
               "modifierName": "Rock_Enhancement_Weapon",
               "otherTargets": {
                 "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [ "equip01", "sheathPoint" ],
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
               },
               "predicates": [
                 {
@@ -1011,10 +1011,10 @@
                   "forceByCaster": true,
                   "key": "_NOEL_SKILL_E_BUFF_WEAPON",
                   "value": 1,
-                  "compareType": "Equal",
-                },
-              ],
-            },
+                  "compareType": "Equal"
+                }
+              ]
+            }
           ],
           "onRemoved": [
             {
@@ -1023,19 +1023,22 @@
               "modifierName": "Rock_Enhancement_Weapon",
               "otherTargets": {
                 "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [ "equip01", "sheathPoint" ],
-              },
-            },
-          ],
+                "equipPartNames": [
+                  "equip01",
+                  "sheathPoint"
+                ]
+              }
+            }
+          ]
         },
         "Buff_BaseTime": {
           "duration": "%AS_Skill_E_Time_PS33_P4",
           "onRemoved": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Buff_RemoveTimeCheck_1",
-            },
-          ],
+              "modifierName": "Buff_RemoveTimeCheck_1"
+            }
+          ]
         },
         "Buff_RemoveTimeCheck_1": {
           "duration": "%AS_Skill_E_MaxTimeUp_Talent_334_P2",
@@ -1047,19 +1050,19 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": "%AS_Skill_E_Time_PS33_P4+%AS_Skill_E_MaxTimeUp_Talent_334_P2",
-              "minValue": "%AS_Skill_E_Time_PS33_P4",
+              "minValue": "%AS_Skill_E_Time_PS33_P4"
             },
             {
               "$type": "SetGlobalValueToOverrideMap",
               "abilityFormula": "None",
               "globalValueKey": "_NOEL_SKILL_E_BUFF_TIME",
-              "overrideMapKey": "OverrideMapVal_BuffRunTime",
+              "overrideMapKey": "OverrideMapVal_BuffRunTime"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Buff_RemoveTimeCheck_2",
-            },
-          ],
+              "modifierName": "Buff_RemoveTimeCheck_2"
+            }
+          ]
         },
         "Buff_RemoveTimeCheck_2": {
           "duration": 0.01,
@@ -1074,30 +1077,28 @@
                   "key": "_NOEL_SKILL_E_BUFF_MAXTIME",
                   "value": "%OverrideMapVal_BuffRunTime",
                   "forceByCaster": true,
-                  "compareType": "LessAndEqual",
-                },
+                  "compareType": "LessAndEqual"
+                }
               ],
               "successActions": [
                 {
                   "$type": "RemoveModifier",
                   "doOffStage": true,
                   "modifierName": "Buff"
-                },
-
-              ],
-            },
-          ],
+                }
+              ]
+            }
+          ]
         },
         "DoNormalAttack": {
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_OnAttack_01",
-            },
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Skill_E_Weapon_OnAttack_01"
+            }
           ],
-          "onRemoved": [
-          ],
-        },
+          "onRemoved": []
+        }
       },
       "abilitySpecials": {
         "AS_Skill_E_OnceAttackDamage_Art_PS33_P1": 0,
@@ -1105,16 +1106,13 @@
         "AS_Skill_E_AttackUp_PS33_P3": 0,
         "AS_Skill_E_Time_PS33_P4": 0,
         "AS_Skill_E_TimeUp_Talent_P1": 1,
-
         "AS_Skill_E_MaxTimeUp_Talent_334_P2": 0,
         "AS_DelayTime": 1.05,
         "AS_DelayTime_Art": 0.3,
-
-        "OverrideMapVal_BuffRunTime": 0,
-      },
-    },
-  }, //Avatar_Noel_Skill_E
-
+        "OverrideMapVal_BuffRunTime": 0
+      }
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1122,65 +1120,88 @@
       "abilityMixins": [
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK01" ],
-          "damagePercentage": "%NormalAttack_01_P1_DamagePercentage",
+          "animEventNames": [
+            "ATK01"
+          ],
+          "damagePercentage": "%NormalAttack_01_P1_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK02" ],
-          "damagePercentage": "%NormalAttack_02_P2_DamagePercentage",
+          "animEventNames": [
+            "ATK02"
+          ],
+          "damagePercentage": "%NormalAttack_02_P2_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK03" ],
-          "damagePercentage": "%NormalAttack_03_P3_DamagePercentage",
+          "animEventNames": [
+            "ATK03"
+          ],
+          "damagePercentage": "%NormalAttack_03_P3_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK04" ],
-          "damagePercentage": "%NormalAttack_04_P4_DamagePercentage",
+          "animEventNames": [
+            "ATK04"
+          ],
+          "damagePercentage": "%NormalAttack_04_P4_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ExtraAttack1" ],
-          "damagePercentage": "%ExtraAttack_Loop_P5_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_Loop_P5_DamagePercentage",
+          "animEventNames": [
+            "ExtraAttack1"
+          ],
+          "damagePercentage": "%ExtraAttack_Loop_P5_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_Loop_P5_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ExtraAttack2" ],
-          "damagePercentage": "%ExtraAttack_End_P6_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_End_P6_DamagePercentage",
-        },
-        //开大分割线========================================================
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK01_Skill_E" ],
-          "damagePercentage": "%NormalAttack_01_P1_DamagePercentage",
+          "animEventNames": [
+            "ExtraAttack2"
+          ],
+          "damagePercentage": "%ExtraAttack_End_P6_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_End_P6_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK02_Skill_E" ],
-          "damagePercentage": "%NormalAttack_02_P2_DamagePercentage",
+          "animEventNames": [
+            "ATK01_Skill_E"
+          ],
+          "damagePercentage": "%NormalAttack_01_P1_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK03_Skill_E" ],
-          "damagePercentage": "%NormalAttack_03_P3_DamagePercentage",
+          "animEventNames": [
+            "ATK02_Skill_E"
+          ],
+          "damagePercentage": "%NormalAttack_02_P2_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ATK04_Skill_E" ],
-          "damagePercentage": "%NormalAttack_04_P4_DamagePercentage",
+          "animEventNames": [
+            "ATK03_Skill_E"
+          ],
+          "damagePercentage": "%NormalAttack_03_P3_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ExtraAttack1_Skill_E" ],
-          "damagePercentage": "%ExtraAttack_Loop_P5_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_Loop_P5_DamagePercentage",
+          "animEventNames": [
+            "ATK04_Skill_E"
+          ],
+          "damagePercentage": "%NormalAttack_04_P4_DamagePercentage"
         },
         {
           "$type": "ModifyDamageMixin",
-          "animEventNames": [ "ExtraAttack2_Skill_E" ],
-          "damagePercentage": "%ExtraAttack_End_P6_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_End_P6_DamagePercentage",
+          "animEventNames": [
+            "ExtraAttack1_Skill_E"
+          ],
+          "damagePercentage": "%ExtraAttack_Loop_P5_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_Loop_P5_DamagePercentage"
         },
+        {
+          "$type": "ModifyDamageMixin",
+          "animEventNames": [
+            "ExtraAttack2_Skill_E"
+          ],
+          "damagePercentage": "%ExtraAttack_End_P6_DamagePercentage*%ExtraAttack_DamagePercentage_Talent_342_P2+%ExtraAttack_End_P6_DamagePercentage"
+        }
       ],
       "abilitySpecials": {
         "NormalAttack_01_P1_DamagePercentage": 0,
@@ -1189,11 +1210,10 @@
         "NormalAttack_04_P4_DamagePercentage": 0,
         "ExtraAttack_Loop_P5_DamagePercentage": 0,
         "ExtraAttack_End_P6_DamagePercentage": 0,
-        "ExtraAttack_DamagePercentage_Talent_342_P2": 0,
-      },
-    },
-  }, //Avatar_Noel_ProudSkill_NormalAttack_DamageHandler
-
+        "ExtraAttack_DamagePercentage_Talent_342_P2": 0
+      }
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1206,28 +1226,28 @@
           "valueSteps": [
             -0.5,
             0.5,
-            1.5,
+            1.5
           ],
           "removeAppliedModifier": true,
           "modifierNameSteps": [
-            "AttachModifier_Steps_0", //Global_0
-            "AttachModifier_Steps_1", //Global_1
-          ],
-        },
+            "AttachModifier_Steps_0",
+            "AttachModifier_Steps_1"
+          ]
+        }
       ],
       "onAdded": [
         {
           "$type": "ClearGlobalValue",
-          "key": "_NOEL_IS_PROUDSKILL_21_CD",
+          "key": "_NOEL_IS_PROUDSKILL_21_CD"
         },
         {
           "$type": "ClearGlobalValue",
-          "key": "_NOEL_IS_PROUDSKILL_21_SELF",
+          "key": "_NOEL_IS_PROUDSKILL_21_SELF"
         },
         {
           "$type": "ApplyModifier",
-          "modifierName": "Init_Skill",
-        },
+          "modifierName": "Init_Skill"
+        }
       ],
       "onRemoved": [
         {
@@ -1237,11 +1257,10 @@
           "value": 1,
           "useLimitRange": true,
           "maxValue": 1,
-          "minValue": 1,
-        },
+          "minValue": 1
+        }
       ],
-      "onAbilityStart": [
-      ],
+      "onAbilityStart": [],
       "modifiers": {
         "Init_Skill": {
           "duration": 1,
@@ -1252,7 +1271,7 @@
               "value": 0,
               "useLimitRange": true,
               "maxValue": 0,
-              "minValue": 0,
+              "minValue": 0
             },
             {
               "$type": "AddGlobalValue",
@@ -1260,15 +1279,15 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 1,
+              "minValue": 1
             },
             {
               "$type": "ApplyModifier",
               "doOffStage": true,
               "modifierName": "UNIQUE_Noel_ProudSkill_21_TeamHandler",
-              "target": "Team",
-            },
-          ],
+              "target": "Team"
+            }
+          ]
         },
         "AttachModifier_Steps_0": {
           "onAdded": [
@@ -1276,9 +1295,9 @@
               "$type": "ApplyModifier",
               "doOffStage": true,
               "modifierName": "UNIQUE_Noel_ProudSkill_21_TeamHandler",
-              "target": "Team",
-            },
-          ],
+              "target": "Team"
+            }
+          ]
         },
         "AttachModifier_Steps_1": {
           "onAdded": [
@@ -1286,9 +1305,9 @@
               "$type": "RemoveModifier",
               "doOffStage": true,
               "modifierName": "UNIQUE_Noel_ProudSkill_21_TeamHandler",
-              "target": "Team",
-            },
-          ],
+              "target": "Team"
+            }
+          ]
         },
         "UNIQUE_Noel_ProudSkill_21_TeamHandler": {
           "isUnique": true,
@@ -1296,9 +1315,9 @@
           "modifierMixins": [
             {
               "$type": "CurLocalAvatarMixin",
-              "modifierName": "Noel_ProudSkill_21_BeHit_Check",
-            },
-          ],
+              "modifierName": "Noel_ProudSkill_21_BeHit_Check"
+            }
+          ]
         },
         "Noel_ProudSkill_21_BeHit_Check": {
           "onBeingHit": [
@@ -1309,7 +1328,7 @@
                 {
                   "$type": "ByHitEnBreak",
                   "enBreak": 0,
-                  "logic": "Greater",
+                  "logic": "Greater"
                 },
                 {
                   "$type": "ByNot",
@@ -1318,13 +1337,13 @@
                       "$type": "ByTargetGlobalValue",
                       "key": "_NOEL_IS_PROUDSKILL_21_SELF",
                       "value": 1,
-                      "compareType": "Equal",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
+                      "compareType": "Equal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         "Noel_ProudSkill_21_BeHit_Hp_Check": {
           "duration": 0.1,
@@ -1339,10 +1358,10 @@
                   "target": "Self",
                   "HPRatio": "%AS_ProudSkill_21_TriggerHPRate_PS21_P1",
                   "logic": "LesserOrEqual"
-                },
-              ],
-            },
-          ],
+                }
+              ]
+            }
+          ]
         },
         "Noel_ProudSkill_21_Shield": {
           "duration": "%AS_ProudSkill_21_Dura_PS21_P3",
@@ -1351,31 +1370,31 @@
             {
               "$type": "AttachEffect",
               "doOffStage": true,
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield",
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield"
             },
             {
               "$type": "SendEffectTrigger",
               "doOffStage": true,
               "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield",
-              "parameter": "Eff_Ani_Noel_Talent_Shield_Show",
+              "parameter": "Eff_Ani_Noel_Talent_Shield_Show"
             },
             {
               "$type": "RemoveModifier",
               "doOffStage": true,
-              "modifierName": "Noel_ProudSkill_21_BeHit_Check",
+              "modifierName": "Noel_ProudSkill_21_BeHit_Check"
             },
             {
               "$type": "RemoveModifier",
               "doOffStage": true,
               "modifierName": "UNIQUE_Noel_ProudSkill_21_TeamHandler",
-              "target": "Team",
+              "target": "Team"
             },
             {
               "$type": "ApplyModifier",
               "target": "Caster",
               "doOffStage": true,
-              "modifierName": "Noel_ProudSkill_21_CD",
-            },
+              "modifierName": "Noel_ProudSkill_21_CD"
+            }
           ],
           "modifierMixins": [
             {
@@ -1388,16 +1407,16 @@
                 {
                   "$type": "RemoveModifier",
                   "doOffStage": true,
-                  "modifierName": "Noel_ProudSkill_21_Shield",
-                },
-              ],
-            },
+                  "modifierName": "Noel_ProudSkill_21_Shield"
+                }
+              ]
+            }
           ],
           "onRemoved": [
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield_Break",
-            },
+              "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield_Break"
+            }
           ],
           "onBeingHit": [
             {
@@ -1407,21 +1426,21 @@
                 {
                   "$type": "ByHitEnBreak",
                   "enBreak": 0,
-                  "logic": "Greater",
-                },
+                  "logic": "Greater"
+                }
               ],
               "successActions": [
                 {
                   "$type": "SendEffectTrigger",
                   "effectPattern": "Eff_Avatar_Girl_Claymore_Noel_Talent_Shield",
-                  "parameter": "Eff_Ani_Noel_Talent_Shield_BeAttack",
-                },
-              ],
-            },
+                  "parameter": "Eff_Ani_Noel_Talent_Shield_BeAttack"
+                }
+              ]
+            }
           ],
           "properties": {
-            "Actor_EndureDelta": 0,
-          },
+            "Actor_EndureDelta": 0
+          }
         },
         "Noel_ProudSkill_21_CD": {
           "duration": "%AS_ProudSkill_21_CD_PS21_P4",
@@ -1435,8 +1454,8 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 1,
-            },
+              "minValue": 1
+            }
           ],
           "onRemoved": [
             {
@@ -1446,20 +1465,19 @@
               "value": 0,
               "useLimitRange": true,
               "maxValue": 0,
-              "minValue": 0,
-            },
-          ],
-        },
+              "minValue": 0
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "AS_ProudSkill_21_TriggerHPRate_PS21_P1": 0,
         "AS_ProudSkill_21_ShieldHp_DefRate_PS21_P2": 0,
         "AS_ProudSkill_21_Dura_PS21_P3": 0,
-        "AS_ProudSkill_21_CD_PS21_P4": 0,
-      },
-    },
-  }, //Avatar_Noel_ProudSkill_21
-
+        "AS_ProudSkill_21_CD_PS21_P4": 0
+      }
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1470,17 +1488,16 @@
           "modifierName": "ChangeCD",
           "targetType": "Self",
           "skillID": 10342,
-          "cdDelta": "%AS_ProudSkill_22_CD_PS22_P1",
-        },
+          "cdDelta": "%AS_ProudSkill_22_CD_PS22_P1"
+        }
       ],
       "onAdded": [
         {
           "$type": "AttachModifier",
-          "modifierName": "CheckNormalAttack",
-        },
+          "modifierName": "CheckNormalAttack"
+        }
       ],
-      "onAbilityStart": [
-      ],
+      "onAbilityStart": [],
       "modifiers": {
         "CheckNormalAttack": {
           "onAttackLanded": [
@@ -1492,17 +1509,17 @@
                   "$type": "ByEntityTypes",
                   "entityTypes": [
                     "Monster"
-                  ],
-                },
+                  ]
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
-                  "modifierName": "UNIQUE_Noel_ProudSkill_22_OnAttackLanded",
-                },
-              ],
-            },
-          ],
+                  "modifierName": "UNIQUE_Noel_ProudSkill_22_OnAttackLanded"
+                }
+              ]
+            }
+          ]
         },
         "UNIQUE_Noel_ProudSkill_22_OnAttackLanded": {
           "duration": 0.1,
@@ -1515,11 +1532,11 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 4,
-              "minValue": 0,
+              "minValue": 0
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "AutoClearAttackCountCheck",
+              "modifierName": "AutoClearAttackCountCheck"
             },
             {
               "$type": "Predicated",
@@ -1529,25 +1546,25 @@
                   "target": "Target",
                   "key": "_NOEL_ATTACK_COUNT",
                   "value": 4,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ClearGlobalValue",
-                  "key": "_NOEL_ATTACK_COUNT",
+                  "key": "_NOEL_ATTACK_COUNT"
                 },
                 {
                   "$type": "ApplyModifier",
-                  "modifierName": "ChangeCD",
-                },
-              ],
-            },
-          ],
+                  "modifierName": "ChangeCD"
+                }
+              ]
+            }
+          ]
         },
         "ChangeCD": {
           "duration": 0.1,
-          "fireEventWhenApply": true,
+          "fireEventWhenApply": true
         },
         "AutoClearAttackCountCheck": {
           "duration": 10,
@@ -1555,15 +1572,14 @@
           "onRemoved": [
             {
               "$type": "ClearGlobalValue",
-              "key": "_NOEL_ATTACK_COUNT",
-            },
-          ],
-        },
+              "key": "_NOEL_ATTACK_COUNT"
+            }
+          ]
+        }
       },
       "abilitySpecials": {
-        "AS_ProudSkill_22_CD_PS22_P1": 0,
-      },
-    },
-  }, //Avatar_Noel_ProudSkill_22
-
+        "AS_ProudSkill_22_CD_PS22_P1": 0
+      }
+    }
+  }
 ]

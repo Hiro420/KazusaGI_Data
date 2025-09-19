@@ -1,9 +1,4 @@
-[
-  ////////////////////////////////////////////////////////////////
-  //
-  //  魔神角色头发表现
-  //
-  ////////////////////////////////////////////////////////////////
+﻿[
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -11,9 +6,20 @@
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS", "Hurricane", "Hurricane_AS", "WindBlade_Rise_BS", "WindBlade_Rise_Charge", "WindBlade_Rise_Charge_1", "WindBlade_RiseUp", "WindBlade", "WindBlade_Land", "WindBlade_AS" ],
-          "modifierName": "HairEmissionScaler",
-        },
+          "stateIDs": [
+            "Hurricane_BS",
+            "Hurricane",
+            "Hurricane_AS",
+            "WindBlade_Rise_BS",
+            "WindBlade_Rise_Charge",
+            "WindBlade_Rise_Charge_1",
+            "WindBlade_RiseUp",
+            "WindBlade",
+            "WindBlade_Land",
+            "WindBlade_AS"
+          ],
+          "modifierName": "HairEmissionScaler"
+        }
       ],
       "modifiers": {
         "HairEmissionScaler": {
@@ -22,48 +28,42 @@
               "$type": "SetEmissionScaler",
               "materialType": "Hair",
               "value": 10,
-              "duration": 1.5,
-            },
+              "duration": 1.5
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetEmissionScaler",
               "materialType": "Hair",
-              "value": 1,
-              // "duration":1.5,
+              "value": 1
             },
             {
               "$type": "FireEffect",
               "effectPattern": "Eff_Venti_HairEmission_Dissipate",
               "born": {
                 "$type": "ConfigBornByAttachPoint",
-                "attachPointName": "PRIVATE_LHair",
-              },
+                "attachPointName": "PRIVATE_LHair"
+              }
             },
             {
               "$type": "FireEffect",
               "effectPattern": "Eff_Venti_HairEmission_Dissipate",
               "born": {
                 "$type": "ConfigBornByAttachPoint",
-                "attachPointName": "PRIVATE_RHair",
-              },
-            },
+                "attachPointName": "PRIVATE_RHair"
+              }
+            }
           ],
           "onKill": [
             {
               "$type": "RemoveModifier",
-              "modifierName": "HairEmissionScaler",
-            },
-          ],
-        },
-      },
-    },
+              "modifierName": "HairEmissionScaler"
+            }
+          ]
+        }
+      }
+    }
   },
-  ////////////////////////////////////////////////////////////////
-  //
-  //  箭的表现
-  //
-  ////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -71,52 +71,26 @@
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Aim", "FastAim", ],
-          "modifierName": "Venti_Arrow_FX",
-        },
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "Venti_Arrow_FX"
+        }
       ],
-      "onAbilityStart": [
-      ],
+      "onAbilityStart": [],
       "modifiers": {
         "Venti_Arrow_FX": {
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Arrow",
-            },
-            // {
-            // 	"$type":"AttachEffect",
-            // 	"effectPattern":"Eff_Bow_Arrow_L",
-            // 	"predicates":
-            // 	[
-            // 		{
-            // 			"$type" : "ByUnlockTalentParam",
-            // 			"talentParam" : "Venti_KageBunshinShoot",
-            // 		},
-            // 	]
-            // },
-            // {
-            // 	"$type":"AttachEffect",
-            // 	"effectPattern":"Eff_Bow_Arrow_R",
-            // 	"predicates":
-            // 	[
-            // 		{
-            // 			"$type" : "ByUnlockTalentParam",
-            // 			"talentParam" : "Venti_KageBunshinShoot",
-            // 		},
-            // 	]
-            // },
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Arrow"
+            }
           ]
         }
       }
     }
   },
-
-  ////////////////////////////////////////////////////////////////
-  //
-  //  Press Shoot
-  //
-  ////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -129,73 +103,82 @@
           "OnBeginUncharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
+              "triggerID": "DoSkill"
             },
             {
               "$type": "SetAnimatorInt",
               "intID": "SkillID",
-              "value": 100,
-            },
+              "value": 100
+            }
           ],
           "OnReleaseUncharged": [
             {
               "$type": "SetCameraLockTime",
-              "lockTime": 0.3,
+              "lockTime": 0.3
             },
             {
               "$type": "EntityDoSkill",
               "skillID": 10223,
-              "isHold": true,
-            },
+              "isHold": true
+            }
           ],
           "OnBeginCharged": [
             {
               "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
+              "triggerID": "DoSkill"
             },
             {
               "$type": "SetAnimatorInt",
               "intID": "SkillID",
-              "value": 101,
-            },
+              "value": 101
+            }
           ],
           "OnReleaseCharged": [
             {
               "$type": "AvatarSkillStart",
-              "skillID": 10221,
+              "skillID": 10221
             },
             {
               "$type": "AvatarSkillStart",
-              "skillID": 10222,
+              "skillID": 10222
             },
             {
               "$type": "EntityDoSkill",
               "skillID": 10223,
-              "isHold": true,
-            },
-            // {
-            // 	"$type": "SetAnimatorTrigger",
-            // 	"triggerID": "AimEnd",
-            // },
+              "isHold": true
+            }
           ],
-          "chargeStateIDs": [ "ShootBS", "Shoot", "FastAim", "FastAimShoot" ],
+          "chargeStateIDs": [
+            "ShootBS",
+            "Shoot",
+            "FastAim",
+            "FastAimShoot"
+          ]
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "FastAim", "FastAimShoot" ],
-          "modifierName": "KeepFastAiming",
-        },
-        {
-          // 当快速瞄准射击结束时，会设置FastAimShootFinish，使得动画从FastAim状态出来，同时会通过FastAimShooting防止在射击过程中点击了瞄准按钮直接退出
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "FastAimShoot" ],
-          "modifierName": "SetFastAimShooting",
+          "stateIDs": [
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "KeepFastAiming"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "ShootBS", "FastAim", "FastAimShoot" ],
-          "modifierName": "SetNeedAimEndStates",
+          "stateIDs": [
+            "FastAimShoot"
+          ],
+          "modifierName": "SetFastAimShooting"
         },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "ShootBS",
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates"
+        }
       ],
       "modifiers": {
         "KeepFastAiming": {
@@ -203,7 +186,7 @@
             {
               "$type": "SetAnimatorBool",
               "boolID": "FastAiming",
-              "value": true,
+              "value": true
             },
             {
               "$type": "AvatarEnterFocus",
@@ -223,42 +206,42 @@
               "assistance": {
                 "ps4": {
                   "useFocusSticky": true,
-                  "useGyro": false,
+                  "useGyro": false
                 },
                 "other": {
                   "useFocusSticky": true,
-                  "useGyro": true,
-                },
+                  "useGyro": true
+                }
               },
               "canMove": true,
-              "vcam_fov": 30,
-            },
+              "vcam_fov": 30
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "FastAiming",
-              "value": false,
+              "value": false
             },
             {
               "$type": "AvatarExitFocus",
-              "keepRotation": true,
-            },
-          ],
+              "keepRotation": true
+            }
+          ]
         },
         "SetFastAimShooting": {
           "onAdded": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "FastAimShooting",
-              "value": true,
-            },
+              "value": true
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "FastAimShooting",
-              "value": false,
+              "value": false
             },
             {
               "$type": "SetAnimatorTrigger",
@@ -268,9 +251,9 @@
                   "$type": "ByAnimatorBool",
                   "parameter": "FastAiming",
                   "value": true
-                },
+                }
               ]
-            },
+            }
           ]
         },
         "SetNeedAimEndStates": {
@@ -278,19 +261,19 @@
             {
               "$type": "SetAnimatorBool",
               "boolID": "InStatesNeedAimEnd",
-              "value": true,
-            },
+              "value": true
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "InStatesNeedAimEnd",
-              "value": false,
-            },
+              "value": false
+            }
           ]
         }
-      },
-    },
+      }
+    }
   },
   {
     "Default": {
@@ -304,36 +287,46 @@
           "OnReleaseCharged": [
             {
               "$type": "AvatarSkillStart",
-              "skillID": 10221,
+              "skillID": 10221
             },
             {
               "$type": "AvatarSkillStart",
-              "skillID": 10222,
+              "skillID": 10222
             },
             {
               "$type": "EntityDoSkill",
               "skillID": 10223,
-              "isHold": true,
-            },
+              "isHold": true
+            }
           ],
-          "chargeStateIDs": [ "Aim", "AimShoot" ],
+          "chargeStateIDs": [
+            "Aim",
+            "AimShoot"
+          ]
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Aim", "AimShoot" ],
-          "modifierName": "KeepAiming",
-        },
-        {
-          // 通过AimShooting防止在射击过程中点击了瞄准按钮直接退出
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "AimShoot" ],
-          "modifierName": "SetAimShooting",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "KeepAiming"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Aim", "AimShoot" ],
-          "modifierName": "SetNeedAimEndStates",
+          "stateIDs": [
+            "AimShoot"
+          ],
+          "modifierName": "SetAimShooting"
         },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "SetNeedAimEndStates"
+        }
       ],
       "modifiers": {
         "KeepAiming": {
@@ -341,7 +334,7 @@
             {
               "$type": "SetAnimatorBool",
               "boolID": "Aiming",
-              "value": true,
+              "value": true
             },
             {
               "$type": "AvatarEnterFocus",
@@ -361,43 +354,43 @@
               "assistance": {
                 "ps4": {
                   "useFocusSticky": true,
-                  "useGyro": false,
+                  "useGyro": false
                 },
                 "other": {
                   "useFocusSticky": true,
-                  "useGyro": true,
-                },
+                  "useGyro": true
+                }
               },
               "canMove": true,
-              "vcam_fov": 30,
-            },
+              "vcam_fov": 30
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "Aiming",
-              "value": false,
+              "value": false
             },
             {
               "$type": "AvatarExitFocus",
-              "keepRotation": true,
-            },
-          ],
+              "keepRotation": true
+            }
+          ]
         },
         "SetAimShooting": {
           "onAdded": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "AimShooting",
-              "value": true,
-            },
+              "value": true
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "AimShooting",
-              "value": false,
-            },
+              "value": false
+            }
           ]
         },
         "SetNeedAimEndStates": {
@@ -405,27 +398,20 @@
             {
               "$type": "SetAnimatorBool",
               "boolID": "InStatesNeedAimEnd",
-              "value": true,
-            },
+              "value": true
+            }
           ],
           "onRemoved": [
             {
               "$type": "SetAnimatorBool",
               "boolID": "InStatesNeedAimEnd",
-              "value": false,
-            },
+              "value": false
+            }
           ]
         }
-      },
-    },
+      }
+    }
   },
-  ////////////////////////////////////////////////////////////////
-  //
-  //  Shoot Arrow
-  //
-  ////////////////////////////////////////////////////////////////
-
-  ///////////////////普攻平射/////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -438,16 +424,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "FireEffect",
@@ -456,16 +442,15 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-            },
-          },
-        },
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
       ],
-      "modifiers": {
-      },
-    },
+      "modifiers": {}
+    }
   },
   {
     "Default": {
@@ -479,16 +464,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "FireEffect",
@@ -497,16 +482,15 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-            },
-          },
-        },
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
       ],
-      "modifiers": {
-      },
-    },
+      "modifiers": {}
+    }
   },
   {
     "Default": {
@@ -520,16 +504,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "FireEffect",
@@ -538,16 +522,15 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-            },
-          },
-        },
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
       ],
-      "modifiers": {
-      },
-    },
+      "modifiers": {}
+    }
   },
   {
     "Default": {
@@ -561,16 +544,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "FireEffect",
@@ -579,16 +562,15 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-            },
-          },
-        },
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
       ],
-      "modifiers": {
-      },
-    },
+      "modifiers": {}
+    }
   },
   {
     "Default": {
@@ -602,16 +584,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "FireEffect",
@@ -620,17 +602,15 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
-            },
-          },
-        },
+              "x": 0,
+              "y": 0,
+              "z": 0
+            }
+          }
+        }
       ],
-      "modifiers": {
-
-      },
-    },
+      "modifiers": {}
+    }
   },
   {
     "Default": {
@@ -644,16 +624,16 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
-          },
+          }
         },
         {
           "$type": "ActCameraShake",
@@ -663,50 +643,35 @@
             "shakeTime": 0.12,
             "shakeDistance": 30,
             "extension": {
-              "baseOnCamera": true,
-            },
-          },
-        },
+              "baseOnCamera": true
+            }
+          }
+        }
       ],
-      "modifiers": {
-      },
-    },
+      "modifiers": {}
+    }
   },
-
-  /////////////瞄准模式//////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_ShootArrow_Aiming",
-      "abilityMixins": [
-      ],
+      "abilityMixins": [],
       "onAbilityStart": [
         {
           "$type": "TriggerBullet",
           "bulletID": 41022004,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset":
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
           },
           "predicates": [
@@ -715,36 +680,25 @@
               "key": "_Enchanted_Time",
               "value": 4,
               "forceByCaster": true,
-              "compareType": "MoreThanAndEqual",
-            },
+              "compareType": "MoreThanAndEqual"
+            }
           ]
         },
         {
           "$type": "TriggerBullet",
           "bulletID": 41022005,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset":
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
-              "attachPointTargetType": "Self",
+              "attachPointTargetType": "Self"
             }
           },
           "predicates": [
@@ -753,52 +707,30 @@
               "key": "_Enchanted_Time",
               "value": 3,
               "forceByCaster": true,
-              "compareType": "LessAndEqual",
-            },
+              "compareType": "LessAndEqual"
+            }
           ]
         },
-        /////////////////////////////////////////通过天赋点出来的分裂箭///////////////////////
         {
           "$type": "TriggerBullet",
           "bulletID": 41022006,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset" :
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // 	"direction":
-          // 	{
-          // 		"$type": "ConfigDirectionByDefault",
-          // 		"angleOffset":
-          // 		{
-          // 			"x": 0.0,
-          // 			"y": 4.0,
-          // 			"z": 0.0,
-          // 		},
-          // 	}
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
               "attachPointTargetType": "Self",
               "angleOffset": {
-                "x": 0.0,
-                "y": 4.0,
-                "z": 0.0,
-              },
+                "x": 0,
+                "y": 4,
+                "z": 0
+              }
             }
           },
           "predicates": [
@@ -807,55 +739,34 @@
               "key": "_Enchanted_Time",
               "value": 4,
               "forceByCaster": true,
-              "compareType": "MoreThanAndEqual",
+              "compareType": "MoreThanAndEqual"
             },
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_KageBunshinShoot",
-            },
+              "talentParam": "Venti_KageBunshinShoot"
+            }
           ]
         },
         {
           "$type": "TriggerBullet",
           "bulletID": 41022007,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset" :
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // 	"direction":
-          // 	{
-          // 		"$type": "ConfigDirectionByDefault",
-          // 		"angleOffset":
-          // 		{
-          // 			"x": 0.0,
-          // 			"y": 4.0,
-          // 			"z": 0.0,
-          // 		},
-          // 	}
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
               "attachPointTargetType": "Self",
               "angleOffset": {
-                "x": 0.0,
-                "y": 4.0,
-                "z": 0.0,
-              },
+                "x": 0,
+                "y": 4,
+                "z": 0
+              }
             }
           },
           "predicates": [
@@ -864,56 +775,34 @@
               "key": "_Enchanted_Time",
               "value": 3,
               "forceByCaster": true,
-              "compareType": "LessAndEqual",
+              "compareType": "LessAndEqual"
             },
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_KageBunshinShoot",
-            },
+              "talentParam": "Venti_KageBunshinShoot"
+            }
           ]
         },
-
         {
           "$type": "TriggerBullet",
           "bulletID": 41022006,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset" :
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // 	"direction":
-          // 	{
-          // 		"$type": "ConfigDirectionByDefault",
-          // 		"angleOffset":
-          // 		{
-          // 			"x": 0.0,
-          // 			"y": -4.0,
-          // 			"z": 0.0,
-          // 		},
-          // 	}
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
               "attachPointTargetType": "Self",
               "angleOffset": {
-                "x": 0.0,
-                "y": -4.0,
-                "z": 0.0,
-              },
+                "x": 0,
+                "y": -4,
+                "z": 0
+              }
             }
           },
           "predicates": [
@@ -922,55 +811,34 @@
               "key": "_Enchanted_Time",
               "value": 4,
               "forceByCaster": true,
-              "compareType": "MoreThanAndEqual",
+              "compareType": "MoreThanAndEqual"
             },
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_KageBunshinShoot",
-            },
+              "talentParam": "Venti_KageBunshinShoot"
+            }
           ]
         },
         {
           "$type": "TriggerBullet",
           "bulletID": 41022007,
-          // "born":
-          // {
-          // 	"$type": "ConfigBornByAttachPoint",
-          // 	"attachPointName" : "FocusAnchor",
-          // 	"offset" :
-          // 	{
-          // 		"x": 0.0,
-          // 		"y": 0.0,
-          // 		"z": 1.0,
-          // 	},
-          // 	"direction":
-          // 	{
-          // 		"$type": "ConfigDirectionByDefault",
-          // 		"angleOffset":
-          // 		{
-          // 			"x": 0.0,
-          // 			"y": -4.0,
-          // 			"z": 0.0,
-          // 		},
-          // 	}
-          // },
           "born": {
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponL",
             "offset": {
-              "x": 0.0,
-              "y": 0.0,
-              "z": 0.0,
+              "x": 0,
+              "y": 0,
+              "z": 0
             },
             "direction": {
               "$type": "ConfigDirectionByAttachPoint",
               "attachPointName": "FocusAnchor",
               "attachPointTargetType": "Self",
               "angleOffset": {
-                "x": 0.0,
-                "y": -4.0,
-                "z": 0.0,
-              },
+                "x": 0,
+                "y": -4,
+                "z": 0
+              }
             }
           },
           "predicates": [
@@ -979,15 +847,14 @@
               "key": "_Enchanted_Time",
               "value": 3,
               "forceByCaster": true,
-              "compareType": "LessAndEqual",
+              "compareType": "LessAndEqual"
             },
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_KageBunshinShoot",
-            },
+              "talentParam": "Venti_KageBunshinShoot"
+            }
           ]
         },
-        ////////////////////////////////////////////////////////////////////////////////////////
         {
           "$type": "ActCameraShake",
           "cameraShake": {
@@ -996,8 +863,8 @@
             "shakeTime": 0.12,
             "shakeDistance": 30,
             "extension": {
-              "baseOnCamera": true,
-            },
+              "baseOnCamera": true
+            }
           },
           "predicates": [
             {
@@ -1005,8 +872,8 @@
               "key": "_Enchanted_Time",
               "value": 4,
               "forceByCaster": true,
-              "compareType": "MoreThanAndEqual",
-            },
+              "compareType": "MoreThanAndEqual"
+            }
           ]
         },
         {
@@ -1016,9 +883,9 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponR",
             "offset": {
-              "x": 0.0, // + means up, - means down
-              "y": 0.0, // + means left, - means right
-              "z": 0.9, // + means forward, - means backward
+              "x": 0,
+              "y": 0,
+              "z": 0.9
             }
           },
           "predicates": [
@@ -1027,8 +894,8 @@
               "key": "_Enchanted_Time",
               "value": 4,
               "forceByCaster": true,
-              "compareType": "MoreThanAndEqual",
-            },
+              "compareType": "MoreThanAndEqual"
+            }
           ]
         },
         {
@@ -1038,9 +905,9 @@
             "$type": "ConfigBornByAttachPoint",
             "attachPointName": "WeaponR",
             "offset": {
-              "x": 0.0, // + means up, - means down
-              "y": 0.0, // + means left, - means right
-              "z": 0.9, // + means forward, - means backward
+              "x": 0,
+              "y": 0,
+              "z": 0.9
             }
           },
           "predicates": [
@@ -1049,16 +916,16 @@
               "key": "_Enchanted_Time",
               "value": 3,
               "forceByCaster": true,
-              "compareType": "LessAndEqual",
-            },
+              "compareType": "LessAndEqual"
+            }
           ]
-        },
+        }
       ],
       "modifiers": {
         "AimChargeMark": {
           "stacking": "MultipleRefreshNoRemove",
           "stackingOption": {
-            "maxModifierNumForMultipleType": 5,
+            "maxModifierNumForMultipleType": 5
           },
           "onAdded": [
             {
@@ -1067,137 +934,139 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 5,
-              "minValue": 0,
-            },
-          ],
+              "minValue": 0
+            }
+          ]
         },
         "Hurricane_Counter": {
           "duration": 1,
           "stacking": "Refresh",
-          "fireEventWhenApply": true,
-        },
+          "fireEventWhenApply": true
+        }
       },
-      "abilitySpecials": {
-      },
-    },
+      "abilitySpecials": {}
+    }
   },
-  //备用，温迪平射箭头特效表现
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_ShootArrow_Light_Material",
       "onAdded": [
-        //箭头拖尾特效
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Venti_Arrow_Fly_Small",
+          "effectPattern": "Eff_Venti_Arrow_Fly_Small"
         },
         {
           "$type": "ApplyModifier",
           "modifierName": "Venti_SkillUpgrade_1_ModifyDamage",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "onAbilityStart": [
-        //箭头命中敌人，或不同场景时的特效
-        //可以在collision的时候trigger，这样不像安柏那样超多Ability，可以少写一个。
         {
           "$type": "FireHitEffect",
           "hitScene": {
             "defaultEffect": "Eff_Arrow_Hit_Earth",
             "surfaceEffect": {
-              "Water": "Eff_Arrow_Hit_Water",
+              "Water": "Eff_Arrow_Hit_Water"
             }
-          },
-        },
+          }
+        }
       ],
       "modifiers": {
         "Venti_SkillUpgrade_1_ModifyDamage": {
           "modifierMixins": [
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_01" ],
-              "damagePercentage": "%NormalAttack_01_Damage_Percentage",
+              "attackTags": [
+                "NormalAttack_01"
+              ],
+              "damagePercentage": "%NormalAttack_01_Damage_Percentage"
             },
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_04" ],
-              "damagePercentage": "%NormalAttack_04_Damage_Percentage",
-            },
-          ],
-        },
+              "attackTags": [
+                "NormalAttack_04"
+              ],
+              "damagePercentage": "%NormalAttack_04_Damage_Percentage"
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "NormalAttack_01_Damage_Percentage": 0,
-        "NormalAttack_04_Damage_Percentage": 0,
-      },
-    },
+        "NormalAttack_04_Damage_Percentage": 0
+      }
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_ShootArrow_Heavy_Material",
       "onAdded": [
-        //箭头拖尾特效
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Venti_Arrow_Fly_Big",
+          "effectPattern": "Eff_Venti_Arrow_Fly_Big"
         },
         {
           "$type": "ApplyModifier",
           "modifierName": "Venti_SkillUpgrade_1_ModifyDamage",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "onAbilityStart": [
-        //箭头命中敌人，或不同场景时的特效
-        //可以在collision的时候trigger，这样不像安柏那样超多Ability，可以少写一个。
         {
           "$type": "FireHitEffect",
           "hitScene": {
             "defaultEffect": "Eff_Arrow_Hit_Earth",
             "surfaceEffect": {
-              "Water": "Eff_Arrow_Hit_Water",
+              "Water": "Eff_Arrow_Hit_Water"
             }
-          },
-        },
+          }
+        }
       ],
       "modifiers": {
         "Venti_SkillUpgrade_1_ModifyDamage": {
           "modifierMixins": [
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_02" ],
-              "damagePercentage": "%NormalAttack_02_Damage_Percentage",
+              "attackTags": [
+                "NormalAttack_02"
+              ],
+              "damagePercentage": "%NormalAttack_02_Damage_Percentage"
             },
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_03" ],
-              "damagePercentage": "%NormalAttack_03_Damage_Percentage",
+              "attackTags": [
+                "NormalAttack_03"
+              ],
+              "damagePercentage": "%NormalAttack_03_Damage_Percentage"
             },
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_05" ],
-              "damagePercentage": "%NormalAttack_05_Damage_Percentage",
+              "attackTags": [
+                "NormalAttack_05"
+              ],
+              "damagePercentage": "%NormalAttack_05_Damage_Percentage"
             },
             {
               "$type": "ModifyDamageMixin",
-              "attackTags": [ "NormalAttack_06" ],
-              "damagePercentage": "%NormalAttack_06_Damage_Percentage",
-            },
-          ],
-        },
+              "attackTags": [
+                "NormalAttack_06"
+              ],
+              "damagePercentage": "%NormalAttack_06_Damage_Percentage"
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "NormalAttack_02_Damage_Percentage": 0,
         "NormalAttack_03_Damage_Percentage": 0,
         "NormalAttack_05_Damage_Percentage": 0,
-        "NormalAttack_06_Damage_Percentage": 0,
-      },
-    },
+        "NormalAttack_06_Damage_Percentage": 0
+      }
+    }
   },
-  //瞄准-风属性-蓄力箭
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1205,13 +1074,13 @@
       "onAdded": [
         {
           "$type": "ApplyModifier",
-          "modifierName": "ShootArrow_Enchanted_Wind",
+          "modifierName": "ShootArrow_Enchanted_Wind"
         },
         {
           "$type": "AttachModifier",
           "modifierName": "AimingArrowElementBall",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "onAbilityStart": [
         {
@@ -1220,8 +1089,8 @@
           "predicates": [
             {
               "$type": "ByHasElement",
-              "element": "Wind",
-            },
+              "element": "Wind"
+            }
           ],
           "attackEvent": {
             "attackPattern": {
@@ -1230,72 +1099,71 @@
               "size": {
                 "x": 0.1,
                 "y": 0.1,
-                "z": 1.0,
+                "z": 1
               },
               "born": {
                 "$type": "ConfigBornByCollisionPoint",
                 "offset": {
-                  "x": 0.0, // + means up, - means down
-                  "y": 0.0, // + means left, - means right
-                  "z": -0.5, // + means forward, - means backward
+                  "x": 0,
+                  "y": 0,
+                  "z": -0.5
                 }
               },
-              "checkHitLayerType": "Both",
+              "checkHitLayerType": "Both"
             },
             "attackInfo": {
               "canBeModifiedBy": "OriginOwner",
               "attackTag": "ExtraAttack",
-              "attenuationTag":"ExtraAttack",
+              "attenuationTag": "ExtraAttack",
               "attackProperty": {
                 "damagePercentage": "%DamageWithWind",
                 "strikeType": "Pierce",
                 "elementType": "Wind",
                 "elementDurability": 25,
                 "enBreak": 20,
-                "enHeadBreak": 60,
+                "enHeadBreak": 60
               },
               "hitPattern": {
                 "onHitEffectName": "Eff_WindMagic_Arrow_Hit",
-                "hitLevel": "Light", //hitlevel = 2
-                "hitImpulseX": 200, //hitlevel = 2
-                "hitImpulseY": 0, //hitlevel = 2
+                "hitLevel": "Light",
+                "hitImpulseX": 200,
+                "hitImpulseY": 0,
                 "reboundRatio": 0,
-                "hitHaltTime": 0.0,
+                "hitHaltTime": 0,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "canHitHead": true,
               "hitHeadPattern": {
                 "onHitEffectName": "Eff_Arrow_Hit_Head_Wind",
-                "hitLevel": "Air", //hitlevel = 5
-                "hitImpulseX": 480, //hitlevel = 5
-                "hitImpulseY": 600, //hitlevel = 5
+                "hitLevel": "Air",
+                "hitImpulseX": 480,
+                "hitImpulseY": 600,
                 "reboundRatio": 0,
                 "hitHaltTime": 0.12,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "bulletWane": {
-                "waneDelay": 0.7, // 表示从Bullet创生之后这么久，开始套用衰减规则
-                "damageWaneInterval": 0.05, // 伤害衰减周期，每过这么久，进行一次伤害衰减
-                "damageWaneRatio": 0.1, // 每次进行伤害衰减时，按照DamageWaneRatio的比例，在damagePercentage上进行【扣除】，最多扣除到0
-                "hitLevelWaneInterval": 0.1, // 受击等级衰减周期，每过这么久，进行一次受击等级衰减，每次将当前受击等级往下降一级：Air→Heavy→Light→Shake→Mute
-                "hitLevelWaneMin": "Mute", // 受击等级最少衰减为这个等级。如果原本就不高于这个等级，则不予衰减。
+                "waneDelay": 0.7,
+                "damageWaneInterval": 0.05,
+                "damageWaneRatio": 0.1,
+                "hitLevelWaneInterval": 0.1,
+                "hitLevelWaneMin": "Mute",
                 "damageWaneMinRatio": 0.1,
                 "elementDurabilityWaneInterval": 0.05,
                 "elementDurabilityWaneRatio": 0.1,
-                "elementDurabilityWaneMinRatio": 0.1,
-              },
-            },
-          },
-        },
+                "elementDurabilityWaneMinRatio": 0.1
+              }
+            }
+          }
+        }
       ],
       "modifiers": {
         "ShootArrow_Enchanted_Wind": {
           "elementType": "Wind",
           "elementDurability": 25,
-          "onAdded": [
-          ]
+          "onAdded": []
         },
         "AimingArrowElementBall": {
           "onAttackLanded": [
@@ -1305,31 +1173,35 @@
               "targetPredicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "ExtraAttack" ],
+                  "attackTags": [
+                    "ExtraAttack"
+                  ]
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster" ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ANIMAL_ENTITY_TYPE",
                   "value": 0,
-                  "compareType": "NoneOrEqual",
-                },
+                  "compareType": "NoneOrEqual"
+                }
               ],
               "successActions": [
                 {
                   "$type": "AttachModifier",
                   "modifierName": "Ball",
-                  "target": "Target",
-                },
-              ],
-            },
-          ],
+                  "target": "Target"
+                }
+              ]
+            }
+          ]
         },
         "Ball": {
-          "duration": 1.0,
+          "duration": 1,
           "stacking": "Unique",
           "onAdded": [
             {
@@ -1344,29 +1216,27 @@
                   "born": {
                     "$type": "ConfigBornByTarget",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
-                },
-              ],
-            },
-          ],
-        },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
       },
       "abilitySpecials": {
-        "DamageWithWind": 0,
-      },
-    },
+        "DamageWithWind": 0
+      }
+    }
   },
-  /////////没有风属性的蓄力箭//////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_ShootArrow_Enchanted_WithoutWind",
-      "onAdded": [
-      ],
+      "onAdded": [],
       "onAbilityStart": [
         {
           "$type": "TriggerAttackEvent",
@@ -1378,72 +1248,70 @@
               "size": {
                 "x": 0.1,
                 "y": 0.1,
-                "z": 1.0,
+                "z": 1
               },
               "born": {
                 "$type": "ConfigBornByCollisionPoint",
                 "offset": {
-                  "x": 0.0, // + means up, - means down
-                  "y": 0.0, // + means left, - means right
-                  "z": -0.5, // + means forward, - means backward
+                  "x": 0,
+                  "y": 0,
+                  "z": -0.5
                 }
               },
-              "checkHitLayerType": "Both",
+              "checkHitLayerType": "Both"
             },
             "attackInfo": {
               "canBeModifiedBy": "OriginOwner",
               "attackTag": "ExtraAttack",
-              "attenuationTag":"ExtraAttack",
+              "attenuationTag": "ExtraAttack",
               "attackProperty": {
                 "damagePercentage": "%DamageWithoutWind",
                 "strikeType": "Pierce",
                 "enBreak": 10,
-                "enHeadBreak": 30,
+                "enHeadBreak": 30
               },
               "hitPattern": {
                 "onHitEffectName": "default",
-                "hitLevel": "Light", //hitlevel = 2
-                "hitImpulseX": 200, //hitlevel = 2
-                "hitImpulseY": 0, //hitlevel = 2
+                "hitLevel": "Light",
+                "hitImpulseX": 200,
+                "hitImpulseY": 0,
                 "reboundRatio": 0,
-                "hitHaltTime": 0.0,
+                "hitHaltTime": 0,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "canHitHead": true,
               "hitHeadPattern": {
                 "onHitEffectName": "Eff_Arrow_Hit_Head",
-                "hitLevel": "Air", //hitlevel = 5
-                "hitImpulseX": 480, //hitlevel = 5
-                "hitImpulseY": 600, //hitlevel = 5
+                "hitLevel": "Air",
+                "hitImpulseX": 480,
+                "hitImpulseY": 600,
                 "reboundRatio": 0,
                 "hitHaltTime": 0.12,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "bulletWane": {
-                "waneDelay": 0.7, // 表示从Bullet创生之后这么久，开始套用衰减规则
-                "damageWaneInterval": 0.05, // 伤害衰减周期，每过这么久，进行一次伤害衰减
-                "damageWaneRatio": 0.1, // 每次进行伤害衰减时，按照DamageWaneRatio的比例，在damagePercentage上进行【扣除】，最多扣除到0
-                "hitLevelWaneInterval": 0.1, // 受击等级衰减周期，每过这么久，进行一次受击等级衰减，每次将当前受击等级往下降一级：Air→Heavy→Light→Shake→Mute
-                "hitLevelWaneMin": "Mute", // 受击等级最少衰减为这个等级。如果原本就不高于这个等级，则不予衰减。
+                "waneDelay": 0.7,
+                "damageWaneInterval": 0.05,
+                "damageWaneRatio": 0.1,
+                "hitLevelWaneInterval": 0.1,
+                "hitLevelWaneMin": "Mute",
                 "damageWaneMinRatio": 0.1,
                 "elementDurabilityWaneInterval": 0.05,
                 "elementDurabilityWaneRatio": 0.1,
-                "elementDurabilityWaneMinRatio": 0.1,
-              },
+                "elementDurabilityWaneMinRatio": 0.1
+              }
             }
-          },
-        },
+          }
+        }
       ],
-      "modifiers": {
-      },
+      "modifiers": {},
       "abilitySpecials": {
-        "DamageWithoutWind": 0,
-      },
-    },
+        "DamageWithoutWind": 0
+      }
+    }
   },
-  //温迪蓄力一段时间后，给自己箭头上风属性
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1451,53 +1319,60 @@
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Aim", "FastAim" ],
-          "modifierName": "ShootAimingArrow_Charge_Handler",
+          "stateIDs": [
+            "Aim",
+            "FastAim"
+          ],
+          "modifierName": "ShootAimingArrow_Charge_Handler"
         },
-        {
-          "$type": "AttachToStateIDMixin", //播放瞄准蓄力特效
-          "stateIDs": [ "FastAim", "FastAimShoot" ],
-          "modifierName": "ShowAimingEffect",
-        },
-        // {
-        // 	"$type": "AttachToStateIDMixin",
-        // 	"stateIDs": [ "Aim", "AimShoot"],
-        // 	"modifierName": "ShootAimingArrow_Charge_Add",
-        // },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Aim", "FastAim", "FastAimShoot", "AimShoot" ],
-          "modifierName": "ShootAimingArrow_Charge_Remove",
+          "stateIDs": [
+            "FastAim",
+            "FastAimShoot"
+          ],
+          "modifierName": "ShowAimingEffect"
         },
         {
-          "$type": "AttachToStateIDMixin", //播放瞄准蓄力特效
-          "stateIDs": [ "Aim", "AimShoot" ],
-          "modifierName": "ShowAimingEffect",
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "FastAim",
+            "FastAimShoot",
+            "AimShoot"
+          ],
+          "modifierName": "ShootAimingArrow_Charge_Remove"
         },
+        {
+          "$type": "AttachToStateIDMixin",
+          "stateIDs": [
+            "Aim",
+            "AimShoot"
+          ],
+          "modifierName": "ShowAimingEffect"
+        }
       ],
       "onAbilityStart": [
-        ///////////////////////射完了记得清一下标记及相关特效////////////////////////////////////
         {
           "$type": "AddGlobalValue",
           "key": "_Enchanted_Time",
           "value": -5,
           "useLimitRange": true,
           "maxValue": 5,
-          "minValue": 0,
+          "minValue": 0
         },
         {
           "$type": "RemoveModifier",
-          "modifierName": "AimChargeMark",
+          "modifierName": "AimChargeMark"
         },
         {
           "$type": "RemoveModifier",
-          "modifierName": "WindMagic_Arrow_Glow_Once",
+          "modifierName": "WindMagic_Arrow_Glow_Once"
         },
         {
           "$type": "RemoveModifier",
-          "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once",
-        },
-        ////////////////////////////////////////////////////////////////////////////////////////
+          "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+        }
       ],
       "modifiers": {
         "ShootAimingArrow_Charge_Handler": {
@@ -1505,9 +1380,9 @@
           "onThinkInterval": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "AimChargeMark",
-            },
-          ],
+              "modifierName": "AimChargeMark"
+            }
+          ]
         },
         "ShootAimingArrow_Charge_Remove": {
           "onRemoved": [
@@ -1517,18 +1392,18 @@
               "value": -5,
               "useLimitRange": true,
               "maxValue": 5,
-              "minValue": 0,
+              "minValue": 0
             },
             {
               "$type": "RemoveModifier",
-              "modifierName": "AimChargeMark",
+              "modifierName": "AimChargeMark"
             }
-          ],
+          ]
         },
         "AimChargeMark": {
           "stacking": "MultipleRefreshNoRemove",
           "stackingOption": {
-            "maxModifierNumForMultipleType": 5,
+            "maxModifierNumForMultipleType": 5
           },
           "onAdded": [
             {
@@ -1537,16 +1412,16 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 5,
-              "minValue": 0,
-            },
-          ],
+              "minValue": 0
+            }
+          ]
         },
         "ShowAimingEffect": {
           "onAdded": [
             {
               "$type": "AttachModifier",
-              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once",
-            },
+              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
+            }
           ],
           "thinkInterval": 0.1,
           "onThinkInterval": [
@@ -1559,8 +1434,8 @@
                   "key": "_Enchanted_Time",
                   "value": 4,
                   "forceByCaster": true,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ]
             },
             {
@@ -1572,19 +1447,19 @@
                   "key": "_Enchanted_Time",
                   "value": 1,
                   "forceByCaster": true,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ]
-            },
+            }
           ],
           "onRemoved": [
             {
               "$type": "RemoveModifier",
-              "modifierName": "WindMagic_Arrow_Glow_Once",
+              "modifierName": "WindMagic_Arrow_Glow_Once"
             },
             {
               "$type": "RemoveModifier",
-              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once",
+              "modifierName": "WindMagic_Arrow_Glow_WithoutWind_Once"
             }
           ]
         },
@@ -1593,12 +1468,12 @@
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Glow_Once_02",
+              "effectPattern": "Eff_WindMagic_Arrow_Glow_Once_02"
             },
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Glow_Loop_02",
-            },
+              "effectPattern": "Eff_WindMagic_Arrow_Glow_Loop_02"
+            }
           ]
         },
         "WindMagic_Arrow_Glow_WithoutWind_Once": {
@@ -1606,18 +1481,17 @@
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Glow_Once_01",
+              "effectPattern": "Eff_WindMagic_Arrow_Glow_Once_01"
             },
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Glow_Loop_01",
-            },
+              "effectPattern": "Eff_WindMagic_Arrow_Glow_Loop_01"
+            }
           ]
         }
-      },
-    },
+      }
+    }
   },
-  //温迪风属性蓄力箭的命中特效
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1626,8 +1500,8 @@
         {
           "$type": "AttachModifier",
           "modifierName": "ArrowEffectModifier",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "onAbilityStart": [
         {
@@ -1635,17 +1509,15 @@
           "predicates": [
             {
               "$type": "ByHasElement",
-              "element": "Wind",
-            },
+              "element": "Wind"
+            }
           ],
-          //特效要替换
-          /*"hitEntity": "Eff_WindMagic_Arrow_Hit",*/ //Eff_Arrow_Fire_OnHitting
           "hitScene": {
             "defaultEffect": "Eff_WindMagic_Arrow_Hit",
             "surfaceEffect": {
               "Water": "Eff_Arrow_Fire_Hit_Water"
             }
-          },
+          }
         },
         {
           "$type": "FireHitEffect",
@@ -1655,81 +1527,60 @@
               "predicates": [
                 {
                   "$type": "ByHasElement",
-                  "element": "Wind",
-                },
-              ],
-            },
+                  "element": "Wind"
+                }
+              ]
+            }
           ],
           "hitScene": {
             "defaultEffect": "Eff_Arrow_Hit_Earth",
             "surfaceEffect": {
               "Water": "Eff_Arrow_Hit_Water"
             }
-          },
-        },
+          }
+        }
       ],
       "modifiers": {
         "ArrowEffectModifier": {
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Fly_Particle",
+              "effectPattern": "Eff_WindMagic_Arrow_Fly_Particle"
             },
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_WindMagic_Arrow_Fly_Trail",
-            },
+              "effectPattern": "Eff_WindMagic_Arrow_Fly_Trail"
+            }
           ]
-        },
-      },
-
-    },
+        }
+      }
+    }
   },
-  //蓄力箭。。。。。没有风属性的表现
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_ShootAimingArrowWithoutWind_Material",
       "onAdded": [
-        //箭头拖尾特效
-        // {
-        // 	"$type": "AttachEffect",
-        // 	"effectPattern": "Eff_Talent_Arrow_Fly_Trail",
-        // },
-        // {
-        // 	"$type": "AttachEffect",
-        // 	"effectPattern": "Eff_Talent_Arrow_Fly_Partcle",
-        // },
         {
           "$type": "AttachEffect",
-          "effectPattern": "Eff_Venti_Arrow_Fly_Big",
-        },
+          "effectPattern": "Eff_Venti_Arrow_Fly_Big"
+        }
       ],
       "onAbilityStart": [
         {
           "$type": "FireHitEffect",
-
           "hitScene": {
             "defaultEffect": "Eff_Arrow_Hit_Earth",
             "surfaceEffect": {
-              "Water": "Eff_Arrow_Hit_Water",
+              "Water": "Eff_Arrow_Hit_Water"
             }
-          },
-        },
+          }
+        }
       ],
-      "modifiers": {
-
-      },
-      "abilitySpecials": {
-
-      },
-    },
+      "modifiers": {},
+      "abilitySpecials": {}
+    }
   },
-  ////////////////////////////////////////////////////////////////
-  //
-  //  Change Main Skill
-  //
-  ////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1737,46 +1588,35 @@
       "abilityMixins": [
         {
           "$type": "AvatarChangeSkillMixin",
-          "aimSkillID": 10222,
-        },
-      ],
-    },
+          "aimSkillID": 10222
+        }
+      ]
+    }
   },
-
-
-  ////////////////////////////////////////////////////////////////
-  //
-  //   Der Himmel Blade
-  //
-  ////////////////////////////////////////////////////////////////
-
   {
-    "Default": //飞鸭，温迪
-    {
+    "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Venti_WindBlade_GravityAdjust",
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "WindBlade_RiseUp", "WindBlade_AS" ],
-          "modifierName": "GravityAdjust_2",
-        },
+          "stateIDs": [
+            "WindBlade_RiseUp",
+            "WindBlade_AS"
+          ],
+          "modifierName": "GravityAdjust_2"
+        }
       ],
       "modifiers": {
         "GravityAdjust_2": {
           "isLimitedProperties": true,
           "properties": {
-            "Actor_AddGravityScale": -2.0,
-          },
-        },
-      },
-    },
+            "Actor_AddGravityScale": -2
+          }
+        }
+      }
+    }
   },
-  /////////////////////////////////////////////////////////////////////////////////
-  /////////////////////////////温迪小技能第二版////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////
-
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -1784,38 +1624,49 @@
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "WindBlade_Rise_Charge_1" ],
-          "modifierName": "TriggerAttack",
+          "stateIDs": [
+            "WindBlade_Rise_Charge_1"
+          ],
+          "modifierName": "TriggerAttack"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "WindBlade_Land" ],
-          "modifierName": "TriggerAttack_Land",
+          "stateIDs": [
+            "WindBlade_Land"
+          ],
+          "modifierName": "TriggerAttack_Land"
         },
-        // {
-        // 	"$type": "AttachToStateIDMixin",
-        // 	"stateIDs": ["WindBlade_Rise_Charge"],
-        // 	"modifierName": "WindBlade_Rise_Charge_Timer",
-        // },
         {
           "$type": "SkillButtonHoldChargeMixin",
           "skillID": 10224,
-          "beforeStateIDs": [ "WindBlade_Rise_BS" ],
-          "chargeLoopStateIDs": [ "WindBlade_Rise_Charge", "WindBlade_RiseUp" ],
-          "chargeLoopDurations": [ 0.3 ],
+          "beforeStateIDs": [
+            "WindBlade_Rise_BS"
+          ],
+          "chargeLoopStateIDs": [
+            "WindBlade_Rise_Charge",
+            "WindBlade_RiseUp"
+          ],
+          "chargeLoopDurations": [
+            0.3
+          ],
           "nextLoopTriggerID": "NextLoopTrigger",
-          "endHoldTrigger": "EndHoldTrigger",
+          "endHoldTrigger": "EndHoldTrigger"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "WindBlade_Land" ],
-          "modifierName": "Eff_Venti_Harp",
+          "stateIDs": [
+            "WindBlade_Land"
+          ],
+          "modifierName": "Eff_Venti_Harp"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "WindBlade_RiseUp", "WindBlade_AS" ],
-          "modifierName": "Eff_Venti_Sprite",
-        },
+          "stateIDs": [
+            "WindBlade_RiseUp",
+            "WindBlade_AS"
+          ],
+          "modifierName": "Eff_Venti_Sprite"
+        }
       ],
       "onAdded": [
         {
@@ -1824,27 +1675,10 @@
           "predicates": [
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_Constellation_2",
-            },
-          ],
-        },
-        // {
-        // 	"$type" : "RemoveModifier",
-        // 	"modifierName" : "WindBlade_Nerf_Handler",
-        // 	"predicates" :
-        // 	[
-        // 		{
-        // 			"$type" : "ByNot",
-        // 			"predicates" :
-        // 			[
-        // 				{
-        // 					"$type" : "ByUnlockTalentParam",
-        // 					"talentParam" : "Venti_Constellation_2",
-        // 				},
-        // 			],
-        // 		},
-        // 	],
-        // },
+              "talentParam": "Venti_Constellation_2"
+            }
+          ]
+        }
       ],
       "modifiers": {
         "TriggerAttack": {
@@ -1857,41 +1691,40 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0.2,
+                  "x": 0,
+                  "y": 0,
+                  "z": 0.2
                 },
                 "onGround": true,
-                "alongGround": true,
-              },
+                "alongGround": true
+              }
             },
             {
               "$type": "AvatarSkillStart",
               "skillID": 10224,
-              "cdRatio": 2.5,
+              "cdRatio": 2.5
             },
             {
-              "$type": "CreateGadget", //天赋的风场
+              "$type": "CreateGadget",
               "gadgetID": 41022014,
               "campID": 1001,
               "campTargetType": "Enemy",
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0.0,
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
                 },
-                "onGround": true,
-                // "alongGround": true,
+                "onGround": true
               },
               "predicates": [
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Venti_Constellation_4",
+                  "talentParam": "Venti_Constellation_4"
                 }
-              ],
-            },
+              ]
+            }
           ]
         },
         "TriggerAttack_Land": {
@@ -1905,17 +1738,17 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
+                  "x": 0,
                   "y": 0.5,
-                  "z": 0.5,
+                  "z": 0.5
                 },
-                "onGround": true,
+                "onGround": true
               },
               "predicates": [
                 {
-                  "$type": "ByHasAttackTarget",
-                },
-              ],
+                  "$type": "ByHasAttackTarget"
+                }
+              ]
             },
             {
               "$type": "CreateGadget",
@@ -1925,29 +1758,29 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 5.0,
+                  "x": 0,
+                  "y": 0,
+                  "z": 5
                 },
                 "onGround": true,
-                "alongGround": true,
+                "alongGround": true
               },
               "predicates": [
                 {
                   "$type": "ByNot",
                   "predicates": [
                     {
-                      "$type": "ByHasAttackTarget",
-                    },
-                  ],
-                },
-              ],
+                      "$type": "ByHasAttackTarget"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "$type": "AvatarSkillStart",
               "skillID": 10224,
-              "cdRatio": 1,
-            },
+              "cdRatio": 1
+            }
           ]
         },
         "Eff_Venti_Harp": {
@@ -1958,31 +1791,21 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0, // + means up, - means down
-                  "y": 0.3, // + means left, - means right
-                  "z": 0.3, // + means forward, - means backward
+                  "x": 0,
+                  "y": 0.3,
+                  "z": 0.3
                 }
-              },
-            },
+              }
+            }
           ]
         },
         "Eff_Venti_Sprite": {
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Sprite",
-              // "born":
-              // {
-              // 	"$type": "ConfigBornByTarget",
-              // 	"offset" :
-              // 	{
-              // 		"x": 0.0, // + means up, - means down
-              // 		"y": 0.3, // + means left, - means right
-              // 		"z": 0.3, // + means forward, - means backward
-              // 	}
-              // },
-            },
-          ],
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Sprite"
+            }
+          ]
         },
         "WindBlade_Nerf_Handler": {
           "onAttackLanded": [
@@ -1993,41 +1816,43 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Wind",
+                  "element": "Wind"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
-            },
-          ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         "UNIQUE_WindBlade_Nerf": {
           "isUnique": true,
           "stacking": "Refresh",
           "duration": "%WindBlade_Nerf_Duration",
           "isLimitedProperties": true,
-          "onAdded": [
-          ],
+          "onAdded": [],
           "properties": {
             "Actor_WindSubHurtDelta": "%WindBlade_Nerf_SubHurtDelta",
-            "Actor_PhysicalSubHurtDelta": -0.12,
-          },
-        },
+            "Actor_PhysicalSubHurtDelta": -0.12
+          }
+        }
       },
       "abilitySpecials": {
-        "GetElementRatio": 1.0,
+        "GetElementRatio": 1,
         "WindBlade_Nerf_Duration": 10,
-        "WindBlade_Nerf_SubHurtDelta": -0.12,
-      },
-    },
+        "WindBlade_Nerf_SubHurtDelta": -0.12
+      }
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -2035,11 +1860,11 @@
       "onAdded": [
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part1",
+          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part1"
         },
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part2",
+          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part2"
         },
         {
           "$type": "AttachModifier",
@@ -2056,8 +1881,8 @@
         {
           "$type": "AttachModifier",
           "modifierName": "WindBladeElementBall",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "modifiers": {
         "WindBlade_Handler": {
@@ -2069,13 +1894,15 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByTargetWeight",
                   "logic": "LesserOrEqual",
-                  "weight": 100,
-                },
+                  "weight": 100
+                }
               ]
             },
             {
@@ -2085,20 +1912,22 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByTargetWeight",
                   "logic": "LesserOrEqual",
-                  "weight": 100,
+                  "weight": 100
                 },
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Venti_Constellation_2",
-                },
-              ],
-            },
-          ],
+                  "talentParam": "Venti_Constellation_2"
+                }
+              ]
+            }
+          ]
         },
         "WindBlade_Timer_1": {
           "duration": 0.6,
@@ -2110,15 +1939,15 @@
                 "attackPattern": {
                   "$type": "ConfigAttackSphere",
                   "triggerType": "TriggerNoRepeat",
-                  "radius": 6.0,
+                  "radius": 6,
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -2128,55 +1957,55 @@
                     "strikeType": "Pierce",
                     "elementType": "Wind",
                     "elementDurability": 50,
-                    "enBreak": 150,
+                    "enBreak": 150
                   },
                   "hitPattern": {
                     "onHitEffectName": "none",
-                    "hitLevel": "Air", //hitlevel = 7
-                    "hitImpulseX": 0, //hitlevel = 7
-                    "hitImpulseY": 800, //hitlevel = 7
+                    "hitLevel": "Air",
+                    "hitImpulseX": 0,
+                    "hitImpulseY": 800,
                     "reboundRatio": 0,
-                    "hitHaltTime": 0.0,
+                    "hitHaltTime": 0,
                     "hitHaltTimeScale": 0.05,
-                    "muteHitText": false,
+                    "muteHitText": false
                   },
                   "forceCameraShake": true,
                   "cameraShake": {
                     "shakeRange": 0.08,
-                    "shakeTime": 0.1,
-                  },
-                },
-              },
+                    "shakeTime": 0.1
+                  }
+                }
+              }
             },
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part3",
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part3"
             },
             {
               "$type": "ActCameraRadialBlur",
               "cameraRadialBlur": {
                 "power": 0.8,
                 "blurTime": 0.2,
-                "fadeTime": 0.2,
-              },
-            },
-          ],
+                "fadeTime": 0.2
+              }
+            }
+          ]
         },
         "WindBlade_Timer_2": {
           "duration": 1.2,
           "onRemoved": [
             {
               "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part4",
-            },
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_Part4"
+            }
           ]
         },
         "WindBlade_SlowFall": {
-          "duration": 3.0,
+          "duration": 3,
           "stacking": "Unique",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_AddGravityScale": -1.9,
+            "Actor_AddGravityScale": -1.9
           },
           "onAdded": [
             {
@@ -2185,8 +2014,10 @@
               "predicates": [
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster" ],
-                },
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
               ]
             }
           ]
@@ -2194,12 +2025,11 @@
         "UNIQUE_WindBlade_SlowFall_Nerf": {
           "isUnique": true,
           "stacking": "Refresh",
-          "duration": 3.0,
-          // "isLimitedProperties": true,
+          "duration": 3,
           "properties": {
             "Actor_WindSubHurtDelta": -0.12,
-            "Actor_PhysicalSubHurtDelta": -0.12,
-          },
+            "Actor_PhysicalSubHurtDelta": -0.12
+          }
         },
         "WindBladeElementBall": {
           "onAttackLanded": [
@@ -2209,28 +2039,32 @@
               "targetPredicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster" ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ANIMAL_ENTITY_TYPE",
                   "value": 0,
-                  "compareType": "NoneOrEqual",
-                },
+                  "compareType": "NoneOrEqual"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "WindBladeElementBall_Base",
-                  "target": "Self",
-                },
-              ],
-            },
-          ],
+                  "target": "Self"
+                }
+              ]
+            }
+          ]
         },
         "WindBladeElementBall_Base": {
           "stacking": "Unique",
@@ -2243,22 +2077,21 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0.0,
-                },
-              },
-            },
-          ],
-        },
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              }
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "WindBladeDamage": 0,
-        "WindBladeGetElementRatio": 1,
-      },
-    },
+        "WindBladeGetElementRatio": 1
+      }
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -2266,7 +2099,7 @@
       "onAdded": [
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_0",
+          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_WIndBlade_0"
         },
         {
           "$type": "AttachModifier",
@@ -2279,8 +2112,8 @@
         {
           "$type": "AttachModifier",
           "modifierName": "WindBladeLand_ElementBall",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
       "modifiers": {
         "WindBlade_Land_Handler": {
@@ -2292,13 +2125,15 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByTargetWeight",
                   "logic": "LesserOrEqual",
-                  "weight": 100,
-                },
+                  "weight": 100
+                }
               ]
             },
             {
@@ -2308,20 +2143,22 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByTargetWeight",
                   "logic": "LesserOrEqual",
-                  "weight": 100,
+                  "weight": 100
                 },
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Venti_Constellation_2",
-                },
-              ],
-            },
-          ],
+                  "talentParam": "Venti_Constellation_2"
+                }
+              ]
+            }
+          ]
         },
         "WindBlade_Land_Timer": {
           "duration": 0.4,
@@ -2333,15 +2170,15 @@
                 "attackPattern": {
                   "$type": "ConfigAttackSphere",
                   "triggerType": "TriggerNoRepeat",
-                  "radius": 3.0,
+                  "radius": 3,
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -2351,17 +2188,17 @@
                     "strikeType": "Pierce",
                     "elementType": "Wind",
                     "elementDurability": 50,
-                    "enBreak": 150,
+                    "enBreak": 150
                   },
                   "hitPattern": {
                     "onHitEffectName": "none",
-                    "hitLevel": "Air", //hitlevel = 7
-                    "hitImpulseX": 0, //hitlevel = 7
-                    "hitImpulseY": 800, //hitlevel = 7
+                    "hitLevel": "Air",
+                    "hitImpulseX": 0,
+                    "hitImpulseY": 800,
                     "reboundRatio": 0,
-                    "hitHaltTime": 0.0,
+                    "hitHaltTime": 0,
                     "hitHaltTimeScale": 0.05,
-                    "muteHitText": false,
+                    "muteHitText": false
                   },
                   "forceCameraShake": false,
                   "cameraShake": {
@@ -2372,25 +2209,25 @@
                     "shakeDir": {
                       "x": 0,
                       "y": -0.5,
-                      "z": 0,
+                      "z": 0
                     },
                     "extension": {
                       "baseCycle": 0.72,
                       "cycleDamping": 0,
-                      "rangeAttenuation": 0.3,
-                    },
-                  },
-                },
-              },
-            },
-          ],
+                      "rangeAttenuation": 0.3
+                    }
+                  }
+                }
+              }
+            }
+          ]
         },
         "WindBlade_Land_SlowFall": {
-          "duration": 2.0,
+          "duration": 2,
           "stacking": "Unique",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_AddGravityScale": -1.8,
+            "Actor_AddGravityScale": -1.8
           },
           "onAdded": [
             {
@@ -2399,8 +2236,10 @@
               "predicates": [
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster" ],
-                },
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
               ]
             }
           ]
@@ -2408,12 +2247,11 @@
         "UNIQUE_WindBlade_Land_SlowFall_Nerf": {
           "isUnique": true,
           "stacking": "Refresh",
-          "duration": 3.0,
-          // "isLimitedProperties": true,
+          "duration": 3,
           "properties": {
             "Actor_WindSubHurtDelta": -0.12,
-            "Actor_PhysicalSubHurtDelta": -0.12,
-          },
+            "Actor_PhysicalSubHurtDelta": -0.12
+          }
         },
         "WindBladeLand_ElementBall": {
           "onAttackLanded": [
@@ -2423,33 +2261,37 @@
               "targetPredicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Art" ],
+                  "attackTags": [
+                    "Elemental_Art"
+                  ]
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster" ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ANIMAL_ENTITY_TYPE",
                   "value": 0,
-                  "compareType": "NoneOrEqual",
-                },
+                  "compareType": "NoneOrEqual"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "WindBladeLand_ElementBall_Base",
-                  "target": "Self",
+                  "target": "Self"
                 },
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "WindBladeLand_ElementBall_Extra",
-                  "target": "Self",
-                },
-              ],
-            },
-          ],
+                  "target": "Self"
+                }
+              ]
+            }
+          ]
         },
         "WindBladeLand_ElementBall_Base": {
           "stacking": "Unique",
@@ -2462,11 +2304,11 @@
               "born": {
                 "$type": "ConfigBornByTarget",
                 "offset": {
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0.0,
-                },
-              },
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              }
             },
             {
               "$type": "Randomed",
@@ -2480,20 +2322,20 @@
                   "born": {
                     "$type": "ConfigBornByTarget",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
-                },
-              ],
-            },
-          ],
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
         },
         "WindBladeLand_ElementBall_Extra": {
           "stacking": "MultipleRefreshNoRemove",
           "stackingOption": {
-            "maxModifierNumForMultipleType": 3,
+            "maxModifierNumForMultipleType": 3
           },
           "onAdded": [
             {
@@ -2508,31 +2350,23 @@
                   "born": {
                     "$type": "ConfigBornByTarget",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
-                },
-              ],
-            },
-          ],
-        },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
       },
       "abilitySpecials": {
         "WindBladeDamage_Land": 0,
-        "WindBladeLand_GetElementRatio": 1,
-      },
-    },
+        "WindBladeLand_GetElementRatio": 1
+      }
+    }
   },
-
-
-
-  ////////////////////////////////////////////////////////////////
-  //
-  //  Hurricane
-  //
-  ////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -2540,7 +2374,7 @@
       "onAbilityStart": [
         {
           "$type": "AvatarSkillStart",
-          "skillID": 10225,
+          "skillID": 10225
         },
         {
           "$type": "CreateGadget",
@@ -2551,40 +2385,55 @@
           "born": {
             "$type": "ConfigBornByTarget",
             "offset": {
-              "x": 0.0,
+              "x": 0,
               "y": 2.5,
-              "z": 10.0,
+              "z": 10
             },
-            "onGround": true,
-          },
-        },
+            "onGround": true
+          }
+        }
       ],
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS", "Hurricane" ],
-          "modifierName": "Hurricane_Camera",
+          "stateIDs": [
+            "Hurricane_BS",
+            "Hurricane"
+          ],
+          "modifierName": "Hurricane_Camera"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS", "Hurricane", "Hurricane_AS" ],
-          "modifierName": "Hurricane_Emotion",
+          "stateIDs": [
+            "Hurricane_BS",
+            "Hurricane",
+            "Hurricane_AS"
+          ],
+          "modifierName": "Hurricane_Emotion"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS", "Hurricane" ],
-          "modifierName": "Elemental_Burst_Invincible",
+          "stateIDs": [
+            "Hurricane_BS",
+            "Hurricane"
+          ],
+          "modifierName": "Elemental_Burst_Invincible"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS", "Hurricane" ],
-          "modifierName": "Elemental_Burst_IsGhostToEnemy",
+          "stateIDs": [
+            "Hurricane_BS",
+            "Hurricane"
+          ],
+          "modifierName": "Elemental_Burst_IsGhostToEnemy"
         },
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Hurricane_BS" ],
-          "modifierName": "Hurricane_CameraRadialBlur",
-        },
+          "stateIDs": [
+            "Hurricane_BS"
+          ],
+          "modifierName": "Hurricane_CameraRadialBlur"
+        }
       ],
       "modifiers": {
         "Hurricane_Camera": {
@@ -2599,63 +2448,49 @@
                     "$type": "ConfigAttackCircle",
                     "triggerType": "TriggerNoRepeat",
                     "height": 0.3,
-                    "fanAngle": 360.0,
+                    "fanAngle": 360,
                     "radius": 0.6,
                     "born": {
                       "$type": "ConfigBornBySelf",
                       "offset": {
-                        "x": 0.0,
+                        "x": 0,
                         "y": 1.4,
-                        "z": 0.0,
-                      },
-                    },
-                  },
-                },
-              ],
+                        "z": 0
+                      }
+                    }
+                  }
+                }
+              ]
             },
             {
               "$type": "AvatarCameraParam",
-              "cameraParam":
-              {
-                "forceRadius": 6.0,
+              "cameraParam": {
+                "forceRadius": 6,
                 "forceRadiusDuration": 0,
-                "shouldKeepForceRadius": true,
-              },
-            },
-            // {
-            // 	"$type" : "ControlEmotion",
-            // 	"toggleBlink" : false,
-            // 	"toggleEmoSync" : false,
-            // 	"toggleEyeKey" : false,
-            // },
+                "shouldKeepForceRadius": true
+              }
+            }
           ],
           "onRemoved": [
-            // {
-            // 	"$type" : "ControlEmotion",
-            // 	"toggleBlink" : true,
-            // 	"toggleEmoSync" : true,
-            // 	"toggleEyeKey" : true,
-            // },
             {
-              "$type": "AvatarExitCameraShot",
-            },
+              "$type": "AvatarExitCameraShot"
+            }
           ],
           "onAvatarOut": [
             {
               "$type": "AvatarExitCameraShot",
-              "doOffStage": true,
-            },
+              "doOffStage": true
+            }
           ],
           "modifierMixins": [
             {
               "$type": "TriggerWeatherMixin",
               "type": "Skill",
               "weatherPattern": "DefaultSkillPreset",
-              "transDuration": 0.8, //这个同时是渐入时长和渐出时长。
-              "duration": 1.5, //释放时变亮的参数
-              // "duration":1.4,//释放时仍然暗的参数,剑变亮时间增长了。
-            },
-          ],
+              "transDuration": 0.8,
+              "duration": 1.5
+            }
+          ]
         },
         "Hurricane_Emotion": {
           "onAdded": [
@@ -2663,8 +2498,8 @@
               "$type": "ControlEmotion",
               "toggleBlink": false,
               "toggleEmoSync": false,
-              "toggleEyeKey": false,
-            },
+              "toggleEyeKey": false
+            }
           ],
           "onRemoved": [
             {
@@ -2672,38 +2507,37 @@
               "doOffStage": true,
               "toggleBlink": true,
               "toggleEmoSync": true,
-              "toggleEyeKey": true,
-            },
-          ],
+              "toggleEyeKey": true
+            }
+          ]
         },
         "Hurricane_CameraRadialBlur": {
-          "duration": 1.0,
+          "duration": 1,
           "onRemoved": [
             {
               "$type": "ActCameraRadialBlur",
               "cameraRadialBlur": {
                 "power": 0.08,
                 "blurTime": 0.4,
-                "fadeTime": 0.1,
-              },
-            },
-          ],
+                "fadeTime": 0.1
+              }
+            }
+          ]
         },
         "Elemental_Burst_Invincible": {
-          "state": "Invincible",
+          "state": "Invincible"
         },
         "Elemental_Burst_IsGhostToEnemy": {
           "onAdded": [
             {
               "$type": "AttachAbilityStateResistance",
-              "resistanceListID": 11002,
-            },
-          ],
-        },
-      },
-    },
+              "resistanceListID": 11002
+            }
+          ]
+        }
+      }
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -2711,15 +2545,15 @@
       "onAdded": [
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Hurricane",
+          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Hurricane"
         },
         {
           "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Hurricane_Open",
+          "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Hurricane_Open"
         },
         {
           "$type": "AttachModifier",
-          "modifierName": "Hurricane_WindZone",
+          "modifierName": "Hurricane_WindZone"
         },
         {
           "$type": "ApplyModifier",
@@ -2727,9 +2561,9 @@
           "predicates": [
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_Constellation_6",
-            },
-          ],
+              "talentParam": "Venti_Constellation_6"
+            }
+          ]
         },
         {
           "$type": "RemoveModifier",
@@ -2740,12 +2574,12 @@
               "predicates": [
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Venti_Constellation_6",
-                },
-              ],
-            },
-          ],
-        },
+                  "talentParam": "Venti_Constellation_6"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "modifiers": {
         "Hurricane_WindZone": {
@@ -2761,21 +2595,14 @@
                 "$type": "ConfigBornByAttachPoint",
                 "attachPointName": "RootNode",
                 "offset": {
-                  "x": 0.0,
+                  "x": 0,
                   "y": -0.5,
-                  "z": 0.0,
-                },
+                  "z": 0
+                }
               },
               "targetType": "Enemy",
-              // "modifierName" : "InWind",
-              "predicates": [
-                // {
-                //   "$type": "ByTargetWeight", //WindZoneLevel = 1
-                //   "logic": "LesserOrEqual", //WindZoneLevel = 1
-                //   "weight": 100.0, //WindZoneLevel = 1
-                // },
-              ],
-            },
+              "predicates": []
+            }
           ],
           "thinkInterval": 0.4,
           "onThinkInterval": [
@@ -2790,11 +2617,11 @@
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -2805,22 +2632,22 @@
                     "elementType": "Wind",
                     "elementDurability": 25,
                     "elementRank": 3,
-                    "enBreak": 4,
+                    "enBreak": 4
                   },
                   "hitPattern": {
-                    "hitLevel": "Light", //hitlevel = 2
-                    "hitImpulseX": 200, //hitlevel = 2
-                    "hitImpulseY": 0, //hitlevel = 2
+                    "hitLevel": "Light",
+                    "hitImpulseX": 200,
+                    "hitImpulseY": 0,
                     "reboundRatio": 0,
-                    "hitHaltTime": 0.0,
+                    "hitHaltTime": 0,
                     "hitHaltTimeScale": 0.05,
-                    "muteHitText": false,
+                    "muteHitText": false
                   },
                   "forceCameraShake": false,
-                  "cameraShake": { },
-                },
-              },
-            },
+                  "cameraShake": {}
+                }
+              }
+            }
           ],
           "onAttackLanded": [
             {
@@ -2830,16 +2657,17 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
-                  "$type": "ByTargetWeight", //WindZoneLevel = 1
-                  "logic": "LesserOrEqual", //WindZoneLevel = 1
-                  "weight": 100.0, //WindZoneLevel = 1
-                },
-              ],
+                  "$type": "ByTargetWeight",
+                  "logic": "LesserOrEqual",
+                  "weight": 100
+                }
+              ]
             },
-
             {
               "$type": "ApplyModifier",
               "modifierName": "Venti_Insight_Wane",
@@ -2847,32 +2675,34 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByUnlockTalentParam",
-                  "talentParam": "Venti_Insight",
-                },
-              ],
-            },
-          ],
+                  "talentParam": "Venti_Insight"
+                }
+              ]
+            }
+          ]
         },
         "Drag": {
-          "duration": 1.0,
+          "duration": 1,
           "stacking": "Refresh",
           "state": "Struggle",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_AddGravityScale": -2,
-          },
+            "Actor_AddGravityScale": -2
+          }
         },
         "Venti_Insight_Wane": {
           "duration": 0.4,
           "stacking": "Refresh",
           "properties": {
             "Actor_AntiCriticalDelta": "%AntiCriticalDelta",
-            "Actor_SubHurtDelta": "%SubHurtDelta",
-          },
+            "Actor_SubHurtDelta": "%SubHurtDelta"
+          }
         },
         "Hurricane_Twisted_Handler": {
           "onAttackLanded": [
@@ -2883,17 +2713,21 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Wind",
+                  "element": "Wind"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
             },
             {
               "$type": "ApplyModifier",
@@ -2902,17 +2736,21 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Fire",
+                  "element": "Fire"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
             },
             {
               "$type": "ApplyModifier",
@@ -2921,17 +2759,21 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Water",
+                  "element": "Water"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
             },
             {
               "$type": "ApplyModifier",
@@ -2940,17 +2782,21 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Electric",
+                  "element": "Electric"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
             },
             {
               "$type": "ApplyModifier",
@@ -2959,19 +2805,23 @@
               "predicates": [
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Elemental_Burst" ],
+                  "attackTags": [
+                    "Elemental_Burst"
+                  ]
                 },
                 {
                   "$type": "ByHitElement",
-                  "element": "Ice",
+                  "element": "Ice"
                 },
                 {
                   "$type": "ByEntityTypes",
-                  "entityTypes": [ "Monster", ],
-                },
-              ],
-            },
-          ],
+                  "entityTypes": [
+                    "Monster"
+                  ]
+                }
+              ]
+            }
+          ]
         },
         "UNIQUE_Hurricane_Twisted_Wind": {
           "isUnique": true,
@@ -2979,8 +2829,8 @@
           "duration": "%WindBreathe_Hurricane_Duration",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_WindSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta",
-          },
+            "Actor_WindSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta"
+          }
         },
         "UNIQUE_Hurricane_Twisted_Fire": {
           "isUnique": true,
@@ -2988,8 +2838,8 @@
           "duration": "%WindBreathe_Hurricane_Duration",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_FireSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta",
-          },
+            "Actor_FireSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta"
+          }
         },
         "UNIQUE_Hurricane_Twisted_Water": {
           "isUnique": true,
@@ -2997,8 +2847,8 @@
           "duration": "%WindBreathe_Hurricane_Duration",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_WaterSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta",
-          },
+            "Actor_WaterSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta"
+          }
         },
         "UNIQUE_Hurricane_Twisted_Electric": {
           "isUnique": true,
@@ -3006,8 +2856,8 @@
           "duration": "%WindBreathe_Hurricane_Duration",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_ElecSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta",
-          },
+            "Actor_ElecSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta"
+          }
         },
         "UNIQUE_Hurricane_Twisted_Ice": {
           "isUnique": true,
@@ -3015,29 +2865,24 @@
           "duration": "%WindBreathe_Hurricane_Duration",
           "isLimitedProperties": true,
           "properties": {
-            "Actor_IceSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta",
-          },
-        },
+            "Actor_IceSubHurtDelta": "%WindBreathe_Hurricane_SubHurtDelta"
+          }
+        }
       },
       "abilitySpecials": {
         "AntiCriticalDelta": -0.08,
         "Elemental_Burst_Damage": 0,
         "SubHurtDelta": 0,
         "WindBreathe_Hurricane_Duration": 10,
-        "WindBreathe_Hurricane_SubHurtDelta": -0.2,
-      },
-    },
+        "WindBreathe_Hurricane_SubHurtDelta": -0.2
+      }
+    }
   },
-  ////////////////////////////////////////////////////////////////
-  //
-  //  温迪充能技属性转换逻辑（现在是完全COPY主角的）
-  //
-  ////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_Hurricane_Mix",
-      "abilityMixins": [ ],
+      "abilityMixins": [],
       "onAdded": [
         {
           "$type": "AddGlobalValue",
@@ -3045,70 +2890,78 @@
           "value": 1,
           "useLimitRange": true,
           "maxValue": 1,
-          "minValue": 0,
+          "minValue": 0
         },
         {
           "$type": "ApplyModifier",
           "modifierName": "Hurricane_Mix_Start",
-          "target": "Self",
-        },
+          "target": "Self"
+        }
       ],
-      "onAbilityStart": [ ],
+      "onAbilityStart": [],
       "modifiers": {
-        //要在龙卷风启动1秒后生效元素混合判定机制
         "Hurricane_Mix_Start": {
-          "duration": 1.0,
+          "duration": 1,
           "onRemoved": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_Mix_Handler",
-              "target": "Self",
-            },
-          ],
+              "target": "Self"
+            }
+          ]
         },
         "Hurricane_Mix_Handler": {
           "modifierMixins": [
             {
               "$type": "AttachModifierToSelfGlobalValueMixin",
               "globalValueKey": "_ABILITY_Hurricane_IsMixed",
-              "valueSteps": [ -1, 0.5, 1.5 ],
+              "valueSteps": [
+                -1,
+                0.5,
+                1.5
+              ],
               "removeAppliedModifier": true,
-              "modifierNameSteps": [ "Blank", "Blank" ],
-            },
+              "modifierNameSteps": [
+                "Blank",
+                "Blank"
+              ]
+            }
           ],
           "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_Mix",
-              "target": "Self",
+              "target": "Self"
             },
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_Mix_Detect_Pre",
-              "target": "Self",
-            },
-          ],
+              "target": "Self"
+            }
+          ]
         },
-        "Blank": { },
+        "Blank": {},
         "Hurricane_Mix_Wind_Material": {
-          "duration": 6.0,
-          "onAdded": [
-            // {
-            // 	"$type" : "AttachEffect",
-            // 	"effectPattern" : "Eff_Avatar_WindBreathe_Tornado_Attach_Wind",
-            // },
-          ],
+          "duration": 6,
+          "onAdded": []
         },
         "Hurricane_Mix_Detect_Pre": {
           "modifierMixins": [
             {
               "$type": "AttachModifierToSelfGlobalValueMixin",
               "globalValueKey": "_ABILITY_Hurricane_IsMixed",
-              "valueSteps": [ -1, 0.5, 1.5 ],
+              "valueSteps": [
+                -1,
+                0.5,
+                1.5
+              ],
               "removeAppliedModifier": true,
-              "modifierNameSteps": [ "Blank", "Hurricane_Mix_Detect" ],
-            },
-          ],
+              "modifierNameSteps": [
+                "Blank",
+                "Hurricane_Mix_Detect"
+              ]
+            }
+          ]
         },
         "Hurricane_Mix_Detect": {
           "thinkInterval": 0.3,
@@ -3122,18 +2975,18 @@
                   "triggerType": "TriggerNoRepeat",
                   "size": {
                     "x": 2.5,
-                    "y": 5.0,
-                    "z": 2.5,
+                    "y": 5,
+                    "z": 2.5
                   },
                   "born": {
                     "$type": "ConfigBornByAttachPoint",
                     "attachPointName": "RootNode",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": -1.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": -1
+                    }
+                  }
                 },
                 "attackInfo": {
                   "attackTag": "Hurricane_Mix_Detect",
@@ -3141,13 +2994,13 @@
                     "damagePercentage": 0,
                     "elementType": "AntiFire",
                     "elementDurability": 1,
-                    "elementRank": 1.0,
-                    "enBreak": 0,
-                  },
-                },
-              },
-            },
-          ],
+                    "elementRank": 1,
+                    "enBreak": 0
+                  }
+                }
+              }
+            }
+          ]
         },
         "Hurricane_Mix": {
           "onHittingOther": [
@@ -3157,25 +3010,27 @@
               "targetPredicates": [
                 {
                   "$type": "ByHasElement",
-                  "element": "Fire",
+                  "element": "Fire"
                 },
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Hurricane_Mix_Detect", ],
+                  "attackTags": [
+                    "Hurricane_Mix_Detect"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "forceByCaster": true,
                   "value": 1,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_Mix_Fire",
-                  "target": "Self",
+                  "target": "Self"
                 },
                 {
                   "$type": "AddGlobalValue",
@@ -3183,9 +3038,9 @@
                   "value": -1,
                   "useLimitRange": true,
                   "maxValue": 1,
-                  "minValue": 0,
-                },
-              ],
+                  "minValue": 0
+                }
+              ]
             },
             {
               "$type": "Predicated",
@@ -3193,25 +3048,27 @@
               "targetPredicates": [
                 {
                   "$type": "ByHasElement",
-                  "element": "Water",
+                  "element": "Water"
                 },
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Hurricane_Mix_Detect", ],
+                  "attackTags": [
+                    "Hurricane_Mix_Detect"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "forceByCaster": true,
                   "value": 1,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_Mix_Water",
-                  "target": "Self",
+                  "target": "Self"
                 },
                 {
                   "$type": "AddGlobalValue",
@@ -3219,9 +3076,9 @@
                   "value": -1,
                   "useLimitRange": true,
                   "maxValue": 1,
-                  "minValue": 0,
-                },
-              ],
+                  "minValue": 0
+                }
+              ]
             },
             {
               "$type": "Predicated",
@@ -3229,25 +3086,27 @@
               "targetPredicates": [
                 {
                   "$type": "ByHasElement",
-                  "element": "Electric",
+                  "element": "Electric"
                 },
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Hurricane_Mix_Detect", ],
+                  "attackTags": [
+                    "Hurricane_Mix_Detect"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "forceByCaster": true,
                   "value": 1,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_Mix_Electric",
-                  "target": "Self",
+                  "target": "Self"
                 },
                 {
                   "$type": "AddGlobalValue",
@@ -3255,11 +3114,10 @@
                   "value": -1,
                   "useLimitRange": true,
                   "maxValue": 1,
-                  "minValue": 0,
-                },
+                  "minValue": 0
+                }
               ],
-              "predicates": [
-              ],
+              "predicates": []
             },
             {
               "$type": "Predicated",
@@ -3270,31 +3128,33 @@
                   "predicates": [
                     {
                       "$type": "ByHasElement",
-                      "element": "Ice",
+                      "element": "Ice"
                     },
                     {
                       "$type": "ByHasElement",
-                      "element": "Frozen",
-                    },
-                  ],
+                      "element": "Frozen"
+                    }
+                  ]
                 },
                 {
                   "$type": "ByAttackTags",
-                  "attackTags": [ "Hurricane_Mix_Detect", ],
+                  "attackTags": [
+                    "Hurricane_Mix_Detect"
+                  ]
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "forceByCaster": true,
                   "value": 1,
-                  "compareType": "Equal",
-                },
+                  "compareType": "Equal"
+                }
               ],
               "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_Mix_Ice",
-                  "target": "Self",
+                  "target": "Self"
                 },
                 {
                   "$type": "AddGlobalValue",
@@ -3302,30 +3162,29 @@
                   "value": -1,
                   "useLimitRange": true,
                   "maxValue": 1,
-                  "minValue": 0,
-                },
+                  "minValue": 0
+                }
               ],
-              "predicates": [
-              ],
-            },
-          ],
+              "predicates": []
+            }
+          ]
         },
         "Hurricane_Mix_Fire": {
           "stacking": "Unique",
-          "duration": 8.0,
+          "duration": 8,
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Fire_Damage",
+              "modifierName": "Hurricane_Mix_Fire_Damage"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Fire_Material",
-            },
-          ],
+              "modifierName": "Hurricane_Mix_Fire_Material"
+            }
+          ]
         },
         "Hurricane_Mix_Fire_Damage": {
-          "duration": 6.0,
+          "duration": 6,
           "thinkInterval": 0.4,
           "onThinkInterval": [
             {
@@ -3339,11 +3198,11 @@
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -3354,22 +3213,18 @@
                     "elementType": "Fire",
                     "elementDurability": 25,
                     "elementRank": 1.5,
-                    "enBreak": 0,
-                  },
-                },
-              },
-            },
-          ],
+                    "enBreak": 0
+                  }
+                }
+              }
+            }
+          ]
         },
         "Hurricane_Mix_Fire_Material": {
           "onAdded": [
-            // {
-            // 	"$type": "AttachEffect",
-            // 	"effectPattern": "Eff_Avatar_WindBreathe_Tornado_Attach_Fire",
-            // },
             {
               "$type": "SendEffectTrigger",
-              "parameter": "Get_Fire",
+              "parameter": "Get_Fire"
             },
             {
               "$type": "AddGlobalValue",
@@ -3377,26 +3232,26 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 0,
-            },
-          ],
+              "minValue": 0
+            }
+          ]
         },
         "Hurricane_Mix_Water": {
           "stacking": "Unique",
-          "duration": 8.0,
+          "duration": 8,
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Water_Damage",
+              "modifierName": "Hurricane_Mix_Water_Damage"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Water_Material",
-            },
-          ],
+              "modifierName": "Hurricane_Mix_Water_Material"
+            }
+          ]
         },
         "Hurricane_Mix_Water_Damage": {
-          "duration": 6.0,
+          "duration": 6,
           "thinkInterval": 0.4,
           "onThinkInterval": [
             {
@@ -3410,11 +3265,11 @@
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -3425,22 +3280,18 @@
                     "elementType": "Water",
                     "elementDurability": 25,
                     "elementRank": 1.5,
-                    "enBreak": 0,
-                  },
-                },
-              },
-            },
-          ],
+                    "enBreak": 0
+                  }
+                }
+              }
+            }
+          ]
         },
         "Hurricane_Mix_Water_Material": {
           "onAdded": [
-            // {
-            // 	"$type": "AttachEffect",
-            // 	"effectPattern": "Eff_Avatar_WindBreathe_Tornado_Attach_Water",
-            // },
             {
               "$type": "SendEffectTrigger",
-              "parameter": "Get_Water",
+              "parameter": "Get_Water"
             },
             {
               "$type": "AddGlobalValue",
@@ -3448,26 +3299,26 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 0,
-            },
-          ],
+              "minValue": 0
+            }
+          ]
         },
         "Hurricane_Mix_Electric": {
           "stacking": "Unique",
-          "duration": 8.0,
+          "duration": 8,
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Electric_Damage",
+              "modifierName": "Hurricane_Mix_Electric_Damage"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Electric_Material",
-            },
-          ],
+              "modifierName": "Hurricane_Mix_Electric_Material"
+            }
+          ]
         },
         "Hurricane_Mix_Electric_Damage": {
-          "duration": 6.0,
+          "duration": 6,
           "thinkInterval": 0.4,
           "onThinkInterval": [
             {
@@ -3481,11 +3332,11 @@
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -3496,22 +3347,18 @@
                     "elementType": "Electric",
                     "elementDurability": 25,
                     "elementRank": 1.5,
-                    "enBreak": 0,
-                  },
-                },
-              },
-            },
-          ],
+                    "enBreak": 0
+                  }
+                }
+              }
+            }
+          ]
         },
         "Hurricane_Mix_Electric_Material": {
           "onAdded": [
-            // {
-            // 	"$type": "AttachEffect",
-            // 	"effectPattern": "Eff_Avatar_WindBreathe_Tornado_Attach_Electric",
-            // },
             {
               "$type": "SendEffectTrigger",
-              "parameter": "Get_Electric",
+              "parameter": "Get_Electric"
             },
             {
               "$type": "AddGlobalValue",
@@ -3519,26 +3366,26 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 0,
-            },
-          ],
+              "minValue": 0
+            }
+          ]
         },
         "Hurricane_Mix_Ice": {
           "stacking": "Unique",
-          "duration": 8.0,
+          "duration": 8,
           "onAdded": [
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Ice_Damage",
+              "modifierName": "Hurricane_Mix_Ice_Damage"
             },
             {
               "$type": "ApplyModifier",
-              "modifierName": "Hurricane_Mix_Ice_Material",
-            },
-          ],
+              "modifierName": "Hurricane_Mix_Ice_Material"
+            }
+          ]
         },
         "Hurricane_Mix_Ice_Damage": {
-          "duration": 6.0,
+          "duration": 6,
           "thinkInterval": 0.4,
           "onThinkInterval": [
             {
@@ -3552,11 +3399,11 @@
                   "born": {
                     "$type": "ConfigBornBySelf",
                     "offset": {
-                      "x": 0.0,
-                      "y": 0.0,
-                      "z": 0.0,
-                    },
-                  },
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  }
                 },
                 "attackInfo": {
                   "canBeModifiedBy": "OriginOwner",
@@ -3567,22 +3414,18 @@
                     "elementType": "Ice",
                     "elementDurability": 25,
                     "elementRank": 1.5,
-                    "enBreak": 0,
-                  },
-                },
-              },
-            },
-          ],
+                    "enBreak": 0
+                  }
+                }
+              }
+            }
+          ]
         },
         "Hurricane_Mix_Ice_Material": {
           "onAdded": [
-            // {
-            // 	"$type": "AttachEffect",
-            // 	"effectPattern": "Eff_Avatar_WindBreathe_Tornado_Attach_Ice",
-            // },
             {
               "$type": "SendEffectTrigger",
-              "parameter": "Get_Ice",
+              "parameter": "Get_Ice"
             },
             {
               "$type": "AddGlobalValue",
@@ -3590,17 +3433,16 @@
               "value": 1,
               "useLimitRange": true,
               "maxValue": 1,
-              "minValue": 0,
-            },
-          ],
-        },
+              "minValue": 0
+            }
+          ]
+        }
       },
       "abilitySpecials": {
-        "Hurricane_Mix_Damage": 0,
-      },
-    },
+        "Hurricane_Mix_Damage": 0
+      }
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -3608,14 +3450,13 @@
       "onAdded": [
         {
           "$type": "ApplyModifier",
-          "modifierName": "Hurricane_Life_Timer",
-        },
+          "modifierName": "Hurricane_Life_Timer"
+        }
       ],
-      "onAbilityStart": [
-      ],
+      "onAbilityStart": [],
       "modifiers": {
         "Hurricane_Life_Timer": {
-          "duration": 8.1, //多5秒时间播消失特效
+          "duration": 8.1,
           "onRemoved": [
             {
               "$type": "SendEffectTrigger",
@@ -3625,9 +3466,9 @@
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 1,
-                  "compareType": "Equal",
-                },
-              ],
+                  "compareType": "Equal"
+                }
+              ]
             },
             {
               "$type": "SendEffectTrigger",
@@ -3637,15 +3478,15 @@
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Fire",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
-              ],
+                  "compareType": "MoreThanAndEqual"
+                }
+              ]
             },
             {
               "$type": "SendEffectTrigger",
@@ -3655,15 +3496,15 @@
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Water",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
-              ],
+                  "compareType": "MoreThanAndEqual"
+                }
+              ]
             },
             {
               "$type": "SendEffectTrigger",
@@ -3673,15 +3514,15 @@
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Electric",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
-              ],
+                  "compareType": "MoreThanAndEqual"
+                }
+              ]
             },
             {
               "$type": "SendEffectTrigger",
@@ -3691,15 +3532,15 @@
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Ice",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
-              ],
+                  "compareType": "MoreThanAndEqual"
+                }
+              ]
             },
             {
               "$type": "ApplyModifier",
@@ -3711,14 +3552,13 @@
           "duration": 6,
           "onRemoved": [
             {
-              "$type": "KillSelf",
-            },
+              "$type": "KillSelf"
+            }
           ]
         }
       }
-    },
+    }
   },
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -3731,10 +3571,10 @@
           "predicates": [
             {
               "$type": "ByUnlockTalentParam",
-              "talentParam": "Venti_Enhanced_Hurricane",
-            },
-          ],
-        },
+              "talentParam": "Venti_Enhanced_Hurricane"
+            }
+          ]
+        }
       ],
       "modifiers": {
         "Hurricane_ElementBall_Handler": {
@@ -3743,387 +3583,339 @@
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Wind",
-              "target": "OriginOwner",
+              "target": "OriginOwner"
             },
             {
               "$type": "Predicated",
               "target": "Self",
-              "targetPredicates":
-              [
+              "targetPredicates": [
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Fire",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ],
-              "successActions":
-              [
+              "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Fire",
-                  "target": "CurTeamAvatars",
+                  "target": "CurTeamAvatars"
                 },
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Fire",
-                  "otherTargets":
-                  {
+                  "otherTargets": {
                     "$type": "SelectTargetsByShape",
                     "shapeName": "CircleR20H10",
                     "centerBasedOn": "Self",
                     "campTargetType": "Alliance",
-                    "campBasedOn": "Self",
+                    "campBasedOn": "Self"
                   },
                   "predicates": [
                     {
                       "$type": "ByEntityTypes",
-                      "entityTypes": ["Avatar"],
-                    },
-                  ],
-                },
-              ],
+                      "entityTypes": [
+                        "Avatar"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "$type": "Predicated",
               "target": "Self",
-              "targetPredicates":
-              [
+              "targetPredicates": [
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Water",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ],
-              "successActions":
-              [
+              "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Water",
-                  "target": "CurTeamAvatars",
+                  "target": "CurTeamAvatars"
                 },
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Water",
-                  "otherTargets":
-                  {
+                  "otherTargets": {
                     "$type": "SelectTargetsByShape",
                     "shapeName": "CircleR20H10",
                     "centerBasedOn": "Self",
                     "campTargetType": "Alliance",
-                    "campBasedOn": "Self",
+                    "campBasedOn": "Self"
                   },
                   "predicates": [
                     {
                       "$type": "ByEntityTypes",
-                      "entityTypes": ["Avatar"],
-                    },
-                  ],
-                },
-              ],
+                      "entityTypes": [
+                        "Avatar"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "$type": "Predicated",
               "target": "Self",
-              "targetPredicates":
-              [
+              "targetPredicates": [
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Electric",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ],
-              "successActions":
-              [
+              "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Electric",
-                  "target": "CurTeamAvatars",
+                  "target": "CurTeamAvatars"
                 },
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Electric",
-                  "otherTargets":
-                  {
+                  "otherTargets": {
                     "$type": "SelectTargetsByShape",
                     "shapeName": "CircleR20H10",
                     "centerBasedOn": "Self",
                     "campTargetType": "Alliance",
-                    "campBasedOn": "Self",
+                    "campBasedOn": "Self"
                   },
                   "predicates": [
                     {
                       "$type": "ByEntityTypes",
-                      "entityTypes": ["Avatar"],
-                    },
-                  ],
-                },
-              ],
+                      "entityTypes": [
+                        "Avatar"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "$type": "Predicated",
               "target": "Self",
-              "targetPredicates":
-              [
+              "targetPredicates": [
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed",
                   "value": 0,
-                  "compareType": "Equal",
+                  "compareType": "Equal"
                 },
                 {
                   "$type": "ByTargetGlobalValue",
                   "key": "_ABILITY_Hurricane_IsMixed_Ice",
                   "value": 1,
-                  "compareType": "MoreThanAndEqual",
-                },
+                  "compareType": "MoreThanAndEqual"
+                }
               ],
-              "successActions":
-              [
+              "successActions": [
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Ice",
-                  "target": "CurTeamAvatars",
+                  "target": "CurTeamAvatars"
                 },
                 {
                   "$type": "ApplyModifier",
                   "modifierName": "Hurricane_GetElement_Ice",
-                  "otherTargets":
-                  {
+                  "otherTargets": {
                     "$type": "SelectTargetsByShape",
                     "shapeName": "CircleR20H10",
                     "centerBasedOn": "Self",
                     "campTargetType": "Alliance",
-                    "campBasedOn": "Self",
+                    "campBasedOn": "Self"
                   },
                   "predicates": [
                     {
                       "$type": "ByEntityTypes",
-                      "entityTypes": ["Avatar"],
-                    },
-                  ],
-                },
-              ],
-            },
+                      "entityTypes": [
+                        "Avatar"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         },
-        "Hurricane_GetElement_Wind":
-        {
-          "duration": 1.0,
+        "Hurricane_GetElement_Wind": {
+          "duration": 1,
           "stacking": "Unique",
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Wind_Handler",
-              "predicates":
-              [
+              "predicates": [
                 {
                   "$type": "ByAvatarElementType",
-                  "elementType": "Wind",
-                },
+                  "elementType": "Wind"
+                }
               ],
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
-        "Hurricane_GetElement_Wind_Handler":
-        {
+        "Hurricane_GetElement_Wind_Handler": {
           "duration": 1.1,
           "stacking": "Unique",
-          "modifierMixins":
-          [
+          "modifierMixins": [
             {
               "$type": "ReviveElemEnergyMixin",
               "type": "Both",
-              "period": 1.0,
-              "baseEnergy":15,
-              "ratio": 1,
-            },
-          ],
+              "period": 1,
+              "baseEnergy": 15,
+              "ratio": 1
+            }
+          ]
         },
-        "Hurricane_GetElement_Fire":
-        {
-          "duration": 1.0,
+        "Hurricane_GetElement_Fire": {
+          "duration": 1,
           "stacking": "Unique",
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Fire_Handler",
-              "predicates":
-              [
+              "predicates": [
                 {
                   "$type": "ByAvatarElementType",
-                  "elementType": "Fire",
-                },
+                  "elementType": "Fire"
+                }
               ],
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
-        "Hurricane_GetElement_Fire_Handler":
-        {
+        "Hurricane_GetElement_Fire_Handler": {
           "duration": 1.1,
           "stacking": "Unique",
-          "modifierMixins":
-          [
+          "modifierMixins": [
             {
               "$type": "ReviveElemEnergyMixin",
               "type": "Both",
-              "period": 1.0,
-              "baseEnergy":15,
-              "ratio": 1,
-            },
-          ],
+              "period": 1,
+              "baseEnergy": 15,
+              "ratio": 1
+            }
+          ]
         },
-        "Hurricane_GetElement_Water":
-        {
-          "duration": 1.0,
+        "Hurricane_GetElement_Water": {
+          "duration": 1,
           "stacking": "Unique",
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Water_Handler",
-              "predicates":
-              [
+              "predicates": [
                 {
                   "$type": "ByAvatarElementType",
-                  "elementType": "Water",
-                },
+                  "elementType": "Water"
+                }
               ],
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
-        "Hurricane_GetElement_Water_Handler":
-        {
+        "Hurricane_GetElement_Water_Handler": {
           "duration": 1.1,
           "stacking": "Unique",
-          "modifierMixins":
-          [
+          "modifierMixins": [
             {
               "$type": "ReviveElemEnergyMixin",
               "type": "Both",
-              "period": 1.0,
-              "baseEnergy":15,
-              "ratio": 1,
-            },
-          ],
+              "period": 1,
+              "baseEnergy": 15,
+              "ratio": 1
+            }
+          ]
         },
-        "Hurricane_GetElement_Electric":
-        {
-          "duration": 1.0,
+        "Hurricane_GetElement_Electric": {
+          "duration": 1,
           "stacking": "Unique",
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Electric_Handler",
-              "predicates":
-              [
+              "predicates": [
                 {
                   "$type": "ByAvatarElementType",
-                  "elementType": "Electric",
-                },
+                  "elementType": "Electric"
+                }
               ],
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
-        "Hurricane_GetElement_Electric_Handler":
-        {
+        "Hurricane_GetElement_Electric_Handler": {
           "duration": 1.1,
           "stacking": "Unique",
-          "modifierMixins":
-          [
+          "modifierMixins": [
             {
               "$type": "ReviveElemEnergyMixin",
               "type": "Both",
-              "period": 1.0,
-              "baseEnergy":15,
-              "ratio": 1,
-            },
-          ],
+              "period": 1,
+              "baseEnergy": 15,
+              "ratio": 1
+            }
+          ]
         },
-        "Hurricane_GetElement_Ice":
-        {
-          "duration": 1.0,
+        "Hurricane_GetElement_Ice": {
+          "duration": 1,
           "stacking": "Unique",
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Hurricane_GetElement_Ice_Handler",
-              "predicates":
-              [
+              "predicates": [
                 {
                   "$type": "ByAvatarElementType",
-                  "elementType": "Ice",
-                },
+                  "elementType": "Ice"
+                }
               ],
-              "doOffStage": true,
-            },
-          ],
+              "doOffStage": true
+            }
+          ]
         },
-        "Hurricane_GetElement_Ice_Handler":
-        {
+        "Hurricane_GetElement_Ice_Handler": {
           "duration": 1.1,
           "stacking": "Unique",
-          "modifierMixins":
-          [
+          "modifierMixins": [
             {
               "$type": "ReviveElemEnergyMixin",
               "type": "Both",
-              "period": 1.0,
-              "baseEnergy":15,
-              "ratio": 1,
-            },
-          ],
-        },
-      },
-    },
+              "period": 1,
+              "baseEnergy": 15,
+              "ratio": 1
+            }
+          ]
+        }
+      }
+    }
   },
-  ////////////////////////////////////////////////////////////////
-  //
-  //  以下为天赋所添加的技能
-  //
-  ////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // //温迪吃球后强化自身的风属性攻击力
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -4131,37 +3923,44 @@
       "abilityMixins": [
         {
           "$type": "DoActionByEnergyChangeMixin",
-          "elementTypes": [ "Wind", "Fire", "Water", "Electric", "Rock", "Ice", "Grass", ],
+          "elementTypes": [
+            "Wind",
+            "Fire",
+            "Water",
+            "Electric",
+            "Rock",
+            "Ice",
+            "Grass"
+          ],
           "doWhenEnergyMax": true,
           "onGainEnergyByBall": [
             {
               "$type": "ApplyModifier",
               "modifierName": "Venti_Windfury",
-              "target": "Self",
-            },
-          ],
-        },
+              "target": "Self"
+            }
+          ]
+        }
       ],
       "modifiers": {
         "Venti_Windfury": {
           "duration": 8,
           "properties": {
-            "Actor_WindAddHurtDelta": "%Windfury_DamageUp",
+            "Actor_WindAddHurtDelta": "%Windfury_DamageUp"
           },
           "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Wind_AttackEnhance",
+              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Wind_AttackEnhance"
             }
           ]
         }
       },
       "abilitySpecials": {
-        "Windfury_DamageUp": 0.25,
-      },
+        "Windfury_DamageUp": 0.25
+      }
     }
   },
-  // 提升温迪得飞行速度
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -4169,27 +3968,25 @@
       "abilityMixins": [
         {
           "$type": "AttachToStateIDMixin",
-          "stateIDs": [ "Fly" ],
-          "modifierName": "StaminaReduce",
-        },
+          "stateIDs": [
+            "Fly"
+          ],
+          "modifierName": "StaminaReduce"
+        }
       ],
       "modifiers": {
         "StaminaReduce": {
-          "modifierMixins": [
-          ],
+          "modifierMixins": [],
           "properties": {
-            "Actor_CostStaminaRatio": "%StaminaReduce",
-          },
-        },
+            "Actor_CostStaminaRatio": "%StaminaReduce"
+          }
+        }
       },
       "abilitySpecials": {
-        "StaminaReduce": -0.08,
-      },
-    },
+        "StaminaReduce": -0.08
+      }
+    }
   },
-
-  //温迪的全队滑翔体力降低
-
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -4198,19 +3995,9 @@
         {
           "$type": "ApplyModifier",
           "modifierName": "CheckMixin",
-          "doOffStage": true,
-        },
+          "doOffStage": true
+        }
       ],
-      // "abilityMixins":
-      // [
-      // 	{
-      // 		"$type": "AttachModifierToSelfGlobalValueMixin",
-      // 		"globalValueKey": "_ABILITY_Talent_ReduceFlyStamina_Trigger",
-      // 		"valueSteps" : [-0.5, 0.5, 1.5],
-      // 		"removeAppliedModifier": true,
-      // 		"modifierNameSteps" : ["Blank", "Talent_ReduceFlyStamina_Trigger"],
-      // 	},
-      // ],
       "modifiers": {
         "CheckMixin": {
           "modifierMixins": [
@@ -4218,14 +4005,21 @@
               "$type": "AttachModifierToSelfGlobalValueMixin",
               "globalValueKey": "_ABILITY_Talent_ReduceFlyStamina_Trigger",
               "defaultGlobalValueOnCreate": 0,
-              "valueSteps": [ -0.5, 0.5, 1.5 ],
+              "valueSteps": [
+                -0.5,
+                0.5,
+                1.5
+              ],
               "removeAppliedModifier": true,
-              "modifierNameSteps": [ "Blank", "Talent_ReduceFlyStamina_Trigger" ],
-            },
-          ],
+              "modifierNameSteps": [
+                "Blank",
+                "Talent_ReduceFlyStamina_Trigger"
+              ]
+            }
+          ]
         },
         "Blank": {
-          "duration": 0.1,
+          "duration": 0.1
         },
         "Talent_ReduceFlyStamina_Trigger": {
           "duration": 0.1,
@@ -4238,124 +4032,21 @@
               "maxValue": 2,
               "minValue": 0,
               "doOffStage": true,
-              "target": "Team",
-            },
-          ],
-        },
-      },
+              "target": "Team"
+            }
+          ]
+        }
+      }
     }
   },
-
-  // {
-  //   "Default":
-  //   {
-  //     "$type":"ConfigAbility",
-  //     "abilityName":"Avatar_Venti_Talent_ReduceFlyStamina2",
-  //     "onAdded":
-  //     [
-  //       {
-  //         "$type":"AttachModifier",
-  //         "modifierName":"UNIQUE_WatchingCurAvatarModifier_Fly",
-  //         "target":"Self",
-  //         "doOffStage":true,
-  //       },
-  //       // {
-  //       //   "$type":"AttachModifier",
-  //       //   "modifierName":"UNIQUE_WatchingCurAvatarModifier_Fly3",
-  //       //   "target":"Self",
-  //       //   "doOffStage":true,
-  //       // }
-  //     ],
-  //     "modifiers":
-  //     {
-  //     	// "UNIQUE_WatchingCurAvatarModifier_Fly3":
-  //     	// {
-  //      //    "isUnique":true,
-  //      //    "modifierMixins":
-  //      //    [
-  //      //      {
-  //      //        "$type":"DoActionByTeamStatusMixin",
-  //      //        "modifierName":"UNIQUE_WatchingCurAvatarModifier_Fly",
-  //      //        "doOffStage":true,
-  //      //      },
-  //      //    ]
-  //     	// },
-  //       "UNIQUE_WatchingCurAvatarModifier_Fly":
-  //       {
-  //         "isUnique":true,
-  //         "modifierMixins":
-  //         [
-  //           {
-  //             "$type":"CurLocalAvatarMixin",
-  //             "modifierName":"UNIQUE_FlyStaminaReduction_Handler1",
-  //             "doOffStage":true,
-  //           }
-  //         ]
-  //       },
-
-  //       "UNIQUE_FlyStaminaReduction_Handler1":
-  //       {
-  //         "isUnique":true,
-  //         "onAdded":
-  //         [
-  //           {
-  //             "$type":"RemoveUniqueModifier",
-  //             "modifierName":"UNIQUE_FlyStaminaReduction_Handler",
-  //          "target":"CurLocalAvatar",
-  //             "doOffStage":true,
-  //           },
-  //      	{
-  //          "$type":"AttachModifier",
-  //          "modifierName":"UNIQUE_FlyStaminaReduction_Handler",
-  //          "target":"CurLocalAvatar",
-  //             "doOffStage":true,
-  //      	},
-  //         ]
-  //       },
-
-  //       "UNIQUE_FlyStaminaReduction_Handler":
-  //       {
-  //         "isUnique":true,
-  //         "modifierMixins":
-  //         [
-  //           {
-  //             "$type": "AttachToStateIDMixin",
-  //             "stateIDs": [ "Fly" ],
-  //             "modifierName": "Avatar_Venti_Talent_ReduceFlyStamina",
-  //           }
-  //         ],
-
-  //       },
-  //       "Avatar_Venti_Talent_ReduceFlyStamina":
-  //       {
-  //         "properties":
-  //         {
-  //           "Actor_CostStaminaRatio":"%Venti_Talent_ReduceFlyStamina",
-  //         },
-  //       },
-  //     },
-  //     "abilitySpecials":
-  //     {
-  //       "Venti_Talent_ReduceFlyStamina":-0.3,
-  //     },
-  //   }
-  // },
-
-  // 分裂箭，目标是人马同款！(这里只负责表现)
   {
     "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Venti_KageBunshinShoot",
-      "abilityMixins": [
-      ],
-      "modifiers": {
-
-      },
+      "abilityMixins": [],
+      "modifiers": {}
     }
   },
-  //////////////////////////////////////////////////////////////////////////
-  ///温迪天赋分裂箭的配置，太多了，拎出来
-  /////////////////////////////////////////////////////////////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -4363,7 +4054,7 @@
       "onAdded": [
         {
           "$type": "ApplyModifier",
-          "modifierName": "Talent_ShootArrow_Enchanted_Wind",
+          "modifierName": "Talent_ShootArrow_Enchanted_Wind"
         }
       ],
       "onAbilityStart": [
@@ -4377,80 +4068,78 @@
               "size": {
                 "x": 0.1,
                 "y": 0.1,
-                "z": 1.0,
+                "z": 1
               },
               "born": {
                 "$type": "ConfigBornByCollisionPoint",
                 "offset": {
-                  "x": 0.0, // + means up, - means down
-                  "y": 0.0, // + means left, - means right
-                  "z": -0.5, // + means forward, - means backward
+                  "x": 0,
+                  "y": 0,
+                  "z": -0.5
                 }
               },
-              "checkHitLayerType": "Both",
+              "checkHitLayerType": "Both"
             },
             "attackInfo": {
               "canBeModifiedBy": "OriginOwner",
               "attackTag": "ExtraAttack",
-              "attenuationTag":"Talent_ExtraAttack",
+              "attenuationTag": "Talent_ExtraAttack",
               "attackProperty": {
                 "damagePercentage": "%Talent_DamageWithWind*0.33",
                 "strikeType": "Pierce",
                 "elementType": "Wind",
                 "elementDurability": 25,
                 "enBreak": 2,
-                "enHeadBreak": 6,
+                "enHeadBreak": 6
               },
               "hitPattern": {
                 "onHitEffectName": "Eff_WindMagic_Arrow_Hit",
-                "hitLevel": "Light", //hitlevel = 2
-                "hitImpulseX": 200, //hitlevel = 2
-                "hitImpulseY": 0, //hitlevel = 2
+                "hitLevel": "Light",
+                "hitImpulseX": 200,
+                "hitImpulseY": 0,
                 "reboundRatio": 0,
-                "hitHaltTime": 0.0,
+                "hitHaltTime": 0,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "canHitHead": true,
               "hitHeadPattern": {
                 "onHitEffectName": "Eff_Arrow_Hit_Head_Wind",
-                "hitLevel": "Air", //hitlevel = 5
-                "hitImpulseX": 480, //hitlevel = 5
-                "hitImpulseY": 600, //hitlevel = 5
+                "hitLevel": "Air",
+                "hitImpulseX": 480,
+                "hitImpulseY": 600,
                 "reboundRatio": 0,
                 "hitHaltTime": 0.12,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "bulletWane": {
-                "waneDelay": 0.7, // 表示从Bullet创生之后这么久，开始套用衰减规则
-                "damageWaneInterval": 0.05, // 伤害衰减周期，每过这么久，进行一次伤害衰减
-                "damageWaneRatio": 0.1, // 每次进行伤害衰减时，按照DamageWaneRatio的比例，在damagePercentage上进行【扣除】，最多扣除到0
-                "hitLevelWaneInterval": 0.1, // 受击等级衰减周期，每过这么久，进行一次受击等级衰减，每次将当前受击等级往下降一级：Air→Heavy→Light→Shake→Mute
-                "hitLevelWaneMin": "Mute", // 受击等级最少衰减为这个等级。如果原本就不高于这个等级，则不予衰减。
+                "waneDelay": 0.7,
+                "damageWaneInterval": 0.05,
+                "damageWaneRatio": 0.1,
+                "hitLevelWaneInterval": 0.1,
+                "hitLevelWaneMin": "Mute",
                 "damageWaneMinRatio": 0.1,
                 "elementDurabilityWaneInterval": 0.05,
                 "elementDurabilityWaneRatio": 0.1,
-                "elementDurabilityWaneMinRatio": 0.1,
-              },
+                "elementDurabilityWaneMinRatio": 0.1
+              }
             }
-          },
-        },
+          }
+        }
       ],
       "modifiers": {
         "Talent_ShootArrow_Enchanted_Wind": {
           "elementType": "Wind",
           "elementDurability": 50,
-          "onAdded": [
-          ]
-        },
+          "onAdded": []
+        }
       },
       "abilitySpecials": {
-        "Talent_DamageWithWind": 0,
-      },
-    },
+        "Talent_DamageWithWind": 0
+      }
+    }
   },
-  //////withoutwind///////////////////////
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -4466,106 +4155,91 @@
               "size": {
                 "x": 0.1,
                 "y": 0.1,
-                "z": 1.0,
+                "z": 1
               },
               "born": {
                 "$type": "ConfigBornByCollisionPoint",
                 "offset": {
-                  "x": 0.0, // + means up, - means down
-                  "y": 0.0, // + means left, - means right
-                  "z": -0.5, // + means forward, - means backward
+                  "x": 0,
+                  "y": 0,
+                  "z": -0.5
                 }
               },
-              "checkHitLayerType": "Both",
+              "checkHitLayerType": "Both"
             },
             "attackInfo": {
               "canBeModifiedBy": "OriginOwner",
-              "attenuationTag":"Talent_ExtraAttack",
+              "attenuationTag": "Talent_ExtraAttack",
               "attackTag": "ExtraAttack",
               "attackProperty": {
                 "damagePercentage": "%Talent_DamageWithoutWind*0.33",
                 "strikeType": "Pierce",
                 "enBreak": 1,
-                "enHeadBreak": 3,
+                "enHeadBreak": 3
               },
               "hitPattern": {
                 "onHitEffectName": "default",
-                "hitLevel": "Light", //hitlevel = 2
-                "hitImpulseX": 200, //hitlevel = 2
-                "hitImpulseY": 0, //hitlevel = 2
+                "hitLevel": "Light",
+                "hitImpulseX": 200,
+                "hitImpulseY": 0,
                 "reboundRatio": 0,
-                "hitHaltTime": 0.0,
+                "hitHaltTime": 0,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "canHitHead": true,
               "hitHeadPattern": {
                 "onHitEffectName": "Eff_Arrow_Hit_Head",
-                "hitLevel": "Air", //hitlevel = 5
-                "hitImpulseX": 480, //hitlevel = 5
-                "hitImpulseY": 600, //hitlevel = 5
+                "hitLevel": "Air",
+                "hitImpulseX": 480,
+                "hitImpulseY": 600,
                 "reboundRatio": 0,
                 "hitHaltTime": 0.12,
                 "hitHaltTimeScale": 0.01,
-                "muteHitText": false,
+                "muteHitText": false
               },
               "bulletWane": {
-                "waneDelay": 0.7, // 表示从Bullet创生之后这么久，开始套用衰减规则
-                "damageWaneInterval": 0.05, // 伤害衰减周期，每过这么久，进行一次伤害衰减
-                "damageWaneRatio": 0.1, // 每次进行伤害衰减时，按照DamageWaneRatio的比例，在damagePercentage上进行【扣除】，最多扣除到0
-                "hitLevelWaneInterval": 0.1, // 受击等级衰减周期，每过这么久，进行一次受击等级衰减，每次将当前受击等级往下降一级：Air→Heavy→Light→Shake→Mute
-                "hitLevelWaneMin": "Mute", // 受击等级最少衰减为这个等级。如果原本就不高于这个等级，则不予衰减。
+                "waneDelay": 0.7,
+                "damageWaneInterval": 0.05,
+                "damageWaneRatio": 0.1,
+                "hitLevelWaneInterval": 0.1,
+                "hitLevelWaneMin": "Mute",
                 "damageWaneMinRatio": 0.1,
                 "elementDurabilityWaneInterval": 0.05,
                 "elementDurabilityWaneRatio": 0.1,
-                "elementDurabilityWaneMinRatio": 0.1,
-              },
+                "elementDurabilityWaneMinRatio": 0.1
+              }
             }
-          },
-        },
+          }
+        }
       ],
-      "modifiers": {
-      },
+      "modifiers": {},
       "abilitySpecials": {
-        "Talent_DamageWithoutWind": 0,
-      },
-    },
+        "Talent_DamageWithoutWind": 0
+      }
+    }
   },
-
-/////////////////////////////////////////////////////////
-//
-// 温迪天赋风场
-//
-/////////////////////////////////////////////////////////
   {
-    "Default": 
-    {
+    "Default": {
       "$type": "ConfigAbility",
       "abilityName": "Avatar_Venti_WindField",
-      "onAdded":
-      [
+      "onAdded": [
         {
           "$type": "ApplyModifier",
-          "modifierName": "WindField",
-        },
+          "modifierName": "WindField"
+        }
       ],
-      "modifiers":
-      {
-        "WindField":
-        { 
+      "modifiers": {
+        "WindField": {
           "duration": 20,
-          "onAdded":
-          [
+          "onAdded": [
             {
               "$type": "AttachEffect",
-              "effectPattern": "Eff_Item_WindSeed_WindField",
-            },
-          ],
-        },
-      },
-    },
-  },
-
-
-
+              "effectPattern": "Eff_Item_WindSeed_WindField"
+            }
+          ]
+        }
+      }
+    }
+  }
 ]

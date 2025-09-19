@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -20,11 +20,11 @@
                   "$type": "ByEntityAppearVisionType",
                   "visionType": "VisionReplaceDie",
                   "value": true
-                },
-              ],
-            },
-          ],
-        },
+                }
+              ]
+            }
+          ]
+        }
       ],
       "modifiers": {
         "UNIQUE_Invincible": {
@@ -32,9 +32,8 @@
           "stacking": "Refresh",
           "duration": 2.5,
           "state": "Invincible",
-          "onAdded": [
-          ],
-        },
+          "onAdded": []
+        }
       },
       "abilityMixins": [
         {
@@ -45,15 +44,13 @@
               "$type": "ApplyModifier",
               "target": "CurLocalAvatar",
               "doOffStage": true,
-              "modifierName": "UNIQUE_Invincible",
-            },
-          ],
-        },
-      ],
-    },
-  }, //Avatar_DefaultAbility_VisionReplaceDieInvincible（//角色死亡导致切换，下一个上场的角色短暂无敌）
-
-
+              "modifierName": "UNIQUE_Invincible"
+            }
+          ]
+        }
+      ]
+    }
+  },
   {
     "Default": {
       "$type": "ConfigAbility",
@@ -61,8 +58,8 @@
       "onAvatarIn": [
         {
           "$type": "ApplyModifier",
-          "modifierName": "ShaderLerp",
-        },
+          "modifierName": "ShaderLerp"
+        }
       ],
       "modifiers": {
         "ShaderLerp": {
@@ -70,14 +67,12 @@
           "modifierMixins": [
             {
               "$type": "ShaderLerpMixin",
-              "type": "CharacterDissolve",
-            },
-          ],
-        },
+              "type": "CharacterDissolve"
+            }
+          ]
+        }
       },
-      "abilityMixins": [
-      ],
-    },
-  }, //Avatar_DefaultAbility_AvartarInShaderChange
-
+      "abilityMixins": []
+    }
+  }
 ]
