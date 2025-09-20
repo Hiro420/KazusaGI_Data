@@ -1,26 +1,58 @@
 {
-	"context": {
-    "MailOverviewPage": {
-      "actionGroups": {
-				"Default": [
-          {"contextEvent": "CommonMenuUpEvent", "eventType": "MenuUpEvent", "priority": 0},
-					{"contextEvent": "CommonMenuLeftEvent", "eventType": "MenuLeftEvent", "priority": 0},
-          {"contextEvent": "CommonRightStickVerticalEvent", "eventType": "RightStickVerticalEvent", "priority": 0},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-          {"contextEvent": "ShowHelpTips", "eventType": "DPadUpEvent", "priority": 10}
-        ]
-			},
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
+    "context": {
+        "MailOverviewPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "CommonMenuUpEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonRightStickVerticalEvent",
+                        "eventType": "RightStickVerticalEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ShowHelpTips",
+                        "eventType": "DPadUpEvent",
+                        "priority": 10
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
         }
-      },
-      "enableJoypadVirtualCursor": false
     }
-	}
 }

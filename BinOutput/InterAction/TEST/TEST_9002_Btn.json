@@ -1,101 +1,107 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType": "TO_LOCAL_AVATAR",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"cameraPosType": "RELATIVE_POS_TO_INTEE",
-				"camPosOffset": {"x": 0, "y": 1.7, "z": 1.5},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 1.3, "z": 0},
-				"duration": 1.0,
-				"lerpRatio": 5.0,
-				"lerpPattern": 0,
-				"storyDither": true,
-				"camDutch": 60.0,
-				"camFov": 60.0,
-				"cutFrameTrans":
-				{
-					"$type": "ConfigFrameTransition",
-					"enable": true,
-					"duration": 3.0
-				}
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"dialogID": 9991501,
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"dialogID": 9991601,
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"dialogID": 9991701,
-			}
-		],
-		// [
-		// 	{
-		// 		"$type": "ConfigBlackScreenAction",
-		// 		"type": "BLACK_SCREEN",
-		// 		"blackScreenType": "TO_BLACK",
-		// 		"durationToBlack": 1.0,
-		// 	}
-		// ],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG_FINISH"
-			},
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType": "RETURN",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				"duration": 0.5
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 3.5,
-				"lerpRatio": 5.0,
-				"lerpPattern": 9
-			}
-		]
-		// [
-		// 	{
-		// 		"$type": "ConfigBlackScreenAction",
-		// 		"type": "BLACK_SCREEN",
-		// 		"blackScreenType": "FROM_BLACK",
-		// 		"durationFromBlack": 1.0,
-		// 	}
-		// ]
-	]
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "TO_LOCAL_AVATAR",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "cameraPosType": "RELATIVE_POS_TO_INTEE",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 1.7,
+                    "z": 1.5
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 1.3,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 5.0,
+                "lerpPattern": 0,
+                "storyDither": true,
+                "camDutch": 60.0,
+                "camFov": 60.0,
+                "cutFrameTrans": {
+                    "$type": "ConfigFrameTransition",
+                    "enable": true,
+                    "duration": 3.0
+                }
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 9991501
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 9991601
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 9991701
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG_FINISH"
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "RETURN",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 0.5
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 3.5,
+                "lerpRatio": 5.0,
+                "lerpPattern": 9
+            }
+        ]
+    ]
 }

@@ -1,479 +1,257 @@
 {
-	"$type" : "ConfigMonster",
-	"common":
-	{
-		"mass" : 100000.0,
-		"height": 1.35,
-		"affectedByWorld" : true,
-		"checkInSurface" : false,
-		"scale": 1.0,
-		"viewSize": 1.0,
-		"effectAttachShape" :
-		{
-			"$type" : "ConfigEffectAttachSkinnedMesh",
-			"mesh" : "EffectMesh",
-		},
-	},
-	"emojiBubble" :
-	{
-	},
-	"defaultDither" : 0.0,
-	"intee":
-	{
-		"$type" : "ConfigIntee",
-		"useTrigger" : true,
-		"usePushCollider" : false,
-		"useInteractionTrigger" : false,
-	},
-	"headControl":
-	{
-		"$type": "ConfigHeadControl",
-		"useHeadControl": true,
-		"useWhiteAnimStates": false,
-		// "animStates":
-		// [
-		// 	"NormalStandby",
-		// 	"NormalMove/WalkToRun",
-		// 	"NormalMove/Walk",
-		// 	"NormalMove/RunToWalk",
-		// 	"NormalMove/Run",
-		// 	"NormalMove/RunToIdle",
-		// 	"NormalMove/WalkToIdle",
-		// 	"NormalMove/RunningTurn",
-		// 	"NormalMove/SprintToRun",
-		// 	"NormalMove/SprintToIdle",
-		// 	"Sprint",
-		// 	"Climb/ClimbIdle",
-		// 	"Ladder/LadderIdle",
-		// 	"Swim/SwimIdle",
-		// 	"NormalStandbyWeapon",
-		// 	"NormalMoveWeapon/WalkToRunWeapon",
-		// 	"NormalMoveWeapon/WalkWeapon",
-		// 	"NormalMoveWeapon/RunToWalkWeapon",
-		// 	"NormalMoveWeapon/RunWeapon",
-		// 	"NormalMoveWeapon/RunToIdleWeapon",
-		// 	"NormalMoveWeapon/WalkToIdleWeapon",
-		// 	"NormalMoveWeapon/RunningTurnWeapon"
-		// ],
-		"dontAnimStates":
-		[
-			"Turn01_90LBS",
-			"Turn01_90LAS",
-			"Turn01_90RBS",
-			"Turn01_90RAS",
-			"Downcast01BS",
-			"Downcast01AS",
-			"Downcast01Loop",
-			"DrinkToComplain",
-			"FountainPray",
-			"FountainSneak",
-			"Pray01Loop",
-			"Investigate01Loop",
-		]
-	},
-	"move" :
-	{
-		"$type" : "ConfigNPCMove",
-	},
-	"stateLayers":
-	{
-		"defaultLayer":
-		{
-			"$type" : "ConfigNormalStateLayer",
-			"stateIDs" :
-			{
-				"Born" :
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					// "canBeInter": false,
-					"animatorStates":
-					{
-						"Born": ["Npc_ResetFreeStyle"],
-					},
-				},
-				"Disappear": 
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates": 
-					{
-						"Disappear": ["Npc_FadeOut"],
-					},
-				},
-				"FreeStyleReset":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"HitLightBackrake01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Famale_HitLightBackrake_footsteps"],
-						"HitLightForerake01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Famale_HitLightForerake_footsteps"],
-						"AfraidAS": ["Npc_ResetFreeStyle"],
-						"Alert01AS": ["Npc_ResetFreeStyle"],
-						"Clap01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Female_Clap01"],
-					},
-				},
-				"FemaleVoiceState":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"Walk": ["Audio_NPC_MengDe_Male_Walk_footsteps"],
-						"Run": ["Audio_NPC_MengDe_Male_Walk_footsteps"],
-						"StandbyBow01BS": ["Audio_NPC_MengDe_Female_StandbyBow01BS"],
-						"StandbyBow01AS": ["Audio_NPC_MengDe_Female_StandbyBow01AS"],
-						"StandbySword01BS": ["Audio_NPC_MengDe_Female_StandbySword01BS"],
-						"StandbySword01AS": ["Audio_NPC_MengDe_Female_StandbySword01AS"],
-						"Shy01BS": ["Audio_NPC_MengDe_Female_Shy01BS"],
-						"Shy01AS": ["Audio_NPC_MengDe_Female_Shy01AS"],
-						"Shout01Loop": ["Audio_NPC_MengDe_Female_Shout01BS"],
-						"Shout01BS": ["Audio_NPC_MengDe_Female_Shout01BS"],
-						"Shout01AS": ["Audio_NPC_MengDe_Female_Shout01AS"],
-						"Request01BS": ["Audio_NPC_MengDe_Female_Request01BS"],
-						"Request01AS": ["Audio_NPC_MengDe_Female_Request01AS"],
-						"Refuse01BS": ["Audio_NPC_MengDe_Female_Refuse01BS"],
-						"Pray01BS": ["Audio_NPC_MengDe_Female_Pray01BS"],
-						"Pray01AS": ["Audio_NPC_MengDe_Female_Pray01AS"],
-						"Laugh01": ["Audio_NPC_MengDe_Female_Laugh01"],
-						"Investigate01BS": ["Audio_NPC_MengDe_Female_Investigate01BS"],
-						"Investigate01AS": ["Audio_NPC_MengDe_Female_Investigate01AS"],
-						"HoldArmHand01BS": ["Audio_NPC_MengDe_Female_HoldArmHand01BS"],
-						"HoldArmHand01AS": ["Audio_NPC_MengDe_Female_HoldArmHand01AS"],
-						"Forerake01AS": ["Audio_NPC_MengDe_Female_Forerake01AS"],
-						"Forerake01BS": ["Audio_NPC_MengDe_Female_Forerake01BS"],
-						"Encourage01": ["Audio_NPC_MengDe_Female_Encourage01"],
-						"Eat01": ["Audio_NPC_MengDe_Female_Eat01"],
-						"Confuse01AS": ["Audio_NPC_MengDe_Female_Confuse01AS"],
-						"Confuse01BS": ["Audio_NPC_MengDe_Female_Confuse01BS"],
-						"Cheer01Loop": ["Audio_NPC_MengDe_Female_Cheer01Loop"],
-						"Backrake01BS": ["Audio_NPC_MengDe_Female_Backrake01BS"],
-						"Akimbo01BS": ["Audio_NPC_MengDe_Female_Akimbo01BS"],
-						"AfraidBS": ["Audio_NPC_MengDe_Male_Afraid01BS"],
-						"HitHeavyForerake01": ["Audio_NPC_MengDe_Famale_HitHeavyForerake_footsteps"],
-						"HitHeavyBackrake01": ["Audio_NPC_MengDe_Famale_HitHeavyBackrake_footsteps"],
-						"Applaud": ["Audio_NPC_MengDe_Female_Applaud"],
-						"StrikeChest01BS": ["Audio_NPC_MengDe_Female_StrikeChest_BS"],
-						"StrikeChest01AS": ["Audio_NPC_MengDe_Female_StrikeChest_AS"],
-						"Shy01BS": ["Audio_NPC_MengDe_Female_Shy_BS"],
-						"Shy01AS": ["Audio_NPC_MengDe_Female_Shy_AS"],
-						"HoldArm01BS": ["Audio_NPC_MengDe_Female_HoldArm_BS"],
-						"HoldArm01AS": ["Audio_NPC_MengDe_Female_HoldArm_AS"],
-					},
-				},
-			},
-		},
-	},
-	"aibeta": 
-	{
-		"enable": true,
-		"friendliness": 1,
-		"profiling":
-		{
-			"lodStrategy": "Npc",
-		},
-		"moveSetting":
-		{
-			"almostReachedDistanceWalk": 0.3,
-			"almostReachedDistanceRun": 0.6,
-		},
-		"sensing":
-		{
-			"enable": false,
-		},
-		"defendArea":
-		{
-			"enable": false,
-		},
-		"threat":
-		{
-			"enable": false,
-		},
-		"scriptedMoveToTactic":
-		{
-			"enable": true,
-			"defaultSetting":
-			{
-				"speedLevel": 1,
-				"is3D": false,
-			},
-		},
-	},
-	"billboard" :
-	{
-		"$type" : "ConfigBillboard",
-		"offsetType": "Character",
-		"offset":
-		{
-			"x": -0.09,
-			"y": 0.01,
-			"z": 0,
-		},
-		"radiusOffset": 0.13,
-		"showDistance" : 20,	
-		"markShowDistance" : 45,
-	},
-	"audio":
-	{
-		"$type": "ConfigGadgetAudio",
-		"animAudio":
-		{
-			"onTransitionOut":
-			[
-				//{
-				//	"currentStateName": "female01",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female01"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female02",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female02"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female03",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female03"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female04",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female04"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female05",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female05"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female06",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female06"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female07",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female07"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female08",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female08"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				////{
-				////	"currentStateName": "female09",
-				////	"audioEvent":
-				////	{
-				////		"text": "Stop_vo_npc_common_female09"
-				////	},
-				////	"otherStateNames": ["Standby"],
-				////	"usage": "InSet"
-				////},
-				//{
-				//	"currentStateName": "female10",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female10"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female11",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female11"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female12",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female12"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-			],
-			"onTransitionIn":
-			[
-				//{
-				//	"currentStateName": "female01",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female01"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female02",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female02"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female03",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female03"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female04",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female04"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female05",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female05"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female06",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female06"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female07",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female07"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female08",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female08"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female09",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female10",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female10"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female11",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female11"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "female12",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_female12"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "HitHeavyForerake",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "HitHeavyBackrake",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "AfraidBS",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "Applaud",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_female09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//}
-			]
-		}
-	}
+    "$type": "ConfigMonster",
+    "common": {
+        "mass": 100000.0,
+        "height": 1.35,
+        "affectedByWorld": true,
+        "checkInSurface": false,
+        "scale": 1.0,
+        "viewSize": 1.0,
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "mesh": "EffectMesh"
+        }
+    },
+    "emojiBubble": {},
+    "defaultDither": 0.0,
+    "intee": {
+        "$type": "ConfigIntee",
+        "useTrigger": true,
+        "usePushCollider": false,
+        "useInteractionTrigger": false
+    },
+    "headControl": {
+        "$type": "ConfigHeadControl",
+        "useHeadControl": true,
+        "useWhiteAnimStates": false,
+        "dontAnimStates": [
+            "Turn01_90LBS",
+            "Turn01_90LAS",
+            "Turn01_90RBS",
+            "Turn01_90RAS",
+            "Downcast01BS",
+            "Downcast01AS",
+            "Downcast01Loop",
+            "DrinkToComplain",
+            "FountainPray",
+            "FountainSneak",
+            "Pray01Loop",
+            "Investigate01Loop"
+        ]
+    },
+    "move": {
+        "$type": "ConfigNPCMove"
+    },
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "Born": [
+                            "Npc_ResetFreeStyle"
+                        ]
+                    }
+                },
+                "Disappear": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Disappear": [
+                            "Npc_FadeOut"
+                        ]
+                    }
+                },
+                "FreeStyleReset": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "HitLightBackrake01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Famale_HitLightBackrake_footsteps"
+                        ],
+                        "HitLightForerake01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Famale_HitLightForerake_footsteps"
+                        ],
+                        "AfraidAS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Alert01AS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Clap01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Female_Clap01"
+                        ]
+                    }
+                },
+                "FemaleVoiceState": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "Walk": [
+                            "Audio_NPC_MengDe_Male_Walk_footsteps"
+                        ],
+                        "Run": [
+                            "Audio_NPC_MengDe_Male_Walk_footsteps"
+                        ],
+                        "StandbyBow01BS": [
+                            "Audio_NPC_MengDe_Female_StandbyBow01BS"
+                        ],
+                        "StandbyBow01AS": [
+                            "Audio_NPC_MengDe_Female_StandbyBow01AS"
+                        ],
+                        "StandbySword01BS": [
+                            "Audio_NPC_MengDe_Female_StandbySword01BS"
+                        ],
+                        "StandbySword01AS": [
+                            "Audio_NPC_MengDe_Female_StandbySword01AS"
+                        ],
+                        "Shy01BS": [
+                            "Audio_NPC_MengDe_Female_Shy_BS"
+                        ],
+                        "Shy01AS": [
+                            "Audio_NPC_MengDe_Female_Shy_AS"
+                        ],
+                        "Shout01Loop": [
+                            "Audio_NPC_MengDe_Female_Shout01BS"
+                        ],
+                        "Shout01BS": [
+                            "Audio_NPC_MengDe_Female_Shout01BS"
+                        ],
+                        "Shout01AS": [
+                            "Audio_NPC_MengDe_Female_Shout01AS"
+                        ],
+                        "Request01BS": [
+                            "Audio_NPC_MengDe_Female_Request01BS"
+                        ],
+                        "Request01AS": [
+                            "Audio_NPC_MengDe_Female_Request01AS"
+                        ],
+                        "Refuse01BS": [
+                            "Audio_NPC_MengDe_Female_Refuse01BS"
+                        ],
+                        "Pray01BS": [
+                            "Audio_NPC_MengDe_Female_Pray01BS"
+                        ],
+                        "Pray01AS": [
+                            "Audio_NPC_MengDe_Female_Pray01AS"
+                        ],
+                        "Laugh01": [
+                            "Audio_NPC_MengDe_Female_Laugh01"
+                        ],
+                        "Investigate01BS": [
+                            "Audio_NPC_MengDe_Female_Investigate01BS"
+                        ],
+                        "Investigate01AS": [
+                            "Audio_NPC_MengDe_Female_Investigate01AS"
+                        ],
+                        "HoldArmHand01BS": [
+                            "Audio_NPC_MengDe_Female_HoldArmHand01BS"
+                        ],
+                        "HoldArmHand01AS": [
+                            "Audio_NPC_MengDe_Female_HoldArmHand01AS"
+                        ],
+                        "Forerake01AS": [
+                            "Audio_NPC_MengDe_Female_Forerake01AS"
+                        ],
+                        "Forerake01BS": [
+                            "Audio_NPC_MengDe_Female_Forerake01BS"
+                        ],
+                        "Encourage01": [
+                            "Audio_NPC_MengDe_Female_Encourage01"
+                        ],
+                        "Eat01": [
+                            "Audio_NPC_MengDe_Female_Eat01"
+                        ],
+                        "Confuse01AS": [
+                            "Audio_NPC_MengDe_Female_Confuse01AS"
+                        ],
+                        "Confuse01BS": [
+                            "Audio_NPC_MengDe_Female_Confuse01BS"
+                        ],
+                        "Cheer01Loop": [
+                            "Audio_NPC_MengDe_Female_Cheer01Loop"
+                        ],
+                        "Backrake01BS": [
+                            "Audio_NPC_MengDe_Female_Backrake01BS"
+                        ],
+                        "Akimbo01BS": [
+                            "Audio_NPC_MengDe_Female_Akimbo01BS"
+                        ],
+                        "AfraidBS": [
+                            "Audio_NPC_MengDe_Male_Afraid01BS"
+                        ],
+                        "HitHeavyForerake01": [
+                            "Audio_NPC_MengDe_Famale_HitHeavyForerake_footsteps"
+                        ],
+                        "HitHeavyBackrake01": [
+                            "Audio_NPC_MengDe_Famale_HitHeavyBackrake_footsteps"
+                        ],
+                        "Applaud": [
+                            "Audio_NPC_MengDe_Female_Applaud"
+                        ],
+                        "StrikeChest01BS": [
+                            "Audio_NPC_MengDe_Female_StrikeChest_BS"
+                        ],
+                        "StrikeChest01AS": [
+                            "Audio_NPC_MengDe_Female_StrikeChest_AS"
+                        ],
+                        "HoldArm01BS": [
+                            "Audio_NPC_MengDe_Female_HoldArm_BS"
+                        ],
+                        "HoldArm01AS": [
+                            "Audio_NPC_MengDe_Female_HoldArm_AS"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "aibeta": {
+        "enable": true,
+        "friendliness": 1,
+        "profiling": {
+            "lodStrategy": "Npc"
+        },
+        "moveSetting": {
+            "almostReachedDistanceWalk": 0.3,
+            "almostReachedDistanceRun": 0.6
+        },
+        "sensing": {
+            "enable": false
+        },
+        "defendArea": {
+            "enable": false
+        },
+        "threat": {
+            "enable": false
+        },
+        "scriptedMoveToTactic": {
+            "enable": true,
+            "defaultSetting": {
+                "speedLevel": 1,
+                "is3D": false
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigBillboard",
+        "offsetType": "Character",
+        "offset": {
+            "x": -0.09,
+            "y": 0.01,
+            "z": 0
+        },
+        "radiusOffset": 0.13,
+        "showDistance": 20,
+        "markShowDistance": 45
+    },
+    "audio": {
+        "$type": "ConfigGadgetAudio",
+        "animAudio": {
+            "onTransitionOut": [],
+            "onTransitionIn": []
+        }
+    }
 }

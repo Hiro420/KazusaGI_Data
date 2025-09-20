@@ -1,2802 +1,2802 @@
 {
-  "$type": "ConfigInterContainer",
-  "luaDataPath": "",
-  "isSimpleTalk": false,
-  "dontUseDefaultFinish": false,
-  "pauseActor": false,
-  "hidePickableEntity": false,
-  "startBlackKeepTime": 0.2,
-  "entityBan": "",
-  "startFade": {
-    "startFadeInDuration": 0.4,
-    "startFadeOutDuration": 0.4
-  },
-  "endFade": {
-    "startFadeInDuration": 0.0,
-    "startFadeOutDuration": 0.0
-  },
-  "group": [
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
+    "$type": "ConfigInterContainer",
+    "luaDataPath": "",
+    "isSimpleTalk": false,
+    "dontUseDefaultFinish": false,
+    "pauseActor": false,
+    "hidePickableEntity": false,
+    "startBlackKeepTime": 0.2,
+    "entityBan": "",
+    "startFade": {
+        "startFadeInDuration": 0.4,
+        "startFadeOutDuration": 0.4
+    },
+    "endFade": {
+        "startFadeInDuration": 0.0,
+        "startFadeOutDuration": 0.0
+    },
+    "group": [
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.0158,
+                    "y": 245.96489,
+                    "z": 345.957336
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.04126,
+                    "y": 245.774063,
+                    "z": 346.0749
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigTimeProtectAction",
+                "type": "TIME_PROTECT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 0.5,
+                "checkNextImmediately": false,
+                "protectTime": 0.5
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.1,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 3.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.0211,
+                    "y": 245.962921,
+                    "z": 345.998047
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.0466,
+                    "y": 245.7721,
+                    "z": 346.1156
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 0,
+                "cameraBlendType": "EaseInOutQuad",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigCameraDOFAction",
+                "type": "CAMERA_DOF",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enabled": true,
+                "focusDistance": 5.0,
+                "focusRange": 5.0,
+                "nearFocalDistance": 0.0,
+                "nearFocalTransDistance": 0.0,
+                "dofBlurAmount": 0.0,
+                "quality": 3
+            },
+            {
+                "$type": "ConfigMoveToAction",
+                "type": "MOVE_TO",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": 0.1,
+                "checkNextImmediately": false,
+                "moveType": "NONE",
+                "routeList": [
+                    {
+                        "x": -582.2568,
+                        "y": 244.3278,
+                        "z": 345.906921
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "delayTime": 0.1,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": 0.1,
+                "checkNextImmediately": false,
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": -0.702317655,
+                    "y": 0.0,
+                    "z": 0.7118637
+                },
+                "useAngle": false,
+                "steerAngle": 0.0,
+                "useSteerAnim": false
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.1,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -583.1634,
+                    "y": 246.001083,
+                    "z": 346.7751
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001401,
+                "protectTime": 0.1,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigMoveToAction",
+                "type": "MOVE_TO",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": 0.1,
+                "checkNextImmediately": false,
+                "moveType": "NONE",
+                "routeList": [
+                    {
+                        "x": -582.1151,
+                        "y": 244.3278,
+                        "z": 346.434235
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "delayTime": 0.1,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": 0.1,
+                "checkNextImmediately": false,
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": -0.9425095,
+                    "y": 0.0,
+                    "z": 0.3341793
+                },
+                "useAngle": false,
+                "steerAngle": 0.0,
+                "useSteerAnim": false
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.1,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -583.1634,
+                    "y": 246.001083,
+                    "z": 346.7751
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001401",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": 0.1,
+                "checkNextImmediately": false,
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": 0.698231161,
+                    "y": 0.0,
+                    "z": -0.7158723
+                },
+                "useAngle": false,
+                "steerAngle": 0.0,
+                "useSteerAnim": false
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.1245,
+                    "y": 245.649277,
+                    "z": 346.448761
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            }
         ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.0158,
-          "y": 245.96489,
-          "z": 345.957336
-        },
-        "camForwardTargetOffset": {
-          "x": -583.04126,
-          "y": 245.774063,
-          "z": 346.0749
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigTimeProtectAction",
-        "type": "TIME_PROTECT",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -568.17804,
+                    "y": 254.33429,
+                    "z": 345.517578
+                },
+                "camForwardTargetOffset": {
+                    "x": -569.0817,
+                    "y": 253.940262,
+                    "z": 345.685333
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 45.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.1,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 10.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -568.004,
+                    "y": 254.33429,
+                    "z": 346.935852
+                },
+                "camForwardTargetOffset": {
+                    "x": -568.921448,
+                    "y": 253.940262,
+                    "z": 346.9915
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 45.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 0,
+                "cameraBlendType": "EaseInOutSine",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigCameraDOFAction",
+                "type": "CAMERA_DOF",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enabled": true,
+                "focusDistance": 25.0,
+                "focusRange": 25.0,
+                "nearFocalDistance": 0.0,
+                "nearFocalTransDistance": 0.0,
+                "dofBlurAmount": 0.0,
+                "quality": 3
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001402,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1172,
+                "isContinue": false,
+                "loopState": 0
+            }
         ],
-        "duration": 0.5,
-        "checkNextImmediately": false,
-        "protectTime": 0.5
-      },
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.1,
-        "aliasList": [
-          ""
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001403,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1230,
+                "isContinue": false,
+                "loopState": 0
+            }
         ],
-        "duration": 3.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.0211,
-          "y": 245.962921,
-          "z": 345.998047
-        },
-        "camForwardTargetOffset": {
-          "x": -583.0466,
-          "y": 245.7721,
-          "z": 346.1156
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 0,
-        "cameraBlendType": "EaseInOutQuad",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigCameraDOFAction",
-        "type": "CAMERA_DOF",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.6814,
+                    "y": 246.34494,
+                    "z": 346.362762
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.743042,
+                    "y": 246.0011,
+                    "z": 346.3983
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.1,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 3.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.6814,
+                    "y": 246.34494,
+                    "z": 346.362732
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.73645,
+                    "y": 246.018051,
+                    "z": 346.378662
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 23.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 0,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigCameraDOFAction",
+                "type": "CAMERA_DOF",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enabled": true,
+                "focusDistance": 5.0,
+                "focusRange": 5.0,
+                "nearFocalDistance": 0.0,
+                "nearFocalTransDistance": 0.0,
+                "dofBlurAmount": 0.0,
+                "quality": 3
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001404,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1120,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001402",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
         ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enabled": true,
-        "focusDistance": 5.0,
-        "focusRange": 5.0,
-        "nearFocalDistance": 0.0,
-        "nearFocalTransDistance": 0.0,
-        "dofBlurAmount": 0.0,
-        "quality": 3
-      },
-      {
-        "$type": "ConfigMoveToAction",
-        "type": "MOVE_TO",
-        "delayTime": 0.0,
-        "aliasList": [
-          "Avatar"
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.8424,
+                    "y": 245.457336,
+                    "z": 344.2059
+                },
+                "camForwardTargetOffset": {
+                    "x": -584.141846,
+                    "y": 245.496323,
+                    "z": 344.918427
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001405,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.2,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001405",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
         ],
-        "duration": 0.1,
-        "checkNextImmediately": false,
-        "moveType": "NONE",
-        "routeList": [
-          {
-            "x": -582.2568,
-            "y": 244.3278,
-            "z": 345.906921
-          }
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.3,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 5.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.779358,
+                    "y": 245.460846,
+                    "z": 344.27005
+                },
+                "camForwardTargetOffset": {
+                    "x": -584.0788,
+                    "y": 245.499832,
+                    "z": 344.982574
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 0,
+                "cameraBlendType": "EaseInOutQuad",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 1.3,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1030,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 1.5,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": false,
+                "enableAbsolute": false,
+                "targetPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 20.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.8,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 1.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 1.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -583.0537,
+                    "y": 245.66806,
+                    "z": 346.3359
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 2.6,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.5205,
+                    "y": 245.467819,
+                    "z": 346.356567
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "delayTime": 2.6,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": 2.0,
+                "checkNextImmediately": false,
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": -0.9306695,
+                    "y": 0.0,
+                    "z": -0.3658609
+                },
+                "useAngle": false,
+                "steerAngle": 0.0,
+                "useSteerAnim": false
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 2.6,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1090,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001406,
+                "protectTime": 3.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.474999964,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1030,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.270935,
+                    "y": 245.7409,
+                    "z": 345.963348
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 3.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001406",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001407,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001407",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -581.786255,
+                    "y": 245.679611,
+                    "z": 343.8857
+                },
+                "camForwardTargetOffset": {
+                    "x": -582.0958,
+                    "y": 245.637619,
+                    "z": 344.835663
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.3,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.3,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -583.1634,
+                    "y": 246.001083,
+                    "z": 346.7751
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.9,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.7,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -583.1634,
+                    "y": 246.001083,
+                    "z": 346.7751
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.9,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001408,
+                "protectTime": 1.0,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1110,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001408",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": 2.0,
+                "checkNextImmediately": false,
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": -0.9425095,
+                    "y": 0.0,
+                    "z": 0.3341793
+                },
+                "useAngle": false,
+                "steerAngle": 0.0,
+                "useSteerAnim": false
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001409,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1172,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001409",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.6814,
+                    "y": 246.34494,
+                    "z": 346.362762
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.743042,
+                    "y": 246.0011,
+                    "z": 346.3983
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001410,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1170,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001410",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.3,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.1245,
+                    "y": 245.649277,
+                    "z": 346.448761
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001411,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1171,
+                "isContinue": false,
+                "loopState": 0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogSelectAction",
+                "type": "DIALOG_SELECT",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogIDList": [
+                    10001413,
+                    10001414
+                ],
+                "grpIDList": [
+                    264075471,
+                    264075471
+                ],
+                "useGrpId": true
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001412,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.270935,
+                    "y": 245.7409,
+                    "z": 345.963348
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -581.786255,
+                    "y": 245.679611,
+                    "z": 343.8857
+                },
+                "camForwardTargetOffset": {
+                    "x": -582.0958,
+                    "y": 245.637619,
+                    "z": 344.835663
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001415,
+                "protectTime": 1.0,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.9,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1172,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001415",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001416,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1173,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001416",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -584.6814,
+                    "y": 246.34494,
+                    "z": 346.362762
+                },
+                "camForwardTargetOffset": {
+                    "x": -583.743042,
+                    "y": 246.0011,
+                    "z": 346.3983
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001417,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1170,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 5.674006,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001417",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.1245,
+                    "y": 245.649277,
+                    "z": 346.448761
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.4,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001418,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1230,
+                "isContinue": false,
+                "loopState": 0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001419,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1231,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 7.00033665,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001420,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1090,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001420",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.3,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "cameraPosType": "ABSOLUTE",
+                "camPosOffset": {
+                    "x": -581.786255,
+                    "y": 245.679611,
+                    "z": 343.8857
+                },
+                "camForwardTargetOffset": {
+                    "x": -582.0958,
+                    "y": 245.637619,
+                    "z": 344.835663
+                },
+                "nearLength": 0.0,
+                "camTargetType": "ABSOLUTE",
+                "needElev": false,
+                "camFov": 25.0,
+                "camDutch": 0.0,
+                "lerpRatio": 6.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001421,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1171,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001421",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001422,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": true,
+                "useTargetPos": true,
+                "enableAbsolute": true,
+                "targetPosition": {
+                    "x": -582.270935,
+                    "y": 245.7409,
+                    "z": 345.963348
+                },
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.5,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1110,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 6.49223661,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001422",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogSelectAction",
+                "type": "DIALOG_SELECT",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogIDList": [
+                    10001424,
+                    10001426
+                ],
+                "grpIDList": [
+                    264075501,
+                    264075502
+                ],
+                "useGrpId": true
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001423,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1120,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001423",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001425,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001425",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001427,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001427",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001428,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001428",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001429,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.4,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 3.418976,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1172,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001429",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001430,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 1.68800473,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1171,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001430",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 10001431,
+                "protectTime": 0.5,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 2.62500167,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 1172,
+                "isContinue": false,
+                "loopState": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001431",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 0.5,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 0.5,
+                "checkNextImmediately": false,
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "camForwardTargetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "nearLength": 0.0,
+                "camTargetType": "TO_INTEE",
+                "needElev": false,
+                "camFov": 45.0,
+                "camDutch": 0.0,
+                "lerpRatio": 0.0,
+                "lerpPattern": 6,
+                "cameraBlendType": "EaseInOutCubic",
+                "storyDither": false,
+                "cutFrameTrans": {
+                    "enable": false,
+                    "duration": 1.0
+                }
+            },
+            {
+                "$type": "ConfigTimeProtectAction",
+                "type": "TIME_PROTECT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "protectTime": 1.0
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG_CLEAR",
+                "delayTime": 0.3,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 0,
+                "protectTime": 0.0,
+                "playAudio": true
+            },
+            {
+                "$type": "ConfigBlackScreenAction",
+                "type": "BLACK_SCREEN",
+                "delayTime": 0.0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": 1.0,
+                "checkNextImmediately": false,
+                "blackScreenType": "TO_KEEP_FROM_BLACK",
+                "durationToBlack": 0.4,
+                "durationKeepBlack": 0.2,
+                "durationFromBlack": 0.4,
+                "changeToInteePos": false,
+                "textMapID": "",
+                "textShake": false
+            },
+            {
+                "$type": "ConfigCameraDOFAction",
+                "type": "CAMERA_DOF",
+                "delayTime": 0.5,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enabled": false,
+                "focusDistance": 0.0,
+                "focusRange": 0.0,
+                "nearFocalDistance": 0.0,
+                "nearFocalTransDistance": 0.0,
+                "dofBlurAmount": 0.0,
+                "quality": 0
+            },
+            {
+                "$type": "ConfigEmoSyncInterAction",
+                "type": "EMO_SYNC",
+                "delayTime": 0.5,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Normal",
+                "audioBankName": "",
+                "audioName": "",
+                "backType": "NONE",
+                "enableBlink": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "Avatar"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": false,
+                "useTargetPos": false,
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "targetPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.0,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "1005"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": false,
+                "useTargetPos": false,
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "targetPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.0,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            },
+            {
+                "$type": "ConfigLookAtInterAction",
+                "type": "LOOK_AT",
+                "delayTime": 0.0,
+                "aliasList": [
+                    "10200"
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "enableHead": false,
+                "useTargetPos": false,
+                "targetOffset": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "targetPosition": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headRotateVec": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "headTurnTime": 0.0,
+                "enableBody": false,
+                "bodyAngle": 0.0,
+                "bodyTurnTime": 0.0
+            }
         ]
-      },
-      {
-        "$type": "ConfigSteerInterAction",
-        "type": "STEER_TO",
-        "delayTime": 0.1,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": 0.1,
-        "checkNextImmediately": false,
-        "steerType": "FREE",
-        "steerDir": {
-          "x": -0.702317655,
-          "y": 0.0,
-          "z": 0.7118637
-        },
-        "useAngle": false,
-        "steerAngle": 0.0,
-        "useSteerAnim": false
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.1,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -583.1634,
-          "y": 246.001083,
-          "z": 346.7751
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001401,
-        "protectTime": 0.1,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigMoveToAction",
-        "type": "MOVE_TO",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": 0.1,
-        "checkNextImmediately": false,
-        "moveType": "NONE",
-        "routeList": [
-          {
-            "x": -582.1151,
-            "y": 244.3278,
-            "z": 346.434235
-          }
-        ]
-      },
-      {
-        "$type": "ConfigSteerInterAction",
-        "type": "STEER_TO",
-        "delayTime": 0.1,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": 0.1,
-        "checkNextImmediately": false,
-        "steerType": "FREE",
-        "steerDir": {
-          "x": -0.9425095,
-          "y": 0.0,
-          "z": 0.3341793
-        },
-        "useAngle": false,
-        "steerAngle": 0.0,
-        "useSteerAnim": false
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.1,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -583.1634,
-          "y": 246.001083,
-          "z": 346.7751
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001401",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigSteerInterAction",
-        "type": "STEER_TO",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": 0.1,
-        "checkNextImmediately": false,
-        "steerType": "FREE",
-        "steerDir": {
-          "x": 0.698231161,
-          "y": 0.0,
-          "z": -0.7158723
-        },
-        "useAngle": false,
-        "steerAngle": 0.0,
-        "useSteerAnim": false
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.1245,
-          "y": 245.649277,
-          "z": 346.448761
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      }
     ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -568.17804,
-          "y": 254.33429,
-          "z": 345.517578
+    "actors": [
+        {
+            "configID": 0,
+            "alias": "Avatar",
+            "visible": true,
+            "bornPointName": "Q100014Player"
         },
-        "camForwardTargetOffset": {
-          "x": -569.0817,
-          "y": 253.940262,
-          "z": 345.685333
+        {
+            "configID": 1005,
+            "alias": "1005",
+            "visible": true,
+            "bornPointName": "Q100014Paimon",
+            "useRelativePos": false,
+            "relativePos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "relativeRot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
         },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 45.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
+        {
+            "configID": 10200,
+            "alias": "10200",
+            "visible": true,
+            "bornPointName": "Q100014Gongzi",
+            "useRelativePos": false,
+            "relativePos": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "relativeRot": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
         }
-      },
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.1,
-        "aliasList": [
-          ""
-        ],
-        "duration": 10.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -568.004,
-          "y": 254.33429,
-          "z": 346.935852
+    ],
+    "groupId": [
+        {
+            "index": 0,
+            "grpId": 2225275876,
+            "nextGrpId": 2225275877
         },
-        "camForwardTargetOffset": {
-          "x": -568.921448,
-          "y": 253.940262,
-          "z": 346.9915
+        {
+            "index": 1,
+            "grpId": 2225275877,
+            "nextGrpId": 2225275878
         },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 45.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 0,
-        "cameraBlendType": "EaseInOutSine",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
+        {
+            "index": 2,
+            "grpId": 2225275878,
+            "nextGrpId": 2225275879
+        },
+        {
+            "index": 3,
+            "grpId": 2225275879,
+            "nextGrpId": 2225275880
+        },
+        {
+            "index": 4,
+            "grpId": 2225275880,
+            "nextGrpId": 2225275881
+        },
+        {
+            "index": 5,
+            "grpId": 2225275881,
+            "nextGrpId": 2225275882
+        },
+        {
+            "index": 6,
+            "grpId": 2225275882,
+            "nextGrpId": 2225275883
+        },
+        {
+            "index": 7,
+            "grpId": 2225275883,
+            "nextGrpId": 2225275884
+        },
+        {
+            "index": 8,
+            "grpId": 2225275884,
+            "nextGrpId": 264075468
+        },
+        {
+            "index": 9,
+            "grpId": 264075468,
+            "nextGrpId": 264075469
+        },
+        {
+            "index": 10,
+            "grpId": 264075469,
+            "nextGrpId": 264075470
+        },
+        {
+            "index": 11,
+            "grpId": 264075470,
+            "nextGrpId": 264075471
+        },
+        {
+            "index": 12,
+            "grpId": 264075471,
+            "nextGrpId": 264075472
+        },
+        {
+            "index": 13,
+            "grpId": 264075472,
+            "nextGrpId": 264075473
+        },
+        {
+            "index": 14,
+            "grpId": 264075473,
+            "nextGrpId": 264075474
+        },
+        {
+            "index": 15,
+            "grpId": 264075474,
+            "nextGrpId": 264075475
+        },
+        {
+            "index": 16,
+            "grpId": 264075475,
+            "nextGrpId": 264075476
+        },
+        {
+            "index": 17,
+            "grpId": 264075476,
+            "nextGrpId": 264075477
+        },
+        {
+            "index": 18,
+            "grpId": 264075477,
+            "nextGrpId": 264075499
+        },
+        {
+            "index": 19,
+            "grpId": 264075499,
+            "nextGrpId": 264075500
+        },
+        {
+            "index": 20,
+            "grpId": 264075500,
+            "nextGrpId": 264075501
+        },
+        {
+            "index": 21,
+            "grpId": 264075501,
+            "nextGrpId": 264075503
+        },
+        {
+            "index": 22,
+            "grpId": 264075502,
+            "nextGrpId": 264075503
+        },
+        {
+            "index": 23,
+            "grpId": 264075503,
+            "nextGrpId": 264075504
+        },
+        {
+            "index": 24,
+            "grpId": 264075504,
+            "nextGrpId": 264075505
+        },
+        {
+            "index": 25,
+            "grpId": 264075505,
+            "nextGrpId": 264075506
+        },
+        {
+            "index": 26,
+            "grpId": 264075506,
+            "nextGrpId": 264075507
+        },
+        {
+            "index": 27,
+            "grpId": 264075507,
+            "nextGrpId": 264075508
+        },
+        {
+            "index": 28,
+            "grpId": 264075508,
+            "nextGrpId": 264075530
         }
-      },
-      {
-        "$type": "ConfigCameraDOFAction",
-        "type": "CAMERA_DOF",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enabled": true,
-        "focusDistance": 25.0,
-        "focusRange": 25.0,
-        "nearFocalDistance": 0.0,
-        "nearFocalTransDistance": 0.0,
-        "dofBlurAmount": 0.0,
-        "quality": 3
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001402,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1172,
-        "isContinue": false,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001403,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1230,
-        "isContinue": false,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.6814,
-          "y": 246.34494,
-          "z": 346.362762
-        },
-        "camForwardTargetOffset": {
-          "x": -583.743042,
-          "y": 246.0011,
-          "z": 346.3983
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.1,
-        "aliasList": [
-          ""
-        ],
-        "duration": 3.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.6814,
-          "y": 246.34494,
-          "z": 346.362732
-        },
-        "camForwardTargetOffset": {
-          "x": -583.73645,
-          "y": 246.018051,
-          "z": 346.378662
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 23.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 0,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigCameraDOFAction",
-        "type": "CAMERA_DOF",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enabled": true,
-        "focusDistance": 5.0,
-        "focusRange": 5.0,
-        "nearFocalDistance": 0.0,
-        "nearFocalTransDistance": 0.0,
-        "dofBlurAmount": 0.0,
-        "quality": 3
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001404,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1120,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001402",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.8424,
-          "y": 245.457336,
-          "z": 344.2059
-        },
-        "camForwardTargetOffset": {
-          "x": -584.141846,
-          "y": 245.496323,
-          "z": 344.918427
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001405,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.2,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001405",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.3,
-        "aliasList": [
-          ""
-        ],
-        "duration": 5.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.779358,
-          "y": 245.460846,
-          "z": 344.27005
-        },
-        "camForwardTargetOffset": {
-          "x": -584.0788,
-          "y": 245.499832,
-          "z": 344.982574
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 0,
-        "cameraBlendType": "EaseInOutQuad",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 1.3,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1030,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 1.5,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": false,
-        "enableAbsolute": false,
-        "targetPosition": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 20.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.8,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 1.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 1.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -583.0537,
-          "y": 245.66806,
-          "z": 346.3359
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 2.6,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.5205,
-          "y": 245.467819,
-          "z": 346.356567
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigSteerInterAction",
-        "type": "STEER_TO",
-        "delayTime": 2.6,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": 2.0,
-        "checkNextImmediately": false,
-        "steerType": "FREE",
-        "steerDir": {
-          "x": -0.9306695,
-          "y": 0.0,
-          "z": -0.3658609
-        },
-        "useAngle": false,
-        "steerAngle": 0.0,
-        "useSteerAnim": false
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 2.6,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1090,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001406,
-        "protectTime": 3.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.474999964,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1030,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.270935,
-          "y": 245.7409,
-          "z": 345.963348
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 3.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001406",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001407,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001407",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -581.786255,
-          "y": 245.679611,
-          "z": 343.8857
-        },
-        "camForwardTargetOffset": {
-          "x": -582.0958,
-          "y": 245.637619,
-          "z": 344.835663
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.3,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.3,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -583.1634,
-          "y": 246.001083,
-          "z": 346.7751
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.9,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.7,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -583.1634,
-          "y": 246.001083,
-          "z": 346.7751
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.9,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001408,
-        "protectTime": 1.0,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1110,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001408",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigSteerInterAction",
-        "type": "STEER_TO",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": 2.0,
-        "checkNextImmediately": false,
-        "steerType": "FREE",
-        "steerDir": {
-          "x": -0.9425095,
-          "y": 0.0,
-          "z": 0.3341793
-        },
-        "useAngle": false,
-        "steerAngle": 0.0,
-        "useSteerAnim": false
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001409,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1172,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001409",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.6814,
-          "y": 246.34494,
-          "z": 346.362762
-        },
-        "camForwardTargetOffset": {
-          "x": -583.743042,
-          "y": 246.0011,
-          "z": 346.3983
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001410,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1170,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001410",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.3,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.1245,
-          "y": 245.649277,
-          "z": 346.448761
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001411,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1171,
-        "isContinue": false,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogSelectAction",
-        "type": "DIALOG_SELECT",
-        "delayTime": 0.4,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogIDList": [
-          10001413,
-          10001414
-        ],
-        "grpIDList": [
-          264075471,
-          264075471
-        ],
-        "useGrpId": true
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001412,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.270935,
-          "y": 245.7409,
-          "z": 345.963348
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -581.786255,
-          "y": 245.679611,
-          "z": 343.8857
-        },
-        "camForwardTargetOffset": {
-          "x": -582.0958,
-          "y": 245.637619,
-          "z": 344.835663
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001415,
-        "protectTime": 1.0,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.9,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1172,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001415",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001416,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1173,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001416",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -584.6814,
-          "y": 246.34494,
-          "z": 346.362762
-        },
-        "camForwardTargetOffset": {
-          "x": -583.743042,
-          "y": 246.0011,
-          "z": 346.3983
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001417,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1170,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 5.674006,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001417",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.1245,
-          "y": 245.649277,
-          "z": 346.448761
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.4,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001418,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1230,
-        "isContinue": false,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001419,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1231,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 7.00033665,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001420,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1090,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001420",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.3,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "cameraPosType": "ABSOLUTE",
-        "camPosOffset": {
-          "x": -581.786255,
-          "y": 245.679611,
-          "z": 343.8857
-        },
-        "camForwardTargetOffset": {
-          "x": -582.0958,
-          "y": 245.637619,
-          "z": 344.835663
-        },
-        "nearLength": 0.0,
-        "camTargetType": "ABSOLUTE",
-        "needElev": false,
-        "camFov": 25.0,
-        "camDutch": 0.0,
-        "lerpRatio": 6.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001421,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1171,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001421",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.4,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Paimon/Cs_Emo_Pet_Paimon_Normal_01",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001422,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": true,
-        "useTargetPos": true,
-        "enableAbsolute": true,
-        "targetPosition": {
-          "x": -582.270935,
-          "y": 245.7409,
-          "z": 345.963348
-        },
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.5,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1110,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 6.49223661,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001422",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogSelectAction",
-        "type": "DIALOG_SELECT",
-        "delayTime": 0.4,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogIDList": [
-          10001424,
-          10001426
-        ],
-        "grpIDList": [
-          264075501,
-          264075502
-        ],
-        "useGrpId": true
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001423,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1120,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001423",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001425,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001425",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001427,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001427",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001428,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001428",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001429,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.4,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 3.418976,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1172,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001429",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001430,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 0,
-        "isContinue": true,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 1.68800473,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1171,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001430",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 10001431,
-        "protectTime": 0.5,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBodyLangInterAction",
-        "type": "BODY_LANG",
-        "delayTime": 2.62500167,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "bodyLangParam": 1172,
-        "isContinue": false,
-        "loopState": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Talk/Cs_Emo_Avatar_MainLine/Cs_Emo_Avatar_LiYue/Cs_Emo_10001431",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigCameraMoveInterAction",
-        "type": "CAMERA_MOVE",
-        "delayTime": 0.5,
-        "aliasList": [
-          ""
-        ],
-        "duration": 0.5,
-        "checkNextImmediately": false,
-        "cameraPosType": "EXIT",
-        "camPosOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "camForwardTargetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "nearLength": 0.0,
-        "camTargetType": "TO_INTEE",
-        "needElev": false,
-        "camFov": 45.0,
-        "camDutch": 0.0,
-        "lerpRatio": 0.0,
-        "lerpPattern": 6,
-        "cameraBlendType": "EaseInOutCubic",
-        "storyDither": false,
-        "cutFrameTrans": {
-          "enable": false,
-          "duration": 1.0
-        }
-      },
-      {
-        "$type": "ConfigTimeProtectAction",
-        "type": "TIME_PROTECT",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "protectTime": 1.0
-      },
-      {
-        "$type": "ConfigDialogInterAction",
-        "type": "DIALOG_CLEAR",
-        "delayTime": 0.3,
-        "aliasList": [
-          ""
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dialogType": "LOCK_FRAME",
-        "dialogID": 0,
-        "protectTime": 0.0,
-        "playAudio": true
-      },
-      {
-        "$type": "ConfigBlackScreenAction",
-        "type": "BLACK_SCREEN",
-        "delayTime": 0.0,
-        "aliasList": [
-          ""
-        ],
-        "duration": 1.0,
-        "checkNextImmediately": false,
-        "blackScreenType": "TO_KEEP_FROM_BLACK",
-        "durationToBlack": 0.4,
-        "durationKeepBlack": 0.2,
-        "durationFromBlack": 0.4,
-        "changeToInteePos": false,
-        "textMapID": "",
-        "textShake": false
-      },
-      {
-        "$type": "ConfigCameraDOFAction",
-        "type": "CAMERA_DOF",
-        "delayTime": 0.5,
-        "aliasList": [
-          ""
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enabled": false,
-        "focusDistance": 0.0,
-        "focusRange": 0.0,
-        "nearFocalDistance": 0.0,
-        "nearFocalTransDistance": 0.0,
-        "dofBlurAmount": 0.0,
-        "quality": 0
-      },
-      {
-        "$type": "ConfigEmoSyncInterAction",
-        "type": "EMO_SYNC",
-        "delayTime": 0.5,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "dataPath": "Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Normal",
-        "audioBankName": "",
-        "audioName": "",
-        "backType": "NONE",
-        "enableBlink": true
-      }
-    ],
-    [
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "Avatar"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": false,
-        "useTargetPos": false,
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "targetPosition": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.0,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "1005"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": false,
-        "useTargetPos": false,
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "targetPosition": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.0,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      },
-      {
-        "$type": "ConfigLookAtInterAction",
-        "type": "LOOK_AT",
-        "delayTime": 0.0,
-        "aliasList": [
-          "10200"
-        ],
-        "duration": -1.0,
-        "checkNextImmediately": false,
-        "enableHead": false,
-        "useTargetPos": false,
-        "targetOffset": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "targetPosition": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headRotateVec": {
-          "x": 0.0,
-          "y": 0.0,
-          "z": 0.0
-        },
-        "headTurnTime": 0.0,
-        "enableBody": false,
-        "bodyAngle": 0.0,
-        "bodyTurnTime": 0.0
-      }
     ]
-  ],
-  "actors": [
-    {
-      "configID": 0,
-      "alias": "Avatar",
-      "visible": true,
-      "bornPointName": "Q100014Player"
-    },
-    {
-      "configID": 1005,
-      "alias": "1005",
-      "visible": true,
-      "bornPointName": "Q100014Paimon",
-      "useRelativePos": false,
-      "relativePos": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "relativeRot": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      }
-    },
-    {
-      "configID": 10200,
-      "alias": "10200",
-      "visible": true,
-      "bornPointName": "Q100014Gongzi",
-      "useRelativePos": false,
-      "relativePos": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
-      "relativeRot": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      }
-    }
-  ],
-  "groupId": [
-    {
-      "index": 0,
-      "grpId": 2225275876,
-      "nextGrpId": 2225275877
-    },
-    {
-      "index": 1,
-      "grpId": 2225275877,
-      "nextGrpId": 2225275878
-    },
-    {
-      "index": 2,
-      "grpId": 2225275878,
-      "nextGrpId": 2225275879
-    },
-    {
-      "index": 3,
-      "grpId": 2225275879,
-      "nextGrpId": 2225275880
-    },
-    {
-      "index": 4,
-      "grpId": 2225275880,
-      "nextGrpId": 2225275881
-    },
-    {
-      "index": 5,
-      "grpId": 2225275881,
-      "nextGrpId": 2225275882
-    },
-    {
-      "index": 6,
-      "grpId": 2225275882,
-      "nextGrpId": 2225275883
-    },
-    {
-      "index": 7,
-      "grpId": 2225275883,
-      "nextGrpId": 2225275884
-    },
-    {
-      "index": 8,
-      "grpId": 2225275884,
-      "nextGrpId": 264075468
-    },
-    {
-      "index": 9,
-      "grpId": 264075468,
-      "nextGrpId": 264075469
-    },
-    {
-      "index": 10,
-      "grpId": 264075469,
-      "nextGrpId": 264075470
-    },
-    {
-      "index": 11,
-      "grpId": 264075470,
-      "nextGrpId": 264075471
-    },
-    {
-      "index": 12,
-      "grpId": 264075471,
-      "nextGrpId": 264075472
-    },
-    {
-      "index": 13,
-      "grpId": 264075472,
-      "nextGrpId": 264075473
-    },
-    {
-      "index": 14,
-      "grpId": 264075473,
-      "nextGrpId": 264075474
-    },
-    {
-      "index": 15,
-      "grpId": 264075474,
-      "nextGrpId": 264075475
-    },
-    {
-      "index": 16,
-      "grpId": 264075475,
-      "nextGrpId": 264075476
-    },
-    {
-      "index": 17,
-      "grpId": 264075476,
-      "nextGrpId": 264075477
-    },
-    {
-      "index": 18,
-      "grpId": 264075477,
-      "nextGrpId": 264075499
-    },
-    {
-      "index": 19,
-      "grpId": 264075499,
-      "nextGrpId": 264075500
-    },
-    {
-      "index": 20,
-      "grpId": 264075500,
-      "nextGrpId": 264075501
-    },
-    {
-      "index": 21,
-      "grpId": 264075501,
-      "nextGrpId": 264075503
-    },
-    {
-      "index": 22,
-      "grpId": 264075502,
-      "nextGrpId": 264075503
-    },
-    {
-      "index": 23,
-      "grpId": 264075503,
-      "nextGrpId": 264075504
-    },
-    {
-      "index": 24,
-      "grpId": 264075504,
-      "nextGrpId": 264075505
-    },
-    {
-      "index": 25,
-      "grpId": 264075505,
-      "nextGrpId": 264075506
-    },
-    {
-      "index": 26,
-      "grpId": 264075506,
-      "nextGrpId": 264075507
-    },
-    {
-      "index": 27,
-      "grpId": 264075507,
-      "nextGrpId": 264075508
-    },
-    {
-      "index": 28,
-      "grpId": 264075508,
-      "nextGrpId": 264075530
-    }
-  ]
 }

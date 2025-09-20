@@ -1,224 +1,224 @@
 {
-  "id": 468,
-  "type": "WQ",
-  "title": 3777872257,
-  "desc": 1970814431,
-  "subQuests": [
-    {
-      "subId": 46801,
-      "mainId": 468,
-      "order": 1,
-      "desc": 2328421759,
-      "showType": "QUEST_HIDDEN",
-      "finishCond": [
+    "id": 468,
+    "type": "WQ",
+    "title": 3777872257,
+    "desc": 1970814431,
+    "subQuests": [
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            46802,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 46802,
-      "mainId": 468,
-      "order": 2,
-      "desc": 2414078271,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            46801,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_LUA_NOTIFY",
-          "param": [
-            0,
-            0
-          ],
-          "count": 1
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_LUA_NOTIFY",
-          "param": [
-            0
-          ],
-          "count": 1
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
-          "param": [
-            "3",
-            "133002225,2"
-          ]
+            "subId": 46801,
+            "mainId": 468,
+            "order": 1,
+            "desc": 2328421759,
+            "showType": "QUEST_HIDDEN",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        46802,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
         },
         {
-          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
-          "param": [
-            "3",
-            "133002143,2"
-          ]
+            "subId": 46802,
+            "mainId": 468,
+            "order": 2,
+            "desc": 2414078271,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        46801,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_LUA_NOTIFY",
+                    "param": [
+                        0,
+                        0
+                    ],
+                    "count": 1
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_LUA_NOTIFY",
+                    "param": [
+                        0
+                    ],
+                    "count": 1
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+                    "param": [
+                        "3",
+                        "133002225,2"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+                    "param": [
+                        "3",
+                        "133002143,2"
+                    ]
+                }
+            ],
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "46801",
+                        ""
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+                    "param": [
+                        "3",
+                        "133002225,2"
+                    ]
+                }
+            ],
+            "beginExec": [
+                {
+                    "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
+                    "param": [
+                        "3",
+                        "133002225,1"
+                    ]
+                }
+            ]
         }
-      ],
-      "failExec": [
+    ],
+    "talks": [
         {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "46801",
-            ""
-          ]
+            "id": 46801,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "46801",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 5,
+            "nextTalks": [
+                46802,
+                46803
+            ],
+            "initDialog": 4680101,
+            "npcId": [
+                1533
+            ],
+            "questId": 468,
+            "assetIndex": 98042696453
         },
         {
-          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
-          "param": [
-            "3",
-            "133002225,2"
-          ]
-        }
-      ],
-      "beginExec": [
+            "id": 46802,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "46801",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "initDialog": 4680201,
+            "npcId": [
+                1533
+            ],
+            "questId": 468,
+            "assetIndex": 724668657689
+        },
         {
-          "type": "QUEST_EXEC_REFRESH_GROUP_SUITE",
-          "param": [
-            "3",
-            "133002225,1"
-          ]
-        }
-      ]
-    }
-  ],
-  "talks": [
-    {
-      "id": 46801,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
+            "id": 46803,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "46801",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "initDialog": 4680301,
+            "npcId": [
+                1533
+            ],
+            "questId": 468,
+            "assetIndex": 676051314880
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "46801",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 5,
-      "nextTalks": [
-        46802,
-        46803
-      ],
-      "initDialog": 4680101,
-      "npcId": [
-        1533
-      ],
-      "questId": 468,
-      "assetIndex": 98042696453
-    },
-    {
-      "id": 46802,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
+            "id": 46804,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "46802",
+                        "3",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 5,
+            "initDialog": 4680401,
+            "npcId": [
+                1533
+            ],
+            "questId": 468,
+            "assetIndex": 228407479746
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "46801",
-            "2",
-            ""
-          ]
+            "id": 46805,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "46802",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 5,
+            "initDialog": 4680501,
+            "npcId": [
+                1533
+            ],
+            "questId": 468,
+            "assetIndex": 1075251232964
         }
-      ],
-      "initDialog": 4680201,
-      "npcId": [
-        1533
-      ],
-      "questId": 468,
-      "assetIndex": 724668657689
-    },
-    {
-      "id": 46803,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "46801",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "initDialog": 4680301,
-      "npcId": [
-        1533
-      ],
-      "questId": 468,
-      "assetIndex": 676051314880
-    },
-    {
-      "id": 46804,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "46802",
-            "3",
-            ""
-          ]
-        }
-      ],
-      "priority": 5,
-      "initDialog": 4680401,
-      "npcId": [
-        1533
-      ],
-      "questId": 468,
-      "assetIndex": 228407479746
-    },
-    {
-      "id": 46805,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "46802",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 5,
-      "initDialog": 4680501,
-      "npcId": [
-        1533
-      ],
-      "questId": 468,
-      "assetIndex": 1075251232964
-    }
-  ]
+    ]
 }

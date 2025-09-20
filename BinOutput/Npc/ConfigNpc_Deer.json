@@ -1,143 +1,129 @@
 {
-	"$type" : "ConfigMonster",
-	"common":
-	{
-		"mass" : 100000.0,
-		"height": 1.35,
-		"affectedByWorld" : true,
-		"checkInSurface" : false,
-		"scale": 1.0,
-		"viewSize": 1.0,
-		"effectAttachShape" :
-		{
-			"$type" : "ConfigEffectAttachSkinnedMesh",
-			"mesh" : "EffectMesh",
-		},
-	},
-	"emojiBubble" :
-	{
-
-	},
-	"defaultDither" : 0.0,
-	"intee":
-	{
-		"$type" : "ConfigIntee",
-		"useTrigger" : true,
-		"usePushCollider" : true,
-	},
-	"headControl":
-	{
-		"$type": "ConfigHeadControl",
-		"useHeadControl": true,
-		"useWhiteAnimStates": false,
-		"speed": 3,
-		"dontAnimStates":
-		[
-			"Turn01_90LBS",
-			"Turn01_90LAS",
-			"Turn01_90RBS",
-			"Turn01_90RAS",
-			"Downcast01BS",
-			"Downcast01AS",
-			"Downcast01Loop",
-			"DrinkToComplain",
-			"FountainPray",
-			"FountainSneak",
-			"Pray01Loop",
-			"Investigate01Loop",
-		]
-	},
-	"move" :
-	{
-		"$type" : "ConfigNPCMove",
-	},
-	"stateLayers":
-	{
-		"defaultLayer":
-		{
-			"$type" : "ConfigNormalStateLayer",
-			"stateIDs" :
-			{
-				"Born" :
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates":
-					{
-						"Born": ["Npc_FadeIn"],
-					},
-				},
-				"Disappear": 
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates": 
-					{
-						"Disappear": ["Npc_FadeOut"],
-					},
-				},
-				"FreeStyleReset":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"HitLightBackrake01": ["Npc_ResetFreeStyle"],
-						"HitLightForerake01": ["Npc_ResetFreeStyle"],
-						"AfraidAS": ["Npc_ResetFreeStyle"],
-						"Alert01AS": ["Npc_ResetFreeStyle"],
-						"Clap01": ["Npc_ResetFreeStyle"],
-					},
-				}
-			},
-		},
-	},
-	"aibeta": 
-	{
-		"enable": true,
-		"friendliness": 1,
-		"profiling":
-		{
-			"lodStrategy": "Npc",
-		},
-		"moveSetting":
-		{
-			"almostReachedDistanceWalk": 0.5,
-			"almostReachedDistanceRun": 1.0,
-		},
-		"sensing":
-		{
-			"enable": false,
-		},
-		"defendArea":
-		{
-			"enable": false,
-		},
-		"threat":
-		{
-			"enable": false,
-		},
-		"scriptedMoveToTactic":
-		{
-			"enable": true,
-			"defaultSetting":
-			{
-				"speedLevel": 1,
-				"is3D": false,
-			},
-		},
-	},
-	"billboard" :
-	{
-		"$type" : "ConfigBillboard",
-		"offsetType": "Character",
-		"offset":
-		{
-			"x": -0.09,
-			"y": 0.01,
-			"z": 0,
-		},
-		"radiusOffset": 0.13,
-		"showDistance" : 20,	
-		"markShowDistance" : 45,
-	},
+    "$type": "ConfigMonster",
+    "common": {
+        "mass": 100000.0,
+        "height": 1.35,
+        "affectedByWorld": true,
+        "checkInSurface": false,
+        "scale": 1.0,
+        "viewSize": 1.0,
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "mesh": "EffectMesh"
+        }
+    },
+    "emojiBubble": {},
+    "defaultDither": 0.0,
+    "intee": {
+        "$type": "ConfigIntee",
+        "useTrigger": true,
+        "usePushCollider": true
+    },
+    "headControl": {
+        "$type": "ConfigHeadControl",
+        "useHeadControl": true,
+        "useWhiteAnimStates": false,
+        "speed": 3,
+        "dontAnimStates": [
+            "Turn01_90LBS",
+            "Turn01_90LAS",
+            "Turn01_90RBS",
+            "Turn01_90RAS",
+            "Downcast01BS",
+            "Downcast01AS",
+            "Downcast01Loop",
+            "DrinkToComplain",
+            "FountainPray",
+            "FountainSneak",
+            "Pray01Loop",
+            "Investigate01Loop"
+        ]
+    },
+    "move": {
+        "$type": "ConfigNPCMove"
+    },
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Born": [
+                            "Npc_FadeIn"
+                        ]
+                    }
+                },
+                "Disappear": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Disappear": [
+                            "Npc_FadeOut"
+                        ]
+                    }
+                },
+                "FreeStyleReset": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "HitLightBackrake01": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "HitLightForerake01": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "AfraidAS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Alert01AS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Clap01": [
+                            "Npc_ResetFreeStyle"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "aibeta": {
+        "enable": true,
+        "friendliness": 1,
+        "profiling": {
+            "lodStrategy": "Npc"
+        },
+        "moveSetting": {
+            "almostReachedDistanceWalk": 0.5,
+            "almostReachedDistanceRun": 1.0
+        },
+        "sensing": {
+            "enable": false
+        },
+        "defendArea": {
+            "enable": false
+        },
+        "threat": {
+            "enable": false
+        },
+        "scriptedMoveToTactic": {
+            "enable": true,
+            "defaultSetting": {
+                "speedLevel": 1,
+                "is3D": false
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigBillboard",
+        "offsetType": "Character",
+        "offset": {
+            "x": -0.09,
+            "y": 0.01,
+            "z": 0
+        },
+        "radiusOffset": 0.13,
+        "showDistance": 20,
+        "markShowDistance": 45
+    }
 }

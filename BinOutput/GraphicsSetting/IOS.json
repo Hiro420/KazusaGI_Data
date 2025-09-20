@@ -1,931 +1,906 @@
 {
-	"settingEntry": [
-		{
-			"entryType": "RenderResolution"
-		},
-		{
-			"entryType": "ShadowQuality",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "PostprocessEffect",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "ParticleEffect",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "ComprehensiveQuality",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "TargetFrameRate",
-			"availableOptions": [
-				"30",
-				"60"
-			],
-			"displayType": "Literally"
-		}
-	],
-	"postprocessEffectOptions": {
-		"Default": {
-			"useHalfShadows": true,
-			"useShadowCache": true,
-			"checkboardType": "None",
-			"aoMode": "SSAO",
-			"enableMotionBlur": true
-		},
-		"Low": {
-			"checkboardType": "LineHalf",
-			"aoMode": "Disable",
-			"enableMotionBlur": false
-		},
-		"Medium": {
-			"checkboardType": "MSAA2x"
-		},
-		"High": {}
-	},
-	"particleEffectOptions": {
-		"Default": {
-			"halfResolutionParticle": true,
-			"particleEmitLevel": "Middle"
-		},
-		"Low": {
-			"halfResolutionParticle": true,
-			"particleEmitLevel": "Low"
-		},
-		"Medium": {},
-		"High": {
-			"particleEmitLevel": "Middle"
-		}
-	},
-	"comprehensiveQualityOptions": {
-		"Low": {
-			"shaderQualityKeyword": "MHY_SHADER_LOW"
-		},
-		"Medium": {
-			"shaderQualityKeyword": "MHY_SHADER_MIDDLE"
-		},
-		"High": {
-			"shaderQualityKeyword": "MHY_SHADER_HIGH"
-		}
-	},
-	"candidateVolatile": [
-		"VeryLow",
-		"Low",
-		"Middle",
-		"High",
-		"Topmost"
-	],
-	"volatileSettings": {
-		"Default": {
-			"frameRateGrade": 1,
-			"renderResolutionGrade": 2,
-			"shadowQualityGrade": 2,
-			"postprocessEffectGrade": 2,
-			"particleEffectGrade": 2,
-			"comprehensiveQualityGrade": 3
-		},
-		"Topmost": {
-			"postprocessEffectGrade": 3,
-			"renderResolutionGrade": 3,
-			"particleEffectGrade": 3,
-			"shadowQualityGrade": 3
-		},
-		"High": {
-			"postprocessEffectGrade": 3,
-			"particleEffectGrade": 2,
-			"renderResolutionGrade": 3
-		},
-		"Middle": {},
-		"Low": {
-			"renderResolutionGrade": 1,
-			"shadowQualityGrade": 2,
-			"particleEffectGrade": 1,
-			"comprehensiveQualityGrade": 2
-		},
-		"VeryLow": {
-			"renderResolutionGrade": 1,
-			"shadowQualityGrade": 1,
-			"particleEffectGrade": 1,
-			"comprehensiveQualityGrade": 1
-		},
-		"Off": {}
-	},
-	"deviceSettings": {
-		"Default": {
-			"qualityLevel": "Beautiful",
-			"levelStreamingConfig": "iOSDefault",
-			"entityLODConfig": "iOS_Middle",
-			"lightOnLevel": "Middle",
-			"avatarOutlineThresh": 20,
-			"avatarShadowThresh": 30,
-			"avatarMotionVectorThresh": 30,
-			"TerrainGrassScaleFactor ": 0.9,
-			"defaultVolatileGrade": 3,
-			"textureStreamingBudget": 100.0,
-			"enableCutsceneTextureStreaming": true,
-			"enableUICameraFullResolution": true,
-			"preloadUIScene": true,
-			"renderResolutions": [
-				{
-					"width": 1440,
-					"height": 674,
-					"secondWidth": 1440,
-					"secondHeight": 674
-				},
-				{
-					"width": 1680,
-					"height": 786,
-					"secondWidth": 1680,
-					"secondHeight": 786
-				},
-				{
-					"width": 1792,
-					"height": 828,
-					"secondWidth": 1792,
-					"secondHeight": 828
-				}
-			]
-		},
-		"EcoMode": {
-			"recommendVolatile": "Off",
-			"resolutionQuality": "Low"
-		},
-		//ios device name: http://docs.unity3d.com/ScriptReference/iOS.DeviceGeneration.html
-		// "iPhone4S":
-		// {
-		// 	"refPostProcessSecondWidth": 1024,
-		// 	"refPostProcessSecondHeight": 576,
-		// 	"recommendVolatile": "Low"
-		// },
-		// "iPhone5":
-		// {
-		// 	"refPostProcessSecondWidth": 1024,
-		// 	"refPostProcessSecondHeight": 576,
-		// 	"recommendVolatile": "Low"
-		// },
-		// "iPhone5C":
-		// {
-		// 	"refPostProcessSecondWidth": 1024,
-		// 	"refPostProcessSecondHeight": 576,
-		// 	"recommendVolatile": "Low"
-		// },
-		// "iPhone5S":
-		// {
-		// 	"refPostProcessSecondWidth": 1024,
-		// 	"refPostProcessSecondHeight": 576,
-		// 	"recommendVolatile": "Middle"
-		// },
-		"iPhone6": {
-			"renderResolutions": [
-				{
-					"width": 960,
-					"height": 600,
-					"secondWidth": 960,
-					"secondHeight": 600
-				},
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				}
-			]
-		},
-		"iPhone6Plus": {
-			"renderResolutions": [
-				{
-					"width": 960,
-					"height": 600,
-					"secondWidth": 960,
-					"secondHeight": 600
-				},
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				}
-			]
-		},
-		"iPhone6S": {
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 900,
-					"secondWidth": 1440,
-					"secondHeight": 900
-				}
-			]
-		},
-		"iPhone6SPlus": {
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 900,
-					"secondWidth": 1440,
-					"secondHeight": 900
-				}
-			]
-		},
-		"iPhone7": {
-			"enableUICameraFullResolution": false,
-			"levelStreamingConfig": "iOSDefault_Middle",
-			"entityLODConfig": "iOS_Low",
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 900,
-					"secondWidth": 1440,
-					"secondHeight": 900
-				}
-			]
-		},
-		"iPhone7Plus": {
-			"enableUICameraFullResolution": false,
-			"levelStreamingConfig": "iOSDefault_Middle",
-			"entityLODConfig": "iOS_Low",
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 900,
-					"secondWidth": 1440,
-					"secondHeight": 900
-				}
-			]
-		},
-		"iPhone8": {
-			"levelStreamingConfig": "iOSDefault_Middle",
-			"entityLODConfig": "iOS_Low",
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 900,
-					"secondWidth": 1440,
-					"secondHeight": 900
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.7
-		},
-		"iPhone8Plus": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"levelStreamingConfig": "iOSDefault_Middle",
-			"entityLODConfig": "iOS_Low",
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 640,
-					"secondWidth": 1024,
-					"secondHeight": 640
-				},
-				{
-					"width": 1280,
-					"height": 720,
-					"secondWidth": 1280,
-					"secondHeight": 720
-				},
-				{
-					"width": 1440,
-					"height": 960,
-					"secondWidth": 1440,
-					"secondHeight": 960
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.7
-		},
-		"iPhoneX": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"levelStreamingConfig": "iOSDefault_Low",
-			"entityLODConfig": "iOS_VeryLow",
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 600,
-					"secondWidth": 1280,
-					"secondHeight": 600
-				},
-				{
-					"width": 1440,
-					"height": 674,
-					"secondWidth": 1440,
-					"secondHeight": 674
-				},
-				{
-					"width": 1600,
-					"height": 750,
-					"secondWidth": 1600,
-					"secondHeight": 750
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.65
-		},
-		"iPhoneXS": {
-			"defaultVolatileGrade": 4,
-			"textureStreamingBudget": 130.0,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 648,
-					"secondWidth": 1280,
-					"secondHeight": 648
-				},
-				{
-					"width": 1440,
-					"height": 810,
-					"secondWidth": 1440,
-					"secondHeight": 810
-				},
-				{
-					"width": 1680,
-					"height": 768,
-					"secondWidth": 1680,
-					"secondHeight": 768
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPhoneXSMax": {
-			"defaultVolatileGrade": 4,
-			"textureStreamingBudget": 130.0,
-			"renderResolutions": [
-				{
-					"width": 1440,
-					"height": 648,
-					"secondWidth": 1440,
-					"secondHeight": 648
-				},
-				{
-					"width": 1560,
-					"height": 810,
-					"secondWidth": 1560,
-					"secondHeight": 810
-				},
-				{
-					"width": 1680,
-					"height": 828,
-					"secondWidth": 1680,
-					"secondHeight": 828
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPhoneXR": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 648,
-					"secondWidth": 1280,
-					"secondHeight": 648
-				},
-				{
-					"width": 1440,
-					"height": 810,
-					"secondWidth": 1440,
-					"secondHeight": 810
-				},
-				{
-					"width": 1680,
-					"height": 828,
-					"secondWidth": 1680,
-					"secondHeight": 828
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPhone11": {
-			"defaultVolatileGrade": 4,
-			"textureStreamingBudget": 130.0,
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPhone11Pro": {
-			"defaultVolatileGrade": 4,
-			"textureStreamingBudget": 130.0,
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPhone11ProMax": {
-			"defaultVolatileGrade": 4,
-			"textureStreamingBudget": 130.0,
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPadMini1Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPadMini2Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPadMini3Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPadMini4Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPadMini5Gen": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPad2Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPad3Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPad4Gen": {
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPad6Gen": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1024,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1680,
-					"height": 1260,
-					"secondWidth": 1680,
-					"secondHeight": 1260
-				}
-			]
-		},
-		"iPad7Gen": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 2,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1024,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1680,
-					"height": 1260,
-					"secondWidth": 1680,
-					"secondHeight": 1260
-				}
-			]
-		},
-		"iPadAir1": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 3,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1024,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1680,
-					"height": 1260,
-					"secondWidth": 1680,
-					"secondHeight": 1260
-				}
-			]
-		},
-		"iPadAir2": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1680,
-					"height": 1260,
-					"secondWidth": 1680,
-					"secondHeight": 1260
-				}
-			]
-		},
-		"iPadAir3Gen": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1680,
-					"height": 1260,
-					"secondWidth": 1680,
-					"secondHeight": 1260
-				}
-			]
-		},
-		"iPadPro1Gen": {
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": false,
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1024,
-					"height": 768,
-					"secondWidth": 1024,
-					"secondHeight": 768
-				},
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				}
-			]
-		},
-		"iPadPro2Gen": {
-			"defaultVolatileGrade": 4,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1440,
-					"height": 1080,
-					"secondWidth": 1440,
-					"secondHeight": 1080
-				},
-				{
-					"width": 1638,
-					"height": 1228,
-					"secondWidth": 1638,
-					"secondHeight": 1228
-				}
-			],
-		},
-		"iPadPro11Inch": {
-			"defaultVolatileGrade": 5,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1638,
-					"height": 1228,
-					"secondWidth": 1638,
-					"secondHeight": 1228
-				},
-				{
-					"width": 1910,
-					"height": 1432,
-					"secondWidth": 1910,
-					"secondHeight": 1432
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.9
-		},
-		"iPadPro3Gen": {
-			"defaultVolatileGrade": 5,
-			"renderResolutions": [
-				{
-					"width": 1280,
-					"height": 960,
-					"secondWidth": 1280,
-					"secondHeight": 960
-				},
-				{
-					"width": 1638,
-					"height": 1228,
-					"secondWidth": 1638,
-					"secondHeight": 1228
-				},
-				{
-					"width": 1910,
-					"height": 1432,
-					"secondWidth": 1910,
-					"secondHeight": 1432
-				}
-			],
-			"TerrainGrassScaleFactor ": 0.9
-		},
-		"iPhoneUnknown": {
-			"defaultVolatileGrade": 4
-		},
-		"iPadUnknown": {
-			"defaultVolatileGrade": 4,
-			"TerrainGrassScaleFactor ": 0.8
-		},
-		"iPodTouchUnknown": {}
-	},
-	"performanceSettings": {
-		"High": {},
-		"Middle": {},
-		"Low": {}
-	}
+    "settingEntry": [
+        {
+            "entryType": "RenderResolution"
+        },
+        {
+            "entryType": "ShadowQuality",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "PostprocessEffect",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "ParticleEffect",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "ComprehensiveQuality",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "TargetFrameRate",
+            "availableOptions": [
+                "30",
+                "60"
+            ],
+            "displayType": "Literally"
+        }
+    ],
+    "postprocessEffectOptions": {
+        "Default": {
+            "useHalfShadows": true,
+            "useShadowCache": true,
+            "checkboardType": "None",
+            "aoMode": "SSAO",
+            "enableMotionBlur": true
+        },
+        "Low": {
+            "checkboardType": "LineHalf",
+            "aoMode": "Disable",
+            "enableMotionBlur": false
+        },
+        "Medium": {
+            "checkboardType": "MSAA2x"
+        },
+        "High": {}
+    },
+    "particleEffectOptions": {
+        "Default": {
+            "halfResolutionParticle": true,
+            "particleEmitLevel": "Middle"
+        },
+        "Low": {
+            "halfResolutionParticle": true,
+            "particleEmitLevel": "Low"
+        },
+        "Medium": {},
+        "High": {
+            "particleEmitLevel": "Middle"
+        }
+    },
+    "comprehensiveQualityOptions": {
+        "Low": {
+            "shaderQualityKeyword": "MHY_SHADER_LOW"
+        },
+        "Medium": {
+            "shaderQualityKeyword": "MHY_SHADER_MIDDLE"
+        },
+        "High": {
+            "shaderQualityKeyword": "MHY_SHADER_HIGH"
+        }
+    },
+    "candidateVolatile": [
+        "VeryLow",
+        "Low",
+        "Middle",
+        "High",
+        "Topmost"
+    ],
+    "volatileSettings": {
+        "Default": {
+            "frameRateGrade": 1,
+            "renderResolutionGrade": 2,
+            "shadowQualityGrade": 2,
+            "postprocessEffectGrade": 2,
+            "particleEffectGrade": 2,
+            "comprehensiveQualityGrade": 3
+        },
+        "Topmost": {
+            "postprocessEffectGrade": 3,
+            "renderResolutionGrade": 3,
+            "particleEffectGrade": 3,
+            "shadowQualityGrade": 3
+        },
+        "High": {
+            "postprocessEffectGrade": 3,
+            "particleEffectGrade": 2,
+            "renderResolutionGrade": 3
+        },
+        "Middle": {},
+        "Low": {
+            "renderResolutionGrade": 1,
+            "shadowQualityGrade": 2,
+            "particleEffectGrade": 1,
+            "comprehensiveQualityGrade": 2
+        },
+        "VeryLow": {
+            "renderResolutionGrade": 1,
+            "shadowQualityGrade": 1,
+            "particleEffectGrade": 1,
+            "comprehensiveQualityGrade": 1
+        },
+        "Off": {}
+    },
+    "deviceSettings": {
+        "Default": {
+            "qualityLevel": "Beautiful",
+            "levelStreamingConfig": "iOSDefault",
+            "entityLODConfig": "iOS_Middle",
+            "lightOnLevel": "Middle",
+            "avatarOutlineThresh": 20,
+            "avatarShadowThresh": 30,
+            "avatarMotionVectorThresh": 30,
+            "TerrainGrassScaleFactor ": 0.9,
+            "defaultVolatileGrade": 3,
+            "textureStreamingBudget": 100.0,
+            "enableCutsceneTextureStreaming": true,
+            "enableUICameraFullResolution": true,
+            "preloadUIScene": true,
+            "renderResolutions": [
+                {
+                    "width": 1440,
+                    "height": 674,
+                    "secondWidth": 1440,
+                    "secondHeight": 674
+                },
+                {
+                    "width": 1680,
+                    "height": 786,
+                    "secondWidth": 1680,
+                    "secondHeight": 786
+                },
+                {
+                    "width": 1792,
+                    "height": 828,
+                    "secondWidth": 1792,
+                    "secondHeight": 828
+                }
+            ]
+        },
+        "EcoMode": {
+            "recommendVolatile": "Off",
+            "resolutionQuality": "Low"
+        },
+        "iPhone6": {
+            "renderResolutions": [
+                {
+                    "width": 960,
+                    "height": 600,
+                    "secondWidth": 960,
+                    "secondHeight": 600
+                },
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                }
+            ]
+        },
+        "iPhone6Plus": {
+            "renderResolutions": [
+                {
+                    "width": 960,
+                    "height": 600,
+                    "secondWidth": 960,
+                    "secondHeight": 600
+                },
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                }
+            ]
+        },
+        "iPhone6S": {
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 900,
+                    "secondWidth": 1440,
+                    "secondHeight": 900
+                }
+            ]
+        },
+        "iPhone6SPlus": {
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 900,
+                    "secondWidth": 1440,
+                    "secondHeight": 900
+                }
+            ]
+        },
+        "iPhone7": {
+            "enableUICameraFullResolution": false,
+            "levelStreamingConfig": "iOSDefault_Middle",
+            "entityLODConfig": "iOS_Low",
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 900,
+                    "secondWidth": 1440,
+                    "secondHeight": 900
+                }
+            ]
+        },
+        "iPhone7Plus": {
+            "enableUICameraFullResolution": false,
+            "levelStreamingConfig": "iOSDefault_Middle",
+            "entityLODConfig": "iOS_Low",
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 900,
+                    "secondWidth": 1440,
+                    "secondHeight": 900
+                }
+            ]
+        },
+        "iPhone8": {
+            "levelStreamingConfig": "iOSDefault_Middle",
+            "entityLODConfig": "iOS_Low",
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 900,
+                    "secondWidth": 1440,
+                    "secondHeight": 900
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.7
+        },
+        "iPhone8Plus": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "levelStreamingConfig": "iOSDefault_Middle",
+            "entityLODConfig": "iOS_Low",
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 640,
+                    "secondWidth": 1024,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1280,
+                    "height": 720,
+                    "secondWidth": 1280,
+                    "secondHeight": 720
+                },
+                {
+                    "width": 1440,
+                    "height": 960,
+                    "secondWidth": 1440,
+                    "secondHeight": 960
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.7
+        },
+        "iPhoneX": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "levelStreamingConfig": "iOSDefault_Low",
+            "entityLODConfig": "iOS_VeryLow",
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 600,
+                    "secondWidth": 1280,
+                    "secondHeight": 600
+                },
+                {
+                    "width": 1440,
+                    "height": 674,
+                    "secondWidth": 1440,
+                    "secondHeight": 674
+                },
+                {
+                    "width": 1600,
+                    "height": 750,
+                    "secondWidth": 1600,
+                    "secondHeight": 750
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.65
+        },
+        "iPhoneXS": {
+            "defaultVolatileGrade": 4,
+            "textureStreamingBudget": 130.0,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 648,
+                    "secondWidth": 1280,
+                    "secondHeight": 648
+                },
+                {
+                    "width": 1440,
+                    "height": 810,
+                    "secondWidth": 1440,
+                    "secondHeight": 810
+                },
+                {
+                    "width": 1680,
+                    "height": 768,
+                    "secondWidth": 1680,
+                    "secondHeight": 768
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPhoneXSMax": {
+            "defaultVolatileGrade": 4,
+            "textureStreamingBudget": 130.0,
+            "renderResolutions": [
+                {
+                    "width": 1440,
+                    "height": 648,
+                    "secondWidth": 1440,
+                    "secondHeight": 648
+                },
+                {
+                    "width": 1560,
+                    "height": 810,
+                    "secondWidth": 1560,
+                    "secondHeight": 810
+                },
+                {
+                    "width": 1680,
+                    "height": 828,
+                    "secondWidth": 1680,
+                    "secondHeight": 828
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPhoneXR": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 648,
+                    "secondWidth": 1280,
+                    "secondHeight": 648
+                },
+                {
+                    "width": 1440,
+                    "height": 810,
+                    "secondWidth": 1440,
+                    "secondHeight": 810
+                },
+                {
+                    "width": 1680,
+                    "height": 828,
+                    "secondWidth": 1680,
+                    "secondHeight": 828
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPhone11": {
+            "defaultVolatileGrade": 4,
+            "textureStreamingBudget": 130.0,
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPhone11Pro": {
+            "defaultVolatileGrade": 4,
+            "textureStreamingBudget": 130.0,
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPhone11ProMax": {
+            "defaultVolatileGrade": 4,
+            "textureStreamingBudget": 130.0,
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPadMini1Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPadMini2Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPadMini3Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPadMini4Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPadMini5Gen": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPad2Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPad3Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPad4Gen": {
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPad6Gen": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1024,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1680,
+                    "height": 1260,
+                    "secondWidth": 1680,
+                    "secondHeight": 1260
+                }
+            ]
+        },
+        "iPad7Gen": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 2,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1024,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1680,
+                    "height": 1260,
+                    "secondWidth": 1680,
+                    "secondHeight": 1260
+                }
+            ]
+        },
+        "iPadAir1": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 3,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1024,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1680,
+                    "height": 1260,
+                    "secondWidth": 1680,
+                    "secondHeight": 1260
+                }
+            ]
+        },
+        "iPadAir2": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1680,
+                    "height": 1260,
+                    "secondWidth": 1680,
+                    "secondHeight": 1260
+                }
+            ]
+        },
+        "iPadAir3Gen": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1680,
+                    "height": 1260,
+                    "secondWidth": 1680,
+                    "secondHeight": 1260
+                }
+            ]
+        },
+        "iPadPro1Gen": {
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": false,
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1024,
+                    "height": 768,
+                    "secondWidth": 1024,
+                    "secondHeight": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                }
+            ]
+        },
+        "iPadPro2Gen": {
+            "defaultVolatileGrade": 4,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1440,
+                    "height": 1080,
+                    "secondWidth": 1440,
+                    "secondHeight": 1080
+                },
+                {
+                    "width": 1638,
+                    "height": 1228,
+                    "secondWidth": 1638,
+                    "secondHeight": 1228
+                }
+            ]
+        },
+        "iPadPro11Inch": {
+            "defaultVolatileGrade": 5,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1638,
+                    "height": 1228,
+                    "secondWidth": 1638,
+                    "secondHeight": 1228
+                },
+                {
+                    "width": 1910,
+                    "height": 1432,
+                    "secondWidth": 1910,
+                    "secondHeight": 1432
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.9
+        },
+        "iPadPro3Gen": {
+            "defaultVolatileGrade": 5,
+            "renderResolutions": [
+                {
+                    "width": 1280,
+                    "height": 960,
+                    "secondWidth": 1280,
+                    "secondHeight": 960
+                },
+                {
+                    "width": 1638,
+                    "height": 1228,
+                    "secondWidth": 1638,
+                    "secondHeight": 1228
+                },
+                {
+                    "width": 1910,
+                    "height": 1432,
+                    "secondWidth": 1910,
+                    "secondHeight": 1432
+                }
+            ],
+            "TerrainGrassScaleFactor ": 0.9
+        },
+        "iPhoneUnknown": {
+            "defaultVolatileGrade": 4
+        },
+        "iPadUnknown": {
+            "defaultVolatileGrade": 4,
+            "TerrainGrassScaleFactor ": 0.8
+        },
+        "iPodTouchUnknown": {}
+    },
+    "performanceSettings": {
+        "High": {},
+        "Middle": {},
+        "Low": {}
+    }
 }

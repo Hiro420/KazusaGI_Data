@@ -1,42 +1,49 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigBlackScreenAction",
-				"type": "BLACK_SCREEN",
-				"durationToBlack": 1.0,
-				"durationKeepBlack": 1.0,
-				"durationFromBlack": 1.0,
-				"changeToInteePos": true,
-				"inteePos": "Q307GaiaWay"
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"delayTime": 1.2,
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 0.01,
-				"lerpRatio": 30.0,
-				"lerpPattern": 5
-			},
-			{
-				"$type": "ConfigShowMessageAction",
-				"type": "SHOW_MESSAGE",
-				"delayTime": 1.8,
-				"txtMapStr": "INFO_GET_TRIAL_AVATAR",
-			},
-			{
-				"$type": "ConfigVisibleInterAction",
-				"type": "VISIBLE",
-				"delayTime": 1.0,
-				"isVisible": false,
-			}
-		]
-	]
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigBlackScreenAction",
+                "type": "BLACK_SCREEN",
+                "durationToBlack": 1.0,
+                "durationKeepBlack": 1.0,
+                "durationFromBlack": 1.0,
+                "changeToInteePos": true,
+                "inteePos": "Q307GaiaWay"
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "delayTime": 1.2,
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 0.01,
+                "lerpRatio": 30.0,
+                "lerpPattern": 5
+            },
+            {
+                "$type": "ConfigShowMessageAction",
+                "type": "SHOW_MESSAGE",
+                "delayTime": 1.8,
+                "txtMapStr": "INFO_GET_TRIAL_AVATAR"
+            },
+            {
+                "$type": "ConfigVisibleInterAction",
+                "type": "VISIBLE",
+                "delayTime": 1.0,
+                "isVisible": false
+            }
+        ]
+    ]
 }

@@ -1,106 +1,248 @@
 {
-	"context": {
-		"InLevelMapPage": {
-			"actionGroups": {
-				"Default": [
-					{"eventType": "MenuConfirmEvent", "priority": 0},
-					{"eventType": "MenuLeftEvent", "priority": 0},
-					{"eventType": "MoveEvent", "priority": 5},
-					{"eventType": "ChangeViewEvent", "priority": 6},
-					{"eventType": "LeftTriggerEvent", "priority": 7},
-					{"eventType": "RightTriggerEvent", "priority": 8},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9},
-					{"contextEvent": "CloseEvent", "eventType": "OpenMapEvent", "priority": 9},
-					{"contextEvent": "UIZoomCameraEvent", "eventType": "ZoomCameraEvent", "priority": 10}
-				],
-				"Joypad": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 0},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MoveCursorEvent", "eventType": "MoveEvent", "priority": 5},
-					{"contextEvent": "ZoomInMapEvent", "eventType": "LeftTriggerAxisEvent", "priority": 6},
-					{"contextEvent": "ZoomOutMapEvent", "eventType": "RightTriggerAxisEvent", "priority": 7},
-					{"contextEvent": "BuyResin", "eventType": "DPadUpEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BuyWorldStamina", "eventType": "DPadRightEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ChangeFocusZone", "eventType": "LeftStickButtonEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ShowCycleDungeonOnly", "eventType": "MenuLeftEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ShowHelpTips", "eventType": "DPadLeftEvent", "priority": 7, "nextToHandle": "FrameEnd"}
-				],
-				"MarkTips": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-					{"contextEvent": "ChangeCustomMarkName", "eventType": "MenuUpEvent"},
-					{"contextEvent": "RemoveCustomMark", "eventType": "MenuLeftEvent"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-					{"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent"},
-					{"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent"},
-					{"contextEvent": "ScrollPrimaryScrollerEvent", "eventType": "LeftStickVerticalEvent"},
-					{"contextEvent": "ShowHelpTips", "eventType": "DPadUpEvent", "nextToHandle": "FrameEnd"},
-					{"contextEvent": "CommonRightStickButtonEvent", "eventType": "RightStickButtonEvent"},
-					{"contextEvent": "CommonMenuUpEvent", "eventType": "MenuUpEvent"}
-				],
-				"RewardTips":
-				[
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-					{"contextEvent": "ChangeFocusZone", "eventType": "LeftStickButtonEvent"}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Joypad"
-				},
-				"1": {},
-				"2": {
-					"keyboardTouch": "MarkTips",
-					"keyboardMouse": "MarkTips",
-					"joypad": "MarkTips"
-				},
-				"3": { // INPUT_STATE_REWARD_TIPS
-					"keyboardTouch": "RewardTips",
-					"keyboardMouse": "RewardTips",
-					"joypad": "RewardTips"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelMapMarkSelectDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "CloseEvent", "eventType": "MenuBackEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "DPadUpEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "DPadDownEvent"}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"DungeonExpendDialog":
-		{
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "SimpleMenu",
-					"keyboardMouse": "SimpleMenu",
-					"joypad": "SimpleMenu"
-				},
-				"1": {
-					"keyboardTouch": "SimpleMenu",
-					"keyboardMouse": "SimpleMenu",
-					"joypad": "SimpleMenu"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		}
-	}
+    "context": {
+        "InLevelMapPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "MoveEvent",
+                        "priority": 5
+                    },
+                    {
+                        "eventType": "ChangeViewEvent",
+                        "priority": 6
+                    },
+                    {
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 7
+                    },
+                    {
+                        "eventType": "RightTriggerEvent",
+                        "priority": 8
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "CloseEvent",
+                        "eventType": "OpenMapEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "UIZoomCameraEvent",
+                        "eventType": "ZoomCameraEvent",
+                        "priority": 10
+                    }
+                ],
+                "Joypad": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MoveCursorEvent",
+                        "eventType": "MoveEvent",
+                        "priority": 5
+                    },
+                    {
+                        "contextEvent": "ZoomInMapEvent",
+                        "eventType": "LeftTriggerAxisEvent",
+                        "priority": 6
+                    },
+                    {
+                        "contextEvent": "ZoomOutMapEvent",
+                        "eventType": "RightTriggerAxisEvent",
+                        "priority": 7
+                    },
+                    {
+                        "contextEvent": "BuyResin",
+                        "eventType": "DPadUpEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BuyWorldStamina",
+                        "eventType": "DPadRightEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChangeFocusZone",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ShowCycleDungeonOnly",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ShowHelpTips",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "MarkTips": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "ChangeCustomMarkName",
+                        "eventType": "MenuUpEvent"
+                    },
+                    {
+                        "contextEvent": "RemoveCustomMark",
+                        "eventType": "MenuLeftEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent"
+                    },
+                    {
+                        "contextEvent": "ScrollPrimaryScrollerEvent",
+                        "eventType": "LeftStickVerticalEvent"
+                    },
+                    {
+                        "contextEvent": "ShowHelpTips",
+                        "eventType": "DPadUpEvent",
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CommonRightStickButtonEvent",
+                        "eventType": "RightStickButtonEvent"
+                    },
+                    {
+                        "contextEvent": "CommonMenuUpEvent",
+                        "eventType": "MenuUpEvent"
+                    }
+                ],
+                "RewardTips": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "ChangeFocusZone",
+                        "eventType": "LeftStickButtonEvent"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Joypad"
+                },
+                "1": {},
+                "2": {
+                    "keyboardTouch": "MarkTips",
+                    "keyboardMouse": "MarkTips",
+                    "joypad": "MarkTips"
+                },
+                "3": {
+                    "keyboardTouch": "RewardTips",
+                    "keyboardMouse": "RewardTips",
+                    "joypad": "RewardTips"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelMapMarkSelectDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CloseEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "DPadUpEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "DPadDownEvent"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "DungeonExpendDialog": {
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "SimpleMenu",
+                    "keyboardMouse": "SimpleMenu",
+                    "joypad": "SimpleMenu"
+                },
+                "1": {
+                    "keyboardTouch": "SimpleMenu",
+                    "keyboardMouse": "SimpleMenu",
+                    "joypad": "SimpleMenu"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    }
 }

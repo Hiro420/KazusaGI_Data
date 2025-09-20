@@ -1,229 +1,229 @@
 {
-  "id": 998,
-  "type": "WQ",
-  "title": 2780691993,
-  "luaPath": "Actor/Quest/SQ998",
-  "rewardIdList": [
-    100400
-  ],
-  "subQuests": [
-    {
-      "subId": 99801,
-      "mainId": 998,
-      "order": 1,
-      "desc": 497343263,
-      "acceptCond": [
+    "id": 998,
+    "type": "WQ",
+    "title": 2780691993,
+    "luaPath": "Actor/Quest/SQ998",
+    "rewardIdList": [
+        100400
+    ],
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            35724,
-            4,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99801,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q351FirstClimb",
-          "50"
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 99802,
-      "mainId": 998,
-      "order": 2,
-      "desc": 1662716615,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99801,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            99802,
-            0
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            99802
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q351FirstClimb",
-          "100"
-        ]
-      }
-    },
-    {
-      "subId": 99803,
-      "mainId": 998,
-      "order": 3,
-      "desc": 1238825079,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99802,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99802,
-            0
-          ]
-        }
-      ],
-      "failCondComb": "LOGIC_OR",
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99803
-          ]
+            "subId": 99801,
+            "mainId": 998,
+            "order": 1,
+            "desc": 497343263,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        35724,
+                        4,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99801,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q351FirstClimb",
+                    "50"
+                ]
+            },
+            "isRewind": true
         },
         {
-          "type": "QUEST_CONTENT_OBTAIN_ITEM",
-          "param": [
-            100210
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true,
-      "failExec": [
+            "subId": 99802,
+            "mainId": 998,
+            "order": 2,
+            "desc": 1662716615,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99801,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        99802,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        99802
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q351FirstClimb",
+                    "100"
+                ]
+            }
+        },
         {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "99801",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 99804,
-      "mainId": 998,
-      "order": 4,
-      "desc": 3694787191,
-      "acceptCond": [
+            "subId": 99803,
+            "mainId": 998,
+            "order": 3,
+            "desc": 1238825079,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99802,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99802,
+                        0
+                    ]
+                }
+            ],
+            "failCondComb": "LOGIC_OR",
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99803
+                    ]
+                },
+                {
+                    "type": "QUEST_CONTENT_OBTAIN_ITEM",
+                    "param": [
+                        100210
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true,
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "99801",
+                        ""
+                    ]
+                }
+            ]
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99803,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 99804,
+            "mainId": 998,
+            "order": 4,
+            "desc": 3694787191,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99803,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        99804,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        99804
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            99804,
-            0
-          ]
+            "subId": 99805,
+            "mainId": 998,
+            "order": 5,
+            "desc": 1232109215,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99804,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99804,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99805
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true,
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "99803",
+                        ""
+                    ]
+                }
+            ]
         }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            99804
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 99805,
-      "mainId": 998,
-      "order": 5,
-      "desc": 1232109215,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99804,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99804,
-            0
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99805
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true,
-      "failExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "99803",
-            ""
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

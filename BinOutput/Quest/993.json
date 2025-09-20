@@ -1,155 +1,155 @@
 {
-  "id": 993,
-  "type": "WQ",
-  "title": 2670288841,
-  "desc": 79649711,
-  "luaPath": "Actor/Quest/SQ993",
-  "subQuests": [
-    {
-      "subId": 99301,
-      "mainId": 993,
-      "order": 1,
-      "desc": 3964310503,
-      "acceptCond": [
+    "id": 993,
+    "type": "WQ",
+    "title": 2670288841,
+    "desc": 79649711,
+    "luaPath": "Actor/Quest/SQ993",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 99301,
+            "mainId": 993,
+            "order": 1,
+            "desc": 3964310503,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_ROOM",
+                    "param": [
+                        1023,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_ENTER_ROOM",
-          "param": [
-            1023,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 99302,
-      "mainId": 993,
-      "order": 2,
-      "desc": 2981090719,
-      "acceptCond": [
+            "subId": 99302,
+            "mainId": 993,
+            "order": 2,
+            "desc": 2981090719,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99301,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        99302,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        99302
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99301,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 99303,
+            "mainId": 993,
+            "order": 3,
+            "desc": 3860542551,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99302,
+                        4,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        99303,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "99302",
+                        ""
+                    ]
+                }
+            ]
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            99302,
-            0
-          ]
+            "subId": 99304,
+            "mainId": 993,
+            "order": 4,
+            "desc": 4176619287,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99302,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        99304,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true
         }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            99302
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 99303,
-      "mainId": 993,
-      "order": 3,
-      "desc": 3860542551,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99302,
-            4,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            99303,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "99302",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 99304,
-      "mainId": 993,
-      "order": 4,
-      "desc": 4176619287,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99302,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            99304,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true
-    }
-  ]
+    ]
 }

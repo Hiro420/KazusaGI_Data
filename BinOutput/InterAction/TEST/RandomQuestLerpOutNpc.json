@@ -1,41 +1,51 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"delayTime": 0,
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType":"RETURN",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				 "duration": 1.0,
-				 "useSteerAnim": true,
-				 "interruptFreestyle": true
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_FOCUS",
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 3.0,
-				"lerpRatio": 4.0,
-				"lerpPattern": 9
-			},	
-			{
-				"$type": "ConfigBodyLangInterAction",
-				"type": "BODY_LANG",
-				"delayTime": 0.9,
-				"aliasList": [				  
-				],
-				"duration": -1.0,
-				"checkNextImmediately": false,
-				"bodyLangParam": 0,
-				"isContinue": true
-			  }
-		],
-	],
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "delayTime": 0,
+                "type": "STEER_TO",
+                "steerType": "RETURN",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "useSteerAnim": true,
+                "interruptFreestyle": true
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_FOCUS",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 3.0,
+                "lerpRatio": 4.0,
+                "lerpPattern": 9
+            },
+            {
+                "$type": "ConfigBodyLangInterAction",
+                "type": "BODY_LANG",
+                "delayTime": 0.9,
+                "aliasList": [],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "bodyLangParam": 0,
+                "isContinue": true
+            }
+        ]
+    ]
 }

@@ -1,883 +1,917 @@
 {
-	"inputActions": {
-		"MoveForward": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_MOVE_FORWARD"
-		},
-		"MoveBackward": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_MOVE_BACKWARD"
-		},
-		"MoveLeft": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_MOVE_LEFT"
-		},
-		"MoveRight": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_MOVE_RIGHT"
-		},
-		"MoveHorizontal": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"MoveVertical": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"Move": {
-			"$type": "ConfigCompoundInputAction",
-			"valueType": "TwoAxisInput",
-			"descriptionTextID": "CONTROL_MOVE",
-			"action1": "MoveHorizontal",
-			"action2": "MoveVertical"
-		},
-		"ViewHorizontal": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"ViewVertical": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"ChangeView": {
-			"$type": "ConfigCompoundInputAction",
-			"valueType": "TwoAxisInput",
-			"descriptionTextID": "CONTROL_VIEW",
-			"action1": "ViewHorizontal",
-			"action2": "ViewVertical"
-		},
-		"OpenMap": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_MAP"
-		},
-		"OpenCharacter": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_CHARACTER"
-		},
-		"OpenBag": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_BAG"
-		},
-		"OpenChat": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_CHAT"
-		},
-		"OpenGacha": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_GACHA"
-		},
-		"OpenPaimon": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_PAIMEN"
-		},
-		"ToggleQuestBook": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TOGGLE_QUEST_BOOK"
-		},
-		"ToAvatar1": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR1"
-		},
-		"ToAvatar1TriggerSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR1_TRIGGER_SKILL"
-		},
-		"ToAvatar2": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR2"
-		},
-		"ToAvatar2TriggerSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR2_TRIGGER_SKILL"
-		},
-		"ToAvatar3": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR3"
-		},
-		"ToAvatar3TriggerSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR3_TRIGGER_SKILL"
-		},
-		"ToAvatar4": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR4"
-		},
-		"ToAvatar4TriggerSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR4_TRIGGER_SKILL"
-		},
-		"ToAvatar5": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR5"
-		},
-		"ToAvatar5TriggerSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TO_AVATAR5_TRIGGER_SKILL"
-		},
-		"ChangeWithSkill": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"WheelMenuTrigger": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_CHANGE_AVATAR_TRIGGER"
-		},
-		"Skill1": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_SKILL1"
-		},
-		"Skill2": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_SKILL2"
-		},
-		"SprintOrSkill3": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_SPRINT_OR_SKILL3"
-		},
-		"JumpOrSkill4": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_JUMP_OR_SKILL4"
-		},
-		"Skill5": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_SKILL5"
-		},
-		"ToggleAttackMode": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TOGGLE_ATTACK_MODE"
-		},
-		"EnterFocusMode": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_TOGGLE_ATTACK_MODE"
-		},
-		"TalkOrPick": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_PICK_TALK"
-		},
-		"LeftShoulder": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightShoulder": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"MenuBack": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"MenuConfirm": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"MenuLeft": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"MenuUp": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftStickLeft": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftStickRight": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftStickUp": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftStickDown": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftStickVertical": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"LeftStickHorizontal": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"LeftStickButton": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"DPadUp": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"DPadRight": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"DPadDown": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"DPadLeft": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"LeftTrigger": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"RightStickLeft": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightStickRight": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightStickUp": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightStickDown": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightTrigger": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"ZoomCamera": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"ResetCamera": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_ELEMENT_VIEW"
-		},
-		"SlowMove": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_SLOW_MOVE"
-		},
-		"Slip": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"DebugMenu": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"QuestTransport": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"RightStickVertical": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "OneAxisInput"
-		},
-		"RightStickButton": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"Help": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_HANDBOOK"
-		},
-		"Multiplayer": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_MULTIPLAYER"
-		},
-		"MenuRight": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"MenuDown": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput"
-		},
-		"OpenNotify": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_NOTIFY"
-		},
-		"OpenDungeonFactor": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_DUNGEON_FACTOR"
-		},
-		"OpenHandbook": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_HANDBOOK"
-		},
-    "TrackQuest": {
-      "$type": "ConfigBaseInputAction",
-      "valueType": "ButtonInput",
-      "descriptionTextID": "CONTROL_TRACK_QUEST"
+    "inputActions": {
+        "MoveForward": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_MOVE_FORWARD"
+        },
+        "MoveBackward": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_MOVE_BACKWARD"
+        },
+        "MoveLeft": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_MOVE_LEFT"
+        },
+        "MoveRight": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_MOVE_RIGHT"
+        },
+        "MoveHorizontal": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "MoveVertical": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "Move": {
+            "$type": "ConfigCompoundInputAction",
+            "valueType": "TwoAxisInput",
+            "descriptionTextID": "CONTROL_MOVE",
+            "action1": "MoveHorizontal",
+            "action2": "MoveVertical"
+        },
+        "ViewHorizontal": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "ViewVertical": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "ChangeView": {
+            "$type": "ConfigCompoundInputAction",
+            "valueType": "TwoAxisInput",
+            "descriptionTextID": "CONTROL_VIEW",
+            "action1": "ViewHorizontal",
+            "action2": "ViewVertical"
+        },
+        "OpenMap": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_MAP"
+        },
+        "OpenCharacter": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_CHARACTER"
+        },
+        "OpenBag": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_BAG"
+        },
+        "OpenChat": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_CHAT"
+        },
+        "OpenGacha": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_GACHA"
+        },
+        "OpenPaimon": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_PAIMEN"
+        },
+        "ToggleQuestBook": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TOGGLE_QUEST_BOOK"
+        },
+        "ToAvatar1": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR1"
+        },
+        "ToAvatar1TriggerSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR1_TRIGGER_SKILL"
+        },
+        "ToAvatar2": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR2"
+        },
+        "ToAvatar2TriggerSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR2_TRIGGER_SKILL"
+        },
+        "ToAvatar3": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR3"
+        },
+        "ToAvatar3TriggerSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR3_TRIGGER_SKILL"
+        },
+        "ToAvatar4": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR4"
+        },
+        "ToAvatar4TriggerSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR4_TRIGGER_SKILL"
+        },
+        "ToAvatar5": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR5"
+        },
+        "ToAvatar5TriggerSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TO_AVATAR5_TRIGGER_SKILL"
+        },
+        "ChangeWithSkill": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "WheelMenuTrigger": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_CHANGE_AVATAR_TRIGGER"
+        },
+        "Skill1": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_SKILL1"
+        },
+        "Skill2": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_SKILL2"
+        },
+        "SprintOrSkill3": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_SPRINT_OR_SKILL3"
+        },
+        "JumpOrSkill4": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_JUMP_OR_SKILL4"
+        },
+        "Skill5": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_SKILL5"
+        },
+        "ToggleAttackMode": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TOGGLE_ATTACK_MODE"
+        },
+        "EnterFocusMode": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TOGGLE_ATTACK_MODE"
+        },
+        "TalkOrPick": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_PICK_TALK"
+        },
+        "LeftShoulder": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightShoulder": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "MenuBack": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "MenuConfirm": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "MenuLeft": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "MenuUp": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftStickLeft": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftStickRight": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftStickUp": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftStickDown": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftStickVertical": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "LeftStickHorizontal": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "LeftStickButton": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "DPadUp": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "DPadRight": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "DPadDown": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "DPadLeft": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "LeftTrigger": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "RightStickLeft": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightStickRight": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightStickUp": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightStickDown": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightTrigger": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "ZoomCamera": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "ResetCamera": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_ELEMENT_VIEW"
+        },
+        "SlowMove": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_SLOW_MOVE"
+        },
+        "Slip": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "DebugMenu": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "QuestTransport": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "RightStickVertical": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "OneAxisInput"
+        },
+        "RightStickButton": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "Help": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_HANDBOOK"
+        },
+        "Multiplayer": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_MULTIPLAYER"
+        },
+        "MenuRight": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "MenuDown": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput"
+        },
+        "OpenNotify": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_NOTIFY"
+        },
+        "OpenDungeonFactor": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_DUNGEON_FACTOR"
+        },
+        "OpenHandbook": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_HANDBOOK"
+        },
+        "TrackQuest": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_TRACK_QUEST"
+        },
+        "OpenPushTips": {
+            "$type": "ConfigBaseInputAction",
+            "valueType": "ButtonInput",
+            "descriptionTextID": "CONTROL_OPEN_PUSHTIPS"
+        }
     },
-    "OpenPushTips": {
-			"$type": "ConfigBaseInputAction",
-			"valueType": "ButtonInput",
-			"descriptionTextID": "CONTROL_OPEN_PUSHTIPS"
-		}
-	},
-	"inputEvents": {
-		"MoveEvent": {
-			"actionType": "Move",
-			"actionEvent": "Any"
-		},
-		"ChangeViewEvent": {
-			"actionType": "ChangeView",
-			"actionEvent": "Any"
-		},
-		"OpenMapEvent": {
-			"actionType": "OpenMap",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenCharacterEvent": {
-			"actionType": "OpenCharacter",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenBagEvent": {
-			"actionType": "OpenBag",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenChatEvent": {
-			"actionType": "OpenChat",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenGachaEvent": {
-			"actionType": "OpenGacha",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenPaimonEvent": {
-			"actionType": "OpenPaimon",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToggleQuestBookEvent": {
-			"actionType": "ToggleQuestBook",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToAvatar1Event": {
-			"actionType": "ToAvatar1",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToAvatar2Event": {
-			"actionType": "ToAvatar2",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToAvatar3Event": {
-			"actionType": "ToAvatar3",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToAvatar4Event": {
-			"actionType": "ToAvatar4",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToAvatar5Event": {
-			"actionType": "ToAvatar5",
-			"actionEvent": "ButtonPressed"
-		},
-		"TriggerChangeWithSkillEvent": {
-			"actionType": "ChangeWithSkill",
-			"actionEvent": "ButtonPressed"
-		},
-		"CancelChangeWithSkillEvent": {
-			"actionType": "ChangeWithSkill",
-			"actionEvent": "ButtonReleased"
-		},
-		"TriggerWheelMenuEvent": {
-			"actionType": "WheelMenuTrigger",
-			"actionEvent": "ButtonPressed"
-		},
-		"CloseWheelMenuEvent": {
-			"actionType": "WheelMenuTrigger",
-			"actionEvent": "ButtonUnpressing"
-		},
-		"TriggerSkill1Event": {
-			"actionType": "Skill1",
-			"actionEvent": "ButtonPressed"
-		},
-		"TriggerSkill2Event": {
-			"actionType": "Skill2",
-			"actionEvent": "ButtonPressed"
-		},
-		"TriggerSkill3Event": {
-			"actionType": "SprintOrSkill3",
-			"actionEvent": "ButtonPressed"
-		},
-		"TriggerSkill4Event": {
-			"actionType": "JumpOrSkill4",
-			"actionEvent": "ButtonPressed"
-		},
-		"TriggerSkill5Event": {
-			"actionType": "Skill5",
-			"actionEvent": "ButtonPressed"
-		},
-		"SelectingEvent": {
-			"actionType": "Skill5",
-			"actionEvent": "ButtonPressing"
-		},
-		"CancelSelectingEvent": {
-			"actionType": "Skill5",
-			"actionEvent": "ButtonReleased"
-		},
-		"ReleaseSkill1Event": {
-			"actionType": "Skill1",
-			"actionEvent": "ButtonReleased"
-		},
-		"ReleaseSkill2Event": {
-			"actionType": "Skill2",
-			"actionEvent": "ButtonReleased"
-		},
-		"ReleaseSkill3Event": {
-			"actionType": "SprintOrSkill3",
-			"actionEvent": "ButtonReleased"
-		},
-		"ReleaseSkill4Event": {
-			"actionType": "JumpOrSkill4",
-			"actionEvent": "ButtonReleased"
-		},
-		"ReleaseSkill5Event": {
-			"actionType": "Skill5",
-			"actionEvent": "ButtonReleased"
-		},
-		"ToggleAttackModeEvent": {
-			"actionType": "ToggleAttackMode",
-			"actionEvent": "ButtonPressed"
-		},
-		"EnterFocusModeEvent": {
-			"actionType": "EnterFocusMode",
-			"actionEvent": "ButtonPressed"
-		},
-		"ExitFocusModeEvent": {
-			"actionType": "EnterFocusMode",
-			"actionEvent": "ButtonReleased"
-		},
-		"TalkOrPickEvent": {
-			"actionType": "TalkOrPick",
-			"actionEvent": "ButtonPressed"
-		},
-		"LeftShoulderEvent": {
-			"actionType": "LeftShoulder",
-			"actionEvent": "ButtonPressed"
-		},
-		"RightShoulderEvent": {
-			"actionType": "RightShoulder",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuBackEvent": {
-			"actionType": "MenuBack",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuBackingEvent": {
-			"actionType": "MenuBack",
-			"actionEvent": "ButtonPressing"
-		},
-		"MenuBackingCancelEvent": {
-			"actionType": "MenuBack",
-			"actionEvent": "ButtonReleased"
-		},
-		"MenuConfirmEvent": {
-			"actionType": "MenuConfirm",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuConfirmingEvent": {
-			"actionType": "MenuConfirm",
-			"actionEvent": "ButtonPressing"
-		},
-		"MenuConfirmingCancelEvent": {
-			"actionType": "MenuConfirm",
-			"actionEvent": "ButtonReleased"
-		},
-		"MenuLeftEvent": {
-			"actionType": "MenuLeft",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuLeftPressingEvent": {
-			"actionType": "MenuLeft",
-			"actionEvent": "ButtonPressing"
-		},
-		"MenuLeftJustReleasedEvent": {
-			"actionType": "MenuLeft",
-			"actionEvent": "ButtonReleased"
-		},
-		"MenuUpEvent": {
-			"actionType": "MenuUp",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuRightEvent": {
-			"actionType": "MenuRight",
-			"actionEvent": "ButtonPressed"
-		},
-		"MenuDownEvent": {
-			"actionType": "MenuDown",
-			"actionEvent": "ButtonPressed"
-		},
-		"LeftStickLeftEvent": {
-			"actionType": "LeftStickLeft",
-			"actionEvent": "ButtonRepeating"
-		},
-		"LeftStickRightEvent": {
-			"actionType": "LeftStickRight",
-			"actionEvent": "ButtonRepeating"
-		},
-		"LeftStickUpEvent": {
-			"actionType": "LeftStickUp",
-			"actionEvent": "ButtonRepeating"
-		},
-		"LeftStickDownEvent": {
-			"actionType": "LeftStickDown",
-			"actionEvent": "ButtonRepeating"
-		},
-		"LeftStickVerticalEvent": {
-			"actionType": "LeftStickVertical",
-			"actionEvent": "AxisActive"
-		},
-		"LeftStickHorizontalEvent": {
-			"actionType": "LeftStickHorizontal",
-			"actionEvent": "AxisActive"
-		},
-		"LeftStickButtonEvent": {
-			"actionType": "LeftStickButton",
-			"actionEvent": "ButtonPressed"
-		},
-		"DPadUpEvent": {
-			"actionType": "DPadUp",
-			"actionEvent": "ButtonPressed"
-		},
-		"DPadRightEvent": {
-			"actionType": "DPadRight",
-			"actionEvent": "ButtonPressed"
-		},
-		"DPadDownEvent": {
-			"actionType": "DPadDown",
-			"actionEvent": "ButtonPressed"
-		},
-		"DPadLeftEvent": {
-			"actionType": "DPadLeft",
-			"actionEvent": "ButtonPressed"
-		},
-		"DPadUpReleaseEvent": {
-			"actionType": "DPadUp",
-			"actionEvent": "ButtonReleased"
-		},
-		"DPadRightReleaseEvent": {
-			"actionType": "DPadRight",
-			"actionEvent": "ButtonReleased"
-		},
-		"DPadDownReleaseEvent": {
-			"actionType": "DPadDown",
-			"actionEvent": "ButtonReleased"
-		},
-		"DPadLeftReleaseEvent": {
-			"actionType": "DPadLeft",
-			"actionEvent": "ButtonReleased"
-		},
-		"LeftTriggerEvent": {
-			"actionType": "LeftTrigger",
-			"actionEvent": "ButtonPressed"
-		},
-		"LeftTriggerAxisEvent": {
-			"actionType": "LeftTrigger",
-			"actionEvent": "AxisActive"
-		},
-		"LeftTriggerReleaseEvent": {
-			"actionType": "LeftTrigger",
-			"actionEvent": "ButtonReleased"
-		},
-		"RightTriggerEvent": {
-			"actionType": "RightTrigger",
-			"actionEvent": "ButtonPressed"
-		},
-		"RightTriggerAxisEvent": {
-			"actionType": "RightTrigger",
-			"actionEvent": "AxisActive"
-		},
-		"RightTriggerReleaseEvent": {
-			"actionType": "RightTrigger",
-			"actionEvent": "ButtonReleased"
-		},
-		"ZoomCameraEvent": {
-			"actionType": "ZoomCamera",
-			"actionEvent": "Any"
-		},
-		"ResetCameraEvent": {
-			"actionType": "ResetCamera",
-			"actionEvent": "ButtonShortPressUp"
-		},
-		"EnterElementViewEvent": {
-			"actionType": "ResetCamera",
-			"actionEvent": "ButtonLongPressed"
-		},
-		"ExitElementViewEvent": {
-			"actionType": "ResetCamera",
-			"actionEvent": "ButtonLongReleased"
-		},
-		"ToggleSlowMoveEvent": {
-			"actionType": "SlowMove",
-			"actionEvent": "ButtonShortPressUp"
-		},
-		"ToggleSlowMoveTempEvent": {
-			"actionType": "SlowMove",
-			"actionEvent": "ButtonLongPressed"
-		},
-		"ResetTempSlowMoveEvent": {
-			"actionType": "SlowMove",
-			"actionEvent": "ButtonLongReleased"
-		},
-		"SlipEvent": {
-			"actionType": "Slip",
-			"actionEvent": "ButtonPressed"
-		},
-		"DebugMenuEvent": {
-			"actionType": "DebugMenu",
-			"actionEvent": "ButtonPressed"
-		},
-		"QuestTransportEvent": {
-			"actionType": "QuestTransport",
-			"actionEvent": "ButtonPressed"
-		},
-		"RightStickVerticalEvent": {
-			"actionType": "RightStickVertical",
-			"actionEvent": "AxisActive"
-		},
-		"RightStickButtonEvent": {
-			"actionType": "RightStickButton",
-			"actionEvent": "ButtonPressed"
-		},
-		"RightStickLeftEvent": {
-			"actionType": "RightStickLeft",
-			"actionEvent": "ButtonRepeating"
-		},
-		"RightStickRightEvent": {
-			"actionType": "RightStickRight",
-			"actionEvent": "ButtonRepeating"
-		},
-		"HelpEvent": {
-			"actionType": "Help",
-			"actionEvent": "ButtonPressed"
-		},
-		"MultiplayerEvent": {
-			"actionType": "Multiplayer",
-			"actionEvent": "ButtonPressed"
-		},
-		"ToPrevInteeEvent": {
-			"actionType": "ZoomCamera",
-			"actionEvent": "ButtonRepeating"
-		},
-		"ToNextInteeEvent": {
-			"actionType": "ZoomCamera",
-			"actionEvent": "NegativeButtonRepeating"
-		},
-		"OpenNotifyEvent": {
-			"actionType": "OpenNotify",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenDungeonFactorEvent": {
-			"actionType": "OpenDungeonFactor",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenHandbookEvent": {
-			"actionType": "OpenHandbook",
-			"actionEvent": "ButtonPressed"
-		},
-    "TrackQuestEvent": {
-      "actionType": "TrackQuest",
-      "actionEvent": "ButtonPressed"
+    "inputEvents": {
+        "MoveEvent": {
+            "actionType": "Move",
+            "actionEvent": "Any"
+        },
+        "ChangeViewEvent": {
+            "actionType": "ChangeView",
+            "actionEvent": "Any"
+        },
+        "OpenMapEvent": {
+            "actionType": "OpenMap",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenCharacterEvent": {
+            "actionType": "OpenCharacter",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenBagEvent": {
+            "actionType": "OpenBag",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenChatEvent": {
+            "actionType": "OpenChat",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenGachaEvent": {
+            "actionType": "OpenGacha",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenPaimonEvent": {
+            "actionType": "OpenPaimon",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToggleQuestBookEvent": {
+            "actionType": "ToggleQuestBook",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToAvatar1Event": {
+            "actionType": "ToAvatar1",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToAvatar2Event": {
+            "actionType": "ToAvatar2",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToAvatar3Event": {
+            "actionType": "ToAvatar3",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToAvatar4Event": {
+            "actionType": "ToAvatar4",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToAvatar5Event": {
+            "actionType": "ToAvatar5",
+            "actionEvent": "ButtonPressed"
+        },
+        "TriggerChangeWithSkillEvent": {
+            "actionType": "ChangeWithSkill",
+            "actionEvent": "ButtonPressed"
+        },
+        "CancelChangeWithSkillEvent": {
+            "actionType": "ChangeWithSkill",
+            "actionEvent": "ButtonReleased"
+        },
+        "TriggerWheelMenuEvent": {
+            "actionType": "WheelMenuTrigger",
+            "actionEvent": "ButtonPressed"
+        },
+        "CloseWheelMenuEvent": {
+            "actionType": "WheelMenuTrigger",
+            "actionEvent": "ButtonUnpressing"
+        },
+        "TriggerSkill1Event": {
+            "actionType": "Skill1",
+            "actionEvent": "ButtonPressed"
+        },
+        "TriggerSkill2Event": {
+            "actionType": "Skill2",
+            "actionEvent": "ButtonPressed"
+        },
+        "TriggerSkill3Event": {
+            "actionType": "SprintOrSkill3",
+            "actionEvent": "ButtonPressed"
+        },
+        "TriggerSkill4Event": {
+            "actionType": "JumpOrSkill4",
+            "actionEvent": "ButtonPressed"
+        },
+        "TriggerSkill5Event": {
+            "actionType": "Skill5",
+            "actionEvent": "ButtonPressed"
+        },
+        "SelectingEvent": {
+            "actionType": "Skill5",
+            "actionEvent": "ButtonPressing"
+        },
+        "CancelSelectingEvent": {
+            "actionType": "Skill5",
+            "actionEvent": "ButtonReleased"
+        },
+        "ReleaseSkill1Event": {
+            "actionType": "Skill1",
+            "actionEvent": "ButtonReleased"
+        },
+        "ReleaseSkill2Event": {
+            "actionType": "Skill2",
+            "actionEvent": "ButtonReleased"
+        },
+        "ReleaseSkill3Event": {
+            "actionType": "SprintOrSkill3",
+            "actionEvent": "ButtonReleased"
+        },
+        "ReleaseSkill4Event": {
+            "actionType": "JumpOrSkill4",
+            "actionEvent": "ButtonReleased"
+        },
+        "ReleaseSkill5Event": {
+            "actionType": "Skill5",
+            "actionEvent": "ButtonReleased"
+        },
+        "ToggleAttackModeEvent": {
+            "actionType": "ToggleAttackMode",
+            "actionEvent": "ButtonPressed"
+        },
+        "EnterFocusModeEvent": {
+            "actionType": "EnterFocusMode",
+            "actionEvent": "ButtonPressed"
+        },
+        "ExitFocusModeEvent": {
+            "actionType": "EnterFocusMode",
+            "actionEvent": "ButtonReleased"
+        },
+        "TalkOrPickEvent": {
+            "actionType": "TalkOrPick",
+            "actionEvent": "ButtonPressed"
+        },
+        "LeftShoulderEvent": {
+            "actionType": "LeftShoulder",
+            "actionEvent": "ButtonPressed"
+        },
+        "RightShoulderEvent": {
+            "actionType": "RightShoulder",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuBackEvent": {
+            "actionType": "MenuBack",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuBackingEvent": {
+            "actionType": "MenuBack",
+            "actionEvent": "ButtonPressing"
+        },
+        "MenuBackingCancelEvent": {
+            "actionType": "MenuBack",
+            "actionEvent": "ButtonReleased"
+        },
+        "MenuConfirmEvent": {
+            "actionType": "MenuConfirm",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuConfirmingEvent": {
+            "actionType": "MenuConfirm",
+            "actionEvent": "ButtonPressing"
+        },
+        "MenuConfirmingCancelEvent": {
+            "actionType": "MenuConfirm",
+            "actionEvent": "ButtonReleased"
+        },
+        "MenuLeftEvent": {
+            "actionType": "MenuLeft",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuLeftPressingEvent": {
+            "actionType": "MenuLeft",
+            "actionEvent": "ButtonPressing"
+        },
+        "MenuLeftJustReleasedEvent": {
+            "actionType": "MenuLeft",
+            "actionEvent": "ButtonReleased"
+        },
+        "MenuUpEvent": {
+            "actionType": "MenuUp",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuRightEvent": {
+            "actionType": "MenuRight",
+            "actionEvent": "ButtonPressed"
+        },
+        "MenuDownEvent": {
+            "actionType": "MenuDown",
+            "actionEvent": "ButtonPressed"
+        },
+        "LeftStickLeftEvent": {
+            "actionType": "LeftStickLeft",
+            "actionEvent": "ButtonRepeating"
+        },
+        "LeftStickRightEvent": {
+            "actionType": "LeftStickRight",
+            "actionEvent": "ButtonRepeating"
+        },
+        "LeftStickUpEvent": {
+            "actionType": "LeftStickUp",
+            "actionEvent": "ButtonRepeating"
+        },
+        "LeftStickDownEvent": {
+            "actionType": "LeftStickDown",
+            "actionEvent": "ButtonRepeating"
+        },
+        "LeftStickVerticalEvent": {
+            "actionType": "LeftStickVertical",
+            "actionEvent": "AxisActive"
+        },
+        "LeftStickHorizontalEvent": {
+            "actionType": "LeftStickHorizontal",
+            "actionEvent": "AxisActive"
+        },
+        "LeftStickButtonEvent": {
+            "actionType": "LeftStickButton",
+            "actionEvent": "ButtonPressed"
+        },
+        "DPadUpEvent": {
+            "actionType": "DPadUp",
+            "actionEvent": "ButtonPressed"
+        },
+        "DPadRightEvent": {
+            "actionType": "DPadRight",
+            "actionEvent": "ButtonPressed"
+        },
+        "DPadDownEvent": {
+            "actionType": "DPadDown",
+            "actionEvent": "ButtonPressed"
+        },
+        "DPadLeftEvent": {
+            "actionType": "DPadLeft",
+            "actionEvent": "ButtonPressed"
+        },
+        "DPadUpReleaseEvent": {
+            "actionType": "DPadUp",
+            "actionEvent": "ButtonReleased"
+        },
+        "DPadRightReleaseEvent": {
+            "actionType": "DPadRight",
+            "actionEvent": "ButtonReleased"
+        },
+        "DPadDownReleaseEvent": {
+            "actionType": "DPadDown",
+            "actionEvent": "ButtonReleased"
+        },
+        "DPadLeftReleaseEvent": {
+            "actionType": "DPadLeft",
+            "actionEvent": "ButtonReleased"
+        },
+        "LeftTriggerEvent": {
+            "actionType": "LeftTrigger",
+            "actionEvent": "ButtonPressed"
+        },
+        "LeftTriggerAxisEvent": {
+            "actionType": "LeftTrigger",
+            "actionEvent": "AxisActive"
+        },
+        "LeftTriggerReleaseEvent": {
+            "actionType": "LeftTrigger",
+            "actionEvent": "ButtonReleased"
+        },
+        "RightTriggerEvent": {
+            "actionType": "RightTrigger",
+            "actionEvent": "ButtonPressed"
+        },
+        "RightTriggerAxisEvent": {
+            "actionType": "RightTrigger",
+            "actionEvent": "AxisActive"
+        },
+        "RightTriggerReleaseEvent": {
+            "actionType": "RightTrigger",
+            "actionEvent": "ButtonReleased"
+        },
+        "ZoomCameraEvent": {
+            "actionType": "ZoomCamera",
+            "actionEvent": "Any"
+        },
+        "ResetCameraEvent": {
+            "actionType": "ResetCamera",
+            "actionEvent": "ButtonShortPressUp"
+        },
+        "EnterElementViewEvent": {
+            "actionType": "ResetCamera",
+            "actionEvent": "ButtonLongPressed"
+        },
+        "ExitElementViewEvent": {
+            "actionType": "ResetCamera",
+            "actionEvent": "ButtonLongReleased"
+        },
+        "ToggleSlowMoveEvent": {
+            "actionType": "SlowMove",
+            "actionEvent": "ButtonShortPressUp"
+        },
+        "ToggleSlowMoveTempEvent": {
+            "actionType": "SlowMove",
+            "actionEvent": "ButtonLongPressed"
+        },
+        "ResetTempSlowMoveEvent": {
+            "actionType": "SlowMove",
+            "actionEvent": "ButtonLongReleased"
+        },
+        "SlipEvent": {
+            "actionType": "Slip",
+            "actionEvent": "ButtonPressed"
+        },
+        "DebugMenuEvent": {
+            "actionType": "DebugMenu",
+            "actionEvent": "ButtonPressed"
+        },
+        "QuestTransportEvent": {
+            "actionType": "QuestTransport",
+            "actionEvent": "ButtonPressed"
+        },
+        "RightStickVerticalEvent": {
+            "actionType": "RightStickVertical",
+            "actionEvent": "AxisActive"
+        },
+        "RightStickButtonEvent": {
+            "actionType": "RightStickButton",
+            "actionEvent": "ButtonPressed"
+        },
+        "RightStickLeftEvent": {
+            "actionType": "RightStickLeft",
+            "actionEvent": "ButtonRepeating"
+        },
+        "RightStickRightEvent": {
+            "actionType": "RightStickRight",
+            "actionEvent": "ButtonRepeating"
+        },
+        "HelpEvent": {
+            "actionType": "Help",
+            "actionEvent": "ButtonPressed"
+        },
+        "MultiplayerEvent": {
+            "actionType": "Multiplayer",
+            "actionEvent": "ButtonPressed"
+        },
+        "ToPrevInteeEvent": {
+            "actionType": "ZoomCamera",
+            "actionEvent": "ButtonRepeating"
+        },
+        "ToNextInteeEvent": {
+            "actionType": "ZoomCamera",
+            "actionEvent": "NegativeButtonRepeating"
+        },
+        "OpenNotifyEvent": {
+            "actionType": "OpenNotify",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenDungeonFactorEvent": {
+            "actionType": "OpenDungeonFactor",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenHandbookEvent": {
+            "actionType": "OpenHandbook",
+            "actionEvent": "ButtonPressed"
+        },
+        "TrackQuestEvent": {
+            "actionType": "TrackQuest",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenPushTipsEvent": {
+            "actionType": "OpenPushTips",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenChatJoystickEvent": {
+            "actionType": "OpenChat",
+            "actionEvent": "ButtonPressed"
+        },
+        "OpenChatCancelJoystickEvent": {
+            "actionType": "OpenChat",
+            "actionEvent": "ButtonReleased"
+        }
     },
-    "OpenPushTipsEvent": {
-			"actionType": "OpenPushTips",
-			"actionEvent": "ButtonPressed"
-		},
-
-		"OpenChatJoystickEvent": {
-			"actionType": "OpenChat",
-			"actionEvent": "ButtonPressed"
-		},
-		"OpenChatCancelJoystickEvent":{
-			"actionType": "OpenChat",
-			"actionEvent": "ButtonReleased"
-		}
-	},
-	"actionGroups": {
-		"TabMenu": [
-			{
-				"contextEvent": "ConfirmEvent",
-				"eventType": "MenuConfirmEvent",
-				"priority": 0
-			},
-			{
-				"eventType": "MenuLeftEvent",
-				"priority": 0
-			},
-			{
-				"eventType": "LeftShoulderEvent",
-				"priority": 0
-			},
-			{
-				"eventType": "RightShoulderEvent",
-				"priority": 0
-			},
-			{
-				"eventType": "LeftStickUpEvent",
-				"priority": 1
-			},
-			{
-				"eventType": "LeftStickDownEvent",
-				"priority": 2
-			},
-			{
-				"eventType": "LeftStickLeftEvent",
-				"priority": 3
-			},
-			{
-				"eventType": "LeftStickRightEvent",
-				"priority": 4
-			},
-			{
-				"eventType": "MoveEvent",
-				"priority": 5
-			},
-			{
-				"eventType": "ChangeViewEvent",
-				"priority": 6
-			},
-			{
-				"eventType": "LeftTriggerEvent",
-				"priority": 7
-			},
-			{
-				"eventType": "RightTriggerEvent",
-				"priority": 8
-			},
-			{
-				"eventType": "MenuBackEvent",
-				"priority": 9
-			}
-		],
-		"WheelMenu": [
-			{
-				"contextEvent": "ToAvatar1Event",
-				"eventType": "MenuUpEvent"
-			},
-			{
-				"contextEvent": "ToAvatar2Event",
-				"eventType": "MenuRightEvent"
-			},
-			{
-				"contextEvent": "ToAvatar3Event",
-				"eventType": "MenuDownEvent"
-			},
-			{
-				"contextEvent": "ToAvatar4Event",
-				"eventType": "MenuLeftEvent"
-			},
-			{
-				"eventType": "CloseWheelMenuEvent"
-			},
-			{
-				"eventType": "ChangeViewEvent"
-			}
-		],
-		"SimpleMenu": [
-			{
-				"contextEvent": "ConfirmEvent",
-				"eventType": "MenuConfirmEvent"
-			},
-			{
-				"contextEvent": "BackEvent",
-				"eventType": "MenuBackEvent"
-			}
-		],
-		"NotifyBanner": [
-			{
-				"contextEvent": "ConfirmEvent",
-				"eventType": "OpenNotifyEvent"
-			}
-		]
-	},
-	"inputModes": {
-		"TabMenu": {
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "TabMenu",
-					"keyboardMouse": "TabMenu",
-					"joypad": "TabMenu"
-				}
-			}
-		},
-		"WheelMenu": {
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "WheelMenu",
-					"keyboardMouse": "WheelMenu",
-					"joypad": "WheelMenu"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"None": {
-			"enableInputPenetrate": true,
-			"enableJoypadVirtualCursor": false
-		},
-		"Block": {
-			"enableJoypadVirtualCursor": false
-		},
-		"SimpleMenu": {
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "SimpleMenu",
-					"keyboardMouse": "SimpleMenu",
-					"joypad": "SimpleMenu"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		}
-	},
-	"joypadChangeViewScale": {
-		"x": 0.8,
-		"y": 0.82
-	},
-	"joypadSenseScales": [0.8, 0.9, 1.0, 1.5, 2 ],
-	"joypadFocusSenseScales": [ 0.8, 0.9, 1.0, 1.1, 1.25 ],
-	"mouseSenseScales": [0.25, 0.5, 0.75, 0.9, 1.05 ],
-	"mouseFocusSenseScales": [ 0.4, 0.7, 1.0, 1.2, 1.4 ],
-	"touchpadSenseScales": [0.75, 0.88, 1.0, 1.12, 1.25 ],
-	"touchpadFocusSenseScales": [0.75, 0.88, 1.0, 1.12, 1.25 ],
-	
-	"joypadLongPressDuration": 1.0
+    "actionGroups": {
+        "TabMenu": [
+            {
+                "contextEvent": "ConfirmEvent",
+                "eventType": "MenuConfirmEvent",
+                "priority": 0
+            },
+            {
+                "eventType": "MenuLeftEvent",
+                "priority": 0
+            },
+            {
+                "eventType": "LeftShoulderEvent",
+                "priority": 0
+            },
+            {
+                "eventType": "RightShoulderEvent",
+                "priority": 0
+            },
+            {
+                "eventType": "LeftStickUpEvent",
+                "priority": 1
+            },
+            {
+                "eventType": "LeftStickDownEvent",
+                "priority": 2
+            },
+            {
+                "eventType": "LeftStickLeftEvent",
+                "priority": 3
+            },
+            {
+                "eventType": "LeftStickRightEvent",
+                "priority": 4
+            },
+            {
+                "eventType": "MoveEvent",
+                "priority": 5
+            },
+            {
+                "eventType": "ChangeViewEvent",
+                "priority": 6
+            },
+            {
+                "eventType": "LeftTriggerEvent",
+                "priority": 7
+            },
+            {
+                "eventType": "RightTriggerEvent",
+                "priority": 8
+            },
+            {
+                "eventType": "MenuBackEvent",
+                "priority": 9
+            }
+        ],
+        "WheelMenu": [
+            {
+                "contextEvent": "ToAvatar1Event",
+                "eventType": "MenuUpEvent"
+            },
+            {
+                "contextEvent": "ToAvatar2Event",
+                "eventType": "MenuRightEvent"
+            },
+            {
+                "contextEvent": "ToAvatar3Event",
+                "eventType": "MenuDownEvent"
+            },
+            {
+                "contextEvent": "ToAvatar4Event",
+                "eventType": "MenuLeftEvent"
+            },
+            {
+                "eventType": "CloseWheelMenuEvent"
+            },
+            {
+                "eventType": "ChangeViewEvent"
+            }
+        ],
+        "SimpleMenu": [
+            {
+                "contextEvent": "ConfirmEvent",
+                "eventType": "MenuConfirmEvent"
+            },
+            {
+                "contextEvent": "BackEvent",
+                "eventType": "MenuBackEvent"
+            }
+        ],
+        "NotifyBanner": [
+            {
+                "contextEvent": "ConfirmEvent",
+                "eventType": "OpenNotifyEvent"
+            }
+        ]
+    },
+    "inputModes": {
+        "TabMenu": {
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "TabMenu",
+                    "keyboardMouse": "TabMenu",
+                    "joypad": "TabMenu"
+                }
+            }
+        },
+        "WheelMenu": {
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "WheelMenu",
+                    "keyboardMouse": "WheelMenu",
+                    "joypad": "WheelMenu"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "None": {
+            "enableInputPenetrate": true,
+            "enableJoypadVirtualCursor": false
+        },
+        "Block": {
+            "enableJoypadVirtualCursor": false
+        },
+        "SimpleMenu": {
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "SimpleMenu",
+                    "keyboardMouse": "SimpleMenu",
+                    "joypad": "SimpleMenu"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    },
+    "joypadChangeViewScale": {
+        "x": 0.8,
+        "y": 0.82
+    },
+    "joypadSenseScales": [
+        0.8,
+        0.9,
+        1.0,
+        1.5,
+        2
+    ],
+    "joypadFocusSenseScales": [
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.25
+    ],
+    "mouseSenseScales": [
+        0.25,
+        0.5,
+        0.75,
+        0.9,
+        1.05
+    ],
+    "mouseFocusSenseScales": [
+        0.4,
+        0.7,
+        1.0,
+        1.2,
+        1.4
+    ],
+    "touchpadSenseScales": [
+        0.75,
+        0.88,
+        1.0,
+        1.12,
+        1.25
+    ],
+    "touchpadFocusSenseScales": [
+        0.75,
+        0.88,
+        1.0,
+        1.12,
+        1.25
+    ],
+    "joypadLongPressDuration": 1.0
 }

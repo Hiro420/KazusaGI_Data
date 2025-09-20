@@ -1,63 +1,63 @@
 {
-  "id": 20507,
-  "type": "WQ",
-  "title": 1312342369,
-  "showType": "QUEST_HIDDEN",
-  "subQuests": [
-    {
-      "subId": 2050701,
-      "mainId": 20507,
-      "order": 1,
-      "showType": "QUEST_HIDDEN",
-      "finishCond": [
+    "id": 20507,
+    "type": "WQ",
+    "title": 1312342369,
+    "showType": "QUEST_HIDDEN",
+    "subQuests": [
         {
-          "type": "QUEST_CONTENT_UNLOCK_TRANS_POINT",
-          "param": [
-            3,
-            10
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 2050702,
-      "mainId": 20507,
-      "order": 2,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
+            "subId": 2050701,
+            "mainId": 20507,
+            "order": 1,
+            "showType": "QUEST_HIDDEN",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_UNLOCK_TRANS_POINT",
+                    "param": [
+                        3,
+                        10
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            2050701,
-            3,
-            0
-          ]
+            "subId": 2050702,
+            "mainId": 20507,
+            "order": 2,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        2050701,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        2050702,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            2050702,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true
-    }
-  ]
+    ]
 }

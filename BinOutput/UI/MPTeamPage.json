@@ -1,99 +1,212 @@
 {
-	"context": {
-    "MPTeamPage": {
-      "actionGroups": {
-        "Default": [
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-          {"contextEvent": "OpenChatEvent", "eventType": "MenuLeftEvent", "priority": 2},
-          {"contextEvent": "ToPrevTabEvent", "eventType": "LeftStickLeftEvent", "priority": 10},
-          {"contextEvent": "ToNextTabEvent", "eventType": "LeftStickRightEvent", "priority": 10},
-          {"contextEvent": "CommonLeftStickButtonEvent", "eventType": "LeftStickButtonEvent", "priority": 10},
-          {"contextEvent": "ChangeTeamEvent", "eventType": "MenuUpEvent", "priority": 10}
-        ],
-        "Avatar": [
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1},
-          {"contextEvent": "UIDetails", "eventType": "MenuLeftEvent", "priority": 1},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-          {"contextEvent": "SubmitFastTeamSelect", "eventType": "MenuLeftEvent", "priority": 1},
-
-          {"contextEvent": "OpenScreenDropdownEvent", "eventType": "DPadLeftEvent", "priority": 1},
-          {"contextEvent": "OpenSortingDropdownEvent", "eventType": "DPadDownEvent", "priority": 1},
-          {"contextEvent": "RevertSortingOrderEvent", "eventType": "DPadRightEvent", "priority": 1},
-
-          {"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 11},
-          {"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 11},
-          {"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent", "priority": 11},
-          {"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent", "priority": 11}
-        ],
-        "Dropdown": [
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-          {"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-          {"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"}
-        ],
-        "Invalid": [
-        ]
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
+    "context": {
+        "MPTeamPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "OpenChatEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickButtonEvent",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ChangeTeamEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 10
+                    }
+                ],
+                "Avatar": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "SubmitFastTeamSelect",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "OpenScreenDropdownEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "OpenSortingDropdownEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "RevertSortingOrderEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 11
+                    }
+                ],
+                "Dropdown": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    }
+                ],
+                "Invalid": []
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                },
+                "1": {
+                    "keyboardTouch": "Avatar",
+                    "keyboardMouse": "Avatar",
+                    "joypad": "Avatar"
+                },
+                "2": {
+                    "keyboardTouch": "Dropdown",
+                    "keyboardMouse": "Dropdown",
+                    "joypad": "Dropdown"
+                },
+                "101": {
+                    "keyboardTouch": "Invalid",
+                    "keyboardMouse": "Invalid",
+                    "joypad": "Invalid"
+                }
+            },
+            "enableJoypadVirtualCursor": false
         },
-        "1": {
-          "keyboardTouch": "Avatar",
-          "keyboardMouse": "Avatar",
-          "joypad": "Avatar"
+        "DungeonInvitationDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 10
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
         },
-        "2": {
-          "keyboardTouch": "Dropdown",
-          "keyboardMouse": "Dropdown",
-          "joypad": "Dropdown"
-        },
-        "101": {
-          "keyboardTouch": "Invalid",
-          "keyboardMouse": "Invalid",
-          "joypad": "Invalid"
-        },
-      },
-      "enableJoypadVirtualCursor": false
-    },
-    "DungeonInvitationDialog":{
-    "actionGroups": {
-        "Default": [
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 10},
-          {"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 10}
-        ],
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        },
-      },
-      "enableJoypadVirtualCursor": false
-    },
-    "DungeonDetailDialog":{
-    "actionGroups": {
-        "Default": [
-          {"contextEvent": "UIDetails", "eventType": "RightStickButtonEvent", "priority": 1},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-          {"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 10},
-          {"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 10}
-        ],
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        },
-      },
-      "enableJoypadVirtualCursor": false
+        "DungeonDetailDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 10
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
     }
-	}
 }

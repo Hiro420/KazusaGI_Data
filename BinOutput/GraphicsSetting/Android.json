@@ -1,474 +1,464 @@
 {
-	"settingEntry": [
-		{
-			"entryType": "RenderResolution"
-		},
-		{
-			"entryType": "ShadowQuality",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "PostprocessEffect",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "ParticleEffect",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		},
-		{
-			"entryType": "ComprehensiveQuality",
-			"availableOptions": [
-				"Low",
-				"Medium",
-				"High"
-			]
-		}
-	],
-	"postprocessEffectOptions": {
-		"Default": {
-			"useHalfShadows": true,
-			"useShadowCache": true,
-			"checkboardType": "None",
-			"aoMode": "Disable",
-			"enableMotionBlur": true
-		},
-		"Low": {
-			"enableMotionBlur": false,
-			"checkboardType": "LineHalf"
-		},
-		"Medium": {},
-		"High": {
-			"checkboardType": "None",
-			"aoMode": "SSAO",
-			"enableMotionBlur": true
-		}
-	},
-	"particleEffectOptions": {
-		"Default": {
-			"halfResolutionParticle": true,
-			"particleEmitLevel": "Middle"
-		},
-		"Low": {
-			"halfResolutionParticle": true,
-			"particleEmitLevel": "Low"
-		},
-		"Medium": {},
-		"High": {}
-	},
-	"comprehensiveQualityOptions": {
-		"Low": {
-			"shaderQualityKeyword": "MHY_SHADER_MIDDLE"
-		},
-		"Medium": {
-			"shaderQualityKeyword": "MHY_SHADER_MIDDLE"
-		},
-		"High": {
-			"shaderQualityKeyword": "MHY_SHADER_HIGH"
-		}
-	},
-	"candidateVolatile": [
-		"VeryLow",
-		"Low",
-		"Middle",
-		"High",
-		"Topmost"
-	],
-	"volatileSettings": {
-		"Default": {
-			"frameRateGrade": 1,
-			"renderResolutionGrade": 2,
-			"shadowQualityGrade": 2,
-			"postprocessEffectGrade": 2,
-			"particleEffectGrade": 1,
-			"comprehensiveQualityGrade": 2
-		},
-		"Topmost": {
-			"postprocessEffectGrade": 3,
-			"renderResolutionGrade": 3,
-			"shadowQualityGrade": 3,
-			"particleEffectGrade": 2,
-			"comprehensiveQualityGrade": 3
-		},
-		"High": {
-			"postprocessEffectGrade": 3,
-			"particleEffectGrade": 2
-		},
-		"Middle": {},
-		"Low": {
-			"renderResolutionGrade": 1,
-			"comprehensiveQualityGrade": 1,
-			"shadowQualityGrade": 1
-		},
-		"VeryLow": {
-			"comprehensiveQualityGrade": 1,
-			"renderResolutionGrade": 1,
-			"shadowQualityGrade": 1
-		},
-		"Off": {}
-	},
-	"deviceSettings": {
-		"Default": {
-			"qualityLevel": "Beautiful",
-			"levelStreamingConfig": "AndroidDefault",
-			"entityLODConfig": "Android_Low",
-			"lightOnLevel": "Middle",
-			"avatarOutlineThresh": 15,
-			"avatarShadowThresh": 25,
-			"avatarMotionVectorThresh": 30,
-			"TerrainGrassScaleFactor ": 0.8,
-			"defaultVolatileGrade": 2,
-			"textureStreamingBudget": 130.0,
-			"enableCutsceneTextureStreaming": true,
-			"enableUICameraFullResolution": false,
-			"preloadUIScene": true,
-			"renderResolutions": [
-				{
-					"width": 1080,
-					"height": 540,
-					"secondWidth": 1080,
-					"secondHeight": 540
-				},
-				{
-					"width": 1280,
-					"height": 640,
-					"secondWidth": 1280,
-					"secondHeight": 640
-				},
-				{
-					"width": 1440,
-					"height": 720,
-					"secondWidth": 1440,
-					"secondHeight": 720
-				}
-			]
-		},
-		"EcoMode": {
-			"recommendVolatile": "Off",
-			"resolutionQuality": "Low"
-		},
-		// devices reference: http://www.mydrivers.com/zhuanti/tianti/01/
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		"Adreno High": {
-			"defaultVolatileGrade": 3,
-			"entityLODConfig": "Android_Middle",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Adreno.*640",
-					],
-				},
-			],
-		},
-		"Adreno Middle": {
-			"defaultVolatileGrade": 3,
-			"performanceQuality": "Middle",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Adreno.*630",
-					],
-				},
-			],
-		},
-		"Adreno Low": {
-			"defaultVolatileGrade": 2,
-			"entityLODConfig": "Android_VeryLow",
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Adreno.*540",
-						"Adreno.*530",
-						"Adreno.*510",
-						"Adreno.*430",
-						"Adreno.*506",
-						"Adreno.*505",
-						"Adreno.*420",
-						"Adreno.*418",
-						"Adreno.*330",
-						"Adreno.*405",
-						"Adreno.*320",
-						"Adreno.*308",
-					],
-				},
-			],
-		},
-		"Adreno Off": {
-			"defaultVolatileGrade": 1,
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Adreno.*306",
-						"Adreno.*305",
-						"Adreno.*304",
-						"Adreno.*302",
-						"Adreno.*225",
-						"Adreno.*220",
-						"Adreno.*205",
-						"Adreno.*203",
-						"Adreno.*200",
-					],
-				},
-			],
-		},
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		"PowerVR High": {
-			"recommendVolatile": "High",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [],
-				},
-			],
-		},
-		"PowerVR Middle": {
-			"recommendVolatile": "Middle",
-			"performanceQuality": "Middle",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [],
-				},
-			],
-		},
-		"PowerVR Low": {
-			//"recommendResolutionX": 1024,
-			//"recommendResolutionY": 576,
-			"recommendVolatile": "Low",
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"PowerVR.*G6430",
-						"PowerVR.*G6200",
-						"PowerVR.*6200",
-					],
-				},
-			],
-		},
-		"PowerVR Off": {
-			"recommendResolutionX": 1024,
-			"recommendResolutionY": 576,
-			"recommendVolatile": "Off",
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"PowerVR.*G6400",
-						"PowerVR.*SGX545",
-						"PowerVR.*SGX544",
-						"PowerVR.*SGX540",
-						"PowerVR.*SGX535",
-						"PowerVR.*SGX531",
-						"PowerVR.*SGX530",
-						"PowerVR.*MBX",
-					],
-				},
-			],
-		},
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		"Mali High": {
-			"defaultVolatileGrade": 3,
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Mali.*G77",
-					],
-				},
-			],
-		},
-		"Mali Middle": {
-			"defaultVolatileGrade": 2,
-			"entityLODConfig": "Android_VeryLow",
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Mali.*G76",
-						"Mali.*G72",
-						"Mali.*G71",
-					],
-				},
-			],
-		},
-		"Mali Low": {
-			"defaultVolatileGrade": 1,
-			"entityLODConfig": "Android_VeryLow",
-			"performanceQuality": "Low",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Mali.*G57",
-						"Mali.*G52",
-						"Mali.*G51",
-						"Mali.*G31",
-						"Mali.*T880",
-						"Mali.*T760",
-						"Mali.*T830",
-						"Mali.*T720",
-						"Mali.*T628",
-						"Mali.*450",
-						"Mali.*T624",
-						"Mali.*T860"
-					],
-				},
-			],
-		},
-		"Mali Off": {
-			"recommendVolatile": "Off",
-			"performanceQuality": "Low",
-			"defaultVolatileGrade": 1,
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Mali.*T604",
-						"Mali.*400",
-					],
-				},
-			],
-		},
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		"Intel High": {
-			"recommendVolatile": "High",
-			"requirements": [
-				{
-					"Info": "GraphicsDeviceName",
-					"Values": [
-						"Atom.*x5",
-						"Atom.*x7",
-					],
-				},
-			],
-		},
-		////////////////////////////////////////////////////////////////////////////////////////////////////
-		"High": {
-			"recommendVolatile": "High",
-			"requirements": [
-				{
-					"Info": "ProcessorFrequency",
-					"Values": [
-						"2000",
-					],
-				},
-				{
-					"Info": "SystemMemorySize",
-					"Values": [
-						"1024",
-					],
-				},
-				{
-					"Info": "GraphicsMemorySize",
-					"Values": [
-						"512",
-					],
-				},
-			],
-		},
-		"Middle": {
-			"recommendVolatile": "Middle",
-			"performanceQuality": "Middle",
-			"requirements": [
-				{
-					"Info": "ProcessorFrequency",
-					"Values": [
-						"1000",
-					],
-				},
-				{
-					"Info": "SystemMemorySize",
-					"Values": [
-						"1024",
-					],
-				},
-				{
-					"Info": "GraphicsMemorySize",
-					"Values": [
-						"256",
-					],
-				},
-			],
-		},
-		"Low": {
-			//"recommendResolutionX": 1024,
-			//"recommendResolutionY": 576,
-			"recommendVolatile": "Low",
-			"requirements": [
-				{
-					"Info": "ProcessorFrequency",
-					"Values": [
-						"500",
-					],
-				},
-				{
-					"Info": "SystemMemorySize",
-					"Values": [
-						"512",
-					],
-				},
-				{
-					"Info": "GraphicsMemorySize",
-					"Values": [
-						"256",
-					],
-				},
-			],
-		},
-		"Off": {
-			"recommendResolutionX": 1024,
-			"recommendResolutionY": 576,
-			"recommendVolatile": "Off",
-			"requirements": [
-				{
-					"Info": "ProcessorFrequency",
-					"Values": [
-						"0",
-					],
-				},
-				{
-					"Info": "SystemMemorySize",
-					"Values": [
-						"0",
-					],
-				},
-				{
-					"Info": "GraphicsMemorySize",
-					"Values": [
-						"0",
-					],
-				},
-			],
-		},
-	},
-	"performanceSettings": {
-		"High": {},
-		"Middle": {
-			"useMoveIK": false
-		},
-		"Low": {
-			"useMoveIK": false
-		}
-	}
+    "settingEntry": [
+        {
+            "entryType": "RenderResolution"
+        },
+        {
+            "entryType": "ShadowQuality",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "PostprocessEffect",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "ParticleEffect",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        },
+        {
+            "entryType": "ComprehensiveQuality",
+            "availableOptions": [
+                "Low",
+                "Medium",
+                "High"
+            ]
+        }
+    ],
+    "postprocessEffectOptions": {
+        "Default": {
+            "useHalfShadows": true,
+            "useShadowCache": true,
+            "checkboardType": "None",
+            "aoMode": "Disable",
+            "enableMotionBlur": true
+        },
+        "Low": {
+            "enableMotionBlur": false,
+            "checkboardType": "LineHalf"
+        },
+        "Medium": {},
+        "High": {
+            "checkboardType": "None",
+            "aoMode": "SSAO",
+            "enableMotionBlur": true
+        }
+    },
+    "particleEffectOptions": {
+        "Default": {
+            "halfResolutionParticle": true,
+            "particleEmitLevel": "Middle"
+        },
+        "Low": {
+            "halfResolutionParticle": true,
+            "particleEmitLevel": "Low"
+        },
+        "Medium": {},
+        "High": {}
+    },
+    "comprehensiveQualityOptions": {
+        "Low": {
+            "shaderQualityKeyword": "MHY_SHADER_MIDDLE"
+        },
+        "Medium": {
+            "shaderQualityKeyword": "MHY_SHADER_MIDDLE"
+        },
+        "High": {
+            "shaderQualityKeyword": "MHY_SHADER_HIGH"
+        }
+    },
+    "candidateVolatile": [
+        "VeryLow",
+        "Low",
+        "Middle",
+        "High",
+        "Topmost"
+    ],
+    "volatileSettings": {
+        "Default": {
+            "frameRateGrade": 1,
+            "renderResolutionGrade": 2,
+            "shadowQualityGrade": 2,
+            "postprocessEffectGrade": 2,
+            "particleEffectGrade": 1,
+            "comprehensiveQualityGrade": 2
+        },
+        "Topmost": {
+            "postprocessEffectGrade": 3,
+            "renderResolutionGrade": 3,
+            "shadowQualityGrade": 3,
+            "particleEffectGrade": 2,
+            "comprehensiveQualityGrade": 3
+        },
+        "High": {
+            "postprocessEffectGrade": 3,
+            "particleEffectGrade": 2
+        },
+        "Middle": {},
+        "Low": {
+            "renderResolutionGrade": 1,
+            "comprehensiveQualityGrade": 1,
+            "shadowQualityGrade": 1
+        },
+        "VeryLow": {
+            "comprehensiveQualityGrade": 1,
+            "renderResolutionGrade": 1,
+            "shadowQualityGrade": 1
+        },
+        "Off": {}
+    },
+    "deviceSettings": {
+        "Default": {
+            "qualityLevel": "Beautiful",
+            "levelStreamingConfig": "AndroidDefault",
+            "entityLODConfig": "Android_Low",
+            "lightOnLevel": "Middle",
+            "avatarOutlineThresh": 15,
+            "avatarShadowThresh": 25,
+            "avatarMotionVectorThresh": 30,
+            "TerrainGrassScaleFactor ": 0.8,
+            "defaultVolatileGrade": 2,
+            "textureStreamingBudget": 130.0,
+            "enableCutsceneTextureStreaming": true,
+            "enableUICameraFullResolution": false,
+            "preloadUIScene": true,
+            "renderResolutions": [
+                {
+                    "width": 1080,
+                    "height": 540,
+                    "secondWidth": 1080,
+                    "secondHeight": 540
+                },
+                {
+                    "width": 1280,
+                    "height": 640,
+                    "secondWidth": 1280,
+                    "secondHeight": 640
+                },
+                {
+                    "width": 1440,
+                    "height": 720,
+                    "secondWidth": 1440,
+                    "secondHeight": 720
+                }
+            ]
+        },
+        "EcoMode": {
+            "recommendVolatile": "Off",
+            "resolutionQuality": "Low"
+        },
+        "Adreno High": {
+            "defaultVolatileGrade": 3,
+            "entityLODConfig": "Android_Middle",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Adreno.*640"
+                    ]
+                }
+            ]
+        },
+        "Adreno Middle": {
+            "defaultVolatileGrade": 3,
+            "performanceQuality": "Middle",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Adreno.*630"
+                    ]
+                }
+            ]
+        },
+        "Adreno Low": {
+            "defaultVolatileGrade": 2,
+            "entityLODConfig": "Android_VeryLow",
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Adreno.*540",
+                        "Adreno.*530",
+                        "Adreno.*510",
+                        "Adreno.*430",
+                        "Adreno.*506",
+                        "Adreno.*505",
+                        "Adreno.*420",
+                        "Adreno.*418",
+                        "Adreno.*330",
+                        "Adreno.*405",
+                        "Adreno.*320",
+                        "Adreno.*308"
+                    ]
+                }
+            ]
+        },
+        "Adreno Off": {
+            "defaultVolatileGrade": 1,
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Adreno.*306",
+                        "Adreno.*305",
+                        "Adreno.*304",
+                        "Adreno.*302",
+                        "Adreno.*225",
+                        "Adreno.*220",
+                        "Adreno.*205",
+                        "Adreno.*203",
+                        "Adreno.*200"
+                    ]
+                }
+            ]
+        },
+        "PowerVR High": {
+            "recommendVolatile": "High",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": []
+                }
+            ]
+        },
+        "PowerVR Middle": {
+            "recommendVolatile": "Middle",
+            "performanceQuality": "Middle",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": []
+                }
+            ]
+        },
+        "PowerVR Low": {
+            "recommendVolatile": "Low",
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "PowerVR.*G6430",
+                        "PowerVR.*G6200",
+                        "PowerVR.*6200"
+                    ]
+                }
+            ]
+        },
+        "PowerVR Off": {
+            "recommendResolutionX": 1024,
+            "recommendResolutionY": 576,
+            "recommendVolatile": "Off",
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "PowerVR.*G6400",
+                        "PowerVR.*SGX545",
+                        "PowerVR.*SGX544",
+                        "PowerVR.*SGX540",
+                        "PowerVR.*SGX535",
+                        "PowerVR.*SGX531",
+                        "PowerVR.*SGX530",
+                        "PowerVR.*MBX"
+                    ]
+                }
+            ]
+        },
+        "Mali High": {
+            "defaultVolatileGrade": 3,
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Mali.*G77"
+                    ]
+                }
+            ]
+        },
+        "Mali Middle": {
+            "defaultVolatileGrade": 2,
+            "entityLODConfig": "Android_VeryLow",
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Mali.*G76",
+                        "Mali.*G72",
+                        "Mali.*G71"
+                    ]
+                }
+            ]
+        },
+        "Mali Low": {
+            "defaultVolatileGrade": 1,
+            "entityLODConfig": "Android_VeryLow",
+            "performanceQuality": "Low",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Mali.*G57",
+                        "Mali.*G52",
+                        "Mali.*G51",
+                        "Mali.*G31",
+                        "Mali.*T880",
+                        "Mali.*T760",
+                        "Mali.*T830",
+                        "Mali.*T720",
+                        "Mali.*T628",
+                        "Mali.*450",
+                        "Mali.*T624",
+                        "Mali.*T860"
+                    ]
+                }
+            ]
+        },
+        "Mali Off": {
+            "recommendVolatile": "Off",
+            "performanceQuality": "Low",
+            "defaultVolatileGrade": 1,
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Mali.*T604",
+                        "Mali.*400"
+                    ]
+                }
+            ]
+        },
+        "Intel High": {
+            "recommendVolatile": "High",
+            "requirements": [
+                {
+                    "Info": "GraphicsDeviceName",
+                    "Values": [
+                        "Atom.*x5",
+                        "Atom.*x7"
+                    ]
+                }
+            ]
+        },
+        "High": {
+            "recommendVolatile": "High",
+            "requirements": [
+                {
+                    "Info": "ProcessorFrequency",
+                    "Values": [
+                        "2000"
+                    ]
+                },
+                {
+                    "Info": "SystemMemorySize",
+                    "Values": [
+                        "1024"
+                    ]
+                },
+                {
+                    "Info": "GraphicsMemorySize",
+                    "Values": [
+                        "512"
+                    ]
+                }
+            ]
+        },
+        "Middle": {
+            "recommendVolatile": "Middle",
+            "performanceQuality": "Middle",
+            "requirements": [
+                {
+                    "Info": "ProcessorFrequency",
+                    "Values": [
+                        "1000"
+                    ]
+                },
+                {
+                    "Info": "SystemMemorySize",
+                    "Values": [
+                        "1024"
+                    ]
+                },
+                {
+                    "Info": "GraphicsMemorySize",
+                    "Values": [
+                        "256"
+                    ]
+                }
+            ]
+        },
+        "Low": {
+            "recommendVolatile": "Low",
+            "requirements": [
+                {
+                    "Info": "ProcessorFrequency",
+                    "Values": [
+                        "500"
+                    ]
+                },
+                {
+                    "Info": "SystemMemorySize",
+                    "Values": [
+                        "512"
+                    ]
+                },
+                {
+                    "Info": "GraphicsMemorySize",
+                    "Values": [
+                        "256"
+                    ]
+                }
+            ]
+        },
+        "Off": {
+            "recommendResolutionX": 1024,
+            "recommendResolutionY": 576,
+            "recommendVolatile": "Off",
+            "requirements": [
+                {
+                    "Info": "ProcessorFrequency",
+                    "Values": [
+                        "0"
+                    ]
+                },
+                {
+                    "Info": "SystemMemorySize",
+                    "Values": [
+                        "0"
+                    ]
+                },
+                {
+                    "Info": "GraphicsMemorySize",
+                    "Values": [
+                        "0"
+                    ]
+                }
+            ]
+        }
+    },
+    "performanceSettings": {
+        "High": {},
+        "Middle": {
+            "useMoveIK": false
+        },
+        "Low": {
+            "useMoveIK": false
+        }
+    }
 }

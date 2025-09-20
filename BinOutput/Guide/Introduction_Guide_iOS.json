@@ -1,158 +1,85 @@
-{	
-	// IOS角色界面 Avatar 201
-	"CharacterPageAvatarIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_MOVE",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 4,
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "CharacterPageAvatarIntroPC",
-			},
-		],
-	},
-
-	// 角色界面 Weapon 211
-	"CharacterPageWeaponIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
-	// 角色界面 Relic 221
-	"CharacterPageRelicIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
-
-	// 角色界面 Talent 231
-	"CharacterPageTalentIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
-
-	// 武器界面 Weapon 212
-	"EquipPageWeaponIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
-
-	// 武器界面 Relic 222
-	"EquipPageRelicIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
-
-	// UseExp界面 202
-	"UseExpIntroiOS" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-		],
-		"finishCondition":
-		[
-		],
-		"onFinish":
-		[
-		],
-	},
+{
+    "CharacterPageAvatarIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_MOVE",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 4
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "CharacterPageAvatarIntroPC"
+            }
+        ]
+    },
+    "CharacterPageWeaponIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    },
+    "CharacterPageRelicIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    },
+    "CharacterPageTalentIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    },
+    "EquipPageWeaponIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    },
+    "EquipPageRelicIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    },
+    "UseExpIntroiOS": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [],
+        "finishCondition": [],
+        "onFinish": []
+    }
 }

@@ -1,28 +1,35 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigLuaAction",
-				"type": "LUA_ACTION",
-				"duration": 3.0,
-				"invoke": true,
-				"invokeAlias": "20101",
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigLuaAction",
+                "type": "LUA_ACTION",
+                "duration": 3.0,
+                "invoke": true,
+                "invokeAlias": "20101",
                 "invokeParam": 119
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_FOCUS",
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0,
-				"lerpRatio": 2.0,
-				"lerpPattern": 9
-			},	
-		]
-	]
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_FOCUS",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 2.0,
+                "lerpPattern": 9
+            }
+        ]
+    ]
 }

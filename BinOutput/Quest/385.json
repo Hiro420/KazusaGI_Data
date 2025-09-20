@@ -1,45 +1,45 @@
 {
-  "id": 385,
-  "title": 1689491481,
-  "desc": 3340655711,
-  "luaPath": "Actor/Quest/MQ385",
-  "showType": "QUEST_HIDDEN",
-  "subQuests": [
-    {
-      "subId": 38501,
-      "mainId": 385,
-      "order": 1,
-      "desc": 3148416559,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
+    "id": 385,
+    "title": 1689491481,
+    "desc": 3340655711,
+    "luaPath": "Actor/Quest/MQ385",
+    "showType": "QUEST_HIDDEN",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
+            "subId": 38501,
+            "mainId": 385,
+            "order": 1,
+            "desc": 3148416559,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        38501,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_NPC",
+                "param": [
+                    "1469",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            }
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            38501,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_NPC",
-        "param": [
-          "1469",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      }
-    }
-  ]
+    ]
 }

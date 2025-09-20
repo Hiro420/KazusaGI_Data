@@ -1,222 +1,222 @@
 {
-  "id": 425,
-  "type": "WQ",
-  "title": 1029454569,
-  "luaPath": "Actor/Quest/SQ425",
-  "subQuests": [
-    {
-      "subId": 42501,
-      "mainId": 425,
-      "order": 1,
-      "desc": 3831557271,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
+    "id": 425,
+    "type": "WQ",
+    "title": 1029454569,
+    "luaPath": "Actor/Quest/SQ425",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 42501,
+            "mainId": 425,
+            "order": 1,
+            "desc": 3831557271,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_ROOM",
+                    "param": [
+                        1015,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_CONTENT_ENTER_ROOM",
-          "param": [
-            1015,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42502,
-      "mainId": 425,
-      "order": 2,
-      "desc": 3824917703,
-      "acceptCond": [
+            "subId": 42502,
+            "mainId": 425,
+            "order": 2,
+            "desc": 3824917703,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42501,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42503,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42501,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 42503,
+            "mainId": 425,
+            "order": 3,
+            "desc": 237560559,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42502,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        42503,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42503,
-            0
-          ]
+            "subId": 42504,
+            "mainId": 425,
+            "order": 4,
+            "desc": 1537116695,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42503,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42506,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true
         }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 42503,
-      "mainId": 425,
-      "order": 3,
-      "desc": 237560559,
-      "acceptCond": [
+    ],
+    "talks": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42502,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "id": 42502,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "42502",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "nextTalks": [
+                42503,
+                42504
+            ],
+            "initDialog": 4250201,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 52431443747
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42503,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 42504,
-      "mainId": 425,
-      "order": 4,
-      "desc": 1537116695,
-      "acceptCond": [
+            "id": 42503,
+            "initDialog": 4250202,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 734859785907
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42503,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "id": 42504,
+            "initDialog": 4250203,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 76647517027
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42506,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true
-    }
-  ],
-  "talks": [
-    {
-      "id": 42502,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
+            "id": 42505,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "42504",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "nextTalks": [
+                42506,
+                42507
+            ],
+            "initDialog": 4250301,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 192801691660
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "42502",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "nextTalks": [
-        42503,
-        42504
-      ],
-      "initDialog": 4250201,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 52431443747
-    },
-    {
-      "id": 42503,
-      "initDialog": 4250202,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 734859785907
-    },
-    {
-      "id": 42504,
-      "initDialog": 4250203,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 76647517027
-    },
-    {
-      "id": 42505,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
+            "id": 42506,
+            "initDialog": 4250302,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 1061598023409
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "42504",
-            "2",
-            ""
-          ]
+            "id": 42507,
+            "initDialog": 4250303,
+            "npcId": [
+                1160
+            ],
+            "questId": 425,
+            "assetIndex": 196243743919
         }
-      ],
-      "nextTalks": [
-        42506,
-        42507
-      ],
-      "initDialog": 4250301,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 192801691660
-    },
-    {
-      "id": 42506,
-      "initDialog": 4250302,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 1061598023409
-    },
-    {
-      "id": 42507,
-      "initDialog": 4250303,
-      "npcId": [
-        1160
-      ],
-      "questId": 425,
-      "assetIndex": 196243743919
-    }
-  ]
+    ]
 }

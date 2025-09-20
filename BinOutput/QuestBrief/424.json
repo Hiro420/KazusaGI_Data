@@ -1,298 +1,298 @@
 {
-  "id": 424,
-  "type": "WQ",
-  "title": 3021578617,
-  "subQuests": [
-    {
-      "subId": 42401,
-      "mainId": 424,
-      "order": 1,
-      "desc": 3359315247,
-      "showType": "QUEST_HIDDEN",
-      "finishCond": [
+    "id": 424,
+    "type": "WQ",
+    "title": 3021578617,
+    "subQuests": [
         {
-          "type": "QUEST_CONTENT_ENTER_ROOM",
-          "param": [
-            1013,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42402,
-      "mainId": 424,
-      "order": 2,
-      "desc": 929980999,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42401,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42403,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100175",
-            "9"
-          ]
+            "subId": 42401,
+            "mainId": 424,
+            "order": 1,
+            "desc": 3359315247,
+            "showType": "QUEST_HIDDEN",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_ROOM",
+                    "param": [
+                        1013,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
         },
         {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100176",
-            "9"
-          ]
+            "subId": 42402,
+            "mainId": 424,
+            "order": 2,
+            "desc": 929980999,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42401,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42403,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100175",
+                        "9"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100176",
+                        "9"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100115",
+                        "9"
+                    ]
+                }
+            ]
         },
         {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100115",
-            "9"
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 42403,
-      "mainId": 424,
-      "order": 3,
-      "desc": 1628519047,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42402,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_OBTAIN_ITEM",
-          "param": [
-            100115,
-            0
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42403
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42404,
-      "mainId": 424,
-      "order": 6,
-      "desc": 2799696903,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42403,
-            4,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42404,
-            0
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42404
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "42402",
-            ""
-          ]
-        }
-      ],
-      "failExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "42402",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 42405,
-      "mainId": 424,
-      "order": 7,
-      "desc": 3929885095,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42403,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42406,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100175",
-            "9"
-          ]
+            "subId": 42403,
+            "mainId": 424,
+            "order": 3,
+            "desc": 1628519047,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42402,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_OBTAIN_ITEM",
+                    "param": [
+                        100115,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        42403
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
         },
         {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100176",
-            "9"
-          ]
+            "subId": 42404,
+            "mainId": 424,
+            "order": 6,
+            "desc": 2799696903,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42403,
+                        4,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        42404,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        42404
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "42402",
+                        ""
+                    ]
+                }
+            ],
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "42402",
+                        ""
+                    ]
+                }
+            ]
         },
         {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100115",
-            "9"
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 42406,
-      "mainId": 424,
-      "order": 4,
-      "desc": 1801202831,
-      "acceptCond": [
+            "subId": 42405,
+            "mainId": 424,
+            "order": 7,
+            "desc": 3929885095,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42403,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42406,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100175",
+                        "9"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100176",
+                        "9"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100115",
+                        "9"
+                    ]
+                }
+            ]
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42402,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 42406,
+            "mainId": 424,
+            "order": 4,
+            "desc": 1801202831,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42402,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_OBTAIN_ITEM",
+                    "param": [
+                        100175,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_CONTENT_OBTAIN_ITEM",
-          "param": [
-            100175,
-            0
-          ]
+            "subId": 42407,
+            "mainId": 424,
+            "order": 5,
+            "desc": 2358493503,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42402,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_OBTAIN_ITEM",
+                    "param": [
+                        100176,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
         }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42407,
-      "mainId": 424,
-      "order": 5,
-      "desc": 2358493503,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42402,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_OBTAIN_ITEM",
-          "param": [
-            100176,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    }
-  ]
+    ]
 }

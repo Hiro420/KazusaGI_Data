@@ -1,27 +1,38 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType": "FREE",
-				"steerDir": {"x": 0, "y": 0, "z": 1},
-				"duration": 1
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0,
-				"lerpRatio": 5.0,
-				"lerpPattern": 1
-			}
-		]
-	]
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "FREE",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                },
+                "duration": 1
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 5.0,
+                "lerpPattern": 1
+            }
+        ]
+    ]
 }

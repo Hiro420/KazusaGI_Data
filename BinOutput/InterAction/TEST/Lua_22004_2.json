@@ -1,25 +1,28 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType":"TO_LOCAL_AVATAR_ADVANCED",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				 "duration": 1.0,
-				 "useSteerAnim": true,
-				 "interruptFreestyle": true
-			},
-			{
-				"$type": "ConfigLuaAction",
-				"type": "LUA_ACTION",
-				"duration": 1.0,
-				"invoke": true,
-				"invokeAlias": "22004",
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "TO_LOCAL_AVATAR_ADVANCED",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "useSteerAnim": true,
+                "interruptFreestyle": true
+            },
+            {
+                "$type": "ConfigLuaAction",
+                "type": "LUA_ACTION",
+                "duration": 1.0,
+                "invoke": true,
+                "invokeAlias": "22004",
                 "invokeParam": 2
-			},
-		]
-	]
+            }
+        ]
+    ]
 }

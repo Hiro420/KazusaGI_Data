@@ -1,100 +1,100 @@
 {
-  "id": 20502,
-  "type": "WQ",
-  "activeMode": "PLAY_MODE_ALL",
-  "title": 1806927561,
-  "desc": 3196473279,
-  "luaPath": "Actor/Quest/IQ20502",
-  "subQuests": [
-    {
-      "subId": 2050201,
-      "mainId": 20502,
-      "order": 1,
-      "desc": 1265957824,
-      "acceptCond": [
+    "id": 20502,
+    "type": "WQ",
+    "activeMode": "PLAY_MODE_ALL",
+    "title": 1806927561,
+    "desc": 3196473279,
+    "luaPath": "Actor/Quest/IQ20502",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 2050201,
+            "mainId": 20502,
+            "order": 1,
+            "desc": 1265957824,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_DUNGEON",
+                    "param": [
+                        4200,
+                        44
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q20502Target1",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_POINT"
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_ENTER_DUNGEON",
-          "param": [
-            4200,
-            44
-          ]
+            "subId": 2050202,
+            "mainId": 20502,
+            "order": 2,
+            "desc": 3228005320,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        2050201,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_DUNGEON_OPEN_STATUE",
+                    "param": [
+                        4200,
+                        0
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_FAIL_DUNGEON",
+                    "param": [
+                        4200,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q20502Target2",
+                    ""
+                ],
+                "guideScene": 40200,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_UI"
+            },
+            "finishParent": true,
+            "isRewind": true,
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "2050201",
+                        ""
+                    ]
+                }
+            ]
         }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q20502Target1",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_POINT"
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 2050202,
-      "mainId": 20502,
-      "order": 2,
-      "desc": 3228005320,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            2050201,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_DUNGEON_OPEN_STATUE",
-          "param": [
-            4200,
-            0
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_FAIL_DUNGEON",
-          "param": [
-            4200,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q20502Target2",
-          ""
-        ],
-        "guideScene": 40200,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_UI"
-      },
-      "finishParent": true,
-      "isRewind": true,
-      "failExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "2050201",
-            ""
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

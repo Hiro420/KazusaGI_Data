@@ -1,252 +1,252 @@
 {
-  "id": 429,
-  "type": "WQ",
-  "title": 2166830017,
-  "luaPath": "Actor/Quest/SQ429",
-  "subQuests": [
-    {
-      "subId": 42901,
-      "mainId": 429,
-      "order": 1,
-      "desc": 2546857536,
-      "acceptCond": [
+    "id": 429,
+    "type": "WQ",
+    "title": 2166830017,
+    "luaPath": "Actor/Quest/SQ429",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42903,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q429Judge",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 42902,
-      "mainId": 429,
-      "order": 2,
-      "desc": 2487738848,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42901,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCondComb": "LOGIC_AND",
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21010301,
-            0
-          ],
-          "count": 6
+            "subId": 42901,
+            "mainId": 429,
+            "order": 1,
+            "desc": 2546857536,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42903,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q429Judge",
+                    ""
+                ]
+            },
+            "isRewind": true
         },
         {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21010901
-          ],
-          "count": 7
+            "subId": 42902,
+            "mainId": 429,
+            "order": 2,
+            "desc": 2487738848,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42901,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCondComb": "LOGIC_AND",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21010301,
+                        0
+                    ],
+                    "count": 6
+                },
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21010901
+                    ],
+                    "count": 7
+                },
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21020201
+                    ],
+                    "count": 1
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        42902,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q429Judge",
+                    ""
+                ]
+            }
         },
         {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21020201
-          ],
-          "count": 1
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42902,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q429Judge",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42903,
-      "mainId": 429,
-      "order": 3,
-      "desc": 1730346984,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42901,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCondComb": "LOGIC_OR",
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21010301,
-            0
-          ],
-          "count": 1
+            "subId": 42903,
+            "mainId": 429,
+            "order": 3,
+            "desc": 1730346984,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42901,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCondComb": "LOGIC_OR",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21010301,
+                        0
+                    ],
+                    "count": 1
+                },
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21010901
+                    ],
+                    "count": 1
+                },
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        21020201
+                    ],
+                    "count": 1
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
+                    "param": [
+                        42903,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q429Judge",
+                    ""
+                ]
+            },
+            "isRewind": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "42903",
+                        "",
+                        ""
+                    ]
+                }
+            ]
         },
         {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21010901
-          ],
-          "count": 1
+            "subId": 42904,
+            "mainId": 429,
+            "order": 4,
+            "desc": 3360607800,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42905,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q429Judge",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "42901",
+                        "",
+                        ""
+                    ]
+                }
+            ]
         },
         {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            21020201
-          ],
-          "count": 1
+            "subId": 42905,
+            "mainId": 429,
+            "order": 5,
+            "desc": 1685691464,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42902,
+                        4,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        42906,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q429Judge",
+                    ""
+                ]
+            },
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "42901",
+                        "",
+                        ""
+                    ]
+                }
+            ]
         }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_NOT_FINISH_PLOT",
-          "param": [
-            42903,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q429Judge",
-          ""
-        ]
-      },
-      "isRewind": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "42903",
-            "",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 42904,
-      "mainId": 429,
-      "order": 4,
-      "desc": 3360607800,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42905,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q429Judge",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "42901",
-            "",
-            ""
-          ]
-        }
-      ]
-    },
-    {
-      "subId": 42905,
-      "mainId": 429,
-      "order": 5,
-      "desc": 1685691464,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42902,
-            4,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            42906,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q429Judge",
-          ""
-        ]
-      },
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "42901",
-            "",
-            ""
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

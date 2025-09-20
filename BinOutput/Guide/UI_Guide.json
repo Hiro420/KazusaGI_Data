@@ -1,573 +1,338 @@
 {
-	// 武器替换
-	"GuideWeaponChange" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_WEAPON_CHANGE_GUIDE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideHasItemCondition",
-				"itemIDLists": [
-					[11201],
-				],
-			},
-		],
-		"onGuide":
-        [
+    "GuideWeaponChange": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_WEAPON_CHANGE_GUIDE",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "itemIDLists": [
+                    [
+                        11201
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
             {
                 "$type": "ConfigGuideAddTaskAction",
-                "taskName": "GuideWeaponChangePC",
+                "taskName": "GuideWeaponChangePC"
             },
             {
                 "$type": "ConfigGuideAddTaskAction",
-                "taskName": "GuideWeaponChangeiOS",
-            },
-         ],
-     },
-
-
-
-	// 武器强化
-	"GuideWeaponUpgrade" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
-				"value": false,
-			},
-			//  {
-			//  	"$type":"ConfigGuideOpenStateCondition",
-			//  	"openState":"OPEN_STATE_WEAPON_UPGRADE",
-			//  	"value":true,
-			//  },
-		],
-		"onGuide":
-		[
-			// {
-            //  	"$type": "ConfigGuideAddTaskAction",
-            // 	"taskName": "GuideWeaponUpgradePC",
-            // },
-            // {
-            //  	"$type": "ConfigGuideAddTaskAction",
-            //  	"taskName": "GuideWeaponUpgradeiOS",
-            // },
-
-		],
-	},
-
-
-	// 角色升级
-	"GuideAvatarUpgrade" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideHasItemCondition",
-				"itemIDLists": [
-					//[104001],
-					[104002],
-					[104003],
-				],
-			},
-		],
-		"onGuide":
-		[
-			{
-             	"$type": "ConfigGuideAddTaskAction",
-            	"taskName": "GuideAvatarUpgradePC",
+                "taskName": "GuideWeaponChangeiOS"
+            }
+        ]
+    },
+    "GuideWeaponUpgrade": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
+                "value": false
+            }
+        ],
+        "onGuide": []
+    },
+    "GuideAvatarUpgrade": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
+                "value": false
             },
             {
-             	"$type": "ConfigGuideAddTaskAction",
-             	"taskName": "GuideAvatarUpgradeiOS",
-            },
-
-		],
-	},
-
-
-	// 天赋引导
-	"GuideTalent" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_TALENT",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_AVATAR_TALENT",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTop/BtnTip",
-						"type": "Blink",
-						"maskType": "Normal",
-						"pageType" : "TalentInfo",
-						"whiteContextList" : ["TutorialDialog"],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnTalent",
-						"xOffset" : -0.5,
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterFuncBtn",
-
-					},
-				],
-			},
-			{
-		        "$type": "ConfigGuideAddTaskAction",
-		        "taskName": "GuideTalent02",
-	        },
-		],
-		"finishCondition":
-		[
-			[
-				/*{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpTop/BtnTip",
-					"pageType" : "TalentInfo",
-				},*/
-				{
-					"$type": "ConfigGuideOpenStateCondition",
-					"openState": "OPEN_STATE_GUIDE_TALENT",
-					"value": true,
-			    },
-			],
-		],
-		"onFinish":
-		[
-			/*{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_TALENT",
-				"value": true,
-			},*/
-		],
-	},
-	// 天赋引导step2
-	"GuideTalent02" :
-	{
-		"$type": "ConfigGuideTask",
-		"onCheck":
-		[
-			{
-				"$type":"ConfigGuideOpenUICondition",
-				"contextName":"CharacterPage",
-				"pageType":"TalentInfo",
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type":"ConfigGuideShowTutorialAction",
-				"tutorialID":231,
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type":"ConfigGuideOpenUICondition",
-					"contextName":"TutorialDialog",
-					"enable":false
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_TALENT",
-				"value": true,
-			},
-		],
-	},
-
-	// // 圣遗物引导旧
-	// "GuideRelic" :
-	// {
-	// 	"$type": "ConfigGuideTask",
-	// 	"predicates":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideOpenStateCondition",
-	// 			"openState": "OPEN_STATE_GUIDE_RELIC",
-	// 			"value": false,
-	// 		},
-	// 		{
-	// 			"$type": "ConfigGuideHasItemCondition",
-	// 			"type" : "Relic",
-	// 		},
-	// 	],
-	// 	"onGuide":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideUIMaskAction",
-	// 			"widgetList": [
-	// 				{
-	// 					"$type": "ConfigGuideWidgetContent",
-	// 					"contextName": "InLevelMainPage",
-	// 					"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-	// 					"type": "Blink",
-	// 					"maskType": "Normal",
-	// 				},
-	// 				{
-	// 					"$type": "ConfigGuideWidgetContent",
-	// 					"contextName": "CharacterPage",
-	// 					"path": "GrpCharacter/GrpTop/BtnTip",
-	// 					"type": "Blink",
-	// 					"maskType": "Normal",
-	// 					"pageType" : "RelicInfo",
-	// 					"whiteContextList" : ["TutorialDialog"],
-	// 				},
-	// 				{
-	// 					"$type": "ConfigGuideWidgetContent",
-	// 					"contextName": "CharacterPage",
-	// 					"path": "GrpCharacter/GrpTab/Menu/Content/BtnRelic",
-	// 					"xOffset" : -0.5,
-	// 					"type": "Blink",
-	// 					"maskType": "Normal",
-	// 					"special" : "CharacterFuncBtn",
-
-	// 				},
-
-	// 			],
-	// 		},
-	// 		{
-	// 	         "$type": "ConfigGuideAddTaskAction",
-	// 	         "taskName": "GuideRelic02",
-	//         },
-	// 	],
-	// 	"finishCondition":
-	// 	[
-	// 		[
-	// 			/*{
-	// 				"$type": "ConfigGuideButtonClickCondition",
-	// 				"contextName" : "CharacterPage",
-	// 				"buttonPath": "GrpCharacter/GrpTop/BtnTip",
-	// 				"pageType" : "RelicInfo",
-	// 			},*/
-	// 			{
-	// 			"$type": "ConfigGuideOpenStateCondition",
-	// 			"openState": "OPEN_STATE_GUIDE_RELIC",
-	// 			"value": true,
-	// 		    },
-	// 		],
-
-	// 	],
-	// 	"onFinish":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideSetOpenStateAction",
-	// 			"openState": "OPEN_STATE_GUIDE_RELIC",
-	// 			"value": true,
-	// 		},
-	// 	],
-	// },
-	//圣遗物引导step2
-	// "GuideRelic02" :
-	// {
-	// 	"$type": "ConfigGuideTask",
-	// 	"onCheck":
-	// 	[
-	// 		{
-	// 			"$type":"ConfigGuideOpenUICondition",
-	// 			"contextName":"CharacterPage",
-	// 			"pageType" : "RelicInfo",
-	// 		},
-	// 	],
-	// 	"onGuide":
-	// 	[
-	// 		{
-	// 			"$type":"ConfigGuideShowTutorialAction",
-	// 			"tutorialID":221,
-	// 		},
-	// 	],
-	// 	"finishCondition":
-	// 	[
-	// 		[
-	// 			{
-	// 				"$type":"ConfigGuideOpenUICondition",
-	// 				"contextName":"TutorialDialog",
-	// 				"enable":false
-	// 			},
-	// 			{
-	// 				"$type": "ConfigGuideDelayFinishCondition",
-	// 				"delayTime": 2,
-	// 			},
-	// 		],
-
-	// 	],
-	// 	"onFinish":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideSetOpenStateAction",
-	// 			"openState": "OPEN_STATE_GUIDE_RELIC",
-	// 			"value": true,
-	// 		},
-	// 	],
-	// },
-
-	// 圣遗物引导
-	"GuideRelic" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_RELIC",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideHasItemCondition",
-				"type" : "Relic",
-			},
-		],
-		"onGuide":
-		[
-			{
-             	"$type": "ConfigGuideAddTaskAction",
-            	"taskName": "GuideRelicPC",
+                "$type": "ConfigGuideHasItemCondition",
+                "itemIDLists": [
+                    [
+                        104002
+                    ],
+                    [
+                        104003
+                    ]
+                ]
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarUpgradePC"
             },
             {
-             	"$type": "ConfigGuideAddTaskAction",
-             	"taskName": "GuideReliciOS",
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarUpgradeiOS"
+            }
+        ]
+    },
+    "GuideTalent": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_TALENT",
+                "value": false
             },
-
-		],
-	},
-
-	// 圣遗物强化引导
-	"GuideRelicPromote" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_RELIC_PROM",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_RELIQUARY_UPGRADE",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Relic/RelicCurrent/GrpAction/BtnPromote",
-						"type": "Blink",
-						"maskType": "Normal",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "EquipOverviewPage",
-						"path": "GrpEquip/GrpTop/BtnTip",
-						"type": "Blink",
-						"maskType": "Normal",
-						"pageType" : "RelicPromote",
-						"whiteContextList" : ["TutorialDialog"],
-					},
-				],
-			},
-			{
-		        "$type": "ConfigGuideAddTaskAction",
-		        "taskName": "GuideRelicPromote02",
-	        },
-		],
-		"finishCondition":
-		[
-			[
-				/*{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "EquipOverviewPage",
-					"buttonPath": "GrpEquip/GrpTop/BtnTip",
-					"pageType" : "RelicPromote",
-				},*/
-				{
-					"$type": "ConfigGuideOpenStateCondition",
-					"openState": "OPEN_STATE_GUIDE_RELIC_PROM",
-					"value": true,
-			    },
-			],
-		],
-		"onFinish":
-		[
-			/*{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_RELIC_PROM",
-				"value": true,
-			},*/
-		],
-	},
-
-	// 圣遗物强化引导 step2
-	"GuideRelicPromote02" :
-	{
-		"$type": "ConfigGuideTask",
-		"onCheck":
-		[
-			{
-				"$type":"ConfigGuideOpenUICondition",
-				"contextName":"EquipOverviewPage",
-				"pageType":"RelicPromote",
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type":"ConfigGuideShowTutorialAction",
-				"tutorialID":222,
-			},
-		],
-		"finishCondition":
-		[
-			[
-				/*{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "EquipOverviewPage",
-					"buttonPath": "GrpEquip/GrpTop/BtnTip",
-					"pageType" : "RelicPromote",
-				},*/
-				{
-					"$type":"ConfigGuideOpenUICondition",
-					"contextName":"TutorialDialog",
-					"enable":false
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_RELIC_PROM",
-				"value": true,
-			},
-		],
-	},
-
-		// 背包引导
-		"GuideBag" :
-		{
-			"$type": "ConfigGuideTask",
-			"predicates":
-			[
-				{
-					"$type": "ConfigGuideOpenStateCondition",
-					"openState": "OPEN_STATE_GUIDE_BAG",
-					"value": false,
-				},
-				{
-					"$type": "ConfigGuideHasItemCondition",
-					"type" : "Any",
-					"value" : 2,
-				},
-			],
-			"onGuide":
-			[
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					"taskName": "GuideBagPC",
-				},
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					 "taskName": "GuideBagiOS",
-				},
-
-			],
-		},
-
-		// 使用食谱引导
-		"UnlockRecipe" :
-		{
-			"$type": "ConfigGuideTask",
-			"predicates":
-			[
-			],
-			"onGuide":
-			[
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					"taskName": "UnlockRecipePC",
-				},
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					 "taskName": "UnlockRecipeiOS",
-				},
-
-			],
-		},
-
-		// 合成霄灯引导
-		"GuideSeaLamp" :
-		{
-			"$type": "ConfigGuideTask",
-			"predicates":
-			[
-			],
-			"onGuide":
-			[
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					"taskName": "GuideSeaLampPC",
-				},
-				{
-					 "$type": "ConfigGuideAddTaskAction",
-					 "taskName": "GuideSeaLampiOS",
-				},
-
-			],
-		},
-
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_AVATAR_TALENT",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTop/BtnTip",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "pageType": "TalentInfo",
+                        "whiteContextList": [
+                            "TutorialDialog"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnTalent",
+                        "xOffset": -0.5,
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterFuncBtn"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideTalent02"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenStateCondition",
+                    "openState": "OPEN_STATE_GUIDE_TALENT",
+                    "value": true
+                }
+            ]
+        ],
+        "onFinish": []
+    },
+    "GuideTalent02": {
+        "$type": "ConfigGuideTask",
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "contextName": "CharacterPage",
+                "pageType": "TalentInfo"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "tutorialID": 231
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "contextName": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_TALENT",
+                "value": true
+            }
+        ]
+    },
+    "GuideRelic": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_RELIC",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "type": "Relic"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideRelicPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideReliciOS"
+            }
+        ]
+    },
+    "GuideRelicPromote": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_RELIC_PROM",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_RELIQUARY_UPGRADE",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Relic/RelicCurrent/GrpAction/BtnPromote",
+                        "type": "Blink",
+                        "maskType": "Normal"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "EquipOverviewPage",
+                        "path": "GrpEquip/GrpTop/BtnTip",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "pageType": "RelicPromote",
+                        "whiteContextList": [
+                            "TutorialDialog"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideRelicPromote02"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenStateCondition",
+                    "openState": "OPEN_STATE_GUIDE_RELIC_PROM",
+                    "value": true
+                }
+            ]
+        ],
+        "onFinish": []
+    },
+    "GuideRelicPromote02": {
+        "$type": "ConfigGuideTask",
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "contextName": "EquipOverviewPage",
+                "pageType": "RelicPromote"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "tutorialID": 222
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "contextName": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_RELIC_PROM",
+                "value": true
+            }
+        ]
+    },
+    "GuideBag": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_BAG",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideHasItemCondition",
+                "type": "Any",
+                "value": 2
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideBagPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideBagiOS"
+            }
+        ]
+    },
+    "UnlockRecipe": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "UnlockRecipePC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "UnlockRecipeiOS"
+            }
+        ]
+    },
+    "GuideSeaLamp": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideSeaLampPC"
+            },
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideSeaLampiOS"
+            }
+        ]
+    }
 }

@@ -1,1761 +1,1437 @@
 {
-	// 武器替换PC
-	"GuideWeaponChangePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			/*{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_WEAPON_CHANGE_GUIDE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideHasItemCondition",
-				"itemIDLists": [
-					[11201],
-				],
-			},*/
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnWeapon",
-						"type": "Blink",
-						"maskType": "Normal",
-						"xOffset" : -0.5,
-						"yOffset" : 0,
-						"special" : "CharacterFuncBtn",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Weapon/WeaponCurrent/GrpAction/BtnReplace",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE",
-						"widghtInfoPos": "T",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_PlayerGirl",
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterAvatarBtn",
-						"widghtInfo": "UI_GUIDE_INFO_CHOOSE_CHARACTER",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_PlayerBoy",
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterAvatarBtn",
-						"widghtInfo": "UI_GUIDE_INFO_CHOOSE_CHARACTER",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "EquipSelectDialog",
-						"path": "Btn/GrpAction/BtnReplace",
-						"type": "Blink",
-						"maskType": "Normal",
-						"special": "Button",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE_CONFIRM",
-						"widghtInfoPos": "T",
-						"pageType": "WeaponSelect",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "EquipSelectDialog",
-						"path": "Dialog/Content_Weapon/ScrollView",
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "Slot",
-						"value" : 11201,
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE_CHOOSE",
-						"widghtInfoPos": "BR",
-						"pageType": "WeaponSelect",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "EquipSelectDialog",
-					"buttonPath": "Dialog/Bottom/GrpAction/BtnReplace/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideHasItemCondition",
-					"notHave" : true,
-					"itemIDLists": [
-						[11201],
-					],
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideTeamMemberCondition",
-					"hasMember" : false,
-					"configID": 10000005,
-				},
-
-				{
-					"$type": "ConfigGuideTeamMemberCondition",
-					"hasMember" : false,
-					"configID": 10000007,
-				},
-			],
-			[
-				{
-					"$type":"ConfigGuideDelayFinishCondition",
-					"delayTime":40,
-				},
-			],
-			[
-				{
-					"$type":"ConfigAvatarEquipChangedCondition",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_WEAPON_CHANGE_GUIDE",
-				"value": true,
-			},
-		],
-	},
-
-	// 武器强化 PC
-	"GuideWeaponUpgradePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnWeapon",
-						"xOffset" : -0.5,
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterFuncBtn",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Weapon/WeaponCurrent/GrpAction/BtnPromote",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON_UPGRADE",
-						"widghtInfoPos": "T",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "EquipOverviewPage",
-						"path": "GrpEquip/GrpEquipLevelUp/EquipLevelUpContainer/EquipLevelUp(Clone)/Selected/FastAdd/BtnFastAdd/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_WEAPON_UPGRADE_MATERIAL",
-						"widghtInfoPos": "T",
-					},
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "CharacterPage",
-					// 	"path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_Ambor",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// 	"special" : "CharacterAvatarBtn",
-					// },
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "EquipOverviewPage",
-					// 	"path": "GrpEquip/GrpTop/BtnTip",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// 	"pageType" : "EquipPromote",
-					// 	"whiteContextList" : ["TutorialDialog"],
-					// },
-				],
-			},
-			// {
-		    //     "$type": "ConfigGuideAddTaskAction",
-		    //     "taskName": "GuideWeaponUpgradeStepPC02",
-	        // },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "EquipOverviewPage",
-					"buttonPath": "GrpEquip/GrpEquipLevelUp/EquipLevelUpContainer/EquipLevelUp(Clone)/Selected/FastAdd/BtnFastAdd/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-			// [
-
-			// 	{
-			// 		"$type": "ConfigGuideOpenStateCondition",
-			// 		"openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
-			// 		"value": true,
-			//     },
-			// ],
-			// [
-			//  	{
-			//  		"$type": "ConfigGuideTeamMemberCondition",
-			//  		"hasMember" : false,
-			//  		"configID": 10000021,
-			//  	},
-			// ],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050003,
-			},
-		],
-	},
-	// 武器强化PC Step2
-	"GuideWeaponUpgradeStepPC02" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onCheck":
-		[
-			{
-				"$type":"ConfigGuideOpenUICondition",
-				"contextName":"EquipOverviewPage",
-				"pageType":"EquipPromote",
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type":"ConfigGuideShowTutorialAction",
-				"tutorialID":212,
-			},
-		],
-		"finishCondition":
-		[
-			[
-
-				{
-					"$type":"ConfigGuideOpenUICondition",
-					"contextName":"TutorialDialog",
-					"enable":false
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				},
-			],
-			/*[
-				{
-					"$type": "ConfigGuideTeamMemberCondition",
-					"hasMember" : false,
-					"configID": 10000021,
-				},
-			],*/
-		],
-		"onFinish":
-		[
-
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
-				"value": true,
-			},
-		],
-	},
-
-
-	// 角色升级 PC
-	"GuideAvatarUpgradePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnAvatar",
-						"xOffset" : -0.5,
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterFuncBtn",
-						"widghtInfo": "UI_GUIDE_INFO_CHARACTER_ATTRIBUTE",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnLvUp/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_CHARACTER_UPGRADE",
-						"widghtInfoPos": "T",
-					},
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "CharacterPage",
-					// 	"path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_Ambor",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// 	"special" : "CharacterAvatarBtn",
-					// },
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "UseExpDialog",
-						"path": "Dialog/BtnTip",
-						"type": "Blink",
-						"maskType": "Normal",
-					},
-				],
-			},
-			// {
-		    //     "$type": "ConfigGuideAddTaskAction",
-		    //     "taskName": "GuideAvatarUpgradePC02",
-	        // },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnLvUp/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-			// [
-			// 	{
-			// 	"$type": "ConfigGuideOpenStateCondition",
-			// 	"openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
-			// 	"value": true,
-			//     },
-			// ],
-			// [
-			// 	{
-			// 		"$type": "ConfigGuideTeamMemberCondition",
-			// 		"hasMember" : false,
-			// 		"configID": 10000021,
-			// 	},
-			// ],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
-				"value": true,
-			},
-		],
-	},
-	// 角色升级PC step2
-	"GuideAvatarUpgradePC02" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onCheck":
-		[
-			{
-				"$type":"ConfigGuideOpenUICondition",
-				"contextName":"UseExpDialog",
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type":"ConfigGuideShowTutorialAction",
-				"tutorialID":202,
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type":"ConfigGuideOpenUICondition",
-					"contextName":"TutorialDialog",
-					"enable":false
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
-				"value": true,
-			},
-		],
-	},
-
-
-		// 任务寻路指引PC
-	"GuideQuestGuidePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_QUEST_BTN_PC",
-						"actionInfoList" : ["ToggleQuestBook"],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/BtnToggleQuest",
-						"type": "Blink",
-						"maskType": "Black",
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ToggleQuestBookEvent",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "ToggleQuestBookEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/MapInfo/BtnToggleQuest",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideQuestGuidePC2",
-			},
-		],
-	},
-	// 任务寻路指引PC第2步
-	"GuideQuestGuidePC2" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelQuestDialog",
-						"path": "GrpQuestBook/GrpQuestDetail/GrpAction/BtnTracker_new",
-						"type": "Blink",
-						"maskType": "Black",
-						"widghtInfo": "UI_GUIDE_INFO_QUEST_TRACKER",
-						"widghtInfoPos": "T",
-					},
-	    			{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelQuestDialog",
-						"path": "GrpQuestBook/GrpQuestItemList/ScrollView_new/Content",
-						"type": "Blink",
-						"maskType": "Black",
-						"special" : "QuestSelectItem",
-						"value" : 356,
-			    	},
-			    	{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelQuestDialog",
-						"path": "GrpQuestBook/GrpTab/Tab",
-						"type": "Blink",
-						"maskType": "Black",
-						"special" : "TabItem",
-						"value" : 0,
-				    },
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelQuestDialog",
-					"buttonPath": "GrpQuestBook/GrpQuestDetail/GrpAction/BtnTracker_new/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideQuestGuidePC3",
-			},
-		],
-	},
-		// 任务寻路指引PC第3步
-		"GuideQuestGuidePC3" :
-		{
-			"$type": "ConfigGuideTask",
-			"predicates":
-			[
-				{
-					"$type": "ConfigGuideCheckPlatformCondition",
-					"platform": "Standalone",
-					"value": true,
-				},
-			],
-			"onCheck":
-			[
-				{
-					"$type":"ConfigGuideOpenUICondition",
-					"contextName":"InLevelQuestHintDialog",
-				},
-			],
-			"onGuide":
-			[
-				{
-					"$type": "ConfigGuideUIMaskAction",
-					"widgetList": [
-						{
-							"$type": "ConfigGuideWidgetContent",
-							"hintInfo": "UI_GUIDE_INFO_QUEST_Navigation_PC",
-							"actionInfoList" : ["ChangeWithSkill"],
-
-							"contextName": "InLevelQuestHintDialog",
-							"path": "EventPanel",
-							"type": "Blink",
-							"maskType": "Black",
-							"special":"DynUIItem",
-							"valueStr":"QuestHintTrace(Clone)/BtnTrace/Layout/Label/TutorialArea",
-						},
-					],
-				},
-				{
-					"$type": "ConfigGuideSwitchInputContextAction",
-					"inputEventList": [
-						"TriggerChangeWithSkillEvent",
-						"CancelChangeWithSkillEvent",
-					],
-				},
-			],
-			"finishCondition":
-			[
-				[
-					{
-						"$type": "ConfigGuideOpenPaimonNavigationCondition",
-					},
-				],
-			],
-			"onFinish":
-			[
-			],
-		},
-
-
-		// 元素视野指引PC
-		"EnterFocusModeGuidePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"actionInfoList" : ["ResetCamera"],
-						"hintInfo": "UI_GUIDE_INFO_QUEST_ELEMENTVISION",
-					},
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "EnterElementViewEvent",
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				}
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	// 随机事件中的元素视野指引PC
-	"RandomTaskElementViewGuidePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"actionInfoList" : ["ResetCamera"],
-						"hintInfo": "UI_GUIDE_INFO_QUEST_ELEMENTVISION",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "EnterElementViewEvent",
-				},
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 2,
-				}
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-			// 时间调整教学PC
-			"ChangeTimeGuidePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"actionInfoList" : ["OpenPaimon"],
-						"hintInfo": "UI_GUIDE_INFO_QUEST_CHANGETIME",
-					},
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "MenuBackEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	// Gacha开放PC
-	"GuideGachaPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_GACHA",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GACHA",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnGacha",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_GACHA_PC",
-						"actionInfoList" : ["OpenGacha", ],
-						"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnGacha/Button",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "OpenGachaEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_GACHA",
-				"value": true,
-			},
-		],
-	},
-
-	// 队伍配置PC
-	"GuideTeamPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_TEAM",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideLevelTypeCondition",
-				"type": "NotDungeon",
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "InLevelMainPage",
-					// 	"path": "GrpMainPage/MapInfo/BtnPlayerProfile/Icon",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// },
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_TEAM_PAIMON_PC",
-						"actionInfoList" : ["OpenPaimon", ],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "PlayerProfilePage",
-						"path": "GrpProfile/GrpEntry/ScrollView/Content/Team",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_OPEN_TEAM",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "TeamPage",
-						"path": "GrpTeam/GrpTeam/GrpAction/BtnFast",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ORGANIZE_TEAM",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "TeamPage",
-					"buttonPath": "GrpTeam/GrpTeam/GrpAction/BtnFast/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 60,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_TEAM",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	// 角色突破PC
-	"GuideAvatarPromotePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_AVATAR_PROMOTE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideHasAvatarCondition",
-				"type": "InTeam",
-				"conType": "Level",
-				"value": 20,
-			},
-		],
-		"onCheck":
-		[
-			{
-				"$type": "ConfigGuideAvatarStateCondition",
-				"state": "CanPromote",
-		   },
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "InLevelMainPage",
-					// 	"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// 	"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-					// 	"actionInfoList" : ["OpenCharacter",],
-					// },
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnAvatar",
-						"type": "Blink",
-						"maskType": "Normal",
-						"xOffset" : -0.5,
-						"yOffset" : 0,
-						"widghtInfo": "UI_GUIDE_INFO_CHARACTER_ATTRIBUTE",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Tab/Viewport/Tab",
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterAvatarBtnByLevel",
-						"value" : 20,
-						"widghtInfo": "UI_GUIDE_INFO_CHARACTER_CANPROMOTE",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnStarUp/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_CHARACTER_PROMOTE",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnStarUp/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 60,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_AVATAR_PROMOTE",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	// 圣遗物引导PC
-	"GuideRelicPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-					// {
-					// 	"$type": "ConfigGuideWidgetContent",
-					// 	"contextName": "CharacterPage",
-					// 	"path": "GrpCharacter/GrpTop/BtnTip",
-					// 	"type": "Blink",
-					// 	"maskType": "Normal",
-					// 	"pageType" : "RelicInfo",
-					// 	"whiteContextList" : ["TutorialDialog"],
-					// },
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnRelic",
-						"xOffset" : -0.5,
-						"type": "Blink",
-						"maskType": "Normal",
-						"special" : "CharacterFuncBtn",
-						"widghtInfo": "UI_GUIDE_INFO_RELIC",
-						"widghtInfoPos": "R",
-					},
-
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpTab/Menu/Content/BtnRelic",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_RELIC",
-				"value": true,
-			},
-		],
-	},
-
-	// 背包引导PC
-	"GuideBagPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_BAG_PC",
-						"actionInfoList" : ["OpenBag",],
-						"hintOffset" : 0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "OpenBagEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_BAG",
-				"value": true,
-			},
-		],
-	},
-
-
-	// 呼出鼠标PC
-	"GuideMousePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MOUSEPC",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_MOUSE_PC",
-						"actionInfoList" : ["ChangeWithSkill",],
-						//"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerChangeWithSkillEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MOUSEPC",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050902,
-			},
-		],
-	},
-
-		// 安柏任务中的元素视野指引PC
-		"AmborTaskElementViewGuidePC" :
-		{
-			"$type": "ConfigGuideTask",
-			"predicates":
-			[
-				{
-					"$type": "ConfigGuideCheckPlatformCondition",
-					"platform": "Standalone",
-					"value": true,
-				},
-			],
-			"onGuide":
-			[
-				{
-					"$type": "ConfigGuideUIMaskAction",
-					"widgetList": [
-						{
-							"$type": "ConfigGuideWidgetContent",
-							"actionInfoList" : ["ResetCamera"],
-							"hintInfo": "UI_GUIDE_INFO_AmborQUEST_ELEMENTVISION",
-						},
-					],
-				},
-			],
-			"finishCondition":
-			[
-				[
-					{
-						"$type": "ConfigGuidePressKeyCondition",
-						"eventID" : "EnterElementViewEvent",
-					},
-					{
-						"$type": "ConfigGuideDelayFinishCondition",
-						"delayTime": 2,
-					}
-				],
-				[
-					{
-						"$type": "ConfigGuideDelayFinishCondition",
-						"delayTime": 10,
-					},
-				],
-
-			],
-			"onFinish":
-			[
-			],
-			"onQuit":
-			[
-			],
-		},
-
-	// 冒险等阶PCStep1
-	"GuidePlayerLV1PC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/BtnPlayerProfile/Icon",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_PLAYERLV_PAIMON_PC",
-						"actionInfoList" : ["OpenPaimon",],
-						"hintOffset" : 0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/MapInfo/BtnPlayerProfile",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID": "MenuBackEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			// {
-		    //     "$type": "ConfigGuideAddTaskAction",
-		    //     "taskName": "GuidePlayerLV2PC",
-	        // },
-		],
-		"onQuit":
-		[
-
-		],
-	},
-
-	// 冒险等阶PCStep2
-	// "GuidePlayerLV2PC" :
-	// {
-	// 	"$type": "ConfigGuideTask",
-	// 	"predicates":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideCheckPlatformCondition",
-	// 			"platform": "Standalone",
-	// 			"value": true,
-	// 		},
-	// 	],
-	// 	"onGuide":
-	// 	[
-	// 		{
-	// 			"$type": "ConfigGuideUIMaskAction",
-	// 			"type": "Blink",
-	// 			"maskType": "Normal",
-	// 			"widgetList": [
-	// 				{
-	// 					"$type": "ConfigGuideWidgetContent",
-	// 					"contextName": "PlayerProfilePage",
-	// 					"path": "GrpProfile/GrpPlayerCard/LevelBg",
-	// 					"type": "Blink",
-	// 					"maskType": "Normal",
-	// 					"widghtInfo": "UI_GUIDE_INFO_PLAYERLV",
-	// 					"widghtInfoPos": "B",
-	// 				},
-	// 			],
-	// 		},
-	// 	],
-	// 	"finishCondition":
-	// 	[
-	// 		[
-	// 			{
-	// 				"$type": "ConfigGuideDelayFinishCondition",
-	// 				"delayTime": 3,
-	// 			},
-	// 		],
-	// 	],
-	// 	"onFinish":
-	// 	[
-	// 	],
-	// 	"onQuit":
-	// 	[
-	// 	],
-	// },
-
-	// 联机开放PC
-	"GuideMultiplayerPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MULTIPLAYER",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_MULTIPLAYER",
-				"value": true,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/BtnTogglePlayerList",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_MULTIPLAYER_PC",
-						"actionInfoList" : ["Multiplayer", ],
-						"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/MapInfo/BtnTogglePlayerList",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "MultiplayerEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MULTIPLAYER",
-				"value": true,
-			},
-		],
-	},
-
-	// 日常地城奖励说明PC
-	"GuideDungeonRewardPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_DUNGEONREWARD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "DungeonEntryPage",
-						"path": "GrpDungeon/Right/Reward/Title/BtnDungeonTips/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_DUNGEONREWARD",
-						"widghtInfoPos": "TR",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "DungeonEntryPage",
-					"buttonPath": "GrpDungeon/Right/Reward/Title/BtnDungeonTips/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_DUNGEONREWARD",
-				"value": true,
-			},
-		],
-	},
-
-	// 使用食谱PC
-	"UnlockRecipePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-
-		"onGuide":
-		[
-		  {
-		    "$type": "ConfigGuideUIMaskAction",
-		      "widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_UNLOCK_RECIPE_OPEN_BAG_PC",
-						"actionInfoList" : ["OpenBag",],
-						"hintOffset" : 0.7,
-						},
-		      {
-		      "$type": "ConfigGuideWidgetContent",
-		      "contextName": "BagPage",
-		      "path": "GrpBag/GrpOp/BtnUse",
-		      "type": "Blink",
-		      "maskType": "Normal",
-		      "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_USE_ITEM",
-		      "widghtInfoPos": "TL",
-		      },
-		      {
-		      "$type": "ConfigGuideWidgetContent",
-		      "contextName": "BagPage",
-		      "path": "GrpBag/GrpTab/BagTab/BagTabContent/ScrollView",
-		      "type": "Blink",
-		      "maskType": "Normal",
-		      "special" : "Slot",
-		      "value" : 109404,
-		      "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_SELECT_ITEM",
-		      "widghtInfoPos": "BR",
-		      },
-		      {
-		      "$type": "ConfigGuideWidgetContent",
-		      "contextName": "BagPage",
-		      "path": "GrpBag/GrpTab/Tab",
-		      "type": "Blink",
-		      "maskType": "Normal",
-		      "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_SWITCH_TAB",
-		      "widghtInfoPos": "B",
-		      "special" : "TabItem",
-		      "value" : 6,
-		      },
-		    ],
-		  },
-		],
-		"finishCondition":
-		[
-		  [
-		    {
-		      "$type": "ConfigGuideButtonClickCondition",
-		      "contextName" : "BagPage",
-		      "buttonPath": "GrpBag/GrpOp/BtnUse/Content",
-		    },
-		  ],
-		],
-		"onFinish":
-		[
-		],
-	},
-
-	// 合成霄灯PC
-	"GuideSeaLampPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "SynthesisPage",
-						"path": "GrpSynthesis/GrpOp/GrpAction/BtnSynthesis/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_SEALAMP_SYNTHESIZE",
-						"widghtInfoPos": "TL",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "SynthesisPage",
-						"path": "GrpSynthesis/GrpTab/SynthesisList/ScrollView",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_SEALAMP_SELECT",
-						"widghtInfoPos": "TR",
-						"special": "SynthesisListItem",
-						"value": "16001",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "SynthesisPage",
-					"buttonPath": "GrpSynthesis/GrpOp/GrpAction/BtnSynthesis/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-	},
-
+    "GuideWeaponChangePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnWeapon",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "xOffset": -0.5,
+                        "yOffset": 0,
+                        "special": "CharacterFuncBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Weapon/WeaponCurrent/GrpAction/BtnReplace",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE",
+                        "widghtInfoPos": "T"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_PlayerGirl",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterAvatarBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_CHOOSE_CHARACTER",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Tab/Viewport/Tab/UI_AvatarIcon_Side_PlayerBoy",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterAvatarBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_CHOOSE_CHARACTER",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "EquipSelectDialog",
+                        "path": "Btn/GrpAction/BtnReplace",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "Button",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE_CONFIRM",
+                        "widghtInfoPos": "T",
+                        "pageType": "WeaponSelect"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "EquipSelectDialog",
+                        "path": "Dialog/Content_Weapon/ScrollView",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "Slot",
+                        "value": 11201,
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON_REPLACE_CHOOSE",
+                        "widghtInfoPos": "BR",
+                        "pageType": "WeaponSelect"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "EquipSelectDialog",
+                    "buttonPath": "Dialog/Bottom/GrpAction/BtnReplace/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideHasItemCondition",
+                    "notHave": true,
+                    "itemIDLists": [
+                        [
+                            11201
+                        ]
+                    ]
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideTeamMemberCondition",
+                    "hasMember": false,
+                    "configID": 10000005
+                },
+                {
+                    "$type": "ConfigGuideTeamMemberCondition",
+                    "hasMember": false,
+                    "configID": 10000007
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 40
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigAvatarEquipChangedCondition"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_WEAPON_CHANGE_GUIDE",
+                "value": true
+            }
+        ]
+    },
+    "GuideWeaponUpgradePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnWeapon",
+                        "xOffset": -0.5,
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterFuncBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Weapon/WeaponCurrent/GrpAction/BtnPromote",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON_UPGRADE",
+                        "widghtInfoPos": "T"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "EquipOverviewPage",
+                        "path": "GrpEquip/GrpEquipLevelUp/EquipLevelUpContainer/EquipLevelUp(Clone)/Selected/FastAdd/BtnFastAdd/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_WEAPON_UPGRADE_MATERIAL",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "EquipOverviewPage",
+                    "buttonPath": "GrpEquip/GrpEquipLevelUp/EquipLevelUpContainer/EquipLevelUp(Clone)/Selected/FastAdd/BtnFastAdd/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050003
+            }
+        ]
+    },
+    "GuideWeaponUpgradeStepPC02": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "contextName": "EquipOverviewPage",
+                "pageType": "EquipPromote"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "tutorialID": 212
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "contextName": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_WEAPON_PROMOTE_GUIDE",
+                "value": true
+            }
+        ]
+    },
+    "GuideAvatarUpgradePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnAvatar",
+                        "xOffset": -0.5,
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterFuncBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_CHARACTER_ATTRIBUTE",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnLvUp/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_CHARACTER_UPGRADE",
+                        "widghtInfoPos": "T"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "UseExpDialog",
+                        "path": "Dialog/BtnTip",
+                        "type": "Blink",
+                        "maskType": "Normal"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "CharacterPage",
+                    "buttonPath": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnLvUp/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
+                "value": true
+            }
+        ]
+    },
+    "GuideAvatarUpgradePC02": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "contextName": "UseExpDialog"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideShowTutorialAction",
+                "tutorialID": 202
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "contextName": "TutorialDialog",
+                    "enable": false
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_PLAYER_LVUP_GUIDE",
+                "value": true
+            }
+        ]
+    },
+    "GuideQuestGuidePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_QUEST_BTN_PC",
+                        "actionInfoList": [
+                            "ToggleQuestBook"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/BtnToggleQuest",
+                        "type": "Blink",
+                        "maskType": "Black"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ToggleQuestBookEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "ToggleQuestBookEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/MapInfo/BtnToggleQuest"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideQuestGuidePC2"
+            }
+        ]
+    },
+    "GuideQuestGuidePC2": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelQuestDialog",
+                        "path": "GrpQuestBook/GrpQuestDetail/GrpAction/BtnTracker_new",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "widghtInfo": "UI_GUIDE_INFO_QUEST_TRACKER",
+                        "widghtInfoPos": "T"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelQuestDialog",
+                        "path": "GrpQuestBook/GrpQuestItemList/ScrollView_new/Content",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "special": "QuestSelectItem",
+                        "value": 356
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelQuestDialog",
+                        "path": "GrpQuestBook/GrpTab/Tab",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "special": "TabItem",
+                        "value": 0
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelQuestDialog",
+                    "buttonPath": "GrpQuestBook/GrpQuestDetail/GrpAction/BtnTracker_new/Content"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideQuestGuidePC3"
+            }
+        ]
+    },
+    "GuideQuestGuidePC3": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideOpenUICondition",
+                "contextName": "InLevelQuestHintDialog"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_QUEST_Navigation_PC",
+                        "actionInfoList": [
+                            "ChangeWithSkill"
+                        ],
+                        "contextName": "InLevelQuestHintDialog",
+                        "path": "EventPanel",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "special": "DynUIItem",
+                        "valueStr": "QuestHintTrace(Clone)/BtnTrace/Layout/Label/TutorialArea"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "TriggerChangeWithSkillEvent",
+                    "CancelChangeWithSkillEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenPaimonNavigationCondition"
+                }
+            ]
+        ],
+        "onFinish": []
+    },
+    "EnterFocusModeGuidePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "actionInfoList": [
+                            "ResetCamera"
+                        ],
+                        "hintInfo": "UI_GUIDE_INFO_QUEST_ELEMENTVISION"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "EnterElementViewEvent"
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "RandomTaskElementViewGuidePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "actionInfoList": [
+                            "ResetCamera"
+                        ],
+                        "hintInfo": "UI_GUIDE_INFO_QUEST_ELEMENTVISION"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "EnterElementViewEvent"
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "ChangeTimeGuidePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "actionInfoList": [
+                            "OpenPaimon"
+                        ],
+                        "hintInfo": "UI_GUIDE_INFO_QUEST_CHANGETIME"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "MenuBackEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideGachaPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_GACHA",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GACHA",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnGacha",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_GACHA_PC",
+                        "actionInfoList": [
+                            "OpenGacha"
+                        ],
+                        "hintOffset": -0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnGacha/Button"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "OpenGachaEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_GACHA",
+                "value": true
+            }
+        ]
+    },
+    "GuideTeamPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_TEAM",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideLevelTypeCondition",
+                "type": "NotDungeon"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_TEAM_PAIMON_PC",
+                        "actionInfoList": [
+                            "OpenPaimon"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "PlayerProfilePage",
+                        "path": "GrpProfile/GrpEntry/ScrollView/Content/Team",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_OPEN_TEAM",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "TeamPage",
+                        "path": "GrpTeam/GrpTeam/GrpAction/BtnFast",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ORGANIZE_TEAM",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "TeamPage",
+                    "buttonPath": "GrpTeam/GrpTeam/GrpAction/BtnFast/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 60
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_TEAM",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideAvatarPromotePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_AVATAR_PROMOTE",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideHasAvatarCondition",
+                "type": "InTeam",
+                "conType": "Level",
+                "value": 20
+            }
+        ],
+        "onCheck": [
+            {
+                "$type": "ConfigGuideAvatarStateCondition",
+                "state": "CanPromote"
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnAvatar",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "xOffset": -0.5,
+                        "yOffset": 0,
+                        "widghtInfo": "UI_GUIDE_INFO_CHARACTER_ATTRIBUTE",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Tab/Viewport/Tab",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterAvatarBtnByLevel",
+                        "value": 20,
+                        "widghtInfo": "UI_GUIDE_INFO_CHARACTER_CANPROMOTE",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnStarUp/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_CHARACTER_PROMOTE",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "CharacterPage",
+                    "buttonPath": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction/BtnStarUp/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 60
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_AVATAR_PROMOTE",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideRelicPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnRelic",
+                        "xOffset": -0.5,
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "CharacterFuncBtn",
+                        "widghtInfo": "UI_GUIDE_INFO_RELIC",
+                        "widghtInfoPos": "R"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "CharacterPage",
+                    "buttonPath": "GrpCharacter/GrpTab/Menu/Content/BtnRelic"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_RELIC",
+                "value": true
+            }
+        ]
+    },
+    "GuideBagPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_BAG_PC",
+                        "actionInfoList": [
+                            "OpenBag"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "OpenBagEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_BAG",
+                "value": true
+            }
+        ]
+    },
+    "GuideMousePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MOUSEPC",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_MOUSE_PC",
+                        "actionInfoList": [
+                            "ChangeWithSkill"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerChangeWithSkillEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MOUSEPC",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050902
+            }
+        ]
+    },
+    "AmborTaskElementViewGuidePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "actionInfoList": [
+                            "ResetCamera"
+                        ],
+                        "hintInfo": "UI_GUIDE_INFO_AmborQUEST_ELEMENTVISION"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "EnterElementViewEvent"
+                },
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 2
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuidePlayerLV1PC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/BtnPlayerProfile/Icon",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_PLAYERLV_PAIMON_PC",
+                        "actionInfoList": [
+                            "OpenPaimon"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/MapInfo/BtnPlayerProfile"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "MenuBackEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideMultiplayerPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MULTIPLAYER",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_MULTIPLAYER",
+                "value": true
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/BtnTogglePlayerList",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_MULTIPLAYER_PC",
+                        "actionInfoList": [
+                            "Multiplayer"
+                        ],
+                        "hintOffset": -0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/MapInfo/BtnTogglePlayerList"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "MultiplayerEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MULTIPLAYER",
+                "value": true
+            }
+        ]
+    },
+    "GuideDungeonRewardPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_DUNGEONREWARD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "DungeonEntryPage",
+                        "path": "GrpDungeon/Right/Reward/Title/BtnDungeonTips/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_DUNGEONREWARD",
+                        "widghtInfoPos": "TR"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "DungeonEntryPage",
+                    "buttonPath": "GrpDungeon/Right/Reward/Title/BtnDungeonTips/Content"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_DUNGEONREWARD",
+                "value": true
+            }
+        ]
+    },
+    "UnlockRecipePC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnBag/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_UNLOCK_RECIPE_OPEN_BAG_PC",
+                        "actionInfoList": [
+                            "OpenBag"
+                        ],
+                        "hintOffset": 0.7
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "BagPage",
+                        "path": "GrpBag/GrpOp/BtnUse",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_USE_ITEM",
+                        "widghtInfoPos": "TL"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "BagPage",
+                        "path": "GrpBag/GrpTab/BagTab/BagTabContent/ScrollView",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "special": "Slot",
+                        "value": 109404,
+                        "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_SELECT_ITEM",
+                        "widghtInfoPos": "BR"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "BagPage",
+                        "path": "GrpBag/GrpTab/Tab",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_UNLOCK_RECIPE_SWITCH_TAB",
+                        "widghtInfoPos": "B",
+                        "special": "TabItem",
+                        "value": 6
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "BagPage",
+                    "buttonPath": "GrpBag/GrpOp/BtnUse/Content"
+                }
+            ]
+        ],
+        "onFinish": []
+    },
+    "GuideSeaLampPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "SynthesisPage",
+                        "path": "GrpSynthesis/GrpOp/GrpAction/BtnSynthesis/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_SEALAMP_SYNTHESIZE",
+                        "widghtInfoPos": "TL"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "SynthesisPage",
+                        "path": "GrpSynthesis/GrpTab/SynthesisList/ScrollView",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_SEALAMP_SELECT",
+                        "widghtInfoPos": "TR",
+                        "special": "SynthesisListItem",
+                        "value": "16001"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "SynthesisPage",
+                    "buttonPath": "GrpSynthesis/GrpOp/GrpAction/BtnSynthesis/Content"
+                }
+            ]
+        ],
+        "onFinish": []
+    }
 }

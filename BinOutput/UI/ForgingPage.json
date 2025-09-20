@@ -1,97 +1,223 @@
 {
-	"context": {
-		"ForgingPage": {
-		  "actionGroups": {
-			"Formula": [
-				{"contextEvent": "OpenScreenDropdownEvent", "eventType": "DPadLeftEvent", "priority": 0},
-				{"contextEvent": "RevertSortingOrderEvent", "eventType": "DPadRightEvent", "priority": 0},
-				{"contextEvent": "OpenSortingDropdownEvent", "eventType": "DPadDownEvent", "priority": 0},
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-				{"contextEvent": "CommonLeftTriggerEvent", "eventType": "LeftTriggerEvent", "priority": 4},
-				{"contextEvent": "CommonRightTriggerEvent", "eventType": "RightTriggerEvent", "priority": 4},
-				{"contextEvent": "ToNextTabEvent", "eventType": "RightShoulderEvent", "priority": 4},
-				{"contextEvent": "CommonMenuLeftEvent", "eventType": "MenuLeftEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickButtonEvent", "eventType": "LeftStickButtonEvent", "priority": 4},
-				{"contextEvent": "CommonRightStickButtonEvent", "eventType": "RightStickButtonEvent", "priority": 4},
-
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-		  
-		  "Screening": [
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-		 
-		  "SortSelect": [
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-				{"contextEvent": "OpenSortingDropdownEvent", "eventType": "DPadDownEvent", "priority": 0},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-
-		 "CharacterSelect": [
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-		 
-		 "ForgeQueue": [
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-				{"contextEvent": "ToPrevTabEvent", "eventType": "LeftShoulderEvent", "priority": 4},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-
-		 "FetchItem": [
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				]
-		  },
-		  
-		  
-		  
-		  "stateActions": {
-			"0": {
-			  "keyboardTouch": "Formula",
-			  "keyboardMouse": "Formula",
-			  "joypad": "Formula"
-			},
-		  	"1": {
-			  "keyboardTouch": "Screening",
-			  "keyboardMouse": "Screening",
-			  "joypad": "Screening"
-			},
-		  	"2": {
-			  "keyboardTouch": "SortSelect",
-			  "keyboardMouse": "SortSelect",
-			  "joypad": "SortSelect"
-			},
-		  	"3": {
-			  "keyboardTouch": "CharacterSelect",
-			  "keyboardMouse": "CharacterSelect",
-			  "joypad": "CharacterSelect"
-			},
-		  	"4": {
-			  "keyboardTouch": "ForgeQueue",
-			  "keyboardMouse": "ForgeQueue",
-			  "joypad": "ForgeQueue"
-			},
-			"5": {
-			  "keyboardTouch": "FetchItem",
-			  "keyboardMouse": "FetchItem",
-			  "joypad": "FetchItem"
-			}
-		  
-		  },
-		  "enableJoypadVirtualCursor": false
-		}
-	}
+    "context": {
+        "ForgingPage": {
+            "actionGroups": {
+                "Formula": [
+                    {
+                        "contextEvent": "OpenScreenDropdownEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "RevertSortingOrderEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "OpenSortingDropdownEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftTriggerEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonRightTriggerEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickButtonEvent",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonRightStickButtonEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "Screening": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "SortSelect": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "OpenSortingDropdownEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "CharacterSelect": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "ForgeQueue": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "FetchItem": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Formula",
+                    "keyboardMouse": "Formula",
+                    "joypad": "Formula"
+                },
+                "1": {
+                    "keyboardTouch": "Screening",
+                    "keyboardMouse": "Screening",
+                    "joypad": "Screening"
+                },
+                "2": {
+                    "keyboardTouch": "SortSelect",
+                    "keyboardMouse": "SortSelect",
+                    "joypad": "SortSelect"
+                },
+                "3": {
+                    "keyboardTouch": "CharacterSelect",
+                    "keyboardMouse": "CharacterSelect",
+                    "joypad": "CharacterSelect"
+                },
+                "4": {
+                    "keyboardTouch": "ForgeQueue",
+                    "keyboardMouse": "ForgeQueue",
+                    "joypad": "ForgeQueue"
+                },
+                "5": {
+                    "keyboardTouch": "FetchItem",
+                    "keyboardMouse": "FetchItem",
+                    "joypad": "FetchItem"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    }
 }

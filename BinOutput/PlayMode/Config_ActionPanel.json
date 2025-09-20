@@ -1,463 +1,461 @@
 {
-  "states": {
-    "DefaultNormalState" :{
-     "$type": "ConfigActionPanelState",
-     "slotMap" : {
-      "Slot1": [
-        {
-          "type": "Skill1",
-        },  
-      ],
-      "Slot2": [   
-        {
-          "type": "Skill2",
+    "states": {
+        "DefaultNormalState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2"
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Skill3"
+                    },
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Skill4"
+                    },
+                    {
+                        "type": "Jump"
+                    }
+                ],
+                "Slot5": [
+                    {
+                        "type": "Skill5"
+                    }
+                ],
+                "SlotAM": [
+                    {
+                        "type": "AttackMode"
+                    }
+                ]
+            }
         },
-      ],
-      "Slot3": [
-        {
-          "type": "Skill3",
+        "CloseAllState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {}
         },
-        {
-          "type": "Sprint",
+        "DefaultClimbState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Slip"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
         },
-      ],
-      "Slot4": [      
-        {
-          "type": "Skill4",
+        "DefaultFlyState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
         },
-        {
-          "type": "Jump",
+        "DefaultSwimState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot3": [
+                    {
+                        "type": "Sprint"
+                    }
+                ]
+            }
         },
-      ],
-      "Slot5": [    
-        {
-          "type": "Skill5",
+        "DefaultAimState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Skill3"
+                    },
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ],
+                "SlotLeft": [
+                    {
+                        "type": "SkillLeft"
+                    }
+                ],
+                "SlotAM": [
+                    {
+                        "type": "AttackMode"
+                    }
+                ]
+            },
+            "slotMapJoypadOverride": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Skill3"
+                    },
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ],
+                "SlotLeft": [
+                    {
+                        "type": "SkillLeft"
+                    }
+                ],
+                "SlotAM": [
+                    {
+                        "type": "AttackMode"
+                    }
+                ]
+            }
         },
-      ],
-      "SlotAM": [
-        {
-          "type": "AttackMode",
+        "DefaultCombatAirState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2"
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Skill3"
+                    },
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot5": [
+                    {
+                        "type": "Skill5"
+                    }
+                ],
+                "SlotAM": [
+                    {
+                        "type": "AttackMode"
+                    }
+                ]
+            }
         },
-      ],
-     },
+        "SneakNormalState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ]
+            }
+        },
+        "SneakSquatState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2",
+                        "forceShow": true
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Roll"
+                    }
+                ]
+            }
+        },
+        "WildSneakClimbState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Slip"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
+        },
+        "WildSneakNormalState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
+        },
+        "WildSneakSquatState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2",
+                        "forceShow": true
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Roll"
+                    }
+                ]
+            }
+        },
+        "BomberNormalState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot3": [
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
+        },
+        "BomberFlyState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot2": [
+                    {
+                        "type": "Skill2",
+                        "forceShow": true
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
+        },
+        "DvalinS01FlyState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Skill1"
+                    }
+                ]
+            },
+            "slotMapJoypadOverride": {
+                "Slot2": [
+                    {
+                        "type": "Skill1"
+                    }
+                ]
+            }
+        },
+        "FindCatState": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2",
+                        "forceShow": true
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Sprint"
+                    }
+                ],
+                "Slot4": [
+                    {
+                        "type": "Jump"
+                    }
+                ]
+            }
+        },
+        "FindCatStateSquat": {
+            "$type": "ConfigActionPanelState",
+            "slotMap": {
+                "Slot1": [
+                    {
+                        "type": "Squat"
+                    }
+                ],
+                "Slot2": [
+                    {
+                        "type": "Skill2",
+                        "forceShow": true
+                    }
+                ],
+                "Slot3": [
+                    {
+                        "type": "Roll"
+                    }
+                ]
+            }
+        }
     },
-    "CloseAllState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        
-     },
-    },
-    "DefaultClimbState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot1": [     
-          {
-            "type": "Slip",
-          },
-        ],
-        "Slot4": [       
-          {
-            "type": "Jump",
-          },
-        ],
-     },
-    },
-    "DefaultFlyState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot1": [
-          {
-            "type": "Skill1",
-          },
-        ],
-        "Slot2": [
-          {
-            "type": "Skill2",
-          },
-        ],
-        "Slot4": [       
-          {
-            "type": "Jump",
-          },
-        ],
-     },
-    },
-    "DefaultSwimState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot3": [       
-          {
-            "type": "Sprint",
-          },
-        ],
-     },
-    },
-    "DefaultAimState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap": {
-        "Slot1": [
-          {
-            "type": "Skill1",
-          },
-        ],
-        "Slot3": [
-          {
-            "type": "Skill3",
-          },
-          {
-            "type": "Sprint",
-          },
-        ],
-        "Slot4": [
-          {
-            "type": "Jump",
-          },
-        ],
-        "SlotLeft": [
-          {
-            "type": "SkillLeft",
-          },
-        ],
-        "SlotAM": [
-          {
-            "type": "AttackMode",
-          },
-        ],
-      },
-      "slotMapJoypadOverride": {
-        "Slot1": [
-          { "type": "Skill1" }
-        ],
-        "Slot2": [   
-          { "type": "Skill1" }
-        ],
-        "Slot3": [
-          { "type": "Skill3" },
-          { "type": "Sprint" }
-        ],
-        "Slot4": [
-          { "type": "Jump" }
-        ],
-        "SlotLeft": [
-          { "type": "SkillLeft" }
-        ],
-        "SlotAM": [
-          { "type": "AttackMode" }
-        ]
-      }
-    },
-    "DefaultCombatAirState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap": {
-        "Slot1": [
-          {
-            "type": "Skill1",
-          },
-        ],
-        "Slot2": [
-          {
-            "type": "Skill2",
-          },
-        ],
-        "Slot3": [
-          {
-            "type": "Skill3",
-          },
-          {
-            "type": "Sprint",
-          },
-        ],
-        "Slot5": [
-          {
-            "type": "Skill5",
-          },
-        ],
-        "SlotAM": [
-          {
-            "type": "AttackMode",
-          },
-        ],
-      },
-    },
-    "SneakNormalState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap": {
-        "Slot1": [
-          {
-            "type": "Squat",
-          },
-        ],
-        // "Slot3": [
-				// 	{
-				// 		"type": "Sprint",
-				// 	},
-        // ],
-        // "Slot4": [       
-        //   {
-        //     "type": "Jump",
-        //   },
-        // ],
-      },
-    },
-    "SneakSquatState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot1": [
-          {
-            "type": "Squat",
-          },
-        ],
-        "Slot2": [
-          {
-            "type": "Skill2",
-            "forceShow": true,
-          },
-        ],
-        "Slot3": [
-          {
-            "type": "Roll",
-          },
-        ],
-     },
-    },
-    "WildSneakClimbState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap": {
-        "Slot1": [
-          {
-            "type": "Slip",
-          },
-        ],
-        "Slot4": [       
-          {
-            "type": "Jump",
-          },
-        ],
-      },
-    },
-    "WildSneakNormalState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap": {
-        "Slot1": [
-          {
-            "type": "Squat",
-          },
-        ],
-        "Slot3": [
-					{
-						"type": "Sprint",
-					},
-        ],
-        "Slot4": [       
-          {
-            "type": "Jump",
-          },
-        ],
-      },
-    },
-    "WildSneakSquatState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot1": [
-          {
-            "type": "Squat",
-          },
-        ],
-        "Slot2": [
-          {
-            "type": "Skill2",
-            "forceShow": true,
-          },
-        ],
-        "Slot3": [
-          {
-            "type": "Roll",
-          },
-        ],
-     },
-    },
-    "BomberNormalState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        // "Slot2": [
-        //   {
-        //     "type": "Skill2",
-        //     "forceShow": true,
-        //   },
-        // ],
-        "Slot3": [
-					{
-						"type": "Sprint",
-					},
-        ],
-        "Slot4": [      
-          {
-            "type": "Jump",
-          },
-        ],
-     },
-    },
-    "BomberFlyState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot2": [
-          {
-            "type": "Skill2",
-            "forceShow": true,
-          },
-        ],
-        "Slot4": [       
-          {
-            "type": "Jump",
-          },
-        ],
-     },
-    },
-    "DvalinS01FlyState": {
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-        "Slot1": [
-          {
-            "type": "Skill1",
-          },
-        ],
-     },
-     "slotMapJoypadOverride": {
-        "Slot2": [
-          { "type": "Skill1" }
-        ],
-      }
-    },
-    "FindCatState" :{
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-       "Slot1": [
-         {
-           "type": "Squat",           
-         },  
-       ],
-       "Slot2": [   
-         {
-           "type": "Skill2",
-           "forceShow": true,
-         },
-       ],
-       "Slot3": [
-         {
-           "type": "Sprint",
-         },
-       ],
-       "Slot4": [
-         {
-           "type": "Jump",
-         },
-       ],
-      },
-     },
-     "FindCatStateSquat" :{
-      "$type": "ConfigActionPanelState",
-      "slotMap" : {
-       "Slot1": [
-         {
-           "type": "Squat",
-         },  
-       ],
-       "Slot2": [   
-         {
-           "type": "Skill2",
-           "forceShow": true,
-         },
-       ],
-       "Slot3": [
-         {
-           "type": "Roll",
-         },
-       ],
-      },
-     },
-  },
-  "modes": {
-    "Normal": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Normal": "DefaultNormalState",
-        "Jump": "DefaultNormalState",
-        "Squat": "DefaultNormalState",
-        "Climb": "DefaultClimbState",
-        "Ladder": "DefaultClimbState",
-        "Fly": "DefaultFlyState",
-        "Swim": "DefaultSwimState",
-        "Aim": "DefaultAimState",
-        "FastAim": "DefaultAimState",
-        "CombatAir": "DefaultCombatAirState",
-        "CloseAll":"CloseAllState",
-      }
-    },
-    "Sneak": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Normal":   "SneakNormalState",
-        "Jump":     "SneakNormalState",
-        "Squat":    "SneakSquatState",
-        "Climb":    "SneakNormalState",
-        "Ladder":   "SneakNormalState",
-        "Fly":      "SneakNormalState",
-        "Swim":     "SneakNormalState",
-        "Aim":      "SneakNormalState",
-        "FastAim":  "SneakNormalState",
-        "CombatAir":"SneakNormalState",
-      }
-    },
-    "WildSneak": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Normal":   "WildSneakNormalState",
-        "Jump":     "WildSneakNormalState",
-        "Squat":    "WildSneakSquatState",
-        "Climb": "DefaultClimbState",
-        "Ladder": "DefaultClimbState",
-        "Fly": "DefaultFlyState",
-        "Swim": "DefaultSwimState",
-        "Aim": "DefaultAimState",
-        "FastAim": "DefaultAimState",
-        "CombatAir": "DefaultCombatAirState",
-      }
-    },
-    "Bomber": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Normal":   "BomberNormalState",
-        "Jump":     "BomberNormalState",
-        "Squat":    "DefaultNormalState",
-        "Climb":    "DefaultClimbState",
-        "Ladder":   "DefaultClimbState",
-        "Fly":      "BomberFlyState",
-        "Swim":     "DefaultSwimState",
-        "Aim":      "DefaultAimState",
-        "FastAim":  "DefaultAimState",
-        "CombatAir": "DefaultCombatAirState",
-      }
-    },
-    "FindCat": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Normal": "FindCatState",
-        "Jump": "FindCatState",
-        "Squat": "FindCatStateSquat",
-        "Climb": "DefaultClimbState",
-        "Ladder": "DefaultClimbState",
-        "Fly": "DefaultFlyState",
-        "Swim": "DefaultSwimState",
-        "Aim": "DefaultAimState",
-        "FastAim": "DefaultAimState",
-        "CombatAir": "DefaultCombatAirState",
-      }
-    },
-    "DvalinS01FlyState": {
-      "$type": "ConfigActionPanelMode",
-      "stateMap": {
-        "Fly":      "DvalinS01FlyState",
-      }
-    },
-  }, 
+    "modes": {
+        "Normal": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Normal": "DefaultNormalState",
+                "Jump": "DefaultNormalState",
+                "Squat": "DefaultNormalState",
+                "Climb": "DefaultClimbState",
+                "Ladder": "DefaultClimbState",
+                "Fly": "DefaultFlyState",
+                "Swim": "DefaultSwimState",
+                "Aim": "DefaultAimState",
+                "FastAim": "DefaultAimState",
+                "CombatAir": "DefaultCombatAirState",
+                "CloseAll": "CloseAllState"
+            }
+        },
+        "Sneak": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Normal": "SneakNormalState",
+                "Jump": "SneakNormalState",
+                "Squat": "SneakSquatState",
+                "Climb": "SneakNormalState",
+                "Ladder": "SneakNormalState",
+                "Fly": "SneakNormalState",
+                "Swim": "SneakNormalState",
+                "Aim": "SneakNormalState",
+                "FastAim": "SneakNormalState",
+                "CombatAir": "SneakNormalState"
+            }
+        },
+        "WildSneak": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Normal": "WildSneakNormalState",
+                "Jump": "WildSneakNormalState",
+                "Squat": "WildSneakSquatState",
+                "Climb": "DefaultClimbState",
+                "Ladder": "DefaultClimbState",
+                "Fly": "DefaultFlyState",
+                "Swim": "DefaultSwimState",
+                "Aim": "DefaultAimState",
+                "FastAim": "DefaultAimState",
+                "CombatAir": "DefaultCombatAirState"
+            }
+        },
+        "Bomber": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Normal": "BomberNormalState",
+                "Jump": "BomberNormalState",
+                "Squat": "DefaultNormalState",
+                "Climb": "DefaultClimbState",
+                "Ladder": "DefaultClimbState",
+                "Fly": "BomberFlyState",
+                "Swim": "DefaultSwimState",
+                "Aim": "DefaultAimState",
+                "FastAim": "DefaultAimState",
+                "CombatAir": "DefaultCombatAirState"
+            }
+        },
+        "FindCat": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Normal": "FindCatState",
+                "Jump": "FindCatState",
+                "Squat": "FindCatStateSquat",
+                "Climb": "DefaultClimbState",
+                "Ladder": "DefaultClimbState",
+                "Fly": "DefaultFlyState",
+                "Swim": "DefaultSwimState",
+                "Aim": "DefaultAimState",
+                "FastAim": "DefaultAimState",
+                "CombatAir": "DefaultCombatAirState"
+            }
+        },
+        "DvalinS01FlyState": {
+            "$type": "ConfigActionPanelMode",
+            "stateMap": {
+                "Fly": "DvalinS01FlyState"
+            }
+        }
+    }
 }

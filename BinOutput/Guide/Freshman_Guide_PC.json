@@ -1,1501 +1,1286 @@
 {
-	//PC转动镜头
-	"GuideCameraMovePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_CAMERA_ROTATE_PC",
-						"actionInfoList": [],
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Move",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideCameraScalePC",
-			},
-		],
-	},
-
-	//PC缩放镜头
-	"GuideCameraScalePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_CAMERA_SCALE_PC",
-						"actionInfo" : "MoveForward",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Scale",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 12,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarMovePC",
-			},
-		],
-	},
-
-	//PC键位指引
-	"GuideKeyboardPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_KEYBOARD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"clickToClose" : true,
-				"prefabList": [
-					"ART/UI/Menus/Widget/Newbie_Guide_PCInputKey",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideOpenUICondition",
-					"contextName": "NewbieDialog",
-					"enable" : false,
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_KEYBOARD",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarMovePC",
-			},
-		],
-	},
-
-	//PC角色移动
-	"GuideAvatarMovePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MOVE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_MOVE_PC",
-						"actionInfoList" : ["MoveForward", "MoveBackward", "MoveLeft", "MoveRight"],
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarActionCondition",
-					"action": "Move",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 8,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MOVE",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarSprintPC",
-			},
-		],
-	},
-
-	//PC冲刺
-	"GuideAvatarSprintPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_SPRINT",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_SPRINT_PC",
-						"actionInfoList" : ["SprintOrSkill3", ],
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerSkill3Event",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 8,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_SPRINT",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarJumpPC",
-			},
-		],
-	},
-
-	//PC跳跃
-	"GuideAvatarJumpPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_JUMP",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_JUMP_PC",
-						"actionInfoList" : ["JumpOrSkill4", ],
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerSkill4Event",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 8,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_JUMP",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC普攻
-	"GuideAvatarAttackPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ATTACK",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_ATTACK_PC",
-						"actionInfoList" : ["Skill1", ],
-						"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerSkill1Event",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ATTACK",
-				"value": true,
-			},
-		],
-	},
-
-	//PC交互
-	"GuideInteractionPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_INTERACTION_PC",
-						"actionInfoList" : ["TalkOrPick", ],
-						"hintOffset": 0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 5,
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC换人
-	"GuideChooseAmborPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_SWITCH_CHARACTER_PC",
-						"actionInfoList" : ["ToAvatar2", ],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ToAvatar1Event",
-					"ToAvatar2Event",
-					"ToAvatar3Event",
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarChangeCondition",
-					"configID": 10000021,
-
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor1AimPC",
-			},
-		],
-	},
-
-	//PC进入瞄准
-	"GuideAmbor1AimPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_ENTER_AIMING_PC",
-						"actionInfoList": ["EnterFocusMode", "ToggleAttackMode", ],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"EnterFocusModeEvent",
-					"ToggleAttackModeEvent",
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckAimCondition",
-					"value": true,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor3KillSlimPC",
-			},
-		],
-	},
-
-	//PC移动准星
-	"GuideAmbor2RotatePC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE_PC",
-						"actionInfoList" : [],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ChangeViewEvent",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Move",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 7,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor3KillSlimPC",
-			},
-		],
-	},
-
-	//PC射击目标
-	"GuideAmbor3KillSlimPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE_PC",
-						"actionInfoList" : ["Skill1", ],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ChangeViewEvent",
-					"TriggerSkill1Event",
-					"ReleaseSkill1Event",
-				],
-				"inputPriorityList":[
-					10,
-					20,
-					20,
-				]
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckTaskFinishCondition",
-					"taskId": 35404,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor4CloseAimPC",
-			},
-		],
-	},
-
-	//PC退出瞄准
-	"GuideAmbor4CloseAimPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_EXIT_AIMING_PC",
-						"actionInfoList" : ["EnterFocusMode", "ToggleAttackMode", ],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ExitFocusModeEvent",
-					"ToggleAttackModeEvent",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckAimCondition",
-					"value": false,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor5LongPressHintPC",
-			},
-		],
-	},
-
-	//PC蓄力瞄准
-	"GuideAmbor5LongPressHintPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_LONGPRESS_TO_AIM_PC",
-						"actionInfoList" : ["Skill1", ],
-						"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-	},
-
-	//PC小地图
-	"GuideRaidarPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_RADAR_PC",
-						"actionInfoList" : ["OpenMap", ],
-						"hintOffset": -0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 12,
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID": "OpenMapEvent",
-				},
-			],
-		],
-	},
-
-
-	//PC派蒙界面
-	"GuideViewHotkeyPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_VIEW_PAIMON_PC",
-						"actionInfoList" : ["OpenPaimon", ],
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID": "MenuBackEvent",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050901,
-			},
-		],
-	},
-
-
-	//PC点按战技
-	"GuideElementSkillPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_PC",
-						"actionInfoList" : ["Skill2", ],
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// },
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": true,
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-			// {
-			// 	"$type": "ConfigGuideSwitchInputContextAction",
-			// 	"inputEventList": [
-			// 		"TriggerSkill2Event",
-			// 		"ReleaseSkill2Event",
-			// 	],
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerSkill2Event",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC蓄力战技
-	"GuideElementSkillHoldPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_HOLD_PC",
-						"actionInfoList" : ["Skill2", ],
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-			// {
-			// 	"$type": "ConfigGuideSwitchInputContextAction",
-			// 	"inputEventList": [
-			// 		"TriggerSkill2Event",
-			// 		"ReleaseSkill2Event",
-			// 	],
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"type": "Charge",
-					"value": 1,
-					"eventID" : "TriggerSkill2Event",
-					"endEventID": "ReleaseSkill2Event",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC爆发
-	"GuideElementSkillBurstPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_BURST_PC",
-						"actionInfoList" : ["Skill5", ],
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-			// {
-			// 	"$type": "ConfigGuideSwitchInputContextAction",
-			// 	"inputEventList": [
-			// 		"TriggerSkill5Event",
-			// 		"ReleaseSkill5Event",
-			// 	],
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "TriggerSkill5Event",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC冒险之证
-	"GuideViewHelpPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
-						"actionInfoList" : ["Help",],
-						"hintOffset" : 0.7,
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuidePressKeyCondition",
-					"eventID" : "HelpEvent",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC冒险之证委托分页
-	"GuideAdventureDailyTaskPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
-						"actionInfoList" : ["Help",],
-						"hintOffset" : 0.7,
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
-						"actionInfoList" : ["Help",],
-						"hintOffset" : 0.7,
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK",
-						"widghtInfoPos": "B",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "AdventureHandbookPage",
-					"buttonPath": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC冒险之证地城分页
-	"GuideAdventureDungeonPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
-						"actionInfoList" : ["Help",],
-						"hintOffset" : 0.7,
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
-						"actionInfoList" : ["Help",],
-						"hintOffset" : 0.7,
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnDungeon/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON_TIPS",
-						"widghtInfoPos": "L",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "AdventureHandbookPage",
-					"buttonPath": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC角色天赋（得意技）
-	"GuideProudPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_PROUD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
-						"actionInfoList" : ["OpenCharacter",],
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnSkill",
-						"type": "Blink",
-						"maskType": "Normal",
-						"xOffset" : -0.5,
-						"yOffset" : 0,
-						"widghtInfo": "UI_GUIDE_INFO_OPEN_PROUD",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Skill/GrpSkill/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE",
-						"widghtInfoPos": "TL",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE_PROUD",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 60,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_PROUD",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-		],
-	},
-
-	//PC传送点
-	"GuideTransportPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
-						"type": "Blink",
-						"maskType": "Normal",
-						"hintInfo": "UI_GUIDE_INFO_TRANSPORT_MAP_PC",
-						"actionInfoList" : ["OpenMap", ],
-						"hintOffset": 0.7,
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMapPage",
-						"path": "GrpMap/MarkContainer/Layer1/10",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_TRANSPORT",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-				 "$type": "ConfigGuideButtonClickCondition",
-				 "type": "Click",
-				 "contextName" : "InLevelMapPage",
-				 "buttonPath": "GrpMap/MarkContainer/Layer1/10",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 30,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050702,
-			},
-		],
-	},
+    "GuideCameraMovePC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_CAMERA_ROTATE_PC",
+                        "actionInfoList": []
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Move"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideCameraScalePC"
+            }
+        ]
+    },
+    "GuideCameraScalePC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_CAMERA_SCALE_PC",
+                        "actionInfo": "MoveForward"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Scale"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 12
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarMovePC"
+            }
+        ]
+    },
+    "GuideKeyboardPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_KEYBOARD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "clickToClose": true,
+                "prefabList": [
+                    "ART/UI/Menus/Widget/Newbie_Guide_PCInputKey"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideOpenUICondition",
+                    "contextName": "NewbieDialog",
+                    "enable": false
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_KEYBOARD",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarMovePC"
+            }
+        ]
+    },
+    "GuideAvatarMovePC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MOVE",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_MOVE_PC",
+                        "actionInfoList": [
+                            "MoveForward",
+                            "MoveBackward",
+                            "MoveLeft",
+                            "MoveRight"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarActionCondition",
+                    "action": "Move"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 8
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MOVE",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarSprintPC"
+            }
+        ]
+    },
+    "GuideAvatarSprintPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_SPRINT",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_SPRINT_PC",
+                        "actionInfoList": [
+                            "SprintOrSkill3"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerSkill3Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 8
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_SPRINT",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarJumpPC"
+            }
+        ]
+    },
+    "GuideAvatarJumpPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_JUMP",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_JUMP_PC",
+                        "actionInfoList": [
+                            "JumpOrSkill4"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerSkill4Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 8
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_JUMP",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideAvatarAttackPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ATTACK",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_ATTACK_PC",
+                        "actionInfoList": [
+                            "Skill1"
+                        ],
+                        "hintOffset": -0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerSkill1Event"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ATTACK",
+                "value": true
+            }
+        ]
+    },
+    "GuideInteractionPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_INTERACTION_PC",
+                        "actionInfoList": [
+                            "TalkOrPick"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 5
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideChooseAmborPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_SWITCH_CHARACTER_PC",
+                        "actionInfoList": [
+                            "ToAvatar2"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ToAvatar1Event",
+                    "ToAvatar2Event",
+                    "ToAvatar3Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarChangeCondition",
+                    "configID": 10000021
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor1AimPC"
+            }
+        ]
+    },
+    "GuideAmbor1AimPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_ENTER_AIMING_PC",
+                        "actionInfoList": [
+                            "EnterFocusMode",
+                            "ToggleAttackMode"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "EnterFocusModeEvent",
+                    "ToggleAttackModeEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckAimCondition",
+                    "value": true
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor3KillSlimPC"
+            }
+        ]
+    },
+    "GuideAmbor2RotatePC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE_PC",
+                        "actionInfoList": []
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ChangeViewEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Move"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 7
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor3KillSlimPC"
+            }
+        ]
+    },
+    "GuideAmbor3KillSlimPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE_PC",
+                        "actionInfoList": [
+                            "Skill1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ChangeViewEvent",
+                    "TriggerSkill1Event",
+                    "ReleaseSkill1Event"
+                ],
+                "inputPriorityList": [
+                    10,
+                    20,
+                    20
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckTaskFinishCondition",
+                    "taskId": 35404
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor4CloseAimPC"
+            }
+        ]
+    },
+    "GuideAmbor4CloseAimPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_EXIT_AIMING_PC",
+                        "actionInfoList": [
+                            "EnterFocusMode",
+                            "ToggleAttackMode"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ExitFocusModeEvent",
+                    "ToggleAttackModeEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckAimCondition",
+                    "value": false
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor5LongPressHintPC"
+            }
+        ]
+    },
+    "GuideAmbor5LongPressHintPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_LONGPRESS_TO_AIM_PC",
+                        "actionInfoList": [
+                            "Skill1"
+                        ],
+                        "hintOffset": -0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ]
+    },
+    "GuideRaidarPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_RADAR_PC",
+                        "actionInfoList": [
+                            "OpenMap"
+                        ],
+                        "hintOffset": -0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 12
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "OpenMapEvent"
+                }
+            ]
+        ]
+    },
+    "GuideViewHotkeyPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_VIEW_PAIMON_PC",
+                        "actionInfoList": [
+                            "OpenPaimon"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "MenuBackEvent"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050901
+            }
+        ]
+    },
+    "GuideElementSkillPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_PC",
+                        "actionInfoList": [
+                            "Skill2"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerSkill2Event"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideElementSkillHoldPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_HOLD_PC",
+                        "actionInfoList": [
+                            "Skill2"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "type": "Charge",
+                    "value": 1,
+                    "eventID": "TriggerSkill2Event",
+                    "endEventID": "ReleaseSkill2Event"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideElementSkillBurstPC": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_BURST_PC",
+                        "actionInfoList": [
+                            "Skill5"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "TriggerSkill5Event"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideViewHelpPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
+                        "actionInfoList": [
+                            "Help"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuidePressKeyCondition",
+                    "eventID": "HelpEvent"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideAdventureDailyTaskPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
+                        "actionInfoList": [
+                            "Help"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
+                        "actionInfoList": [
+                            "Help"
+                        ],
+                        "hintOffset": 0.7
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK",
+                        "widghtInfoPos": "B"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "AdventureHandbookPage",
+                    "buttonPath": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideAdventureDungeonPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
+                        "actionInfoList": [
+                            "Help"
+                        ],
+                        "hintOffset": 0.7
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_MAP_PC",
+                        "actionInfoList": [
+                            "Help"
+                        ],
+                        "hintOffset": 0.7
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnDungeon/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON_TIPS",
+                        "widghtInfoPos": "L"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "AdventureHandbookPage",
+                    "buttonPath": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideProudPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_PROUD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE_PC",
+                        "actionInfoList": [
+                            "OpenCharacter"
+                        ]
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnSkill",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "xOffset": -0.5,
+                        "yOffset": 0,
+                        "widghtInfo": "UI_GUIDE_INFO_OPEN_PROUD",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Skill/GrpSkill/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE",
+                        "widghtInfoPos": "TL"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE_PROUD",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "CharacterPage",
+                    "buttonPath": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 60
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_PROUD",
+                "value": true
+            }
+        ],
+        "onQuit": []
+    },
+    "GuideTransportPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "hintInfo": "UI_GUIDE_INFO_TRANSPORT_MAP_PC",
+                        "actionInfoList": [
+                            "OpenMap"
+                        ],
+                        "hintOffset": 0.7
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMapPage",
+                        "path": "GrpMap/MarkContainer/Layer1/10",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_TRANSPORT",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMapPage",
+                    "buttonPath": "GrpMap/MarkContainer/Layer1/10"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 30
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050702
+            }
+        ]
+    }
 }

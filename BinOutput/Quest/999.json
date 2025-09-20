@@ -1,74 +1,74 @@
 {
-  "id": 999,
-  "type": "WQ",
-  "title": 3695553,
-  "luaPath": "Actor/Quest/SQ999",
-  "rewardIdList": [
-    100400
-  ],
-  "subQuests": [
-    {
-      "subId": 99901,
-      "mainId": 999,
-      "order": 1,
-      "desc": 3406630415,
-      "acceptCond": [
+    "id": 999,
+    "type": "WQ",
+    "title": 3695553,
+    "luaPath": "Actor/Quest/SQ999",
+    "rewardIdList": [
+        100400
+    ],
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            35724,
-            4,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 99901,
+            "mainId": 999,
+            "order": 1,
+            "desc": 3406630415,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        35724,
+                        4,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99902,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99902,
-            0
-          ]
+            "subId": 99902,
+            "mainId": 999,
+            "order": 2,
+            "desc": 383933495,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99901,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        99908,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true
         }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 99902,
-      "mainId": 999,
-      "order": 2,
-      "desc": 383933495,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99901,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            99908,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true
-    }
-  ]
+    ]
 }

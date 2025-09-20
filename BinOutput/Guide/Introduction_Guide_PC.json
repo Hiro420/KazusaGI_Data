@@ -1,45 +1,37 @@
 {
-    // PC角色界面 Avatar 201
-	"CharacterPageAvatarIntroPC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_MOVE",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 4,
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-	},
-
+    "CharacterPageAvatarIntroPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/AvatarInfo/GrpAction",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_MOVE",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 4
+                }
+            ]
+        ],
+        "onFinish": []
+    }
 }

@@ -1,45 +1,45 @@
 {
-  "id": 90001,
-  "type": "IQ",
-  "subQuests": [
-    {
-      "subId": 9000101,
-      "mainId": 90001,
-      "order": 1,
-      "acceptCond": [
+    "id": 90001,
+    "type": "IQ",
+    "subQuests": [
         {
-          "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
-          "param": [
-            30,
-            0,
-            0
-          ]
-        },
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
+            "subId": 9000101,
+            "mainId": 90001,
+            "order": 1,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
+                    "param": [
+                        30,
+                        0,
+                        0
+                    ]
+                },
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_PLAYER_LEVEL_UP",
+                    "param": [
+                        31,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    null,
+                    null
+                ]
+            },
+            "finishParent": true
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_PLAYER_LEVEL_UP",
-          "param": [
-            31,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          null,
-          null
-        ]
-      },
-      "finishParent": true
-    }
-  ]
+    ]
 }

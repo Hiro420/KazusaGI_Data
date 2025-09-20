@@ -1,115 +1,287 @@
 {
-	"context": {
-    "ActivitySeaLampPage": {
-      "actionGroups": {
-				"Default": [
-					{"contextEvent": "ShowHelpTips","eventType": "DPadUpEvent", "priority": 0},
-          {"contextEvent": "UIDetails","eventType": "DPadRightEvent", "priority": 0},
-          {"contextEvent": "ShowItemDetailEvent","eventType": "RightStickButtonEvent", "priority": 0},
-          {"contextEvent": "CommonMenuLeftEvent","eventType": "MenuLeftEvent", "priority": 0},
-          {"contextEvent": "CommonMenuUpEvent","eventType": "MenuUpEvent", "priority": 0},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-          {"contextEvent": "CommonLeftStickHorizontalEvent", "eventType": "LeftStickHorizontalEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickButtonEvent", "eventType": "LeftStickButtonEvent", "priority": 0}
-        ]
-			},
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
+    "context": {
+        "ActivitySeaLampPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ShowHelpTips",
+                        "eventType": "DPadUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "DPadRightEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuUpEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickHorizontalEvent",
+                        "eventType": "LeftStickHorizontalEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickButtonEvent",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 0
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ActivityGetRewardDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ActivityWishDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuUpEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountReleaseEvent",
+                        "eventType": "RightTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountReleaseEvent",
+                        "eventType": "LeftTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ActivityContributionDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountReleaseEvent",
+                        "eventType": "RightTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountReleaseEvent",
+                        "eventType": "LeftTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ActivityProgressPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
         }
-      },
-      "enableJoypadVirtualCursor": false,
-    },
-    "ActivityGetRewardDialog": {
-      "actionGroups": {
-        "Default": [
-          {"contextEvent": "ShowItemDetailEvent","eventType": "RightStickButtonEvent", "priority": 0},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-        ]
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        }
-      },
-      "enableJoypadVirtualCursor": false,
-    },
-    "ActivityWishDialog": {
-      "actionGroups": {
-        "Default": [
-          {"contextEvent": "CommonMenuLeftEvent","eventType": "MenuLeftEvent", "priority": 0},
-          {"contextEvent": "CommonMenuUpEvent", "eventType": "MenuUpEvent", "priority": 4},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-          {"contextEvent": "IncreaseCountEvent", "eventType": "RightTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "DecreaseCountEvent", "eventType": "LeftTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "IncreaseCountReleaseEvent", "eventType": "RightTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "DecreaseCountReleaseEvent", "eventType": "LeftTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-        ]
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        }
-      },
-      "enableJoypadVirtualCursor": false,
-    },
-    "ActivityContributionDialog": {
-      "actionGroups": {
-        "Default": [
-          {"contextEvent": "ShowItemDetailEvent","eventType": "RightStickButtonEvent", "priority": 0},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-          {"contextEvent": "IncreaseCountEvent", "eventType": "RightTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "DecreaseCountEvent", "eventType": "LeftTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "IncreaseCountReleaseEvent", "eventType": "RightTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "DecreaseCountReleaseEvent", "eventType": "LeftTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-        ]
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        }
-      },
-      "enableJoypadVirtualCursor": false,
-    },
-    "ActivityProgressPage": {
-      "actionGroups": {
-        "Default": [
-          {"contextEvent": "ShowItemDetailEvent","eventType": "RightStickButtonEvent", "priority": 0},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-          {"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-          {"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-        ]
-      },
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
-        }
-      },
-      "enableJoypadVirtualCursor": false,
-    },
-	}
+    }
 }

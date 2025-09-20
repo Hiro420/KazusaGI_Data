@@ -1,69 +1,55 @@
 {
-	"GuideAvatarFlyWarningInfo" : 
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"maskType": "Normal",
-						"warningInfo" : "UI_GUIDE_INFO_FLYWARNING",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarStateCondition",
-					"state": "Normal",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onQuit":
-		[
-		],
-	},
-
-
-    //单纯禁止操作
-	"GuideDisableInput" : 
-	{
-		"$type": "ConfigGuideTask",
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideForceAvatarMoveAction",
-				"angle" : 0,
-				"rotate" : 0,
-				"mold" : 0,
-			},
-			{
-				"$type": "ConfigGuideCameraControlAction",
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 1.5,
-				},
-			],
-		],
-	},
-
+    "GuideAvatarFlyWarningInfo": {
+        "$type": "ConfigGuideTask",
+        "predicates": [],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "maskType": "Normal",
+                        "warningInfo": "UI_GUIDE_INFO_FLYWARNING"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Normal"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onQuit": []
+    },
+    "GuideDisableInput": {
+        "$type": "ConfigGuideTask",
+        "onGuide": [
+            {
+                "$type": "ConfigGuideForceAvatarMoveAction",
+                "angle": 0,
+                "rotate": 0,
+                "mold": 0
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 1.5
+                }
+            ]
+        ]
+    }
 }

@@ -1,75 +1,75 @@
 {
-  "id": 996,
-  "type": "WQ",
-  "title": 1903697617,
-  "luaPath": "Actor/Quest/SQ996",
-  "subQuests": [
-    {
-      "subId": 99601,
-      "mainId": 996,
-      "order": 1,
-      "desc": 3683323503,
-      "acceptCond": [
+    "id": 996,
+    "type": "WQ",
+    "title": 1903697617,
+    "luaPath": "Actor/Quest/SQ996",
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 99601,
+            "mainId": 996,
+            "order": 1,
+            "desc": 3683323503,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "QuestChurchMark",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            0,
-            0
-          ]
+            "subId": 99602,
+            "mainId": 996,
+            "order": 2,
+            "desc": 544559735,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99601,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "QuestChurchMark",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true
         }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "QuestChurchMark",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 99602,
-      "mainId": 996,
-      "order": 2,
-      "desc": 544559735,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99601,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            0,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "QuestChurchMark",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true
-    }
-  ]
+    ]
 }

@@ -1,209 +1,183 @@
 {
-//PC飞行
-	"GuideAvatarFlyPC" : 
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_MOVEFORWARD_PC",
-						"actionInfoList" : ["MoveForward"],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideForceAvatarMoveAction",
-				"angle" : 0,
-				"rotate" : 0,
-				"mold" : 1,
-			},
-			{
-				"$type": "ConfigGuideCameraControlAction",
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarStateCondition",
-					"state": "CanFly",
-				},
-			],
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarFly_Step02PC",
-			},
-		],
-	},
-
-	"GuideAvatarFly_Step02PC" : 
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_FLY_PC",
-						"actionInfoList" : ["JumpOrSkill4"],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuidePauseAction",
-			},
-			{
-				"$type": "ConfigGuideCameraControlAction",
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarStateCondition",
-					"state": "Fly",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideDelayDoAction",
-				"delayTime": 0.8,
-				"actions" : [
-					{
-				        "$type": "ConfigGuideAddTaskAction",
-				        "taskName": "GuideAvatarFly_Step03PC",
-			        },
-				]
-			}
-		],
-	},
-
-	"GuideAvatarFly_Step03PC" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_MOVE_PC",
-						"actionInfoList" : ["MoveForward", "MoveBackward", "MoveLeft", "MoveRight"],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideCameraControlAction",
-			},
-			{
-				"$type": "ConfigGuidePauseAction",
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-				"$type": "ConfigGuideAvatarStateCondition",
-				"state": "TryToMove",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-		],
-	},
-
-    //PC风场
-		"GuideAvatarFlyInWindPC" : 
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "Standalone",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"actionInfoList" : ["JumpOrSkill4"],
-						"hintInfo": "UI_GUIDE_INFO_FLYINWIND_PC",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarStateCondition",
-					"state": "Fly",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 10,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-
-		"onQuit":
-		[
-
-		],
-	},
+    "GuideAvatarFlyPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_MOVEFORWARD_PC",
+                        "actionInfoList": [
+                            "MoveForward"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideForceAvatarMoveAction",
+                "angle": 0,
+                "rotate": 0,
+                "mold": 1
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "CanFly"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarFly_Step02PC"
+            }
+        ]
+    },
+    "GuideAvatarFly_Step02PC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_FLY_PC",
+                        "actionInfoList": [
+                            "JumpOrSkill4"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideDelayDoAction",
+                "delayTime": 0.8,
+                "actions": [
+                    {
+                        "$type": "ConfigGuideAddTaskAction",
+                        "taskName": "GuideAvatarFly_Step03PC"
+                    }
+                ]
+            }
+        ]
+    },
+    "GuideAvatarFly_Step03PC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_MOVE_PC",
+                        "actionInfoList": [
+                            "MoveForward",
+                            "MoveBackward",
+                            "MoveLeft",
+                            "MoveRight"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideCameraControlAction"
+            },
+            {
+                "$type": "ConfigGuidePauseAction"
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "TryToMove"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    },
+    "GuideAvatarFlyInWindPC": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "Standalone",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "actionInfoList": [
+                            "JumpOrSkill4"
+                        ],
+                        "hintInfo": "UI_GUIDE_INFO_FLYINWIND_PC"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarStateCondition",
+                    "state": "Fly"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 10
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": []
+    }
 }

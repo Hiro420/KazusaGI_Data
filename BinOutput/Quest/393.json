@@ -1,168 +1,168 @@
 {
-  "id": 393,
-  "series": 1003,
-  "title": 1520658585,
-  "desc": 3601198255,
-  "luaPath": "Actor/Quest/MQ393",
-  "suggestTrackMainQuestList": [
-    394
-  ],
-  "rewardIdList": [
-    100393
-  ],
-  "chapterId": 1003,
-  "subQuests": [
-    {
-      "subId": 39301,
-      "mainId": 393,
-      "order": 1,
-      "desc": 3474298871,
-      "acceptCond": [
+    "id": 393,
+    "series": 1003,
+    "title": 1520658585,
+    "desc": 3601198255,
+    "luaPath": "Actor/Quest/MQ393",
+    "suggestTrackMainQuestList": [
+        394
+    ],
+    "rewardIdList": [
+        100393
+    ],
+    "chapterId": 1003,
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39008,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 39301,
+            "mainId": 393,
+            "order": 1,
+            "desc": 3474298871,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39008,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        39301,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_NOTIFY_GROUP_LUA",
+                    "param": [
+                        "3",
+                        "133007029"
+                    ]
+                }
+            ],
+            "exclusiveNpcList": [
+                1001,
+                1009,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            39301,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishExec": [
+            "subId": 39302,
+            "mainId": 393,
+            "order": 2,
+            "desc": 1199618135,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39301,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_TRIGGER_FIRE",
+                    "param": [
+                        1092,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q389VentiPos2",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "isRewind": true,
+            "exclusiveNpcList": [
+                1001,
+                1009,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
+        },
         {
-          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA",
-          "param": [
-            "3",
-            "133007029"
-          ]
+            "subId": 39303,
+            "mainId": 393,
+            "order": 3,
+            "desc": 286588839,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39302,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        39301,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "exclusiveNpcList": [
+                1001,
+                1009,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
         }
-      ],
-      "exclusiveNpcList": [
-        1001,
-        1009,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    },
-    {
-      "subId": 39302,
-      "mainId": 393,
-      "order": 2,
-      "desc": 1199618135,
-      "acceptCond": [
+    ],
+    "talks": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39301,
-            3,
-            0
-          ]
+            "id": 39301,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "39303",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 1,
+            "initDialog": 3930101,
+            "npcId": [
+                1001
+            ],
+            "performCfg": "QuestDialogue/Q393/InterContainer_Q39301",
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 393,
+            "assetIndex": 786894274137
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_TRIGGER_FIRE",
-          "param": [
-            1092,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q389VentiPos2",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "isRewind": true,
-      "exclusiveNpcList": [
-        1001,
-        1009,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    },
-    {
-      "subId": 39303,
-      "mainId": 393,
-      "order": 3,
-      "desc": 286588839,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39302,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            39301,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "exclusiveNpcList": [
-        1001,
-        1009,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    }
-  ],
-  "talks": [
-    {
-      "id": 39301,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "39303",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 1,
-      "initDialog": 3930101,
-      "npcId": [
-        1001
-      ],
-      "performCfg": "QuestDialogue/Q393/InterContainer_Q39301",
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 393,
-      "assetIndex": 786894274137
-    }
-  ]
+    ]
 }

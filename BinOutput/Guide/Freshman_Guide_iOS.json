@@ -1,1513 +1,1258 @@
 {
-	//iOS转动镜头
-	"GuideCameraMove" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"prefabList": [
-					"ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01",
-				],
-			},
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_CAMERA_ROTATE",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Move",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 12,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideCameraScale",
-			},
-		],
-	},
-	//iOS缩放镜头
-	"GuideCameraScale" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"prefabList": [
-					"ART/UI/Menus/Widget/Newbie_Guide_MobileGesture02",
-				],
-			},
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_CAMERA_SCALE",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Scale",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 12,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarMove",
-			},
-		],
-	},
-	//iOS角色移动
-	"GuideAvatarMove" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_MOVE",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/InputController/MoveJoystick_H4/GrpJoyStick",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_MOVE",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarActionCondition",
-					"action": "Move",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_MOVE",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarSprint",
-			},
-		],
-	},
-	//iOS冲刺
-	"GuideAvatarSprint" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_SPRINT",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill3",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_SPRINT",
-						"widghtInfoPos": "L",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "PressDown",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill3/ActionBtn_Sprint(Clone)",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_SPRINT",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarJump",
-			},
-		],
-	},
-	//iOS跳跃
-	"GuideAvatarJump" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_JUMP",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill4",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_JUMP",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill4/ActionBtn_Jump(Clone)",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_JUMP",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideCameraMovePC",
-			},
-		],
-	},
-
-	//iOS普攻
-	"GuideAvatarAttack" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ATTACK",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ATTACK",
-						"widghtInfoPos": "TL",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "PressDown",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1/ActionBtn_Skill1(Clone)",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ATTACK",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAvatarAttackPC",
-			},
-		],
-	},
-	
-
-	//iOS交互
-	"GuideInteraction" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_INTERACTION",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 5,
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideInteractionPC",
-			},
-		],
-	},
-	
-
-	//iOS换人
-	"GuideChooseAmbor" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/TeamBtnContainer/Content/1",
-						"type": "Blink",
-						"maskType": "Black",
-						"hintInfo": "UI_GUIDE_SWITCH_CHARACTER",
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ToAvatar1Event",
-					"ToAvatar2Event",
-					"ToAvatar3Event",
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideAvatarChangeCondition",
-					"configID": 10000021,
-
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor1Aim",
-			},
-		],
-	},
-	//iOS进入瞄准
-	"GuideAmbor1Aim" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/AM",
-						"type": "Blink",
-						"maskType": "Black",
-						"widghtInfo": "UI_GUIDE_INFO_ENTER_AIMING",
-						"widghtInfoPos": "L",
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"EnterFocusModeEvent",
-					"ToggleAttackModeEvent",
-				],
-			},
-
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckAimCondition",
-					"value": true,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor3KillSlim",
-			},
-		],
-	},
-	//iOS移动准星
-	"GuideAmbor2Rotate" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"prefabList": [
-					"ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01",
-				],
-			},
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE",
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ChangeViewEvent",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCameraCondition",
-					"action": "Move",
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor3KillSlim",
-			},
-		],
-	},
-	//iOS射击目标
-	"GuideAmbor3KillSlim" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1",
-						"type": "Blink",
-						"maskType": "Transparent",
-						"maskPassEasyTouch": true,
-						"hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE",
-						"widghtInfo": "UI_GUIDE_AIMING_SHOOT",
-						"widghtInfoPos": "T",
-					},
-					{
-						"$type": "ConfigGuideUIMaskAction",
-						"prefabList": [
-							"ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01",
-						],
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ChangeViewEvent",
-					"TriggerSkill1Event",
-					"ReleaseSkill1Event",
-				],
-				"inputPriorityList":[
-					10,
-					20,
-					20,
-				]
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckTaskFinishCondition",
-					"taskId": 35404,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor4CloseAim",
-			},
-		],
-	},
-	//iOS退出瞄准
-	"GuideAmbor4CloseAim" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/AM",
-						"type": "Blink",
-						"maskType": "Black",
-						"widghtInfo": "UI_GUIDE_INFO_EXIT_AIMING",
-						"widghtInfoPos": "L",
-					},
-				],
-			},
-			{
-				"$type": "ConfigGuideSwitchInputContextAction",
-				"inputEventList": [
-					"ExitFocusModeEvent",
-					"ToggleAttackModeEvent",
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideCheckAimCondition",
-					"value": false,
-				},
-			],
-		],
-		"onFinish":
-		[
-
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAmbor5LongPressHint",
-			},
-		],
-	},
-	//iOS蓄力瞄准
-	"GuideAmbor5LongPressHint" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"hintInfo": "UI_GUIDE_INFO_LONGPRESS_TO_AIM",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 15,
-				},
-			],
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideChooseAmborPC",
-			},
-		],
-	},
-
-	//iOS小地图
-	"GuideRadar" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_RADAR",
-						"widghtInfoPos": "R",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-				 "$type": "ConfigGuideButtonClickCondition",
-				 "type": "Click",
-				 "contextName" : "InLevelMainPage",
-				 "buttonPath": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap",
-				},
-			],
-			[
-				{
-					"$type": "ConfigGuideDelayFinishCondition",
-					"delayTime": 12,
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideRaidarPC",
-			},
-		],
-	},
-
-	//iOS派蒙界面
-	"GuideViewHotkey" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/BtnPlayerProfile/Icon",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_VIEW_PAIMON",
-						"widghtInfoPos": "R",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/MapInfo/BtnPlayerProfile",
-				},
-			],
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideViewHotkeyPC",
-			},
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050901,
-			},
-		],
-	},
-
-	//ios点按战技
-	"GuideElementSkill" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// 	"enable": false,
-			// },
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": true,
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "PressDown",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2/ActionBtn_Skill2(Clone)",
-				},
-			],
-		],
-		"onFinish":
-		[
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": false,
-			// },
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// 	"enable": true,
-			// },
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideElementSkillPC",
-			},
-			// {
-			// 	"$type": "ConfigGuideAddTaskAction",
-			// 	"taskName": "GuideElementSkillCD",
-			// },
-		],
-	},
-
-	//ios蓄力战技
-	"GuideElementSkillHold" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_HOLD",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// 	"enable": false,
-			// },
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": true,
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Charge",
-					"value": 1,
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2/ActionBtn_Skill2(Clone)",
-				},
-			],
-		],
-		"onFinish":
-		[
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": false,
-			// },
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// 	"enable": true,
-			// },
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideElementSkillHoldPC",
-			},
-		],
-	},
-
-
-	//ios爆发
-	"GuideElementSkillBurst" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill5",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_BURST",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-			// {
-			// 	"$type": "ConfigGuideCameraControlAction",
-			// },
-			// {
-			// 	"$type": "ConfigGuidePauseAction",
-			// 	"enable": true,
-			// },
-			// {
-			// 	"$type": "ConfigGuideForceAvatarMoveAction",
-			// 	"angle" : 0,
-			// 	"rotate" : 0,
-			// 	"mold" : 0,
-			// },
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "PressDown",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill5/ActionBtn_Skill5(Clone)",
-				},
-			],
-		],
-		"onFinish":
-		[
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideElementSkillBurstPC",
-			},
-		],
-	},
-
-	//iOS冒险之证
-	"GuideViewHelp" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
-						"widghtInfoPos": "B",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "InLevelMainPage",
-					"buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideViewHelpPC",
-			},
-		],
-	},
-
-	//iOS冒险之证委托分页
-	"GuideAdventureDailyTask" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK",
-						"widghtInfoPos": "B",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "AdventureHandbookPage",
-					"buttonPath": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAdventureDailyTaskPC",
-			},
-		],
-	},
-	
-	//iOS冒险之证地城分页
-	"GuideAdventureDungeon" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"type": "Blink",
-				"maskType": "Normal",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnDungeon/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "AdventureHandbookPage",
-						"path": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON_TIPS",
-						"widghtInfoPos": "L",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "AdventureHandbookPage",
-					"buttonPath": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideAdventureDungeonPC",
-			},
-		],
-	},
-
-	//iOS角色天赋（得意技）
-	"GuideProud" :
-	{
-		"$type": "ConfigGuideTask",
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideOpenStateCondition",
-				"openState": "OPEN_STATE_GUIDE_PROUD",
-				"value": false,
-			},
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpTab/Menu/Content/BtnSkill",
-						"type": "Blink",
-						"maskType": "Normal",
-						"xOffset" : -0.5,
-						"yOffset" : 0,
-						"widghtInfo": "UI_GUIDE_INFO_OPEN_PROUD",
-						"widghtInfoPos": "R",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Skill/GrpSkill",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE",
-						"widghtInfoPos": "TL",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "CharacterPage",
-						"path": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE_PROUD",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-					"$type": "ConfigGuideButtonClickCondition",
-					"type": "Click",
-					"contextName" : "CharacterPage",
-					"buttonPath": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideSetOpenStateAction",
-				"openState": "OPEN_STATE_GUIDE_PROUD",
-				"value": true,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideProudPC",
-			},
-		],
-	},
-
-	//iOS传送点
-	"GuideTransport" :
-	{
-		"$type": "ConfigGuideTask",
-		"isFreshmanGuide" : true,
-		"predicates":
-		[
-			{
-				"$type": "ConfigGuideCheckPlatformCondition",
-				"platform": "iOS",
-				"value": true,
-			},
-		],
-		"onGuide":
-		[
-			{
-				"$type": "ConfigGuideUIMaskAction",
-				"widgetList": [
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMainPage",
-						"path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_TRANSPORT_MAP",
-						"widghtInfoPos": "B",
-					},
-					{
-						"$type": "ConfigGuideWidgetContent",
-						"contextName": "InLevelMapPage",
-						"path": "GrpMap/MarkContainer/Layer1/10",
-						"type": "Blink",
-						"maskType": "Normal",
-						"widghtInfo": "UI_GUIDE_INFO_TRANSPORT",
-						"widghtInfoPos": "T",
-					},
-				],
-			},
-		],
-		"finishCondition":
-		[
-			[
-				{
-				 "$type": "ConfigGuideButtonClickCondition",
-				 "type": "Click",
-				 "contextName" : "InLevelMapPage",
-				 "buttonPath": "GrpMap/MarkContainer/Layer1/10",
-				},
-			],
-		],
-		"onFinish":
-		[
-			{
-				"$type": "ConfigGuideFinishQuestAction",
-				"questID": 2050702,
-			},
-		],
-		"onQuit":
-		[
-			{
-				"$type": "ConfigGuideAddTaskAction",
-				"taskName": "GuideTransportPC",
-			},
-		],
-	},
+    "GuideCameraMove": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "prefabList": [
+                    "ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01"
+                ]
+            },
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_CAMERA_ROTATE"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Move"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 12
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MOVE_CAMERA",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideCameraScale"
+            }
+        ]
+    },
+    "GuideCameraScale": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "prefabList": [
+                    "ART/UI/Menus/Widget/Newbie_Guide_MobileGesture02"
+                ]
+            },
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_CAMERA_SCALE"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Scale"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 12
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_SCALE_CAMERA",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarMove"
+            }
+        ]
+    },
+    "GuideAvatarMove": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_MOVE",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/InputController/MoveJoystick_H4/GrpJoyStick",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_MOVE",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarActionCondition",
+                    "action": "Move"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_MOVE",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarSprint"
+            }
+        ]
+    },
+    "GuideAvatarSprint": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_SPRINT",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill3",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_SPRINT",
+                        "widghtInfoPos": "L"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "PressDown",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill3/ActionBtn_Sprint(Clone)"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_SPRINT",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarJump"
+            }
+        ]
+    },
+    "GuideAvatarJump": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_JUMP",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill4",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_JUMP",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill4/ActionBtn_Jump(Clone)"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_JUMP",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideCameraMovePC"
+            }
+        ]
+    },
+    "GuideAvatarAttack": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ATTACK",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ATTACK",
+                        "widghtInfoPos": "TL"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "PressDown",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1/ActionBtn_Skill1(Clone)"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ATTACK",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAvatarAttackPC"
+            }
+        ]
+    },
+    "GuideInteraction": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_INTERACTION"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 5
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideInteractionPC"
+            }
+        ]
+    },
+    "GuideChooseAmbor": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/TeamBtnContainer/Content/1",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "hintInfo": "UI_GUIDE_SWITCH_CHARACTER"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ToAvatar1Event",
+                    "ToAvatar2Event",
+                    "ToAvatar3Event"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideAvatarChangeCondition",
+                    "configID": 10000021
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor1Aim"
+            }
+        ]
+    },
+    "GuideAmbor1Aim": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/AM",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "widghtInfo": "UI_GUIDE_INFO_ENTER_AIMING",
+                        "widghtInfoPos": "L"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "EnterFocusModeEvent",
+                    "ToggleAttackModeEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckAimCondition",
+                    "value": true
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor3KillSlim"
+            }
+        ]
+    },
+    "GuideAmbor2Rotate": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "prefabList": [
+                    "ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01"
+                ]
+            },
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ChangeViewEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCameraCondition",
+                    "action": "Move"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor3KillSlim"
+            }
+        ]
+    },
+    "GuideAmbor3KillSlim": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill1",
+                        "type": "Blink",
+                        "maskType": "Transparent",
+                        "maskPassEasyTouch": true,
+                        "hintInfo": "UI_GUIDE_AIMING_CAMERA_ROTATE",
+                        "widghtInfo": "UI_GUIDE_AIMING_SHOOT",
+                        "widghtInfoPos": "T"
+                    },
+                    {
+                        "$type": "ConfigGuideUIMaskAction",
+                        "prefabList": [
+                            "ART/UI/Menus/Widget/Newbie_Guide_MobileGesture01"
+                        ]
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ChangeViewEvent",
+                    "TriggerSkill1Event",
+                    "ReleaseSkill1Event"
+                ],
+                "inputPriorityList": [
+                    10,
+                    20,
+                    20
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckTaskFinishCondition",
+                    "taskId": 35404
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor4CloseAim"
+            }
+        ]
+    },
+    "GuideAmbor4CloseAim": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/AM",
+                        "type": "Blink",
+                        "maskType": "Black",
+                        "widghtInfo": "UI_GUIDE_INFO_EXIT_AIMING",
+                        "widghtInfoPos": "L"
+                    }
+                ]
+            },
+            {
+                "$type": "ConfigGuideSwitchInputContextAction",
+                "inputEventList": [
+                    "ExitFocusModeEvent",
+                    "ToggleAttackModeEvent"
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideCheckAimCondition",
+                    "value": false
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAmbor5LongPressHint"
+            }
+        ]
+    },
+    "GuideAmbor5LongPressHint": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "hintInfo": "UI_GUIDE_INFO_LONGPRESS_TO_AIM"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 15
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideChooseAmborPC"
+            }
+        ]
+    },
+    "GuideRadar": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_RADAR",
+                        "widghtInfoPos": "R"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap"
+                }
+            ],
+            [
+                {
+                    "$type": "ConfigGuideDelayFinishCondition",
+                    "delayTime": 12
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideRaidarPC"
+            }
+        ]
+    },
+    "GuideViewHotkey": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/BtnPlayerProfile/Icon",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_VIEW_PAIMON",
+                        "widghtInfoPos": "R"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/MapInfo/BtnPlayerProfile"
+                }
+            ]
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideViewHotkeyPC"
+            }
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050901
+            }
+        ]
+    },
+    "GuideElementSkill": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "PressDown",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2/ActionBtn_Skill2(Clone)"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideElementSkillPC"
+            }
+        ]
+    },
+    "GuideElementSkillHold": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_HOLD",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Charge",
+                    "value": 1,
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill2/ActionBtn_Skill2(Clone)"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideElementSkillHoldPC"
+            }
+        ]
+    },
+    "GuideElementSkillBurst": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill5",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ELEMENT_SKILL_BURST",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "PressDown",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/ActionPanelContainer/ActionBtnPanel/Skill5/ActionBtn_Skill5(Clone)"
+                }
+            ]
+        ],
+        "onFinish": [],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideElementSkillBurstPC"
+            }
+        ]
+    },
+    "GuideViewHelp": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
+                        "widghtInfoPos": "B"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMainPage",
+                    "buttonPath": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_CARD",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideViewHelpPC"
+            }
+        ]
+    },
+    "GuideAdventureDailyTask": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DAILYTASK",
+                        "widghtInfoPos": "B"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "AdventureHandbookPage",
+                    "buttonPath": "GrpAdventureHandbook/GrpHandbook/Menu/BtnEvent/Content"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DAILYTASK",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAdventureDailyTaskPC"
+            }
+        ]
+    },
+    "GuideAdventureDungeon": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "type": "Blink",
+                "maskType": "Normal",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnHandbook/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Menu/BtnDungeon/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "AdventureHandbookPage",
+                        "path": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_ADVENTURE_CARD_DUNGEON_TIPS",
+                        "widghtInfoPos": "L"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "AdventureHandbookPage",
+                    "buttonPath": "GrpAdventureHandbook/GrpHandbook/Tab/Dungeon/GrpCU/BtnDungeonTips/Content"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_ADVENTURE_DUNGEON",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideAdventureDungeonPC"
+            }
+        ]
+    },
+    "GuideProud": {
+        "$type": "ConfigGuideTask",
+        "predicates": [
+            {
+                "$type": "ConfigGuideOpenStateCondition",
+                "openState": "OPEN_STATE_GUIDE_PROUD",
+                "value": false
+            },
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/GrpMainBtn/GrpMainToggle/GrpTopPanel/BtnSystem/Button",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_OPEN_CHARACTERPAGE",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpTab/Menu/Content/BtnSkill",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "xOffset": -0.5,
+                        "yOffset": 0,
+                        "widghtInfo": "UI_GUIDE_INFO_OPEN_PROUD",
+                        "widghtInfoPos": "R"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Skill/GrpSkill",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE",
+                        "widghtInfoPos": "TL"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "CharacterPage",
+                        "path": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_AVATAR_PROMOTE_PROUD",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "CharacterPage",
+                    "buttonPath": "GrpCharacter/GrpAvatarInfo/Skill/GrpDetail/SkillDetail/Bottom/BtnUpgrade/Content"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideSetOpenStateAction",
+                "openState": "OPEN_STATE_GUIDE_PROUD",
+                "value": true
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideProudPC"
+            }
+        ]
+    },
+    "GuideTransport": {
+        "$type": "ConfigGuideTask",
+        "isFreshmanGuide": true,
+        "predicates": [
+            {
+                "$type": "ConfigGuideCheckPlatformCondition",
+                "platform": "iOS",
+                "value": true
+            }
+        ],
+        "onGuide": [
+            {
+                "$type": "ConfigGuideUIMaskAction",
+                "widgetList": [
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMainPage",
+                        "path": "GrpMainPage/MapInfo/GrpMiniMap/GrpMap/Btn",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_TRANSPORT_MAP",
+                        "widghtInfoPos": "B"
+                    },
+                    {
+                        "$type": "ConfigGuideWidgetContent",
+                        "contextName": "InLevelMapPage",
+                        "path": "GrpMap/MarkContainer/Layer1/10",
+                        "type": "Blink",
+                        "maskType": "Normal",
+                        "widghtInfo": "UI_GUIDE_INFO_TRANSPORT",
+                        "widghtInfoPos": "T"
+                    }
+                ]
+            }
+        ],
+        "finishCondition": [
+            [
+                {
+                    "$type": "ConfigGuideButtonClickCondition",
+                    "type": "Click",
+                    "contextName": "InLevelMapPage",
+                    "buttonPath": "GrpMap/MarkContainer/Layer1/10"
+                }
+            ]
+        ],
+        "onFinish": [
+            {
+                "$type": "ConfigGuideFinishQuestAction",
+                "questID": 2050702
+            }
+        ],
+        "onQuit": [
+            {
+                "$type": "ConfigGuideAddTaskAction",
+                "taskName": "GuideTransportPC"
+            }
+        ]
+    }
 }

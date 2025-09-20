@@ -1,52 +1,96 @@
 {
-	"context": {
-		"ExplorationPage": {
-
-			"actionGroups": {
-				"CitySelect": [
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 1},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 1},
-				{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 1},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-			
-				"ExploreSelect": [
-				{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 1},
-				{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 1},
-				{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 1},
-				{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 1},
-				{"contextEvent": "CommonLeftTriggerEvent", "eventType": "LeftTriggerEvent", "priority": 1},
-				{"contextEvent": "CommonRightTriggerEvent", "eventType": "RightTriggerEvent", "priority": 1},
-				{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10}
-				],
-			
-				// CharacterSelect is handle by Dialog, thus no input 
-				"CharacterSelect": []
-			},
-
-			"stateActions": {
-				"0": {
-				"keyboardTouch": "CitySelect",
-				"keyboardMouse": "CitySelect",
-				"joypad": "CitySelect"
-				},
-			
-				"1": {
-				"keyboardTouch": "ExploreSelect",
-				"keyboardMouse": "ExploreSelect",
-				"joypad": "ExploreSelect"
-				},
-			
-				"2": {
-				"keyboardTouch": "CharacterSelect",
-				"keyboardMouse": "CharacterSelect",
-				"joypad": "CharacterSelect"
-				}
-			},
-
-			"enableJoypadVirtualCursor": false
-		}	
-	}
+    "context": {
+        "ExplorationPage": {
+            "actionGroups": {
+                "CitySelect": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "ExploreSelect": [
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonLeftTriggerEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "CommonRightTriggerEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    }
+                ],
+                "CharacterSelect": []
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "CitySelect",
+                    "keyboardMouse": "CitySelect",
+                    "joypad": "CitySelect"
+                },
+                "1": {
+                    "keyboardTouch": "ExploreSelect",
+                    "keyboardMouse": "ExploreSelect",
+                    "joypad": "ExploreSelect"
+                },
+                "2": {
+                    "keyboardTouch": "CharacterSelect",
+                    "keyboardMouse": "CharacterSelect",
+                    "joypad": "CharacterSelect"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    }
 }

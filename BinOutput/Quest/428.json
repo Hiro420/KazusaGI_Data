@@ -1,96 +1,96 @@
 {
-  "id": 428,
-  "type": "WQ",
-  "title": 1471032225,
-  "desc": 448127879,
-  "luaPath": "Actor/Quest/SQ428",
-  "subQuests": [
-    {
-      "subId": 42801,
-      "mainId": 428,
-      "order": 1,
-      "desc": 72431063,
-      "showType": "QUEST_HIDDEN",
-      "finishCond": [
+    "id": 428,
+    "type": "WQ",
+    "title": 1471032225,
+    "desc": 448127879,
+    "luaPath": "Actor/Quest/SQ428",
+    "subQuests": [
         {
-          "type": "QUEST_CONTENT_ENTER_ROOM",
-          "param": [
-            1016,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 42802,
-      "mainId": 428,
-      "order": 2,
-      "desc": 1303840271,
-      "acceptCond": [
+            "subId": 42801,
+            "mainId": 428,
+            "order": 1,
+            "desc": 72431063,
+            "showType": "QUEST_HIDDEN",
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_ROOM",
+                    "param": [
+                        1016,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42801,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 42802,
+            "mainId": 428,
+            "order": 2,
+            "desc": 1303840271,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42801,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        42802,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42802,
-            0
-          ]
+            "subId": 42803,
+            "mainId": 428,
+            "order": 3,
+            "desc": 3904820751,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        42802,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        42803,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "isRewind": true
         }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 42803,
-      "mainId": 428,
-      "order": 3,
-      "desc": 3904820751,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            42802,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            42803,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "isRewind": true
-    }
-  ]
+    ]
 }

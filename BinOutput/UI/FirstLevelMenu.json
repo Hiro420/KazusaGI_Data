@@ -1,687 +1,1615 @@
 {
-	"context": {
-		"InLevelQuestDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ToPrevPrimaryTabEvent", "eventType": "LeftShoulderEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextPrimaryTabEvent", "eventType": "RightShoulderEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "NavigateToQuestEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevMainQuestEvent", "eventType": "LeftStickUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextMainQuestEvent", "eventType": "LeftStickDownEvent", "priority": 2, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToRewardPageEvent", "eventType": "LeftStickButtonEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "DPadUpEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ChapterSelectEvent", "eventType": "DPadLeftEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ShowSubQuestDetailEvent", "eventType": "DPadRightEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ToggleQuestTrackingEvent", "eventType": "MenuLeftEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ToggleChapterFold", "eventType": "MenuUpEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-        ],
-				"Chapter": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ChoosePrevChapterEvent", "eventType": "LeftStickLeftEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ChooseNextChapterEvent", "eventType": "LeftStickRightEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-				],
-				"Detail": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevMainQuestEvent", "eventType": "LeftStickUpEvent", "priority": 2, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextMainQuestEvent", "eventType": "LeftStickDownEvent", "priority": 2, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ShowSubQuestDetailEvent", "eventType": "DPadRightEvent", "priority": 7, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ChoosePrevChapterEvent", "eventType": "LeftShoulderEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ChooseNextChapterEvent", "eventType": "RightShoulderEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToRewardPageEvent", "eventType": "LeftStickButtonEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-				],
-				"Reward": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevRewardEvent", "eventType": "LeftStickLeftEvent", "priority": 6},
-					{"contextEvent": "ToNextRewardEvent", "eventType": "LeftStickRightEvent", "priority": 6},
-					{"contextEvent": "ToRewardDetailEvent", "eventType": "RightStickButtonEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-				"1": {
-					"keyboardTouch": "Chapter",
-					"keyboardMouse": "Chapter",
-					"joypad": "Chapter"
-				},
-				"2": {
-					"keyboardTouch": "Detail",
-					"keyboardMouse": "Detail",
-					"joypad": "Detail"
-				},
-				"3": {
-					"keyboardTouch": "Reward",
-					"keyboardMouse": "Reward",
-					"joypad": "Reward"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"ChatPage": {
-			"actionGroups": {
-				"Default": [
-          			{"contextEvent": "ScrollPrimaryScrollerEvent", "eventType": "LeftStickVerticalEvent", "priority": 4},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "OpenChatEvent", "eventType": "MenuLeftEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationLeft", "eventType": "DPadLeftEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationRight", "eventType": "DPadRightEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "CommonMenuLeftEvent", "eventType": "OpenChatEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-				],
-				"Emoji": [
-          			{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-          			{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-          			{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-          			{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-				],
-				"Quick": [
-          			{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-          			{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 0, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9, "nextToHandle": "FrameEnd"},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-				"1": {
-					"keyboardTouch": "Empty",
-					"keyboardMouse": "Empty",
-					"joypad": "Emoji"
-				},
-				"2": {
-					"keyboardTouch": "Empty",
-					"keyboardMouse": "Empty",
-					"joypad": "Quick"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"BagPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "UseEvent", "eventType": "MenuConfirmEvent", "priority": 0},
-					{"contextEvent": "DropEvent", "eventType": "MenuLeftEvent", "priority": 0},
-					{"contextEvent": "ToPrevTabEvent", "eventType": "LeftShoulderEvent", "priority": 0},
-					{"contextEvent": "ToNextTabEvent", "eventType": "RightShoulderEvent", "priority": 0},
-					{"contextEvent": "ToPrevRowEvent", "eventType": "LeftStickUpEvent", "priority": 1},
-					{"contextEvent": "ToNextRowEvent", "eventType": "LeftStickDownEvent", "priority": 2},
-					{"contextEvent": "ToPrevSlotEvent", "eventType": "LeftStickLeftEvent", "priority": 3},
-					{"contextEvent": "ToNextSlotEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9},
-					{"contextEvent": "CloseEvent", "eventType": "OpenBagEvent", "priority": 9},
-					{"contextEvent": "OpenScreenDropdownEvent", "eventType": "DPadLeftEvent", "priority": 9},
-					{"contextEvent": "OpenSortingDropdownEvent", "eventType": "DPadUpEvent", "priority": 9},
-					{"contextEvent": "RevertSortingOrderEvent", "eventType": "DPadRightEvent", "priority": 9},
-					{"contextEvent": "ShowItemDetailEvent", "eventType": "RightStickButtonEvent", "priority": 9}
-				],
-				"Dropdown": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"}
-				],
-				"ItemDetail": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-				"1": {
-					"keyboardTouch": "Dropdown",
-					"keyboardMouse": "Dropdown",
-					"joypad": "Dropdown"
-				},
-				"2": {
-					"keyboardTouch": "ItemDetail",
-					"keyboardMouse": "ItemDetail",
-					"joypad": "ItemDetail"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelGachaPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ToPrevTabEvent", "eventType": "LeftShoulderEvent", "priority": 0},
-					{"contextEvent": "ToNextTabEvent", "eventType": "RightShoulderEvent", "priority": 0},
-					{"contextEvent": "GachaNoticeEvent", "eventType": "DPadLeftEvent", "priority": 0},
-					{"contextEvent": "GachaHistoryEvent", "eventType": "DPadRightEvent", "priority": 0},
-					{"contextEvent": "GachaOnceEvent", "eventType": "MenuConfirmEvent", "priority": 0},
-					{"contextEvent": "GachaTenTimesEvent", "eventType": "MenuUpEvent", "priority": 0},
-					{"contextEvent": "CloseEvent", "eventType": "OpenGachaEvent", "priority": 9},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelGachaSettlementPage": {
-			"actionGroups": {
-				"OneItem": [
-					{"contextEvent": "ShowItemDetailEvent", "eventType": "RightStickButtonEvent", "priority": 0},
-					{"contextEvent": "CommonMenuLeftEvent", "eventType": "MenuLeftEvent", "priority": 0},
-					{"contextEvent": "GachaNextEvent", "eventType": "MenuConfirmEvent", "priority": 0},
-					{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9},
-				],
-				"AllItems": [
-					{"contextEvent": "ShowItemDetailEvent", "eventType": "RightStickButtonEvent", "priority": 0},
-					{"contextEvent": "CommonMenuLeftEvent", "eventType": "MenuLeftEvent", "priority": 0},
-					{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 9},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "OneItem",
-					"keyboardMouse": "OneItem",
-					"joypad": "OneItem"
-				},
-				"1": {
-					"keyboardTouch": "AllItems",
-					"keyboardMouse": "AllItems",
-					"joypad": "AllItems"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"CharacterPage": {
-			"actionGroups": {
-				"Default": [
-					{"eventType": "MenuConfirmEvent", "priority": 0},
-					{"eventType": "MenuUpEvent", "priority": 0},
-					{"eventType": "LeftShoulderEvent", "priority": 0},
-					{"eventType": "RightShoulderEvent", "priority": 0},
-					{"eventType": "LeftStickUpEvent", "priority": 1},
-					{"eventType": "LeftStickDownEvent", "priority": 2},
-					{"eventType": "LeftStickLeftEvent", "priority": 3},
-					{"eventType": "LeftStickRightEvent", "priority": 4},
-					{"eventType": "MoveEvent", "priority": 5},
-					{"eventType": "ChangeViewEvent", "priority": 6},
-					{"eventType": "LeftTriggerEvent", "priority": 7},
-					{"eventType": "RightTriggerEvent", "priority": 8},
-					{"eventType": "MenuBackEvent", "priority": 9},
-					{"eventType": "OpenCharacterEvent", "priority": 9}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "TabMenu"
-				},
-				"1": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "TabMenu"
-				},
-				"2": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "TabMenu"
-				}
-			}
-		},
-		"CharacterSelectPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ToPrevTabEvent", "eventType": "LeftStickLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextTabEvent", "eventType": "LeftStickRightEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelNamePage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ReNameEvent", "eventType": "MenuUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"TalkDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevRowEvent", "eventType": "LeftStickUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextRowEvent", "eventType": "LeftStickDownEvent", "priority": 2, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevRowEvent", "eventType": "DPadUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextRowEvent", "eventType": "DPadDownEvent", "priority": 2, "nextToHandle": "FrameEnd"},
-				],
-				"Keyboard": [
-					{"contextEvent": "ToNextDialogEvent", "eventType": "TalkOrPickEvent", "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextDialogEvent", "eventType": "TriggerSkill4Event", "nextToHandle": "FrameEnd"}
-				],
-				"Joypad": [
-					{"eventType": "MenuConfirmEvent", "priority": 0},
-					{"eventType": "MenuLeftEvent", "priority": 0}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Keyboard",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"GeneralDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelCutScenePage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmingEvent", "eventType": "MenuConfirmingEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmingCancelEvent", "eventType": "MenuConfirmingCancelEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"TeamPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-					{"contextEvent": "ChangeTeamEvent", "eventType": "MenuLeftEvent", "priority": 2},
-					{"contextEvent": "ChangeTeamNameEvent", "eventType": "DPadLeftEvent", "priority": 3},
-					{"contextEvent": "FastTeamSelectEvent", "eventType": "MenuUpEvent", "priority": 4, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "ToPrevPrimaryTabEvent", "eventType": "LeftShoulderEvent", "priority": 10},
-					{"contextEvent": "ToNextPrimaryTabEvent", "eventType": "RightShoulderEvent", "priority": 10},
-					{"contextEvent": "ToPrevTabEvent", "eventType": "LeftStickLeftEvent", "priority": 10},
-					{"contextEvent": "ToNextTabEvent", "eventType": "LeftStickRightEvent", "priority": 10}
-				],
-				"Avatar": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1},
-					{"contextEvent": "UIDetails", "eventType": "MenuLeftEvent", "priority": 1},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1},
-					{"contextEvent": "SubmitFastTeamSelect", "eventType": "MenuLeftEvent", "priority": 1},
-
-					{"contextEvent": "OpenScreenDropdownEvent", "eventType": "DPadLeftEvent", "priority": 1},
-					{"contextEvent": "OpenSortingDropdownEvent", "eventType": "DPadDownEvent", "priority": 1},
-					{"contextEvent": "RevertSortingOrderEvent", "eventType": "DPadRightEvent", "priority": 1},
-
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent", "priority": 11}
-				],
-				"Dropdown": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent"}
-				],
-				"Invalid": [
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-				"1": {
-					"keyboardTouch": "Avatar",
-					"keyboardMouse": "Avatar",
-					"joypad": "Avatar"
-				},
-				"2": {
-					"keyboardTouch": "Dropdown",
-					"keyboardMouse": "Dropdown",
-					"joypad": "Dropdown"
-				},
-				"101": {
-					"keyboardTouch": "Invalid",
-					"keyboardMouse": "Invalid",
-					"joypad": "Invalid"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"DungeonEntryPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ShowItemDetailEvent", "eventType": "MenuLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent", "priority": 11},
-					{"contextEvent": "ShowHelpTips", "eventType": "DPadUpEvent","priority": 12, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BuyResin", "eventType": "DPadRightEvent", "priority": 12, "nextToHandle": "FrameEnd"}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelReviveDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "Revive", "eventType": "TriggerSkill5Event", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"AddTalentPointDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ToPrevPrimaryTabEvent", "eventType": "LeftShoulderEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextPrimaryTabEvent", "eventType": "RightShoulderEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "IncreaseCountEvent", "eventType": "DPadUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "DecreaseCountEvent", "eventType": "DPadDownEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "UIDetails", "eventType": "MenuLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"ShopPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "IncreaseCountEvent", "eventType": "RightTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "DecreaseCountEvent", "eventType": "LeftTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "IncreaseCountReleaseEvent", "eventType": "RightTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "DecreaseCountReleaseEvent", "eventType": "LeftTriggerReleaseEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "CommonRightStickButtonEvent", "eventType": "RightStickButtonEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "UIDetails", "eventType": "MenuLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "ItemSourceSelectEvent", "eventType": "LeftStickVerticalEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"CookingPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ToPrevPrimaryTabEvent", "eventType": "LeftShoulderEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextPrimaryTabEvent", "eventType": "RightShoulderEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "ToPrevSecondaryTabEvent", "eventType": "LeftTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToNextSecondaryTabEvent", "eventType": "RightTriggerEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 11},					
-					{"contextEvent": "MenuNavigationLeft", "eventType": "LeftStickLeftEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationRight", "eventType": "LeftStickRightEvent", "priority": 11},
-
-					{"contextEvent": "UIDetails", "eventType": "MenuLeftEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"CookingQTEPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "UIDetails", "eventType": "TriggerSkill5Event", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InLevelClockPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"eventType": "MoveEvent", "priority": 5},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"RepairSkyHarpPage": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "Revive", "eventType": "TriggerSkill5Event", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"AvatarInfoDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "MenuNavigationUp", "eventType": "LeftStickUpEvent", "priority": 11},
-					{"contextEvent": "MenuNavigationDown", "eventType": "LeftStickDownEvent", "priority": 11},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"ReadingDialog": {
-			"actionGroups": {
-				"Default": [
-					{"eventType": "MoveEvent", "priority": 5},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				},
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"GeneralScrollDialogContext": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"GeneralIntroduceDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10, "nextToHandle": "FrameEnd"},
-          			{"contextEvent": "ScrollPrimaryScrollerEvent", "eventType": "LeftStickVerticalEvent", "priority": 4},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"SkipWidgetContext": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmingCancelEvent", "eventType": "MenuConfirmingCancelEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"DungeonRuleDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickLeftEvent", "eventType": "LeftStickLeftEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickRightEvent", "eventType": "LeftStickRightEvent", "priority": 4},
-         			{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-					{"contextEvent": "CommonRightStickButtonEvent", "eventType": "RightStickButtonEvent", "priority": 0},
-				],
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-	}
+    "context": {
+        "InLevelQuestDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevPrimaryTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextPrimaryTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "NavigateToQuestEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevMainQuestEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextMainQuestEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 2,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToRewardPageEvent",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChapterSelectEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ShowSubQuestDetailEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToggleQuestTrackingEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToggleChapterFold",
+                        "eventType": "MenuUpEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Chapter": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChoosePrevChapterEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChooseNextChapterEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Detail": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevMainQuestEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 2,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextMainQuestEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 2,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ShowSubQuestDetailEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 7,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChoosePrevChapterEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ChooseNextChapterEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToRewardPageEvent",
+                        "eventType": "LeftStickButtonEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Reward": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevRewardEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 6
+                    },
+                    {
+                        "contextEvent": "ToNextRewardEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 6
+                    },
+                    {
+                        "contextEvent": "ToRewardDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                },
+                "1": {
+                    "keyboardTouch": "Chapter",
+                    "keyboardMouse": "Chapter",
+                    "joypad": "Chapter"
+                },
+                "2": {
+                    "keyboardTouch": "Detail",
+                    "keyboardMouse": "Detail",
+                    "joypad": "Detail"
+                },
+                "3": {
+                    "keyboardTouch": "Reward",
+                    "keyboardMouse": "Reward",
+                    "joypad": "Reward"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ChatPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ScrollPrimaryScrollerEvent",
+                        "eventType": "LeftStickVerticalEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "OpenChatEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "DPadRightEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "OpenChatEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Emoji": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Quick": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                },
+                "1": {
+                    "keyboardTouch": "Empty",
+                    "keyboardMouse": "Empty",
+                    "joypad": "Emoji"
+                },
+                "2": {
+                    "keyboardTouch": "Empty",
+                    "keyboardMouse": "Empty",
+                    "joypad": "Quick"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "BagPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "UseEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "DropEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ToPrevRowEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "ToNextRowEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ToPrevSlotEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 3
+                    },
+                    {
+                        "contextEvent": "ToNextSlotEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "CloseEvent",
+                        "eventType": "OpenBagEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "OpenScreenDropdownEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "OpenSortingDropdownEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "RevertSortingOrderEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 9
+                    }
+                ],
+                "Dropdown": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    }
+                ],
+                "ItemDetail": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                },
+                "1": {
+                    "keyboardTouch": "Dropdown",
+                    "keyboardMouse": "Dropdown",
+                    "joypad": "Dropdown"
+                },
+                "2": {
+                    "keyboardTouch": "ItemDetail",
+                    "keyboardMouse": "ItemDetail",
+                    "joypad": "ItemDetail"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelGachaPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "GachaNoticeEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "GachaHistoryEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "GachaOnceEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "GachaTenTimesEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CloseEvent",
+                        "eventType": "OpenGachaEvent",
+                        "priority": 9
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelGachaSettlementPage": {
+            "actionGroups": {
+                "OneItem": [
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "GachaNextEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    }
+                ],
+                "AllItems": [
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonMenuLeftEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "OneItem",
+                    "keyboardMouse": "OneItem",
+                    "joypad": "OneItem"
+                },
+                "1": {
+                    "keyboardTouch": "AllItems",
+                    "keyboardMouse": "AllItems",
+                    "joypad": "AllItems"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "CharacterPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "MenuUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1
+                    },
+                    {
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 2
+                    },
+                    {
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 3
+                    },
+                    {
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "eventType": "MoveEvent",
+                        "priority": 5
+                    },
+                    {
+                        "eventType": "ChangeViewEvent",
+                        "priority": 6
+                    },
+                    {
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 7
+                    },
+                    {
+                        "eventType": "RightTriggerEvent",
+                        "priority": 8
+                    },
+                    {
+                        "eventType": "MenuBackEvent",
+                        "priority": 9
+                    },
+                    {
+                        "eventType": "OpenCharacterEvent",
+                        "priority": 9
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "TabMenu"
+                },
+                "1": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "TabMenu"
+                },
+                "2": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "TabMenu"
+                }
+            }
+        },
+        "CharacterSelectPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelNamePage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ReNameEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "TalkDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevRowEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextRowEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 2,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevRowEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextRowEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 2,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Keyboard": [
+                    {
+                        "contextEvent": "ToNextDialogEvent",
+                        "eventType": "TalkOrPickEvent",
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextDialogEvent",
+                        "eventType": "TriggerSkill4Event",
+                        "nextToHandle": "FrameEnd"
+                    }
+                ],
+                "Joypad": [
+                    {
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 0
+                    },
+                    {
+                        "eventType": "MenuLeftEvent",
+                        "priority": 0
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Keyboard",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "GeneralDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelCutScenePage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmingEvent",
+                        "eventType": "MenuConfirmingEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmingCancelEvent",
+                        "eventType": "MenuConfirmingCancelEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "TeamPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "ChangeTeamEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ChangeTeamNameEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 3
+                    },
+                    {
+                        "contextEvent": "FastTeamSelectEvent",
+                        "eventType": "MenuUpEvent",
+                        "priority": 4,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevPrimaryTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ToNextPrimaryTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ToPrevTabEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ToNextTabEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 10
+                    }
+                ],
+                "Avatar": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "SubmitFastTeamSelect",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "OpenScreenDropdownEvent",
+                        "eventType": "DPadLeftEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "OpenSortingDropdownEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "RevertSortingOrderEvent",
+                        "eventType": "DPadRightEvent",
+                        "priority": 1
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 11
+                    }
+                ],
+                "Dropdown": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent"
+                    }
+                ],
+                "Invalid": []
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                },
+                "1": {
+                    "keyboardTouch": "Avatar",
+                    "keyboardMouse": "Avatar",
+                    "joypad": "Avatar"
+                },
+                "2": {
+                    "keyboardTouch": "Dropdown",
+                    "keyboardMouse": "Dropdown",
+                    "joypad": "Dropdown"
+                },
+                "101": {
+                    "keyboardTouch": "Invalid",
+                    "keyboardMouse": "Invalid",
+                    "joypad": "Invalid"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "DungeonEntryPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ShowItemDetailEvent",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "ShowHelpTips",
+                        "eventType": "DPadUpEvent",
+                        "priority": 12,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BuyResin",
+                        "eventType": "DPadRightEvent",
+                        "priority": 12,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelReviveDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "Revive",
+                        "eventType": "TriggerSkill5Event",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "AddTalentPointDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevPrimaryTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextPrimaryTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ShopPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountReleaseEvent",
+                        "eventType": "RightTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "DecreaseCountReleaseEvent",
+                        "eventType": "LeftTriggerReleaseEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CommonRightStickButtonEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ItemSourceSelectEvent",
+                        "eventType": "LeftStickVerticalEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "CookingPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevPrimaryTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextPrimaryTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevSecondaryTabEvent",
+                        "eventType": "LeftTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToNextSecondaryTabEvent",
+                        "eventType": "RightTriggerEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationLeft",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationRight",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "MenuLeftEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "CookingQTEPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "UIDetails",
+                        "eventType": "TriggerSkill5Event",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InLevelClockPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "eventType": "MoveEvent",
+                        "priority": 5
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "RepairSkyHarpPage": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "Revive",
+                        "eventType": "TriggerSkill5Event",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "AvatarInfoDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "MenuNavigationUp",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "MenuNavigationDown",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 11
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ReadingDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "eventType": "MoveEvent",
+                        "priority": 5
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "GeneralScrollDialogContext": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "GeneralIntroduceDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ScrollPrimaryScrollerEvent",
+                        "eventType": "LeftStickVerticalEvent",
+                        "priority": 4
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "SkipWidgetContext": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmingCancelEvent",
+                        "eventType": "MenuConfirmingCancelEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "DungeonRuleDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickLeftEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickRightEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "CommonRightStickButtonEvent",
+                        "eventType": "RightStickButtonEvent",
+                        "priority": 0
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    }
 }

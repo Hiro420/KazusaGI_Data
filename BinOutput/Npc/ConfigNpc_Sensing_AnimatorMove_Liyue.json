@@ -1,145 +1,158 @@
 {
-	"$type" : "ConfigMonster",
-	"common":
-	{
-		"mass" : 20.0,
-		"height": 0.8,
-		"affectedByWorld" : true,
-		"checkInSurface" : false,
-		"scale": 1.0,
-		"viewSize": 1.0,
-		"effectAttachShape" :
-		{
-			"$type" : "ConfigEffectAttachSkinnedMesh",
-			"mesh" : "EffectMesh",
-		},
-	},
-	"defaultDither" : 0.0,
-	"move" :
-	{
-		"$type" : "ConfigNPCMove",
-	},
-	"stateLayers":
-	{
-		"defaultLayer":
-		{
-			"$type" : "ConfigNormalStateLayer",
-			"stateIDs" :
-			{
-				"Born" :
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates":
-					{
-						"Born": ["Npc_FadeIn"],
-					},
-				},
-				"Disappear": 
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates": 
-					{
-						"Disappear": ["Npc_FadeOut"],
-					},
-				},
-				"FreeStyleReset":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"HitLightBackrake01": ["Npc_ResetFreeStyle"],
-						"HitLightForerake01": ["Npc_ResetFreeStyle"],
-						"AfraidAS": ["Npc_ResetFreeStyle"],
-						"Alert01AS": ["Npc_ResetFreeStyle"],
-						"Clap01": ["Npc_ResetFreeStyle"],
-					},
-				}
-			},
-		},
-	},
-	"aibeta": 
-	{
-		"enable": true,
-		"friendliness": 1,
-		"moveSetting":
-		{
-			"almostReachedDistanceWalk": 0.3,
-			"almostReachedDistanceRun": 0.6,
-		},
-		"sensing":
-		{
-			"enable": true,
-			"settings":
-			{
-				"DefaultSetting":
-				{
-					"hearAttractionRange": 8,
-					"hearFootstepRange": 1.8,
-					"viewRange": 13,
-					"viewPanoramic": false,
-					"horizontalFov": 150,
-					"verticalFov": 180,
-					"feelRange": 1,
-				},
-			},
-		},
-		"defendArea":
-		{
-			"enable": false,
-		},
-		"threat":
-		{
-			"enable": true,
-			"clearThreatTargetDistance": 25.0,
-			"clearThreatEdgeDistance": 0,
-			"clearThreatByLostPath": false,
-			"clearThreatTimerByDistance": 4.75,
-			"clearThreatTimerByLostPath": 10,
-			"feelThreatGrow": 80,
-			"viewThreatGrow": 40,
-			"hearThreatGrow": 0,
-			"threatDecreaseSpeed": 30,
-			"threatBroadcastRange": 1,
-			"viewAttenuation":
-			[
-				{"x": 2.0, "y": 4.1},
-				{"x": 5.0, "y": 2.9},
-				{"x": 8.0, "y": 1.5},
-				{"x": 12.0, "y": 0.8},
-				{"x": 15.0, "y": 0.5},
-			],
-			"hearAttenuation":
-			[
-				{"x": 3.0, "y": 2.1},
-				{"x": 5.0, "y": 1.1},
-				{"x": 7.0, "y": 0.6},
-			],
-		},
-		"scriptedMoveToTactic":
-		{
-			"enable": true,
-			"defaultSetting":
-			{
-				"speedLevel": 1,
-				"is3D": false,
-				"stopByObstacle": true,
-			},
-		},
-	},
-	"billboard" :
-	{
-		"$type" : "ConfigBillboard",
-		"offsetType": "Character",
-		"offset":
-		{
-			"x": -0.09,
-			"y": 0.01,
-			"z": 0,
-		},
-		"radiusOffset": 0.13,
-		"showDistance" : 20,	
-		"markShowDistance" : 45,
-	},
+    "$type": "ConfigMonster",
+    "common": {
+        "mass": 20.0,
+        "height": 0.8,
+        "affectedByWorld": true,
+        "checkInSurface": false,
+        "scale": 1.0,
+        "viewSize": 1.0,
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "mesh": "EffectMesh"
+        }
+    },
+    "defaultDither": 0.0,
+    "move": {
+        "$type": "ConfigNPCMove"
+    },
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Born": [
+                            "Npc_FadeIn"
+                        ]
+                    }
+                },
+                "Disappear": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Disappear": [
+                            "Npc_FadeOut"
+                        ]
+                    }
+                },
+                "FreeStyleReset": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "HitLightBackrake01": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "HitLightForerake01": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "AfraidAS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Alert01AS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Clap01": [
+                            "Npc_ResetFreeStyle"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "aibeta": {
+        "enable": true,
+        "friendliness": 1,
+        "moveSetting": {
+            "almostReachedDistanceWalk": 0.3,
+            "almostReachedDistanceRun": 0.6
+        },
+        "sensing": {
+            "enable": true,
+            "settings": {
+                "DefaultSetting": {
+                    "hearAttractionRange": 8,
+                    "hearFootstepRange": 1.8,
+                    "viewRange": 13,
+                    "viewPanoramic": false,
+                    "horizontalFov": 150,
+                    "verticalFov": 180,
+                    "feelRange": 1
+                }
+            }
+        },
+        "defendArea": {
+            "enable": false
+        },
+        "threat": {
+            "enable": true,
+            "clearThreatTargetDistance": 25.0,
+            "clearThreatEdgeDistance": 0,
+            "clearThreatByLostPath": false,
+            "clearThreatTimerByDistance": 4.75,
+            "clearThreatTimerByLostPath": 10,
+            "feelThreatGrow": 80,
+            "viewThreatGrow": 40,
+            "hearThreatGrow": 0,
+            "threatDecreaseSpeed": 30,
+            "threatBroadcastRange": 1,
+            "viewAttenuation": [
+                {
+                    "x": 2.0,
+                    "y": 4.1
+                },
+                {
+                    "x": 5.0,
+                    "y": 2.9
+                },
+                {
+                    "x": 8.0,
+                    "y": 1.5
+                },
+                {
+                    "x": 12.0,
+                    "y": 0.8
+                },
+                {
+                    "x": 15.0,
+                    "y": 0.5
+                }
+            ],
+            "hearAttenuation": [
+                {
+                    "x": 3.0,
+                    "y": 2.1
+                },
+                {
+                    "x": 5.0,
+                    "y": 1.1
+                },
+                {
+                    "x": 7.0,
+                    "y": 0.6
+                }
+            ]
+        },
+        "scriptedMoveToTactic": {
+            "enable": true,
+            "defaultSetting": {
+                "speedLevel": 1,
+                "is3D": false,
+                "stopByObstacle": true
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigBillboard",
+        "offsetType": "Character",
+        "offset": {
+            "x": -0.09,
+            "y": 0.01,
+            "z": 0
+        },
+        "radiusOffset": 0.13,
+        "showDistance": 20,
+        "markShowDistance": 45
+    }
 }

@@ -1,25 +1,53 @@
 {
-	"context": {
-    "SelectAwakeningAffixDialog": {
-      "actionGroups": {
-				"Default": [
-          {"contextEvent": "ToPrevPrimaryTabEvent", "eventType": "LeftShoulderEvent", "priority": 0},
-					{"contextEvent": "ToNextPrimaryTabEvent", "eventType": "RightShoulderEvent", "priority": 0},
-          {"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 4},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 4},
-          {"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 10},
-				  {"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 10},
-				  {"contextEvent": "ConfirmingCancelEvent", "eventType": "MenuConfirmingCancelEvent", "priority": 11}
-        ]
-			},
-      "stateActions": {
-        "0": {
-          "keyboardTouch": "Default",
-          "keyboardMouse": "Default",
-          "joypad": "Default"
+    "context": {
+        "SelectAwakeningAffixDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "ToPrevPrimaryTabEvent",
+                        "eventType": "LeftShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "ToNextPrimaryTabEvent",
+                        "eventType": "RightShoulderEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 4
+                    },
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 10
+                    },
+                    {
+                        "contextEvent": "ConfirmingCancelEvent",
+                        "eventType": "MenuConfirmingCancelEvent",
+                        "priority": 11
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
         }
-      },
-      "enableJoypadVirtualCursor": false
     }
-	}
 }

@@ -1,96 +1,194 @@
 {
-	"context": {
-		"UseReviveDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ToPrevSlotEvent", "eventType": "LeftStickLeftEvent", "priority": 2},
-					{"contextEvent": "ToNextSlotEvent", "eventType": "LeftStickRightEvent", "priority": 2}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"UseExpDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "IncreaseCountEvent", "eventType": "DPadUpEvent", "priority": 2},
-					{"contextEvent": "DecreaseCountEvent", "eventType": "DPadDownEvent", "priority": 2},
-					{"contextEvent": "ToPrevSlotEvent", "eventType": "LeftStickLeftEvent", "priority": 3},
-					{"contextEvent": "ToNextSlotEvent", "eventType": "LeftStickRightEvent", "priority": 3}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"OperatedAvatarSelectDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "IncreaseCountEvent", "eventType": "DPadUpEvent", "priority": 2},
-					{"contextEvent": "DecreaseCountEvent", "eventType": "DPadDownEvent", "priority": 2},
-					{"contextEvent": "ToPrevSlotEvent", "eventType": "LeftStickLeftEvent", "priority": 3},
-					{"contextEvent": "ToNextSlotEvent", "eventType": "LeftStickRightEvent", "priority": 3}
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"InfoTextDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		},
-		"ItemTipsDialog": {
-			"actionGroups": {
-				"Default": [
-					{"contextEvent": "BackEvent", "eventType": "MenuBackEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "ConfirmEvent", "eventType": "MenuConfirmEvent", "priority": 1, "nextToHandle": "FrameEnd"},
-					{"contextEvent": "CommonLeftStickUpEvent", "eventType": "LeftStickUpEvent", "priority": 0},
-					{"contextEvent": "CommonLeftStickDownEvent", "eventType": "LeftStickDownEvent", "priority": 0},
-				]
-			},
-			"stateActions": {
-				"0": {
-					"keyboardTouch": "Default",
-					"keyboardMouse": "Default",
-					"joypad": "Default"
-				}
-			},
-			"enableJoypadVirtualCursor": false
-		}
-	}
+    "context": {
+        "UseReviveDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ToPrevSlotEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ToNextSlotEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 2
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "UseExpDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ToPrevSlotEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 3
+                    },
+                    {
+                        "contextEvent": "ToNextSlotEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 3
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "OperatedAvatarSelectDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "IncreaseCountEvent",
+                        "eventType": "DPadUpEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "DecreaseCountEvent",
+                        "eventType": "DPadDownEvent",
+                        "priority": 2
+                    },
+                    {
+                        "contextEvent": "ToPrevSlotEvent",
+                        "eventType": "LeftStickLeftEvent",
+                        "priority": 3
+                    },
+                    {
+                        "contextEvent": "ToNextSlotEvent",
+                        "eventType": "LeftStickRightEvent",
+                        "priority": 3
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "InfoTextDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        },
+        "ItemTipsDialog": {
+            "actionGroups": {
+                "Default": [
+                    {
+                        "contextEvent": "BackEvent",
+                        "eventType": "MenuBackEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "ConfirmEvent",
+                        "eventType": "MenuConfirmEvent",
+                        "priority": 1,
+                        "nextToHandle": "FrameEnd"
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickUpEvent",
+                        "eventType": "LeftStickUpEvent",
+                        "priority": 0
+                    },
+                    {
+                        "contextEvent": "CommonLeftStickDownEvent",
+                        "eventType": "LeftStickDownEvent",
+                        "priority": 0
+                    }
+                ]
+            },
+            "stateActions": {
+                "0": {
+                    "keyboardTouch": "Default",
+                    "keyboardMouse": "Default",
+                    "joypad": "Default"
+                }
+            },
+            "enableJoypadVirtualCursor": false
+        }
+    }
 }

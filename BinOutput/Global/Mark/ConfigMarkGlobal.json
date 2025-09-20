@@ -1,414 +1,428 @@
 {
-  "markConfig": {
-    "Default": {
-      "layerOrder": 1,
-      "raycastTarget": false,
-      "radarVisibility": "Around",
-      "mapVisibility": "Always",
-      "showHeight":true
+    "markConfig": {
+        "Default": {
+            "layerOrder": 1,
+            "raycastTarget": false,
+            "radarVisibility": "Around",
+            "mapVisibility": "Always",
+            "showHeight": true
+        },
+        "TransPoint": {
+            "layerOrder": 1,
+            "raycastTarget": true,
+            "showHeight": true
+        },
+        "Quest": {
+            "layerOrder": 3,
+            "radarVisibility": "Always",
+            "showHeight": true
+        },
+        "Custom": {
+            "layerOrder": 2,
+            "raycastTarget": true,
+            "showHeight": false
+        },
+        "LocalAvatar": {
+            "layerOrder": 4
+        },
+        "Companion": {
+            "layerOrder": 2,
+            "radarVisibility": "Always",
+            "showHeight": true
+        },
+        "Monster": {
+            "layerOrder": 1,
+            "radarVisibility": "Always",
+            "mapVisibility": "Invisible",
+            "showHeight": true
+        },
+        "Pin": {
+            "layerOrder": 2,
+            "raycastTarget": true,
+            "radarVisibility": "Always",
+            "showHeight": true
+        },
+        "NearHint": {
+            "mapVisibility": "Invisible",
+            "showHeight": false
+        },
+        "ScenePoint": {
+            "layerOrder": 0,
+            "showHeight": true
+        },
+        "Task": {
+            "layerOrder": 1,
+            "raycastTarget": true,
+            "showHeight": true
+        },
+        "Boss": {
+            "layerOrder": 1,
+            "raycastTarget": true
+        }
     },
-    "TransPoint": {
-      "layerOrder": 1,
-      "raycastTarget": true,
-      "showHeight":true
+    "markIconConfig": {
+        "Default": {
+            "iconName": "",
+            "materialIndex": 0,
+            "markType": "Default",
+            "ignoreRaycastOnMap": false,
+            "layerOrder": -1
+        },
+        "MarkTransPoint": {
+            "iconName": "UI_MarkTransPoint",
+            "markType": "TransPoint",
+            "title": "UI_MAPMARK_MarkTransPoint_TITLE",
+            "desc": "UI_MAPMARK_MarkTransPoint_DESC"
+        },
+        "MarkTransPointLocked": {
+            "iconName": "UI_MarkTransPoint",
+            "materialIndex": 1,
+            "markType": "TransPoint",
+            "ignoreRaycastOnMap": true,
+            "title": "UI_MAPMARK_MarkTransPointLocked_TITLE",
+            "desc": "UI_MAPMARK_MarkTransPointLocked_DESC"
+        },
+        "MarkPortal": {
+            "iconName": "UI_MarkPoint_WormHole",
+            "markType": "ScenePoint",
+            "mapVisibility": {
+                "value": "Invisible"
+            }
+        },
+        "MarkDungeonEntry": {
+            "iconName": "UI_MarkTower",
+            "markType": "ScenePoint",
+            "layerOrder": 3
+        },
+        "MarkDungeonEntryLocked": {
+            "iconName": "UI_MarkTower",
+            "materialIndex": 1,
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "ignoreRaycastOnMap": true
+        },
+        "MarkWeeklyDungeonEntry": {
+            "iconName": "UI_MarkTower_Weekly",
+            "markType": "ScenePoint",
+            "layerOrder": 3
+        },
+        "MarkWeeklyDungeonEntryLocked": {
+            "iconName": "UI_MarkTower_Weekly",
+            "materialIndex": 1,
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "ignoreRaycastOnMap": true
+        },
+        "MarkDailyDungeonEntry": {
+            "iconName": "UI_MarkTower_Weekly",
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "showOnLockedArea": true
+        },
+        "MarkDailyDungeonEntryLocked": {
+            "iconName": "UI_MarkTower_Locked",
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "ignoreRaycastOnMap": true
+        },
+        "MarkDailyDungeonEntryToBeExplored": {
+            "iconName": "UI_MarkTower_Weekly",
+            "materialIndex": 1,
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "showOnLockedArea": true
+        },
+        "MarkTowerDungeonEntry": {
+            "iconName": "UI_MarkTower_Tower",
+            "markType": "ScenePoint",
+            "layerOrder": 3
+        },
+        "MarkTowerDungeonEntryLocked": {
+            "iconName": "UI_MarkTower_Locked",
+            "markType": "ScenePoint",
+            "layerOrder": 3,
+            "ignoreRaycastOnMap": true
+        },
+        "MarkTowerDungeonEntryToBeExplored": {
+            "iconName": "UI_MarkTower_Tower",
+            "materialIndex": 1,
+            "markType": "ScenePoint",
+            "layerOrder": 3
+        },
+        "MarkGoddessLocked": {
+            "iconName": "UI_MarkGoddess1",
+            "materialIndex": 1,
+            "markType": "TransPoint",
+            "ignoreRaycastOnMap": true,
+            "layerOrder": 3,
+            "title": "UI_MAPMARK_MarkGoddessLocked_TITLE",
+            "desc": "UI_MAPMARK_MarkGoddessLocked_DESC"
+        },
+        "MarkGoddessUnlocked": {
+            "iconName": "UI_MarkGoddess5",
+            "markType": "TransPoint",
+            "layerOrder": 3,
+            "title": "InCityData",
+            "desc": "InCityData"
+        },
+        "MarkQuest": {
+            "iconName": "UI_MarkQuest",
+            "markType": "Quest"
+        },
+        "MarkQuestArea": {
+            "iconName": "UI_MarkQuest",
+            "markType": "Quest",
+            "showHeight": {
+                "value": "False"
+            }
+        },
+        "MarkDangerousQuest": {
+            "iconName": "UI_MarkQuest_Dangers",
+            "markType": "Quest"
+        },
+        "MarkDangerousQuestArea": {
+            "iconName": "UI_MarkQuest_Dangers",
+            "markType": "Quest"
+        },
+        "MarkCustom": {
+            "iconName": "UI_MarkCustom",
+            "markType": "Custom"
+        },
+        "MarkCustomBoss": {
+            "iconName": "UI_MarkCustom_TagMonster",
+            "markType": "Custom"
+        },
+        "MarkCustomBox": {
+            "iconName": "UI_MarkCustom_TagFPStar",
+            "markType": "Custom"
+        },
+        "MarkCustomCollect": {
+            "iconName": "UI_MarkCustom_TagCollect",
+            "markType": "Custom"
+        },
+        "MarkCustomCooking": {
+            "iconName": "UI_MarkCustom_TagCooking",
+            "markType": "Custom"
+        },
+        "MarkCustomMainTask": {
+            "iconName": "UI_MarkCustom_TagQuest",
+            "markType": "Custom"
+        },
+        "MarkCustomMonster": {
+            "iconName": "UI_MarkCustom_TagMineral",
+            "markType": "Custom"
+        },
+        "MarkCustomSlime": {
+            "iconName": "UI_MarkCustom_TagSlime",
+            "markType": "Custom"
+        },
+        "MarkCustomTrap": {
+            "iconName": "UI_MarkCustom_TagHunting",
+            "markType": "Custom"
+        },
+        "MarkCustomWind": {
+            "iconName": "UI_MarkCustom_TagMineral",
+            "markType": "Custom"
+        },
+        "MarkPinBlue": {
+            "iconName": "UI_MarkCustom_TagBlue",
+            "markType": "Pin"
+        },
+        "MarkPinGreen": {
+            "iconName": "UI_MarkCustom_TagGreen",
+            "markType": "Pin"
+        },
+        "MarkPinPurple": {
+            "iconName": "UI_MarkCustom_TagPurple",
+            "markType": "Pin"
+        },
+        "MarkPinRed": {
+            "iconName": "UI_MarkCustom_TagRed",
+            "markType": "Pin"
+        },
+        "MarkPinYellow": {
+            "iconName": "UI_MarkCustom_TagYellow",
+            "markType": "Pin"
+        },
+        "MarkLocalAvatar": {
+            "iconName": "UI_MarkLocalAvatar",
+            "markType": "LocalAvatar",
+            "ignoreRaycastOnMap": true,
+            "layerOrder": 4
+        },
+        "MarkPlayer1": {
+            "iconName": "UI_MarkPlayer1",
+            "markType": "Companion",
+            "ignoreRaycastOnMap": true
+        },
+        "MarkPlayer2": {
+            "iconName": "UI_MarkPlayer2",
+            "markType": "Companion",
+            "ignoreRaycastOnMap": true
+        },
+        "MarkPlayer3": {
+            "iconName": "UI_MarkPlayer3",
+            "markType": "Companion",
+            "ignoreRaycastOnMap": true
+        },
+        "MarkPlayer4": {
+            "iconName": "UI_MarkPlayer4",
+            "markType": "Companion",
+            "ignoreRaycastOnMap": true
+        },
+        "MarkBoredMonster": {
+            "iconName": "UI_MarkCustom",
+            "markType": "Monster",
+            "ignoreRaycastOnMap": true
+        },
+        "MarkRadarHint": {
+            "iconName": "UI_MarkWindCrystal",
+            "markType": "NearHint",
+            "ignoreRaycastOnMap": true,
+            "showHeight": {
+                "value": "False"
+            }
+        },
+        "MarkChurch": {
+            "iconName": "UI_MarkPoint_Church",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkChurch_TITLE",
+            "desc": "UI_MAPMARK_MarkChurch_DESC"
+        },
+        "MarkKnights": {
+            "iconName": "UI_MarkPoint_Knights",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkKnights_TITLE",
+            "desc": "UI_MAPMARK_MarkKnights_DESC"
+        },
+        "MarkPub": {
+            "iconName": "UI_MarkPoint_Pub",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkPub_TITLE",
+            "desc": "UI_MAPMARK_MarkPub_DESC"
+        },
+        "MarkBlacksmith": {
+            "iconName": "UI_MarkPoint_Blacksmith",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_BLACKSMITH_TITLE",
+            "desc": "UI_MAPMARK_BLACKSMITH_DESC"
+        },
+        "MarkBlacksmith_liyue": {
+            "iconName": "UI_MarkPoint_Blacksmith",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_BLACKSMITH_Liyue_TITLE",
+            "desc": "UI_MAPMARK_BLACKSMITH_Liyue_DESC"
+        },
+        "MarkSouvenir": {
+            "iconName": "UI_MarkPoint_Souvenir",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkSouvenir_TITLE",
+            "desc": "UI_MAPMARK_MarkSouvenir_DESC"
+        },
+        "MarkSouvenir_liyue": {
+            "iconName": "UI_MarkPoint_Souvenir",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkSouvenir_Liyue_TITLE",
+            "desc": "UI_MAPMARK_MarkSouvenir_Liyue_DESC"
+        },
+        "MarkRestaurant": {
+            "iconName": "UI_MarkPoint_Restaurant",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkRestaurant_TITLE",
+            "desc": "UI_MAPMARK_MarkRestaurant_DESC"
+        },
+        "MarkRestaurant_liyue": {
+            "iconName": "UI_MarkPoint_Restaurant",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkRestaurant_Liyue_TITLE",
+            "desc": "UI_MAPMARK_MarkRestaurant_Liyue_DESC"
+        },
+        "MarkGeneralCargo": {
+            "iconName": "UI_MarkPoint_GeneralCargo",
+            "markType": "ScenePoint",
+            "mapVisibility": {
+                "value": "Invisible"
+            }
+        },
+        "MarkTeamArranger": {
+            "iconName": "UI_MarkPoint_EditTeam",
+            "markType": "ScenePoint",
+            "mapVisibility": {
+                "value": "Invisible"
+            }
+        },
+        "MarkDailyTask": {
+            "iconName": "UI_MarkQuest_Events_Proce",
+            "markType": "Task"
+        },
+        "MarkRandomTask": {
+            "iconName": "UI_MarkQuest_Random_Proce",
+            "markType": "NearHint",
+            "effectName": "ART/Effect/UI/Eff_UI_Mark_MapEvent",
+            "ignoreRaycastOnMap": true,
+            "showHeight": {
+                "value": "True"
+            }
+        },
+        "MarkAdventurers": {
+            "iconName": "UI_MarkPoint_Adventurers",
+            "markType": "ScenePoint",
+            "layerOrder": 1,
+            "title": "UI_MAPMARK_MarkAdventurers_TITLE",
+            "desc": "UI_MAPMARK_MarkAdventurers_DESC"
+        },
+        "MarkAlchemy": {
+            "iconName": "UI_MarkPoint_Combine",
+            "markType": "ScenePoint",
+            "title": "UI_MAPMARK_MarkAlchemy_TITLE",
+            "desc": "UI_MAPMARK_MarkAlchemy_DESC"
+        },
+        "MarkSeaLampGiving": {
+            "iconName": "UI_MarkActivity_SeaLamp",
+            "markType": "ScenePoint",
+            "layerOrder": 1,
+            "title": "UI_MAPMARK_MarkSeaLampGiving_TITLE",
+            "desc": "UI_MAPMARK_MarkSeaLampGiving_DESC"
+        },
+        "MarkInvestigationMonster": {
+            "markType": "Boss",
+            "radarVisibility": {
+                "value": "Around"
+            },
+            "mapVisibility": {
+                "value": "Always"
+            }
+        }
     },
-    "Quest": {
-      "layerOrder": 3,
-      "radarVisibility": "Always",
-      "showHeight":true
-    },
-    "Custom": {
-      "layerOrder": 2,
-      "raycastTarget": true,
-      "showHeight":false
-    },
-    "LocalAvatar": {
-      "layerOrder": 4
-    },
-    "Companion": {
-      "layerOrder": 2,
-      "radarVisibility": "Always",
-      "showHeight":true
-    },
-    "Monster": {
-      "layerOrder": 1,
-      "radarVisibility": "Always",
-      "mapVisibility": "Invisible",
-      "showHeight":true
-    },
-    "Pin": {
-      "layerOrder": 2,
-      "raycastTarget": true,
-      "radarVisibility": "Always",
-      "showHeight":true
-    },
-    "NearHint": {
-      "mapVisibility": "Invisible",
-      "showHeight":false
-    },
-    "ScenePoint": {
-      "layerOrder": 0,
-      "showHeight":true
-    },
-    "Task": {
-      "layerOrder": 1,
-      "raycastTarget": true,
-      "showHeight":true
-    },
-    "Boss": {
-      "layerOrder": 1,
-      "raycastTarget": true
+    "pinMarkIcons": [
+        "MarkPinBlue",
+        "MarkPinGreen",
+        "MarkPinPurple",
+        "MarkPinRed",
+        "MarkPinYellow"
+    ],
+    "customMarkIcons": [
+        "MarkCustomBoss",
+        "MarkCustomMainTask",
+        "MarkCustomBox",
+        "MarkCustomTrap",
+        "MarkCustomCollect",
+        "MarkCustomMonster"
+    ],
+    "sceneBuildingMarks": {
+        "Church": "MarkChurch",
+        "Knights": "MarkKnights",
+        "Pub": "MarkPub",
+        "Souvenir": "MarkSouvenir",
+        "Restaurant": "MarkRestaurant",
+        "GeneralCargo": "MarkGeneralCargo",
+        "Blacksmith": "MarkBlacksmith",
+        "TeamArranger": "MarkTeamArranger",
+        "Adventurers": "MarkAdventurers",
+        "Alchemy": "MarkAlchemy",
+        "SeaLampGiving": "MarkSeaLampGiving",
+        "Blacksmith_liyue": "MarkBlacksmith_liyue",
+        "Souvenir_liyue": "MarkSouvenir_liyue",
+        "Restaurant_liyue": "MarkRestaurant_liyue"
     }
-  },
-  "markIconConfig": {
-    "Default": {
-      "iconName": "",
-      "materialIndex": 0,
-      "markType": "Default",
-      "ignoreRaycastOnMap": false,
-      "layerOrder": -1
-    },
-    "MarkTransPoint": {
-      "iconName": "UI_MarkTransPoint",
-      "markType": "TransPoint",
-      "title": "UI_MAPMARK_MarkTransPoint_TITLE",
-      "desc": "UI_MAPMARK_MarkTransPoint_DESC"
-    },
-    "MarkTransPointLocked": {
-      "iconName": "UI_MarkTransPoint",
-      "materialIndex": 1,
-      "markType": "TransPoint",
-      "ignoreRaycastOnMap": true,
-      "title": "UI_MAPMARK_MarkTransPointLocked_TITLE",
-      "desc": "UI_MAPMARK_MarkTransPointLocked_DESC"
-    },
-    "MarkPortal": {
-      "iconName": "UI_MarkPoint_WormHole",
-      "markType": "ScenePoint",
-      "mapVisibility" : {"value" : "Invisible"}
-    },
-    "MarkDungeonEntry": {
-      "iconName": "UI_MarkTower",
-      "markType": "ScenePoint",
-      "layerOrder": 3
-    },
-    "MarkDungeonEntryLocked": {
-      "iconName": "UI_MarkTower",
-      "materialIndex": 1,
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "ignoreRaycastOnMap": true
-    },
-    "MarkWeeklyDungeonEntry": {
-      "iconName": "UI_MarkTower_Weekly",
-      "markType": "ScenePoint",
-      "layerOrder": 3
-    },
-    "MarkWeeklyDungeonEntryLocked": {
-      "iconName": "UI_MarkTower_Weekly",
-      "materialIndex": 1,
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "ignoreRaycastOnMap": true
-    },
-    "MarkDailyDungeonEntry": {
-      "iconName": "UI_MarkTower_Weekly",
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "showOnLockedArea" : true,
-    },
-    "MarkDailyDungeonEntryLocked": {
-      "iconName": "UI_MarkTower_Locked",
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "ignoreRaycastOnMap": true
-    },
-    "MarkDailyDungeonEntryToBeExplored": {
-      "iconName": "UI_MarkTower_Weekly",
-      "materialIndex": 1,
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "showOnLockedArea" : true,
-    },
-    "MarkTowerDungeonEntry": {
-      "iconName": "UI_MarkTower_Tower",
-      "markType": "ScenePoint",
-      "layerOrder": 3
-    },
-    "MarkTowerDungeonEntryLocked": {
-      "iconName": "UI_MarkTower_Locked",
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-      "ignoreRaycastOnMap": true
-    },
-    "MarkTowerDungeonEntryToBeExplored": {
-      "iconName": "UI_MarkTower_Tower",
-      "materialIndex": 1,
-      "markType": "ScenePoint",
-      "layerOrder": 3,
-    },
-    "MarkGoddessLocked": {
-      "iconName": "UI_MarkGoddess1",
-      "materialIndex": 1,
-      "markType": "TransPoint",
-      "ignoreRaycastOnMap": true,
-      "layerOrder": 3,
-      "title": "UI_MAPMARK_MarkGoddessLocked_TITLE",
-      "desc": "UI_MAPMARK_MarkGoddessLocked_DESC"
-    },
-    "MarkGoddessUnlocked": {
-      "iconName": "UI_MarkGoddess5",
-      "markType": "TransPoint",
-      "layerOrder": 3,
-      "title": "InCityData",
-      "desc": "InCityData"
-    },
-    "MarkQuest": {
-      "iconName": "UI_MarkQuest",
-      "markType": "Quest"
-    },
-    "MarkQuestArea": {
-      "iconName": "UI_MarkQuest",
-      "markType": "Quest",
-      "showHeight":{"value" : "False"}
-    },
-    "MarkDangerousQuest": {
-      "iconName": "UI_MarkQuest_Dangers",
-      "markType": "Quest"
-    },
-    "MarkDangerousQuestArea": {
-      "iconName": "UI_MarkQuest_Dangers",
-      "markType": "Quest"
-    },
-    "MarkCustom": {
-      "iconName": "UI_MarkCustom",
-      "markType": "Custom"
-    },
-    "MarkCustomBoss": {
-      "iconName": "UI_MarkCustom_TagMonster",
-      "markType": "Custom"
-    },
-    "MarkCustomBox": {
-      "iconName": "UI_MarkCustom_TagFPStar",
-      "markType": "Custom"
-    },
-    "MarkCustomCollect": {
-      "iconName": "UI_MarkCustom_TagCollect",
-      "markType": "Custom"
-    },
-    "MarkCustomCooking": {
-      "iconName": "UI_MarkCustom_TagCooking",
-      "markType": "Custom"
-    },
-    "MarkCustomMainTask": {
-      "iconName": "UI_MarkCustom_TagQuest",
-      "markType": "Custom"
-    },
-    "MarkCustomMonster": {
-      "iconName": "UI_MarkCustom_TagMineral",
-      "markType": "Custom"
-    },
-    "MarkCustomSlime": {
-      "iconName": "UI_MarkCustom_TagSlime",
-      "markType": "Custom"
-    },
-    "MarkCustomTrap": {
-      "iconName": "UI_MarkCustom_TagHunting",
-      "markType": "Custom"
-    },
-    "MarkCustomWind": {
-      "iconName": "UI_MarkCustom_TagMineral",
-      "markType": "Custom"
-    },
-    "MarkPinBlue": {
-      "iconName": "UI_MarkCustom_TagBlue",
-      "markType": "Pin"
-    },
-    "MarkPinGreen": {
-      "iconName": "UI_MarkCustom_TagGreen",
-      "markType": "Pin"
-    },
-    "MarkPinPurple": {
-      "iconName": "UI_MarkCustom_TagPurple",
-      "markType": "Pin"
-    },
-    "MarkPinRed": {
-      "iconName": "UI_MarkCustom_TagRed",
-      "markType": "Pin"
-    },
-    "MarkPinYellow": {
-      "iconName": "UI_MarkCustom_TagYellow",
-      "markType": "Pin"
-    },
-    "MarkLocalAvatar": {
-      "iconName": "UI_MarkLocalAvatar",
-      "markType": "LocalAvatar",
-      "ignoreRaycastOnMap": true,
-      "layerOrder": 4
-    },
-    "MarkPlayer1": {
-      "iconName": "UI_MarkPlayer1",
-      "markType": "Companion",
-      "ignoreRaycastOnMap": true
-    },
-    "MarkPlayer2": {
-      "iconName": "UI_MarkPlayer2",
-      "markType": "Companion",
-      "ignoreRaycastOnMap": true
-    },
-    "MarkPlayer3": {
-      "iconName": "UI_MarkPlayer3",
-      "markType": "Companion",
-      "ignoreRaycastOnMap": true
-    },
-    "MarkPlayer4": {
-      "iconName": "UI_MarkPlayer4",
-      "markType": "Companion",
-      "ignoreRaycastOnMap": true
-    },
-    "MarkBoredMonster": {
-      "iconName": "UI_MarkCustom",
-      "markType": "Monster",
-      "ignoreRaycastOnMap": true
-    },
-    "MarkRadarHint": {
-      "iconName": "UI_MarkWindCrystal",
-      "markType": "NearHint",
-      "ignoreRaycastOnMap": true,
-      "showHeight":{"value" : "False"}
-    },
-    "MarkChurch": {
-      "iconName": "UI_MarkPoint_Church",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkChurch_TITLE",
-      "desc": "UI_MAPMARK_MarkChurch_DESC"
-    },
-    "MarkKnights": {
-      "iconName": "UI_MarkPoint_Knights",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkKnights_TITLE",
-      "desc": "UI_MAPMARK_MarkKnights_DESC"
-    },
-    "MarkPub": {
-      "iconName": "UI_MarkPoint_Pub",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkPub_TITLE",
-      "desc": "UI_MAPMARK_MarkPub_DESC"
-    },
-    "MarkBlacksmith": {
-      "iconName": "UI_MarkPoint_Blacksmith",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_BLACKSMITH_TITLE",
-      "desc": "UI_MAPMARK_BLACKSMITH_DESC"
-    },
-    "MarkBlacksmith_liyue": {
-      "iconName": "UI_MarkPoint_Blacksmith",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_BLACKSMITH_Liyue_TITLE",
-      "desc": "UI_MAPMARK_BLACKSMITH_Liyue_DESC"
-    },
-      "MarkSouvenir": {
-      "iconName": "UI_MarkPoint_Souvenir",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkSouvenir_TITLE",
-      "desc": "UI_MAPMARK_MarkSouvenir_DESC"
-    },
-      "MarkSouvenir_liyue": {
-      "iconName": "UI_MarkPoint_Souvenir",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkSouvenir_Liyue_TITLE",
-      "desc": "UI_MAPMARK_MarkSouvenir_Liyue_DESC"
-    },
-    "MarkRestaurant": {
-      "iconName": "UI_MarkPoint_Restaurant",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkRestaurant_TITLE",
-      "desc": "UI_MAPMARK_MarkRestaurant_DESC"
-    },
-    "MarkRestaurant_liyue": {
-      "iconName": "UI_MarkPoint_Restaurant",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkRestaurant_Liyue_TITLE",
-      "desc": "UI_MAPMARK_MarkRestaurant_Liyue_DESC"
-    },
-    "MarkGeneralCargo": {
-      "iconName": "UI_MarkPoint_GeneralCargo",
-      "markType": "ScenePoint",
-      "mapVisibility" : {"value" : "Invisible"}
-    },
-    "MarkTeamArranger": {
-      "iconName": "UI_MarkPoint_EditTeam",
-      "markType": "ScenePoint",
-      "mapVisibility" : {"value" : "Invisible"}
-    },
-    "MarkDailyTask": {
-      "iconName": "UI_MarkQuest_Events_Proce",
-      "markType": "Task"
-    },
-    "MarkRandomTask": {
-      "iconName": "UI_MarkQuest_Random_Proce",
-      "markType": "NearHint",
-      "effectName": "ART/Effect/UI/Eff_UI_Mark_MapEvent",
-      "ignoreRaycastOnMap": true,
-      "showHeight":{"value" : "True"}
-    },
-    "MarkAdventurers": {
-      "iconName": "UI_MarkPoint_Adventurers",
-      "markType": "ScenePoint",
-      "layerOrder": 1,
-      "title": "UI_MAPMARK_MarkAdventurers_TITLE",
-      "desc": "UI_MAPMARK_MarkAdventurers_DESC"
-    },
-    "MarkAlchemy": {
-      "iconName": "UI_MarkPoint_Combine",
-      "markType": "ScenePoint",
-      "title": "UI_MAPMARK_MarkAlchemy_TITLE",
-      "desc": "UI_MAPMARK_MarkAlchemy_DESC"
-    },
-    "MarkSeaLampGiving": {
-      "iconName": "UI_MarkActivity_SeaLamp",
-      "markType": "ScenePoint",
-      "layerOrder": 1,
-      "title": "UI_MAPMARK_MarkSeaLampGiving_TITLE",
-      "desc": "UI_MAPMARK_MarkSeaLampGiving_DESC"
-    },
-    "MarkInvestigationMonster": {
-      "markType": "Boss",
-      "radarVisibility": {"value": "Around"},
-      "mapVisibility" : {"value" : "Always"}
-    }
-  },
-	"pinMarkIcons": [
-		"MarkPinBlue",
-		"MarkPinGreen",
-		"MarkPinPurple",
-		"MarkPinRed",
-		"MarkPinYellow"
-	],
-	"customMarkIcons": [
-    "MarkCustomBoss",
-		"MarkCustomMainTask",
-		"MarkCustomBox",
-		"MarkCustomTrap",
-		"MarkCustomCollect",
-		"MarkCustomMonster"
-  ],
-  "sceneBuildingMarks":
-  {
-    "Church": "MarkChurch",
-    "Knights": "MarkKnights",
-    "Pub": "MarkPub",
-    "Souvenir": "MarkSouvenir",
-    "Restaurant": "MarkRestaurant",
-    "GeneralCargo": "MarkGeneralCargo",
-    "Blacksmith": "MarkBlacksmith",
-    "TeamArranger": "MarkTeamArranger",
-    "Adventurers": "MarkAdventurers",
-    "Alchemy": "MarkAlchemy",
-    "SeaLampGiving": "MarkSeaLampGiving",
-    "Blacksmith_liyue":"MarkBlacksmith_liyue",
-    "Souvenir_liyue":"MarkSouvenir_liyue",
-    "Restaurant_liyue":"MarkRestaurant_liyue"
-
-  }
 }

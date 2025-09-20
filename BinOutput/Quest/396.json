@@ -1,289 +1,289 @@
 {
-  "id": 396,
-  "series": 1003,
-  "title": 4079397641,
-  "desc": 3000630519,
-  "luaPath": "Actor/Quest/MQ396",
-  "rewardIdList": [
-    100396
-  ],
-  "chapterId": 1003,
-  "subQuests": [
-    {
-      "subId": 39601,
-      "mainId": 396,
-      "order": 1,
-      "isMpBlock": true,
-      "desc": 3582722255,
-      "acceptCond": [
+    "id": 396,
+    "series": 1003,
+    "title": 4079397641,
+    "desc": 3000630519,
+    "luaPath": "Actor/Quest/MQ396",
+    "rewardIdList": [
+        100396
+    ],
+    "chapterId": 1003,
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39403,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_PLOT",
-          "param": [
-            39601,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "isRewind": true,
-      "finishExec": [
-        {
-          "type": "QUEST_EXEC_NOTIFY_GROUP_LUA",
-          "param": [
-            "3",
-            "133007183"
-          ]
+            "subId": 39601,
+            "mainId": 396,
+            "order": 1,
+            "isMpBlock": true,
+            "desc": 3582722255,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39403,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_PLOT",
+                    "param": [
+                        39601,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "isRewind": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_NOTIFY_GROUP_LUA",
+                    "param": [
+                        "3",
+                        "133007183"
+                    ]
+                },
+                {
+                    "type": "QUEST_EXEC_SET_WEATHER_GADGET",
+                    "param": [
+                        "2",
+                        "0"
+                    ]
+                }
+            ],
+            "sharedNpcList": [
+                1001,
+                1008,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
         },
         {
-          "type": "QUEST_EXEC_SET_WEATHER_GADGET",
-          "param": [
-            "2",
-            "0"
-          ]
-        }
-      ],
-      "sharedNpcList": [
-        1001,
-        1008,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    },
-    {
-      "subId": 39602,
-      "mainId": 396,
-      "order": 2,
-      "desc": 4009287327,
-      "acceptCond": [
+            "subId": 39602,
+            "mainId": 396,
+            "order": 2,
+            "desc": 4009287327,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39601,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        39602,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_NPC",
+                "param": [
+                    "1008",
+                    ""
+                ],
+                "guideScene": 1008,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "isRewind": true,
+            "exclusiveNpcList": [
+                1001,
+                1008,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39601,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 39604,
+            "mainId": 396,
+            "order": 4,
+            "desc": 3666608975,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39602,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        39604,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "finishExec": [
+                {
+                    "type": "QUEST_EXEC_DEL_PACK_ITEM",
+                    "param": [
+                        "100165",
+                        "1"
+                    ]
+                }
+            ],
+            "exclusiveNpcList": [
+                1001,
+                1008,
+                1006
+            ],
+            "exclusiveNpcPriority": 1000
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            39602,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_NPC",
-        "param": [
-          "1008",
-          ""
-        ],
-        "guideScene": 1008,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "isRewind": true,
-      "exclusiveNpcList": [
-        1001,
-        1008,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    },
-    {
-      "subId": 39604,
-      "mainId": 396,
-      "order": 4,
-      "desc": 3666608975,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
+            "subId": 39605,
+            "mainId": 396,
+            "order": 5,
+            "desc": 4003668407,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_MY_WORLD",
+                    "param": [
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39602,
-            3,
-            0
-          ]
+            "subId": 39606,
+            "mainId": 396,
+            "order": 6,
+            "desc": 2753842151,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        39605,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        39606,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            }
         }
-      ],
-      "finishCond": [
+    ],
+    "talks": [
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            39604,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "finishExec": [
+            "id": 39602,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "39602",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 1,
+            "initDialog": 3960201,
+            "npcId": [
+                1008
+            ],
+            "performCfg": "QuestDialogue/Q396/InterContainer_Q39602",
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 396,
+            "assetIndex": 302468777814
+        },
         {
-          "type": "QUEST_EXEC_DEL_PACK_ITEM",
-          "param": [
-            "100165",
-            "1"
-          ]
-        }
-      ],
-      "exclusiveNpcList": [
-        1001,
-        1008,
-        1006
-      ],
-      "exclusiveNpcPriority": 1000
-    },
-    {
-      "subId": 39605,
-      "mainId": 396,
-      "order": 5,
-      "desc": 4003668407,
-      "acceptCond": [
+            "id": 39604,
+            "beginWay": "TALK_BEGIN_AUTO",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "39604",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 1,
+            "initDialog": 3960401,
+            "npcId": [
+                1001
+            ],
+            "performCfg": "QuestDialogue/Q396/InterContainer_Q39604",
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 396,
+            "assetIndex": 616433303408
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
+            "id": 39606,
+            "beginWay": "TALK_BEGIN_MANUAL",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "39606",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 1,
+            "initDialog": 3960601,
+            "npcId": [
+                1001
+            ],
+            "questId": 396,
+            "assetIndex": 761290829787
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_ENTER_MY_WORLD",
-          "param": [
-            3,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "subId": 39606,
-      "mainId": 396,
-      "order": 6,
-      "desc": 2753842151,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            39605,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            39606,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      }
-    }
-  ],
-  "talks": [
-    {
-      "id": 39602,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "39602",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 1,
-      "initDialog": 3960201,
-      "npcId": [
-        1008
-      ],
-      "performCfg": "QuestDialogue/Q396/InterContainer_Q39602",
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 396,
-      "assetIndex": 302468777814
-    },
-    {
-      "id": 39604,
-      "beginWay": "TALK_BEGIN_AUTO",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "39604",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 1,
-      "initDialog": 3960401,
-      "npcId": [
-        1001
-      ],
-      "performCfg": "QuestDialogue/Q396/InterContainer_Q39604",
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 396,
-      "assetIndex": 616433303408
-    },
-    {
-      "id": 39606,
-      "beginWay": "TALK_BEGIN_MANUAL",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "39606",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 1,
-      "initDialog": 3960601,
-      "npcId": [
-        1001
-      ],
-      "questId": 396,
-      "assetIndex": 761290829787
-    }
-  ]
+    ]
 }

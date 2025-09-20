@@ -1,80 +1,103 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType": "TO_LOCAL_AVATAR",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"cameraPosType": "RELATIVE_POS_TO_INTEE",
-				"camPosOffset": {"x": 0, "y": 1.5, "z": 1.5},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 1.1, "z": 0},
-				"duration": 1.0,
-				"lerpRatio": 5.0,
-				"lerpPattern": 0,
-				"storyDither": true
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"talkerName": "阿三",
-				"content": "我其实说的话跟字幕可能是对不上的"
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"talkerName": "阿三",
-				"content": "就是这么吊，你不服不行"
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG",
-				"dialogType": "LOCK_FRAME",
-				"talkerName": "阿三",
-				"content": "然后我就循环了"
-			}
-		],
-		[
-			{
-				"$type": "ConfigDialogInterAction",
-				"type": "DIALOG_FINISH"
-			},
-			{
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType": "RETURN",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0
-			},
-			{
-				"$type": "ConfigCameraMoveInterAction",
-				"type": "CAMERA_MOVE",
-				"cameraPosType": "EXIT",
-				"camPosOffset": {"x": 0, "y": 0, "z": 0},
-				"nearLength": 0,
-				"camTargetType": "TO_INTEE",
-				"camForwardTargetOffset": {"x": 0, "y": 0, "z": 0},
-				"duration": 1.0,
-				"lerpRatio": 5.0,
-				"lerpPattern": 0
-			}
-		]
-	]
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "TO_LOCAL_AVATAR",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "cameraPosType": "RELATIVE_POS_TO_INTEE",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 1.5,
+                    "z": 1.5
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 1.1,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 5.0,
+                "lerpPattern": 0,
+                "storyDither": true
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "talkerName": "\u963f\u4e09",
+                "content": "\u6211\u5176\u5b9e\u8bf4\u7684\u8bdd\u8ddf\u5b57\u5e55\u53ef\u80fd\u662f\u5bf9\u4e0d\u4e0a\u7684"
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "talkerName": "\u963f\u4e09",
+                "content": "\u5c31\u662f\u8fd9\u4e48\u540a\uff0c\u4f60\u4e0d\u670d\u4e0d\u884c"
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG",
+                "dialogType": "LOCK_FRAME",
+                "talkerName": "\u963f\u4e09",
+                "content": "\u7136\u540e\u6211\u5c31\u5faa\u73af\u4e86"
+            }
+        ],
+        [
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG_FINISH"
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "type": "STEER_TO",
+                "steerType": "RETURN",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_MOVE",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 5.0,
+                "lerpPattern": 0
+            }
+        ]
+    ]
 }

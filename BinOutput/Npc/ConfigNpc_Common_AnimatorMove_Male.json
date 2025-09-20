@@ -1,429 +1,288 @@
 {
-	"$type" : "ConfigMonster",
-	"common":
-	{
-		"mass" : 100000.0,
-		"height": 1.35,
-		"affectedByWorld" : true,
-		"checkInSurface" : false,
-		"scale": 1.0,
-		"viewSize": 1.0,
-		"effectAttachShape" :
-		{
-			"$type" : "ConfigEffectAttachSkinnedMesh",
-			"mesh" : "EffectMesh",
-		},
-	},
-	"emojiBubble" :
-	{
-	},
-	"defaultDither" : 0.0,
-	"intee":
-	{
-		"$type" : "ConfigIntee",
-		"useTrigger" : true,
-		"usePushCollider" : true,
-		"useInteractionTrigger" : true,
-	},
-	"headControl":
-	{
-		"$type": "ConfigHeadControl",
-		"useHeadControl": true,
-		"useWhiteAnimStates": false,
-		"speed": 6.0,
-		"weightSpeed": 2,
-		"dontAnimStates":
-		[
-			"Turn01_90LBS",
-			"Turn01_90LAS",
-			"Turn01_90RBS",
-			"Turn01_90RAS",
-			"Downcast01BS",
-			"Downcast01AS",
-			"Downcast01Loop",
-			"DrinkToComplain",
-			"FountainPray",
-			"FountainSneak",
-			"Pray01Loop",
-			"Investigate01Loop",
-			"Shy01Loop",
-			"HoldHead01Loop",
-		]
-	},
-	"move" :
-	{
-		"$type" : "ConfigNPCMove",
-	},
-	"stateLayers":
-	{
-		"defaultLayer":
-		{
-			"$type" : "ConfigNormalStateLayer",
-			"stateIDs" :
-			{
-				"Born" :
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					// "canBeInter": false,
-					"animatorStates":
-					{
-						"Born": ["Npc_ResetFreeStyle"],
-					},
-				},
-				"Disappear": 
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"canBeInter": false,
-					"animatorStates": 
-					{
-						"Disappear": ["Npc_FadeOut"],
-					},
-				},
-				"FreeStyleReset":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"HitLightBackrake01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Male_HitLightBackrake_footsteps"],
-						"HitLightForerake01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Male_HitLightForerake_footsteps"],
-						"AfraidAS": ["Npc_ResetFreeStyle"],
-						"Alert01AS": ["Npc_ResetFreeStyle"],
-						"Clap01": ["Npc_ResetFreeStyle","Audio_NPC_MengDe_Male_Clap01"],
-					},
-				},
-				"MaleVoiceState":
-				{
-					"$type": "ConfigNpcStateIDInfo",
-					"animatorStates":
-					{
-						"Walk": ["Audio_NPC_MengDe_Male_Walk_footsteps"],
-						"Run": ["Audio_NPC_MengDe_Male_Walk_footsteps"],
-						"FountainSneak": ["Audio_NPC_MengDe_Male_FountainSneak"],
-						"StandbyBow01BS": ["Audio_NPC_MengDe_Male_StandbyBow01BS"],
-						"StandbyBow01AS": ["Audio_NPC_MengDe_Male_StandbyBow01AS"],
-						"StandbySword01BS": ["Audio_NPC_MengDe_Male_StandbySword01BS"],
-						"StandbySword01AS": ["Audio_NPC_MengDe_Male_StandbySword01AS"],
-						"Shy01BS": ["Audio_NPC_MengDe_Male_Shy01BS"],
-						"Shy01AS": ["Audio_NPC_MengDe_Male_Shy01AS"],
-						"Shout01BS": ["Audio_NPC_MengDe_Male_Shout01BS"],
-						"Shout01Loop": ["Audio_NPC_MengDe_Male_Shout01Loop"],
-						"Shout01AS": ["Audio_NPC_MengDe_Male_Shout01AS"],
-						"Request01BS": ["Audio_NPC_MengDe_Male_Request01BS"],
-						"Request01AS": ["Audio_NPC_MengDe_Male_Request01AS"],
-						"Refuse01BS": ["Audio_NPC_MengDe_Male_Refuse01BS"],
-						"Pour01": ["Audio_NPC_MengDe_Male_Pour01"],
-						"PlayAndSing01BS": ["Audio_NPC_MengDe_Male_PlayAndSing01BS"],
-						"PlayAndSing01AS": ["Audio_NPC_MengDe_Male_PlayAndSing01AS"],
-						"Pray01BS": ["Audio_NPC_MengDe_Male_Pray01BS"],
-						"Pray01AS": ["Audio_NPC_MengDe_Male_Pray01AS"],
-						"Laugh01": ["Audio_NPC_MengDe_Male_Laugh01"],
-						"Investigate01BS": ["Audio_NPC_MengDe_Male_Investigate01BS"],
-						"Investigate01AS": ["Audio_NPC_MengDe_Male_Investigate01AS"],
-						"HoldArmHand01BS": ["Audio_NPC_MengDe_Male_HoldArmHand01BS"],
-						"Forerake01BS": ["Audio_NPC_MengDe_Male_Forerake01BS"],
-						"Encourage01": ["Audio_NPC_MengDe_Male_Encourage01"],
-						"Eat01": ["Audio_NPC_MengDe_Male_Eat01"],
-						"Confuse01AS": ["Audio_NPC_MengDe_Male_Confuse01AS"],
-						"Confuse01BS": ["Audio_NPC_MengDe_Male_Confuse01BS"],
-						"Cheer01BS": ["Audio_NPC_MengDe_Male_Cheer01BS"],
-						"Cheer01Loop": ["Audio_NPC_MengDe_Male_Cheer01Loop"],
-						"Backrake01BS": ["Audio_NPC_MengDe_Female_Backrake01BS"],
-						"Akimbo01BS": ["Audio_NPC_MengDe_Female_Akimbo01BS"],
-						"Afraid01BS": ["Audio_NPC_MengDe_Male_Afraid01BS"],
-						"HitHeavyForerake01": ["Audio_NPC_MengDe_Male_HitHeavyForerake_footsteps"],
-						"HitHeavyBackrake01": ["Audio_NPC_MengDe_Male_HitHeavyBackrake_footsteps"],
-						"MengdeSalute01": ["Audio_NPC_MengDe_Male_Salute"],
-						"SaluteMengde01BS": ["Audio_NPC_MengDe_Male_Salute"],
-						"Ani_NPC_Male_SaluteMengde01BS": ["Audio_NPC_MengDe_Male_Salute"],
-						"Applaud": ["Audio_NPC_MengDe_Male_Applaud"],
-						"HoldArm01BS": ["Audio_NPC_MengDe_Male_HoldArm_BS"],
-						"HoldArm01AS": ["Audio_NPC_MengDe_Male_HoldArm_AS"],
-						"Think01BS": ["Audio_NPC_MengDe_Male_HoldArm_BS"],
-						"Think01AS": ["Audio_NPC_MengDe_Male_HoldArm_AS"],
-						"Iron01BS": ["Audio_NPC_MengDe_Male_Blacksmith_hit_BS"],
-						"Blacksmith": ["Audio_NPC_MengDe_Male_Blacksmith_hit"],
-						"IronLoop": ["Audio_NPC_MengDe_Male_Blacksmith_hit"],
-					},
-				},
-			},
-		},
-	},
-	"aibeta": 
-	{
-		"enable": true,
-		"friendliness": 1,
-		"profiling":
-		{
-			"lodStrategy": "Npc",
-		},
-		"moveSetting":
-		{
-			"almostReachedDistanceWalk": 0.3,
-			"almostReachedDistanceRun": 0.6,
-		},
-		"sensing":
-		{
-			"enable": false,
-		},
-		"defendArea":
-		{
-			"enable": false,
-		},
-		"threat":
-		{
-			"enable": false,
-		},
-		"scriptedMoveToTactic":
-		{
-			"enable": true,
-			"defaultSetting":
-			{
-				"speedLevel": 1,
-				"is3D": false,
-			},
-		},
-	},
-	"billboard" :
-	{
-		"$type" : "ConfigBillboard",
-		"offsetType": "Character",
-		"offset":
-		{
-			"x": -0.09,
-			"y": 0.01,
-			"z": 0,
-		},
-		"radiusOffset": 0.13,
-		"showDistance" : 20,	
-		"markShowDistance" : 45,
-	},
-	"audio":
-	{
-		"$type": "ConfigGadgetAudio",
-		"animAudio":
-		{
-			"onTransitionOut":
-			[
-				//{
-				//	"currentStateName": "male01",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male01"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male02",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male02"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male03",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male03"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male04",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male04"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male05",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male05"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male06",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male06"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male07",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male07"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male08",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male08"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male09",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male10",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male10"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male11",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male11"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male12",
-				//	"audioEvent":
-				//	{
-				//		"text": "Stop_vo_npc_common_male12"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-			],
-			"onTransitionIn":
-			[
-				//{
-				//	"currentStateName": "male01",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male01"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male02",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male02"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male03",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male03"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male04",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male04"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male05",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male05"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male06",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male06"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male07",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male07"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male08",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male08"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male09",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male09"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male10",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male10"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male11",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male11"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-				//{
-				//	"currentStateName": "male12",
-				//	"audioEvent":
-				//	{
-				//		"text": "Play_vo_npc_common_male12"
-				//	},
-				//	"otherStateNames": [],
-				//	"usage": "Any"
-				//},
-			]
-		}
-	}
+    "$type": "ConfigMonster",
+    "common": {
+        "mass": 100000.0,
+        "height": 1.35,
+        "affectedByWorld": true,
+        "checkInSurface": false,
+        "scale": 1.0,
+        "viewSize": 1.0,
+        "effectAttachShape": {
+            "$type": "ConfigEffectAttachSkinnedMesh",
+            "mesh": "EffectMesh"
+        }
+    },
+    "emojiBubble": {},
+    "defaultDither": 0.0,
+    "intee": {
+        "$type": "ConfigIntee",
+        "useTrigger": true,
+        "usePushCollider": true,
+        "useInteractionTrigger": true
+    },
+    "headControl": {
+        "$type": "ConfigHeadControl",
+        "useHeadControl": true,
+        "useWhiteAnimStates": false,
+        "speed": 6.0,
+        "weightSpeed": 2,
+        "dontAnimStates": [
+            "Turn01_90LBS",
+            "Turn01_90LAS",
+            "Turn01_90RBS",
+            "Turn01_90RAS",
+            "Downcast01BS",
+            "Downcast01AS",
+            "Downcast01Loop",
+            "DrinkToComplain",
+            "FountainPray",
+            "FountainSneak",
+            "Pray01Loop",
+            "Investigate01Loop",
+            "Shy01Loop",
+            "HoldHead01Loop"
+        ]
+    },
+    "move": {
+        "$type": "ConfigNPCMove"
+    },
+    "stateLayers": {
+        "defaultLayer": {
+            "$type": "ConfigNormalStateLayer",
+            "stateIDs": {
+                "Born": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "Born": [
+                            "Npc_ResetFreeStyle"
+                        ]
+                    }
+                },
+                "Disappear": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "canBeInter": false,
+                    "animatorStates": {
+                        "Disappear": [
+                            "Npc_FadeOut"
+                        ]
+                    }
+                },
+                "FreeStyleReset": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "HitLightBackrake01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Male_HitLightBackrake_footsteps"
+                        ],
+                        "HitLightForerake01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Male_HitLightForerake_footsteps"
+                        ],
+                        "AfraidAS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Alert01AS": [
+                            "Npc_ResetFreeStyle"
+                        ],
+                        "Clap01": [
+                            "Npc_ResetFreeStyle",
+                            "Audio_NPC_MengDe_Male_Clap01"
+                        ]
+                    }
+                },
+                "MaleVoiceState": {
+                    "$type": "ConfigNpcStateIDInfo",
+                    "animatorStates": {
+                        "Walk": [
+                            "Audio_NPC_MengDe_Male_Walk_footsteps"
+                        ],
+                        "Run": [
+                            "Audio_NPC_MengDe_Male_Walk_footsteps"
+                        ],
+                        "FountainSneak": [
+                            "Audio_NPC_MengDe_Male_FountainSneak"
+                        ],
+                        "StandbyBow01BS": [
+                            "Audio_NPC_MengDe_Male_StandbyBow01BS"
+                        ],
+                        "StandbyBow01AS": [
+                            "Audio_NPC_MengDe_Male_StandbyBow01AS"
+                        ],
+                        "StandbySword01BS": [
+                            "Audio_NPC_MengDe_Male_StandbySword01BS"
+                        ],
+                        "StandbySword01AS": [
+                            "Audio_NPC_MengDe_Male_StandbySword01AS"
+                        ],
+                        "Shy01BS": [
+                            "Audio_NPC_MengDe_Male_Shy01BS"
+                        ],
+                        "Shy01AS": [
+                            "Audio_NPC_MengDe_Male_Shy01AS"
+                        ],
+                        "Shout01BS": [
+                            "Audio_NPC_MengDe_Male_Shout01BS"
+                        ],
+                        "Shout01Loop": [
+                            "Audio_NPC_MengDe_Male_Shout01Loop"
+                        ],
+                        "Shout01AS": [
+                            "Audio_NPC_MengDe_Male_Shout01AS"
+                        ],
+                        "Request01BS": [
+                            "Audio_NPC_MengDe_Male_Request01BS"
+                        ],
+                        "Request01AS": [
+                            "Audio_NPC_MengDe_Male_Request01AS"
+                        ],
+                        "Refuse01BS": [
+                            "Audio_NPC_MengDe_Male_Refuse01BS"
+                        ],
+                        "Pour01": [
+                            "Audio_NPC_MengDe_Male_Pour01"
+                        ],
+                        "PlayAndSing01BS": [
+                            "Audio_NPC_MengDe_Male_PlayAndSing01BS"
+                        ],
+                        "PlayAndSing01AS": [
+                            "Audio_NPC_MengDe_Male_PlayAndSing01AS"
+                        ],
+                        "Pray01BS": [
+                            "Audio_NPC_MengDe_Male_Pray01BS"
+                        ],
+                        "Pray01AS": [
+                            "Audio_NPC_MengDe_Male_Pray01AS"
+                        ],
+                        "Laugh01": [
+                            "Audio_NPC_MengDe_Male_Laugh01"
+                        ],
+                        "Investigate01BS": [
+                            "Audio_NPC_MengDe_Male_Investigate01BS"
+                        ],
+                        "Investigate01AS": [
+                            "Audio_NPC_MengDe_Male_Investigate01AS"
+                        ],
+                        "HoldArmHand01BS": [
+                            "Audio_NPC_MengDe_Male_HoldArmHand01BS"
+                        ],
+                        "Forerake01BS": [
+                            "Audio_NPC_MengDe_Male_Forerake01BS"
+                        ],
+                        "Encourage01": [
+                            "Audio_NPC_MengDe_Male_Encourage01"
+                        ],
+                        "Eat01": [
+                            "Audio_NPC_MengDe_Male_Eat01"
+                        ],
+                        "Confuse01AS": [
+                            "Audio_NPC_MengDe_Male_Confuse01AS"
+                        ],
+                        "Confuse01BS": [
+                            "Audio_NPC_MengDe_Male_Confuse01BS"
+                        ],
+                        "Cheer01BS": [
+                            "Audio_NPC_MengDe_Male_Cheer01BS"
+                        ],
+                        "Cheer01Loop": [
+                            "Audio_NPC_MengDe_Male_Cheer01Loop"
+                        ],
+                        "Backrake01BS": [
+                            "Audio_NPC_MengDe_Female_Backrake01BS"
+                        ],
+                        "Akimbo01BS": [
+                            "Audio_NPC_MengDe_Female_Akimbo01BS"
+                        ],
+                        "Afraid01BS": [
+                            "Audio_NPC_MengDe_Male_Afraid01BS"
+                        ],
+                        "HitHeavyForerake01": [
+                            "Audio_NPC_MengDe_Male_HitHeavyForerake_footsteps"
+                        ],
+                        "HitHeavyBackrake01": [
+                            "Audio_NPC_MengDe_Male_HitHeavyBackrake_footsteps"
+                        ],
+                        "MengdeSalute01": [
+                            "Audio_NPC_MengDe_Male_Salute"
+                        ],
+                        "SaluteMengde01BS": [
+                            "Audio_NPC_MengDe_Male_Salute"
+                        ],
+                        "Ani_NPC_Male_SaluteMengde01BS": [
+                            "Audio_NPC_MengDe_Male_Salute"
+                        ],
+                        "Applaud": [
+                            "Audio_NPC_MengDe_Male_Applaud"
+                        ],
+                        "HoldArm01BS": [
+                            "Audio_NPC_MengDe_Male_HoldArm_BS"
+                        ],
+                        "HoldArm01AS": [
+                            "Audio_NPC_MengDe_Male_HoldArm_AS"
+                        ],
+                        "Think01BS": [
+                            "Audio_NPC_MengDe_Male_HoldArm_BS"
+                        ],
+                        "Think01AS": [
+                            "Audio_NPC_MengDe_Male_HoldArm_AS"
+                        ],
+                        "Iron01BS": [
+                            "Audio_NPC_MengDe_Male_Blacksmith_hit_BS"
+                        ],
+                        "Blacksmith": [
+                            "Audio_NPC_MengDe_Male_Blacksmith_hit"
+                        ],
+                        "IronLoop": [
+                            "Audio_NPC_MengDe_Male_Blacksmith_hit"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "aibeta": {
+        "enable": true,
+        "friendliness": 1,
+        "profiling": {
+            "lodStrategy": "Npc"
+        },
+        "moveSetting": {
+            "almostReachedDistanceWalk": 0.3,
+            "almostReachedDistanceRun": 0.6
+        },
+        "sensing": {
+            "enable": false
+        },
+        "defendArea": {
+            "enable": false
+        },
+        "threat": {
+            "enable": false
+        },
+        "scriptedMoveToTactic": {
+            "enable": true,
+            "defaultSetting": {
+                "speedLevel": 1,
+                "is3D": false
+            }
+        }
+    },
+    "billboard": {
+        "$type": "ConfigBillboard",
+        "offsetType": "Character",
+        "offset": {
+            "x": -0.09,
+            "y": 0.01,
+            "z": 0
+        },
+        "radiusOffset": 0.13,
+        "showDistance": 20,
+        "markShowDistance": 45
+    },
+    "audio": {
+        "$type": "ConfigGadgetAudio",
+        "animAudio": {
+            "onTransitionOut": [],
+            "onTransitionIn": []
+        }
+    }
 }

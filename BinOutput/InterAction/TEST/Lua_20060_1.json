@@ -1,60 +1,63 @@
 {
-	"$type": "ConfigInterContainer",
-	"group":
-	[
-		[
-			{
-				"$type": "ConfigLuaAction",
-				"type": "LUA_ACTION",
-				"duration": 1.0,
-				"invoke": true,
-				"invokeAlias": "20060",
+    "$type": "ConfigInterContainer",
+    "group": [
+        [
+            {
+                "$type": "ConfigLuaAction",
+                "type": "LUA_ACTION",
+                "duration": 1.0,
+                "invoke": true,
+                "invokeAlias": "20060",
                 "invokeParam": 1
-			},
-			{
-				"delayTime": 0,
-				"$type": "ConfigSteerInterAction",
-				"type": "STEER_TO",
-				"steerType":"RETURN",
-				"steerDir": {"x": 0, "y": 0, "z": 0},
-				 "duration": 1.0,
-				 "useSteerAnim": true,
-				 "interruptFreestyle": true
-			},
-			{
-			"$type": "ConfigCameraMoveInterAction",
-			"type": "CAMERA_FOCUS",
-				"cameraPosType": "EXIT",
-			"camPosOffset": {
-				"x": 0,
-			"y": 0,
-				"z": 0
-			},
-			"nearLength": 0,
-			"camTargetType": "TO_INTEE",
-			"camForwardTargetOffset": {
-			"x": 0,
-			"y": 0,
-			"z": 0
-			},
-			"duration": 1.0,
-			"lerpRatio": 2.0,
-			"lerpPattern": 9
-			},
-			{
-			"$type": "ConfigDialogInterAction",
-			"type": "DIALOG_CLEAR",
-			"delayTime": 0,
-			"aliasList": [
-			""
-			],
-			"duration": -1.0,
-			"checkNextImmediately": false,
-			"dialogType": "LOCK_FRAME",
-			"dialogID": 0,
-			"protectTime": 0,
-			"playAudio": false
-			},		
-		]
-	]
+            },
+            {
+                "$type": "ConfigSteerInterAction",
+                "delayTime": 0,
+                "type": "STEER_TO",
+                "steerType": "RETURN",
+                "steerDir": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "useSteerAnim": true,
+                "interruptFreestyle": true
+            },
+            {
+                "$type": "ConfigCameraMoveInterAction",
+                "type": "CAMERA_FOCUS",
+                "cameraPosType": "EXIT",
+                "camPosOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "nearLength": 0,
+                "camTargetType": "TO_INTEE",
+                "camForwardTargetOffset": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "duration": 1.0,
+                "lerpRatio": 2.0,
+                "lerpPattern": 9
+            },
+            {
+                "$type": "ConfigDialogInterAction",
+                "type": "DIALOG_CLEAR",
+                "delayTime": 0,
+                "aliasList": [
+                    ""
+                ],
+                "duration": -1.0,
+                "checkNextImmediately": false,
+                "dialogType": "LOCK_FRAME",
+                "dialogID": 0,
+                "protectTime": 0,
+                "playAudio": false
+            }
+        ]
+    ]
 }

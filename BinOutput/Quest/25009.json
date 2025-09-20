@@ -1,115 +1,115 @@
 {
-  "id": 25009,
-  "type": "WQ",
-  "title": 3528888169,
-  "desc": 1637153903,
-  "rewardIdList": [
-    125009
-  ],
-  "chapterId": 50004,
-  "subQuests": [
-    {
-      "subId": 2500901,
-      "mainId": 25009,
-      "order": 1,
-      "desc": 3141787631,
-      "acceptCondComb": "LOGIC_AND",
-      "acceptCond": [
+    "id": 25009,
+    "type": "WQ",
+    "title": 3528888169,
+    "desc": 1637153903,
+    "rewardIdList": [
+        125009
+    ],
+    "chapterId": 50004,
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            2500801,
-            3,
-            0
-          ]
+            "subId": 2500901,
+            "mainId": 25009,
+            "order": 1,
+            "desc": 3141787631,
+            "acceptCondComb": "LOGIC_AND",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        2500801,
+                        3,
+                        0
+                    ]
+                },
+                {
+                    "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
+                    "param": [
+                        45,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_ENTER_DUNGEON",
+                    "param": [
+                        2014,
+                        48
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q25009Target",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "isRewind": true
         },
         {
-          "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
-          "param": [
-            45,
-            0,
-            0
-          ]
+            "subId": 2500902,
+            "mainId": 25009,
+            "order": 2,
+            "desc": 301866087,
+            "acceptCondComb": "LOGIC_AND",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        2500901,
+                        3,
+                        0
+                    ]
+                },
+                {
+                    "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
+                    "param": [
+                        45,
+                        0,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_DUNGEON",
+                    "param": [
+                        2014,
+                        48
+                    ]
+                }
+            ],
+            "failCond": [
+                {
+                    "type": "QUEST_CONTENT_FAIL_DUNGEON",
+                    "param": [
+                        2014
+                    ]
+                }
+            ],
+            "guide": {
+                "param": [
+                    "",
+                    ""
+                ]
+            },
+            "finishParent": true,
+            "failExec": [
+                {
+                    "type": "QUEST_EXEC_ROLLBACK_QUEST",
+                    "param": [
+                        "2500901",
+                        ""
+                    ]
+                }
+            ]
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_ENTER_DUNGEON",
-          "param": [
-            2014,
-            48
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q25009Target",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 2500902,
-      "mainId": 25009,
-      "order": 2,
-      "desc": 301866087,
-      "acceptCondComb": "LOGIC_AND",
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            2500901,
-            3,
-            0
-          ]
-        },
-        {
-          "type": "QUEST_COND_PLAYER_LEVEL_EQUAL_GREATER",
-          "param": [
-            45,
-            0,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_FINISH_DUNGEON",
-          "param": [
-            2014,
-            48
-          ]
-        }
-      ],
-      "failCond": [
-        {
-          "type": "QUEST_CONTENT_FAIL_DUNGEON",
-          "param": [
-            2014
-          ]
-        }
-      ],
-      "guide": {
-        "param": [
-          "",
-          ""
-        ]
-      },
-      "finishParent": true,
-      "failExec": [
-        {
-          "type": "QUEST_EXEC_ROLLBACK_QUEST",
-          "param": [
-            "2500901",
-            ""
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

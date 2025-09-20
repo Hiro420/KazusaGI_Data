@@ -1,46 +1,46 @@
 {
-  "id": 60105,
-  "type": "VQ",
-  "title": 387605001,
-  "desc": 4213020871,
-  "showType": "QUEST_HIDDEN",
-  "subQuests": [
-    {
-      "subId": 6010501,
-      "mainId": 60105,
-      "order": 5,
-      "desc": 1537240440,
-      "showType": "QUEST_HIDDEN",
-      "acceptCond": [
+    "id": 60105,
+    "type": "VQ",
+    "title": 387605001,
+    "desc": 4213020871,
+    "showType": "QUEST_HIDDEN",
+    "subQuests": [
         {
-          "type": "QUEST_COND_OPEN_STATE_EQUAL",
-          "param": [
-            1101,
-            1,
-            0
-          ]
+            "subId": 6010501,
+            "mainId": 60105,
+            "order": 5,
+            "desc": 1537240440,
+            "showType": "QUEST_HIDDEN",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_OPEN_STATE_EQUAL",
+                    "param": [
+                        1101,
+                        1,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_MONSTER_DIE",
+                    "param": [
+                        22010201,
+                        0
+                    ],
+                    "count": 1
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "AM0001SYFS",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_POINT",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            }
         }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_MONSTER_DIE",
-          "param": [
-            22010201,
-            0
-          ],
-          "count": 1
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "AM0001SYFS",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_POINT",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      }
-    }
-  ]
+    ]
 }

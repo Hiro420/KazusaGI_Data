@@ -1,229 +1,229 @@
 {
-  "id": 387,
-  "title": 3606828353,
-  "desc": 2935036183,
-  "rewardIdList": [
-    100387
-  ],
-  "subQuests": [
-    {
-      "subId": 38701,
-      "mainId": 387,
-      "order": 1,
-      "desc": 2108028279,
-      "acceptCondComb": "LOGIC_AND",
-      "acceptCond": [
+    "id": 387,
+    "title": 3606828353,
+    "desc": 2935036183,
+    "rewardIdList": [
+        100387
+    ],
+    "subQuests": [
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            99902,
-            3,
-            0
-          ]
+            "subId": 38701,
+            "mainId": 387,
+            "order": 1,
+            "desc": 2108028279,
+            "acceptCondComb": "LOGIC_AND",
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        99902,
+                        3,
+                        0
+                    ]
+                },
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        38601,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        38701,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_NPC",
+                "param": [
+                    "1469",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "isRewind": true
         },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            38601,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "subId": 38702,
+            "mainId": 387,
+            "order": 2,
+            "desc": 4138419999,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        38701,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_FINISH_DUNGEON",
+                    "param": [
+                        4007,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_LOCATION",
+                "param": [
+                    "Q387Target1",
+                    ""
+                ],
+                "guideScene": 3
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            38701,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_NPC",
-        "param": [
-          "1469",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 38702,
-      "mainId": 387,
-      "order": 2,
-      "desc": 4138419999,
-      "acceptCond": [
+            "subId": 38703,
+            "mainId": 387,
+            "order": 3,
+            "desc": 605196263,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        38702,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        38703,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_NPC",
+                "param": [
+                    "1469",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "isRewind": true
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            38701,
-            3,
-            0
-          ]
+            "subId": 38704,
+            "mainId": 387,
+            "order": 4,
+            "desc": 4231533383,
+            "acceptCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        38703,
+                        3,
+                        0
+                    ]
+                }
+            ],
+            "finishCond": [
+                {
+                    "type": "QUEST_CONTENT_COMPLETE_TALK",
+                    "param": [
+                        38704,
+                        0
+                    ]
+                }
+            ],
+            "guide": {
+                "type": "QUEST_GUIDE_NPC",
+                "param": [
+                    "1512",
+                    ""
+                ],
+                "guideScene": 3,
+                "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
+                "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
+            },
+            "finishParent": true,
+            "isRewind": true
         }
-      ],
-      "finishCond": [
+    ],
+    "talks": [
         {
-          "type": "QUEST_CONTENT_FINISH_DUNGEON",
-          "param": [
-            4007,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_LOCATION",
-        "param": [
-          "Q387Target1",
-          ""
-        ],
-        "guideScene": 3
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 38703,
-      "mainId": 387,
-      "order": 3,
-      "desc": 605196263,
-      "acceptCond": [
+            "id": 38701,
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "38701",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 1,
+            "initDialog": 3870101,
+            "npcId": [
+                1469
+            ],
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 387,
+            "assetIndex": 451416138108
+        },
         {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            38702,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
+            "id": 38703,
+            "beginWay": "TALK_BEGIN_AUTO",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "38703",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 3,
+            "initDialog": 3870301,
+            "npcId": [
+                1469
+            ],
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 387,
+            "assetIndex": 50243421941
+        },
         {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            38703,
-            0
-          ]
+            "id": 38704,
+            "beginWay": "TALK_BEGIN_AUTO",
+            "beginCond": [
+                {
+                    "type": "QUEST_COND_STATE_EQUAL",
+                    "param": [
+                        "38704",
+                        "2",
+                        ""
+                    ]
+                }
+            ],
+            "priority": 3,
+            "initDialog": 3870401,
+            "npcId": [
+                1512
+            ],
+            "heroTalk": "TALK_HERO_MAIN",
+            "questId": 387,
+            "assetIndex": 179488782544
         }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_NPC",
-        "param": [
-          "1469",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "isRewind": true
-    },
-    {
-      "subId": 38704,
-      "mainId": 387,
-      "order": 4,
-      "desc": 4231533383,
-      "acceptCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            38703,
-            3,
-            0
-          ]
-        }
-      ],
-      "finishCond": [
-        {
-          "type": "QUEST_CONTENT_COMPLETE_TALK",
-          "param": [
-            38704,
-            0
-          ]
-        }
-      ],
-      "guide": {
-        "type": "QUEST_GUIDE_NPC",
-        "param": [
-          "1512",
-          ""
-        ],
-        "guideScene": 3,
-        "guideStyle": "QUEST_GUIDE_STYLE_TARGET",
-        "guideLayer": "QUEST_GUIDE_LAYER_SCENE"
-      },
-      "finishParent": true,
-      "isRewind": true
-    }
-  ],
-  "talks": [
-    {
-      "id": 38701,
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "38701",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 1,
-      "initDialog": 3870101,
-      "npcId": [
-        1469
-      ],
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 387,
-      "assetIndex": 451416138108
-    },
-    {
-      "id": 38703,
-      "beginWay": "TALK_BEGIN_AUTO",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "38703",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 3,
-      "initDialog": 3870301,
-      "npcId": [
-        1469
-      ],
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 387,
-      "assetIndex": 50243421941
-    },
-    {
-      "id": 38704,
-      "beginWay": "TALK_BEGIN_AUTO",
-      "beginCond": [
-        {
-          "type": "QUEST_COND_STATE_EQUAL",
-          "param": [
-            "38704",
-            "2",
-            ""
-          ]
-        }
-      ],
-      "priority": 3,
-      "initDialog": 3870401,
-      "npcId": [
-        1512
-      ],
-      "heroTalk": "TALK_HERO_MAIN",
-      "questId": 387,
-      "assetIndex": 179488782544
-    }
-  ]
+    ]
 }
