@@ -1,78 +1,78 @@
-﻿[
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_DefaultAbility_VisionReplaceDieInvincible",
-      "onAvatarIn": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "UNIQUE_Invincible",
-          "predicates": [
-            {
-              "$type": "ByAny",
-              "predicates": [
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_DefaultAbility_VisionReplaceDieInvincible",
+            "onAvatarIn": [
                 {
-                  "$type": "ByEntityAppearVisionType",
-                  "visionType": "VisionReborn",
-                  "value": true
-                },
-                {
-                  "$type": "ByEntityAppearVisionType",
-                  "visionType": "VisionReplaceDie",
-                  "value": true
+                    "$type": "ApplyModifier",
+                    "modifierName": "UNIQUE_Invincible",
+                    "predicates": [
+                        {
+                            "$type": "ByAny",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityAppearVisionType",
+                                    "visionType": "VisionReborn",
+                                    "value": true
+                                },
+                                {
+                                    "$type": "ByEntityAppearVisionType",
+                                    "visionType": "VisionReplaceDie",
+                                    "value": true
+                                }
+                            ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ]
+            ],
+            "modifiers": {
+                "UNIQUE_Invincible": {
+                    "isUnique": true,
+                    "stacking": "Refresh",
+                    "duration": 2.5,
+                    "state": "Invincible",
+                    "onAdded": []
+                }
+            },
+            "abilityMixins": [
+                {
+                    "$type": "DoReviveMixin",
+                    "type": "Both",
+                    "onReviveActions": [
+                        {
+                            "$type": "ApplyModifier",
+                            "target": "CurLocalAvatar",
+                            "doOffStage": true,
+                            "modifierName": "UNIQUE_Invincible"
+                        }
+                    ]
+                }
+            ]
         }
-      ],
-      "modifiers": {
-        "UNIQUE_Invincible": {
-          "isUnique": true,
-          "stacking": "Refresh",
-          "duration": 2.5,
-          "state": "Invincible",
-          "onAdded": []
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_DefaultAbility_AvartarInShaderChange",
+            "onAvatarIn": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "ShaderLerp"
+                }
+            ],
+            "modifiers": {
+                "ShaderLerp": {
+                    "duration": 1.3,
+                    "modifierMixins": [
+                        {
+                            "$type": "ShaderLerpMixin",
+                            "type": "CharacterDissolve"
+                        }
+                    ]
+                }
+            },
+            "abilityMixins": []
         }
-      },
-      "abilityMixins": [
-        {
-          "$type": "DoReviveMixin",
-          "type": "Both",
-          "onReviveActions": [
-            {
-              "$type": "ApplyModifier",
-              "target": "CurLocalAvatar",
-              "doOffStage": true,
-              "modifierName": "UNIQUE_Invincible"
-            }
-          ]
-        }
-      ]
     }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_DefaultAbility_AvartarInShaderChange",
-      "onAvatarIn": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "ShaderLerp"
-        }
-      ],
-      "modifiers": {
-        "ShaderLerp": {
-          "duration": 1.3,
-          "modifierMixins": [
-            {
-              "$type": "ShaderLerpMixin",
-              "type": "CharacterDissolve"
-            }
-          ]
-        }
-      },
-      "abilityMixins": []
-    }
-  }
 ]

@@ -1,2349 +1,2349 @@
-﻿[
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_ExtraAttack",
-      "abilityMixins": [
-        {
-          "$type": "ButtonHoldChargeMixin",
-          "skillID": 10031,
-          "chargeTime": 0.12,
-          "secondChargeTime": 0.2,
-          "OnBeginUncharged": [
-            {
-              "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill"
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 99,
-              "predicates": [
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_ExtraAttack",
+            "abilityMixins": [
                 {
-                  "$type": "ByAny",
-                  "predicates": [
-                    {
-                      "$type": "ByAnimatorInt",
-                      "value": 0,
-                      "parameter": "ComboCount",
-                      "logic": "Equal"
+                    "$type": "ButtonHoldChargeMixin",
+                    "skillID": 10031,
+                    "chargeTime": 0.12,
+                    "secondChargeTime": 0.2,
+                    "OnBeginUncharged": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill"
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 99,
+                            "predicates": [
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByAnimatorInt",
+                                            "value": 0,
+                                            "parameter": "ComboCount",
+                                            "logic": "Equal"
+                                        },
+                                        {
+                                            "$type": "ByAnimatorInt",
+                                            "value": 5,
+                                            "parameter": "ComboCount",
+                                            "logic": "Equal"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "boolID": "IsCharging",
+                            "value": false
+                        }
+                    ],
+                    "OnReleaseUncharged": [
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1
+                        }
+                    ],
+                    "OnBeginCharged": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "boolID": "IsCharging",
+                            "value": true
+                        }
+                    ],
+                    "OnReleaseCharged": [
+                        {
+                            "$type": "SetAnimatorBool",
+                            "boolID": "IsCharging",
+                            "value": false
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 1
+                        }
+                    ],
+                    "OnBeginSecondCharged": [
+                        {
+                            "$type": "SetAnimatorTrigger",
+                            "triggerID": "DoSkill",
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
+                                    "logic": "GreaterOrEqual"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetAnimatorInt",
+                            "intID": "SkillID",
+                            "value": 6,
+                            "predicates": [
+                                {
+                                    "$type": "ByLocalAvatarStamina",
+                                    "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
+                                    "logic": "GreaterOrEqual"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetAnimatorBool",
+                            "boolID": "IsCharging",
+                            "value": false
+                        }
+                    ],
+                    "OnReleaseSecondCharged": [],
+                    "chargeStateIDs": [
+                        "Attack01",
+                        "Attack02",
+                        "Attack03",
+                        "Attack04",
+                        "Run"
+                    ]
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "ExtraAttack"
+                    ],
+                    "modifierName": "ExtraAttack_StaminaCost"
+                }
+            ],
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "Qin_ExtraAttack_Detect",
+                    "target": "Self"
+                }
+            ],
+            "modifiers": {
+                "ExtraAttack_StaminaCost": {
+                    "onAdded": [
+                        {
+                            "$type": "AvatarSkillStart",
+                            "skillID": 10001,
+                            "costStaminaRatio": "%ExtraAttack_Sword_Stamina_Cost"
+                        }
+                    ]
+                },
+                "Qin_ExtraAttack_Detect": {
+                    "onAttackLanded": [
+                        {
+                            "$type": "ApplyModifier",
+                            "target": "Target",
+                            "modifierName": "UNIQUE_Qin_ExtraAttack_WeightDown_Pre",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "attackTags": [
+                                        "ExtraAttack"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster",
+                                        "Gadget"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "key": "Qin_ExtraAttack_Recently_Lifted",
+                                    "value": 0,
+                                    "maxValue": 1,
+                                    "compareType": "NoneOrEqual"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Qin_ExtraAttack_WeightDown_Pre": {
+                    "isUnique": true,
+                    "duration": 0.4,
+                    "onRemoved": [
+                        {
+                            "$type": "ApplyModifier",
+                            "target": "Self",
+                            "modifierName": "UNIQUE_Qin_ExtraAttack_WeightDown"
+                        }
+                    ]
+                },
+                "UNIQUE_Qin_ExtraAttack_WeightDown": {
+                    "duration": 3.0,
+                    "isUnique": true,
+                    "stacking": "Unique",
+                    "isLimitedProperties": true,
+                    "properties": {
+                        "Actor_AddGravityScale": -1.98
                     },
-                    {
-                      "$type": "ByAnimatorInt",
-                      "value": 5,
-                      "parameter": "ComboCount",
-                      "logic": "Equal"
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Rise_Monster",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster",
+                                        "Gadget"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Qin_ExtraAttack_Recently_Lifted"
+                        }
+                    ]
+                },
+                "Qin_ExtraAttack_WeightDown_Afterwards": {
+                    "duration": 1.5,
+                    "stacking": "Unique",
+                    "properties": {
+                        "Actor_AddGravityScale": -1.93
+                    },
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Rise_Monster",
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster",
+                                        "Gadget"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Qin_ExtraAttack_Recently_Lifted": {
+                    "duration": 6.0,
+                    "stacking": "Refresh",
+                    "onAdded": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "key": "Qin_ExtraAttack_Recently_Lifted",
+                            "value": 1,
+                            "useLimitRange": true,
+                            "maxValue": 1,
+                            "minValue": 0
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "key": "Qin_ExtraAttack_Recently_Lifted",
+                            "value": -5,
+                            "useLimitRange": true,
+                            "maxValue": 1,
+                            "minValue": 0
+                        }
+                    ]
+                }
+            },
+            "abilitySpecials": {
+                "ExtraAttack_Sword_Stamina_Cost": 0,
+                "Flexible_Stamina": -2
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_VortexSmash",
+            "abilityMixins": [
+                {
+                    "$type": "SkillButtonHoldChargeMixin",
+                    "skillID": 10033,
+                    "beforeStateIDs": [
+                        "VortexSmash_BS"
+                    ],
+                    "chargeLoopStateIDs": [
+                        "VortexSmash_Charge_01"
+                    ],
+                    "chargeLoopDurations": [
+                        5
+                    ],
+                    "nextLoopTriggerID": "NextLoopTrigger",
+                    "endHoldTrigger": "EndHoldTrigger"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "VortexSmash_Charge_01"
+                    ],
+                    "modifierName": "Charge1"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "VortexSmash_Charge_01"
+                    ],
+                    "modifierName": "Charging"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "VortexSmash_BS",
+                        "VortexSmash_Charge_01",
+                        "VortexSmash_Strike_01"
+                    ],
+                    "modifierName": "Focus"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "VortexSmash_Strike_01"
+                    ],
+                    "modifierName": "GenerateElemBall_VortexSmash"
+                }
+            ],
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "doOffStage": true,
+                    "modifierName": "DetectAttackLanded",
+                    "target": "Self"
+                }
+            ],
+            "onAbilityStart": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "skillID": 10033
+                },
+                {
+                    "$type": "TriggerAttackEvent",
+                    "targetType": "Enemy",
+                    "attackEvent": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "triggerType": "TriggerNoRepeat",
+                            "size": {
+                                "x": 4.0,
+                                "y": 2.4,
+                                "z": 3.5
+                            },
+                            "born": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "attachPointName": "FocusAnchor",
+                                "offset": {
+                                    "x": 0.0,
+                                    "y": 0.4,
+                                    "z": 0.6
+                                }
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Art",
+                            "attackProperty": {
+                                "damagePercentage": "%Art_DMG",
+                                "strikeType": "Default",
+                                "elementType": "Wind",
+                                "attackType": "Melee",
+                                "elementDurability": 50,
+                                "enBreak": 250
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitLevel": "Air",
+                                "hitImpulseX": 1200,
+                                "hitImpulseY": 600,
+                                "retreatType": "ByHitDirection",
+                                "reboundRatio": 0,
+                                "canBeDefenceHalt": false,
+                                "hitHaltTime": 0.0,
+                                "hitHaltTimeScale": 0.05,
+                                "muteHitText": false
+                            }
+                        }
                     }
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            }
-          ],
-          "OnReleaseUncharged": [
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 1
-            }
-          ],
-          "OnBeginCharged": [
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": true
-            }
-          ],
-          "OnReleaseCharged": [
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 1
-            }
-          ],
-          "OnBeginSecondCharged": [
-            {
-              "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
-              "predicates": [
-                {
-                  "$type": "ByLocalAvatarStamina",
-                  "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
-                  "logic": "GreaterOrEqual"
-                }
-              ]
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 6,
-              "predicates": [
-                {
-                  "$type": "ByLocalAvatarStamina",
-                  "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
-                  "logic": "GreaterOrEqual"
-                }
-              ]
-            },
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            }
-          ],
-          "OnReleaseSecondCharged": [],
-          "chargeStateIDs": [
-            "Attack01",
-            "Attack02",
-            "Attack03",
-            "Attack04",
-            "Run"
-          ]
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "ExtraAttack"
-          ],
-          "modifierName": "ExtraAttack_StaminaCost"
-        }
-      ],
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "Qin_ExtraAttack_Detect",
-          "target": "Self"
-        }
-      ],
-      "modifiers": {
-        "ExtraAttack_StaminaCost": {
-          "onAdded": [
-            {
-              "$type": "AvatarSkillStart",
-              "skillID": 10001,
-              "costStaminaRatio": "%ExtraAttack_Sword_Stamina_Cost"
-            }
-          ]
-        },
-        "Qin_ExtraAttack_Detect": {
-          "onAttackLanded": [
-            {
-              "$type": "ApplyModifier",
-              "target": "Target",
-              "modifierName": "UNIQUE_Qin_ExtraAttack_WeightDown_Pre",
-              "predicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "ExtraAttack"
-                  ]
                 },
                 {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster",
-                    "Gadget"
-                  ]
-                },
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "Qin_ExtraAttack_Recently_Lifted",
-                  "value": 0,
-                  "maxValue": 1,
-                  "compareType": "NoneOrEqual"
-                }
-              ]
-            }
-          ]
-        },
-        "UNIQUE_Qin_ExtraAttack_WeightDown_Pre": {
-          "isUnique": true,
-          "duration": 0.4,
-          "onRemoved": [
-            {
-              "$type": "ApplyModifier",
-              "target": "Self",
-              "modifierName": "UNIQUE_Qin_ExtraAttack_WeightDown"
-            }
-          ]
-        },
-        "UNIQUE_Qin_ExtraAttack_WeightDown": {
-          "duration": 3,
-          "isUnique": true,
-          "stacking": "Unique",
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_AddGravityScale": -1.98
-          },
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Rise_Monster",
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster",
-                    "Gadget"
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Qin_ExtraAttack_Recently_Lifted"
-            }
-          ]
-        },
-        "Qin_ExtraAttack_WeightDown_Afterwards": {
-          "duration": 1.5,
-          "stacking": "Unique",
-          "properties": {
-            "Actor_AddGravityScale": -1.93
-          },
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Bow_Venti_Rise_Monster",
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster",
-                    "Gadget"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "Qin_ExtraAttack_Recently_Lifted": {
-          "duration": 6,
-          "stacking": "Refresh",
-          "onAdded": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "Qin_ExtraAttack_Recently_Lifted",
-              "value": 1,
-              "useLimitRange": true,
-              "maxValue": 1,
-              "minValue": 0
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "Qin_ExtraAttack_Recently_Lifted",
-              "value": -5,
-              "useLimitRange": true,
-              "maxValue": 1,
-              "minValue": 0
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {
-        "ExtraAttack_Sword_Stamina_Cost": 0,
-        "Flexible_Stamina": -2
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_VortexSmash",
-      "abilityMixins": [
-        {
-          "$type": "SkillButtonHoldChargeMixin",
-          "skillID": 10033,
-          "beforeStateIDs": [
-            "VortexSmash_BS"
-          ],
-          "chargeLoopStateIDs": [
-            "VortexSmash_Charge_01"
-          ],
-          "chargeLoopDurations": [
-            5
-          ],
-          "nextLoopTriggerID": "NextLoopTrigger",
-          "endHoldTrigger": "EndHoldTrigger"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "VortexSmash_Charge_01"
-          ],
-          "modifierName": "Charge1"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "VortexSmash_Charge_01"
-          ],
-          "modifierName": "Charging"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "VortexSmash_BS",
-            "VortexSmash_Charge_01",
-            "VortexSmash_Strike_01"
-          ],
-          "modifierName": "Focus"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "VortexSmash_Strike_01"
-          ],
-          "modifierName": "GenerateElemBall_VortexSmash"
-        }
-      ],
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "doOffStage": true,
-          "modifierName": "DetectAttackLanded",
-          "target": "Self"
-        }
-      ],
-      "onAbilityStart": [
-        {
-          "$type": "AvatarSkillStart",
-          "skillID": 10033
-        },
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackBox",
-              "triggerType": "TriggerNoRepeat",
-              "size": {
-                "x": 4,
-                "y": 2.4,
-                "z": 3.5
-              },
-              "born": {
-                "$type": "ConfigBornByAttachPoint",
-                "attachPointName": "FocusAnchor",
-                "offset": {
-                  "x": 0,
-                  "y": 0.4,
-                  "z": 0.6
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Art_DMG",
-                "strikeType": "Default",
-                "elementType": "Wind",
-                "attackType": "Melee",
-                "elementDurability": 50,
-                "enBreak": 250
-              },
-              "hitPattern": {
-                "onHitEffectName": "default",
-                "hitLevel": "Air",
-                "hitImpulseX": 1200,
-                "hitImpulseY": 600,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "canBeDefenceHalt": false,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.05,
-                "muteHitText": false
-              }
-            }
-          }
-        },
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Alliance",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackBox",
-              "triggerType": "TriggerNoRepeat",
-              "size": {
-                "x": 4,
-                "y": 2.4,
-                "z": 3.5
-              },
-              "born": {
-                "$type": "ConfigBornByAttachPoint",
-                "attachPointName": "FocusAnchor",
-                "offset": {
-                  "x": 0,
-                  "y": 0.4,
-                  "z": 0.6
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": 0,
-                "strikeType": "Default",
-                "elementType": "None",
-                "elementDurability": 50,
-                "enBreak": 250,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "default",
-                "hitLevel": "Air",
-                "hitImpulseX": 1200,
-                "hitImpulseY": 600,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "canBeDefenceHalt": false,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.05,
-                "muteHitText": false
-              }
-            }
-          }
-        },
-        {
-          "$type": "ActCameraShake",
-          "cameraShake": {
-            "shakeType": "Center",
-            "shakeRange": 0.36,
-            "shakeTime": 0.12,
-            "shakeDistance": 30
-          },
-          "extension": {
-            "baseOnCamera": true
-          }
-        },
-        {
-          "$type": "ActCameraRadialBlur",
-          "cameraRadialBlur": {
-            "power": 1,
-            "blurTime": 0.25,
-            "fadeTime": 0.3
-          }
-        }
-      ],
-      "modifiers": {
-        "Charging": {
-          "onRemoved": [
-            {
-              "$type": "AvatarSkillStart",
-              "skillID": 10033
-            }
-          ],
-          "thinkInterval": 0.15,
-          "onThinkInterval": [
-            {
-              "$type": "TriggerAttackEvent",
-              "targetType": "Enemy",
-              "attackEvent": {
-                "attackPattern": {
-                  "$type": "ConfigAttackBox",
-                  "triggerType": "TriggerNoRepeat",
-                  "size": {
-                    "x": 2,
-                    "y": 2,
-                    "z": 2.5
-                  },
-                  "born": {
-                    "$type": "ConfigBornByAttachPoint",
-                    "attachPointName": "FocusAnchor",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 0
+                    "$type": "TriggerAttackEvent",
+                    "targetType": "Alliance",
+                    "attackEvent": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackBox",
+                            "triggerType": "TriggerNoRepeat",
+                            "size": {
+                                "x": 4.0,
+                                "y": 2.4,
+                                "z": 3.5
+                            },
+                            "born": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "attachPointName": "FocusAnchor",
+                                "offset": {
+                                    "x": 0.0,
+                                    "y": 0.4,
+                                    "z": 0.6
+                                }
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Art",
+                            "attackProperty": {
+                                "damagePercentage": 0.0,
+                                "strikeType": "Default",
+                                "elementType": "None",
+                                "elementDurability": 50,
+                                "enBreak": 250,
+                                "attackType": "Melee"
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitLevel": "Air",
+                                "hitImpulseX": 1200,
+                                "hitImpulseY": 600,
+                                "retreatType": "ByHitDirection",
+                                "reboundRatio": 0,
+                                "canBeDefenceHalt": false,
+                                "hitHaltTime": 0.0,
+                                "hitHaltTimeScale": 0.05,
+                                "muteHitText": false
+                            }
+                        }
                     }
-                  }
                 },
-                "attackInfo": {
-                  "attackTag": "Elemental_Art_Hold",
-                  "attackProperty": {
-                    "damagePercentage": 0,
-                    "elementType": "None",
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "Center",
+                        "shakeRange": 0.36,
+                        "shakeTime": 0.12,
+                        "shakeDistance": 30
+                    },
+                    "extension": {
+                        "baseOnCamera": true
+                    }
+                },
+                {
+                    "$type": "ActCameraRadialBlur",
+                    "cameraRadialBlur": {
+                        "power": 1,
+                        "blurTime": 0.25,
+                        "fadeTime": 0.3
+                    }
+                }
+            ],
+            "modifiers": {
+                "Charging": {
+                    "onRemoved": [
+                        {
+                            "$type": "AvatarSkillStart",
+                            "skillID": 10033
+                        }
+                    ],
+                    "thinkInterval": 0.15,
+                    "onThinkInterval": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "targetType": "Enemy",
+                            "attackEvent": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "triggerType": "TriggerNoRepeat",
+                                    "size": {
+                                        "x": 2.0,
+                                        "y": 2.0,
+                                        "z": 2.5
+                                    },
+                                    "born": {
+                                        "$type": "ConfigBornByAttachPoint",
+                                        "attachPointName": "FocusAnchor",
+                                        "offset": {
+                                            "x": 0.0,
+                                            "y": 0.0,
+                                            "z": 0.0
+                                        }
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Elemental_Art_Hold",
+                                    "attackProperty": {
+                                        "damagePercentage": 0.0,
+                                        "elementType": "None",
+                                        "elementDurability": 50,
+                                        "enBreak": 0
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Focus": {
+                    "onAdded": [
+                        {
+                            "$type": "AvatarEnterFocus",
+                            "cameraFollowLower": {
+                                "x": 0.5,
+                                "y": 0.0,
+                                "z": -2.5
+                            },
+                            "cameraFollowUpper": {
+                                "x": 0.3,
+                                "y": -0.2,
+                                "z": 0.0
+                            },
+                            "cameraFastFocusMode": true,
+                            "dragButtonName": "Skill2",
+                            "assistance": {
+                                "ps4": {
+                                    "useGyro": true
+                                },
+                                "other": {
+                                    "useGyro": true
+                                }
+                            },
+                            "canMove": false
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "AvatarExitFocus"
+                        }
+                    ]
+                },
+                "Charge1": {
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_VortexSmash_Charge_01",
+                            "predicates": [
+                                {
+                                    "$type": "ByNot",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByUnlockTalentParam",
+                                            "talentParam": "Stronger_VortexSmash"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_VortexSmash_Charge_02",
+                            "predicates": [
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "talentParam": "Stronger_VortexSmash"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierMixins": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "shapeName": "CircleR10",
+                            "strength": "%Strength",
+                            "attenuation": "%Attenuation",
+                            "born": {
+                                "$type": "ConfigBornByAttachPoint",
+                                "attachPointName": "FocusAnchor",
+                                "offset": {
+                                    "x": 0.4,
+                                    "y": 0.0,
+                                    "z": 1.8
+                                }
+                            },
+                            "targetType": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "logic": "LesserOrEqual",
+                                    "weight": 150.0
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "reject": true
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "CostStaminaMixin",
+                            "costStaminaDelta": "%StaminaCost",
+                            "onStaminaEmpty": [
+                                {
+                                    "$type": "SetAnimatorTrigger",
+                                    "triggerID": "EndHoldTrigger"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "DetectAttackLanded": {
+                    "onAttackLanded": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Collision",
+                            "target": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "attackTags": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "reject": true
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Drag",
+                            "target": "Target",
+                            "predicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "attackTags": [
+                                        "Elemental_Art_Hold"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "logic": "LesserOrEqual",
+                                    "weight": 100.0
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "reject": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Drag": {
+                    "duration": 0.2,
+                    "state": "Struggle"
+                },
+                "Collision": {
+                    "modifierMixins": [
+                        {
+                            "$type": "VelocityDetectMixin",
+                            "minSpeed": 1.0,
+                            "maxSpeed": 1.0,
+                            "detectOnStart": true,
+                            "onNegedge": [
+                                {
+                                    "$type": "RemoveModifier",
+                                    "modifierName": "Collision"
+                                }
+                            ]
+                        }
+                    ],
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_VortexSmash_Trail01"
+                        }
+                    ],
+                    "onCrash": [
+                        {
+                            "$type": "RemoveModifier",
+                            "modifierName": "Collision"
+                        }
+                    ]
+                },
+                "GenerateElemBall_VortexSmash": {
+                    "onAttackLanded": [
+                        {
+                            "$type": "Predicated",
+                            "target": "Target",
+                            "targetPredicates": [
+                                {
+                                    "$type": "ByAttackTags",
+                                    "attackTags": [
+                                        "Elemental_Art"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByTargetGlobalValue",
+                                    "key": "_ANIMAL_ENTITY_TYPE",
+                                    "value": 0,
+                                    "compareType": "NoneOrEqual"
+                                }
+                            ],
+                            "successActions": [
+                                {
+                                    "$type": "ApplyModifier",
+                                    "modifierName": "Ball",
+                                    "target": "Self"
+                                },
+                                {
+                                    "$type": "ApplyModifier",
+                                    "modifierName": "Ball_Extra",
+                                    "target": "Self"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Ball": {
+                    "duration": 1.0,
+                    "stacking": "Unique",
+                    "onAdded": [
+                        {
+                            "$type": "Randomed",
+                            "chance": 1.0,
+                            "successActions": [
+                                {
+                                    "$type": "GenerateElemBall",
+                                    "configID": 2021,
+                                    "baseEnergy": 6,
+                                    "ratio": "%GetElementRatio",
+                                    "born": {
+                                        "$type": "ConfigBornByTarget",
+                                        "offset": {
+                                            "x": 0.0,
+                                            "y": 0.0,
+                                            "z": 1.0
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Ball_Extra": {
+                    "duration": 1.0,
+                    "stacking": "MultipleRefreshNoRemove",
+                    "stackingOption": {
+                        "maxModifierNumForMultipleType": 3
+                    },
+                    "onAdded": [
+                        {
+                            "$type": "Randomed",
+                            "chance": 0.67,
+                            "successActions": [
+                                {
+                                    "$type": "GenerateElemBall",
+                                    "configID": 2021,
+                                    "baseEnergy": 3,
+                                    "ratio": "%GetElementRatio",
+                                    "born": {
+                                        "$type": "ConfigBornByTarget",
+                                        "offset": {
+                                            "x": 0.0,
+                                            "y": 0.0,
+                                            "z": 1.0
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "abilitySpecials": {
+                "GetElementRatio": 1.0,
+                "Art_DMG": 0,
+                "Attenuation": 2,
+                "Strength": 2,
+                "StaminaCost": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_CreateWoodSpike",
+            "onAbilityStart": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "skillID": 10033
+                },
+                {
+                    "$type": "CreateGadget",
+                    "gadgetID": 41003001,
+                    "campID": 1001,
+                    "campTargetType": "All",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeRange": 0.18,
+                        "shakeTime": 0.36
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_WoodSpikeMaterial",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "WoodSpikeStart",
+                    "target": "Self"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "effectPattern": "Eff_Avatar_WoodSpike_Strike"
+                }
+            ],
+            "modifiers": {
+                "WoodSpikeStart": {
+                    "elementType": "Grass",
                     "elementDurability": 50,
-                    "enBreak": 0
-                  }
+                    "onAdded": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "targetType": "Enemy",
+                            "attackEvent": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackSphere",
+                                    "duration": 0.0,
+                                    "triggerType": "TriggerNoRepeat",
+                                    "radius": 5,
+                                    "born": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "x": 0.0,
+                                            "y": 0.8,
+                                            "z": 0.0
+                                        }
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackProperty": {
+                                        "damagePercentage": 2.0,
+                                        "elementType": "None",
+                                        "elementDurability": 100
+                                    },
+                                    "hitPattern": {
+                                        "hitLevel": "Air",
+                                        "hitImpulseX": 0,
+                                        "hitImpulseY": 800,
+                                        "reboundRatio": 0,
+                                        "hitHaltTime": 0.0,
+                                        "hitHaltTimeScale": 0.05,
+                                        "muteHitText": false
+                                    },
+                                    "forceCameraShake": true,
+                                    "cameraShake": {
+                                        "shakeRange": 0.36,
+                                        "shakeTime": 0.18
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
-              }
             }
-          ]
-        },
-        "Focus": {
-          "onAdded": [
-            {
-              "$type": "AvatarEnterFocus",
-              "cameraFollowLower": {
-                "x": 0.5,
-                "y": 0,
-                "z": -2.5
-              },
-              "cameraFollowUpper": {
-                "x": 0.3,
-                "y": -0.2,
-                "z": 0
-              },
-              "cameraFastFocusMode": true,
-              "dragButtonName": "Skill2",
-              "assistance": {
-                "ps4": {
-                  "useGyro": true
-                },
-                "other": {
-                  "useGyro": true
-                }
-              },
-              "canMove": false
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "AvatarExitFocus"
-            }
-          ]
-        },
-        "Charge1": {
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_VortexSmash_Charge_01",
-              "predicates": [
-                {
-                  "$type": "ByNot",
-                  "predicates": [
-                    {
-                      "$type": "ByUnlockTalentParam",
-                      "talentParam": "Stronger_VortexSmash"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_VortexSmash_Charge_02",
-              "predicates": [
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "talentParam": "Stronger_VortexSmash"
-                }
-              ]
-            }
-          ],
-          "modifierMixins": [
-            {
-              "$type": "WindZoneMixin",
-              "shapeName": "CircleR10",
-              "strength": "%Strength",
-              "attenuation": "%Attenuation",
-              "born": {
-                "$type": "ConfigBornByAttachPoint",
-                "attachPointName": "FocusAnchor",
-                "offset": {
-                  "x": 0.4,
-                  "y": 0,
-                  "z": 1.8
-                }
-              },
-              "targetType": "All",
-              "predicates": [
-                {
-                  "$type": "ByTargetWeight",
-                  "logic": "LesserOrEqual",
-                  "weight": 150
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ],
-                  "reject": true
-                }
-              ]
-            },
-            {
-              "$type": "CostStaminaMixin",
-              "costStaminaDelta": "%StaminaCost",
-              "onStaminaEmpty": [
-                {
-                  "$type": "SetAnimatorTrigger",
-                  "triggerID": "EndHoldTrigger"
-                }
-              ]
-            }
-          ]
-        },
-        "DetectAttackLanded": {
-          "onAttackLanded": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Collision",
-              "target": "Target",
-              "predicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ],
-                  "reject": true
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Drag",
-              "target": "Target",
-              "predicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art_Hold"
-                  ]
-                },
-                {
-                  "$type": "ByTargetWeight",
-                  "logic": "LesserOrEqual",
-                  "weight": 100
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ],
-                  "reject": true
-                }
-              ]
-            }
-          ]
-        },
-        "Drag": {
-          "duration": 0.2,
-          "state": "Struggle"
-        },
-        "Collision": {
-          "modifierMixins": [
-            {
-              "$type": "VelocityDetectMixin",
-              "minSpeed": 1,
-              "maxSpeed": 1,
-              "detectOnStart": true,
-              "onNegedge": [
-                {
-                  "$type": "RemoveModifier",
-                  "modifierName": "Collision"
-                }
-              ]
-            }
-          ],
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_VortexSmash_Trail01"
-            }
-          ],
-          "onCrash": [
-            {
-              "$type": "RemoveModifier",
-              "modifierName": "Collision"
-            }
-          ]
-        },
-        "GenerateElemBall_VortexSmash": {
-          "onAttackLanded": [
-            {
-              "$type": "Predicated",
-              "target": "Target",
-              "targetPredicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ANIMAL_ENTITY_TYPE",
-                  "value": 0,
-                  "compareType": "NoneOrEqual"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball",
-                  "target": "Self"
-                },
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball_Extra",
-                  "target": "Self"
-                }
-              ]
-            }
-          ]
-        },
-        "Ball": {
-          "duration": 1,
-          "stacking": "Unique",
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 1,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2021,
-                  "baseEnergy": 6,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "Ball_Extra": {
-          "duration": 1,
-          "stacking": "MultipleRefreshNoRemove",
-          "stackingOption": {
-            "maxModifierNumForMultipleType": 3
-          },
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 0.67,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2021,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
         }
-      },
-      "abilitySpecials": {
-        "GetElementRatio": 1,
-        "Art_DMG": 0,
-        "Attenuation": 2,
-        "Strength": 2,
-        "StaminaCost": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_CreateWoodSpike",
-      "onAbilityStart": [
-        {
-          "$type": "AvatarSkillStart",
-          "skillID": 10033
-        },
-        {
-          "$type": "CreateGadget",
-          "gadgetID": 41003001,
-          "campID": 1001,
-          "campTargetType": "All",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 0
-            }
-          }
-        },
-        {
-          "$type": "ActCameraShake",
-          "cameraShake": {
-            "shakeRange": 0.18,
-            "shakeTime": 0.36
-          }
-        }
-      ]
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_WoodSpikeMaterial",
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "WoodSpikeStart",
-          "target": "Self"
-        },
-        {
-          "$type": "AttachEffect",
-          "effectPattern": "Eff_Avatar_WoodSpike_Strike"
-        }
-      ],
-      "modifiers": {
-        "WoodSpikeStart": {
-          "elementType": "Grass",
-          "elementDurability": 50,
-          "onAdded": [
-            {
-              "$type": "TriggerAttackEvent",
-              "targetType": "Enemy",
-              "attackEvent": {
-                "attackPattern": {
-                  "$type": "ConfigAttackSphere",
-                  "duration": 0,
-                  "triggerType": "TriggerNoRepeat",
-                  "radius": 5,
-                  "born": {
-                    "$type": "ConfigBornBySelf",
-                    "offset": {
-                      "x": 0,
-                      "y": 0.8,
-                      "z": 0
-                    }
-                  }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_CreateWoodWall",
+            "onAbilityStart": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "skillID": 10016
                 },
-                "attackInfo": {
-                  "attackProperty": {
-                    "damagePercentage": 2,
+                {
+                    "$type": "CreateGadget",
+                    "gadgetID": 41003003,
+                    "campID": 1001,
+                    "campTargetType": "All",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 2.0
+                        }
+                    }
+                }
+            ],
+            "abilityMixins": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "SupportArrowRain_In",
+                        "SupportArrowRain",
+                        "SupportArrowRain_Out"
+                    ],
+                    "modifierName": "SupportInvincible"
+                }
+            ],
+            "modifiers": {
+                "SupportInvincible": {
+                    "state": "Invincible"
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_WoodWall_Material",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "WoodWall_Material",
+                    "target": "Self"
+                },
+                {
+                    "$type": "AttachEffect",
+                    "effectPattern": "Eff_Avatar_WoodWall"
+                }
+            ],
+            "modifiers": {
+                "WoodWall_Material": {
+                    "elementType": "Grass",
+                    "elementDurability": 50,
+                    "thinkInterval": 2.0,
+                    "onThinkInterval": [
+                        {
+                            "$type": "HealHP",
+                            "amount": 35,
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR3",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            }
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "effectPattern": "Eff_Avatar_HealingCircle"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_DandelionWind_Camera",
+            "onAbilityStart": [
+                {
+                    "$type": "AvatarEnterCameraShot",
+                    "cameraMoveCfgPath": "Camera_Qin_DandelionWind",
+                    "predicates": [
+                        {
+                            "$type": "ByAttackNotHitScene",
+                            "attackPattern": {
+                                "$type": "ConfigAttackCircle",
+                                "triggerType": "TriggerNoRepeat",
+                                "height": 0.2,
+                                "fanAngle": 30.0,
+                                "radius": 0.8,
+                                "born": {
+                                    "$type": "ConfigBornBySelf",
+                                    "offset": {
+                                        "x": 0.0,
+                                        "y": 1.2,
+                                        "z": 0.0
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "abilityMixins": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DandelionWind"
+                    ],
+                    "modifierName": "Tornado_Eff"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DandelionWind"
+                    ],
+                    "modifierName": "isGhost"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DandelionWind"
+                    ],
+                    "modifierName": "invincible"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "DandelionWind",
+                        "DandelionWind_Out"
+                    ],
+                    "modifierName": "camera"
+                },
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "stateID": "DandelionWind",
+                    "modifierName": "SetEmission",
+                    "normalizeStart": 0.16,
+                    "normalizeEnd": 0.95
+                }
+            ],
+            "modifiers": {
+                "isGhost": {
+                    "onAdded": [
+                        {
+                            "$type": "AttachAbilityStateResistance",
+                            "resistanceListID": 11002
+                        }
+                    ]
+                },
+                "invincible": {
+                    "state": "Invincible"
+                },
+                "Tornado_Eff": {
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Qin_DandelionWind_SurroundWind"
+                        }
+                    ],
+                    "modifierMixins": [
+                        {
+                            "$type": "WindZoneMixin",
+                            "shapeName": "CircleR2",
+                            "strength": -2,
+                            "targetType": "All",
+                            "predicates": [
+                                {
+                                    "$type": "ByTargetWeight",
+                                    "logic": "LesserOrEqual",
+                                    "weight": 100.0
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ],
+                                    "reject": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "camera": {
+                    "onAdded": [
+                        {
+                            "$type": "ControlEmotion",
+                            "toggleBlink": false,
+                            "toggleEmoSync": false,
+                            "toggleEyeKey": false
+                        }
+                    ],
+                    "modifierMixins": [
+                        {
+                            "$type": "TriggerWeatherMixin",
+                            "type": "Skill",
+                            "weatherPattern": "DefaultSkillPreset",
+                            "transDuration": 0.3,
+                            "duration": 0.99
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "materialType": "Weapon",
+                            "value": -1,
+                            "duration": 0.3
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "lockParam": false,
+                            "cameraParam": {
+                                "forceRadius": 6.0,
+                                "forceRadiusDuration": 0.0
+                            }
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "doOffStage": true,
+                            "toggleBlink": true,
+                            "toggleEmoSync": true,
+                            "toggleEyeKey": true
+                        },
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "doOffStage": true
+                        }
+                    ],
+                    "onAvatarOut": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "materialType": "Weapon",
+                            "value": -1,
+                            "duration": 0.3
+                        },
+                        {
+                            "$type": "AvatarCameraParam",
+                            "lockParam": false,
+                            "cameraParam": {
+                                "forceRadius": 6.0,
+                                "forceRadiusDuration": 0.0
+                            }
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "doOffStage": true,
+                            "toggleBlink": true,
+                            "toggleEmoSync": true,
+                            "toggleEyeKey": true
+                        },
+                        {
+                            "$type": "AvatarExitCameraShot",
+                            "doOffStage": true
+                        }
+                    ]
+                },
+                "SetEmission": {
+                    "onAdded": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "materialType": "Weapon",
+                            "useDefaultColor": false,
+                            "value": 15,
+                            "duration": 0.3
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "SetEmissionScaler",
+                            "materialType": "Weapon",
+                            "value": -1,
+                            "duration": 0.6
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_DandelionWind",
+            "onAbilityStart": [
+                {
+                    "$type": "AvatarSkillStart",
+                    "skillID": 10034
+                },
+                {
+                    "$type": "CreateGadget",
+                    "gadgetID": 41003004,
+                    "campID": 1001,
+                    "campTargetType": "Alliance",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "CreateGadget",
+                    "gadgetID": 41003005,
+                    "campID": 1001,
+                    "campTargetType": "Enemy",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        }
+                    }
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "RestorEnergy",
+                    "predicates": [
+                        {
+                            "$type": "ByUnlockTalentParam",
+                            "talentParam": "RestoreEnergy"
+                        }
+                    ]
+                }
+            ],
+            "modifiers": {
+                "RestorEnergy": {
+                    "duration": 0.15,
+                    "modifierMixins": [
+                        {
+                            "$type": "ReviveElemEnergyMixin",
+                            "type": "Both",
+                            "period": 0.1,
+                            "baseEnergy": "%Rate",
+                            "ratio": "%ReviveElemEnergyRatio"
+                        }
+                    ]
+                }
+            },
+            "abilitySpecials": {
+                "Rate": 0,
+                "ReviveElemEnergyRatio": 1
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_DandelionWind_Heal",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "modifierName": "DandelionWind_Buff"
+                },
+                {
+                    "$type": "AttachModifier",
+                    "modifierName": "DandelionWind_Field"
+                }
+            ],
+            "modifiers": {
+                "DandelionWind_Field": {
+                    "duration": 10,
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Qin_DandelionWind"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "DandelionWind_Field_UniqueHeal",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "DandelionWind_Field_UniqueHeal",
+                            "target": "CurTeamAvatars"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "UNIQUE_Talent_WindShield",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindShield"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_QinWindShield_COUNT",
+                            "value": 3,
+                            "useLimitRange": true,
+                            "maxValue": 3,
+                            "minValue": 3,
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindShield"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Time_Slow",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Enemy",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindPressure"
+                                }
+                            ]
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "FireEffect",
+                            "effectPattern": "Eff_Qin_DandelionWind_Splinter"
+                        }
+                    ]
+                },
+                "DandelionWind_Field_UniqueHeal": {
+                    "duration": 0.2,
+                    "stacking": "Unique",
+                    "onAdded": [
+                        {
+                            "$type": "HealHP",
+                            "amountByCasterMaxHPRatio": "%BurstHeal",
+                            "target": "Self",
+                            "doOffStage": true
+                        }
+                    ]
+                },
+                "DandelionWind_Buff": {
+                    "duration": 10.5,
+                    "thinkInterval": 1,
+                    "onThinkInterval": [
+                        {
+                            "$type": "HealHP",
+                            "amountByCasterMaxHPRatio": "%Heal",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "UNIQUE_Talent_WindShield",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindShield"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_QinWindShield_COUNT",
+                            "value": 3,
+                            "useLimitRange": true,
+                            "maxValue": 3,
+                            "minValue": 3,
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindShield"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Time_Slow",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Enemy",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByUnlockTalentParam",
+                                    "target": "Owner",
+                                    "talentParam": "WindPressure"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "UNIQUE_DandelionWind_Buff_WindBuff",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByShape",
+                                "shapeName": "CircleR6",
+                                "centerBasedOn": "Self",
+                                "campTargetType": "Alliance",
+                                "campBasedOn": "Self"
+                            },
+                            "predicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Avatar"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "Time_Slow": {
+                    "duration": 1.2,
+                    "isLimitedProperties": true,
+                    "state": "DefenseDown",
+                    "properties": {
+                        "Actor_WindSubHurtDelta": "%WindHurt"
+                    }
+                },
+                "UNIQUE_DandelionWind_Buff_WindBuff": {
+                    "isUnique": true,
+                    "stacking": "Refresh",
+                    "duration": 0.2,
+                    "elementType": "Wind",
+                    "elementDurability": 25
+                },
+                "UNIQUE_Talent_WindShield_Timer": {
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
+                        }
+                    ],
+                    "stacking": "Refresh",
+                    "isUnique": true,
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachModifierToSelfGlobalValueMixin",
+                            "globalValueKey": "_ABILITY_QinWindShield_COUNT",
+                            "valueSteps": [
+                                -100,
+                                0.5,
+                                1.5,
+                                2.5,
+                                3.5
+                            ],
+                            "defaultGlobalValueOnCreate": 3,
+                            "removeAppliedModifier": true,
+                            "modifierNameSteps": [
+                                "None",
+                                "eff_1",
+                                "eff_2",
+                                "eff_3"
+                            ],
+                            "actionQueues": [
+                                [],
+                                [],
+                                [],
+                                []
+                            ]
+                        }
+                    ]
+                },
+                "UNIQUE_Talent_WindShield": {
+                    "onAdded": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "UNIQUE_Talent_WindShield_Timer"
+                        }
+                    ],
+                    "duration": 10,
+                    "stacking": "Refresh",
+                    "isUnique": true,
+                    "onBeingHit": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "key": "_ABILITY_QinWindShield_COUNT",
+                            "value": -1,
+                            "useLimitRange": true,
+                            "maxValue": 3,
+                            "minValue": 0,
+                            "predicates": [
+                                {
+                                    "$type": "ByHitDamage",
+                                    "damage": 1,
+                                    "compareType": "GreaterOrEqual"
+                                }
+                            ]
+                        }
+                    ],
+                    "onKill": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "key": "_ABILITY_QinWindShield_COUNT",
+                            "value": -3,
+                            "useLimitRange": true,
+                            "maxValue": 0,
+                            "minValue": 0,
+                            "doOffStage": true
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "key": "_ABILITY_QinWindShield_COUNT",
+                            "value": -3,
+                            "useLimitRange": true,
+                            "maxValue": 0,
+                            "minValue": 0,
+                            "doOffStage": true
+                        }
+                    ]
+                },
+                "None": {
+                    "onAdded": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "parameter": "Level_0",
+                            "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
+                        }
+                    ],
+                    "thinkInterval": 0.4,
+                    "onThinkInterval": [
+                        {
+                            "$type": "RemoveModifier",
+                            "doOffStage": true,
+                            "modifierName": "UNIQUE_Talent_WindShield"
+                        },
+                        {
+                            "$type": "RemoveModifier",
+                            "doOffStage": true,
+                            "modifierName": "UNIQUE_Talent_WindShield_Timer"
+                        }
+                    ]
+                },
+                "eff_1": {
+                    "onAdded": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "parameter": "Level_1",
+                            "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
+                        }
+                    ],
+                    "isLimitedProperties": true,
+                    "properties": {
+                        "Actor_SubHurtDelta": "%LessHurt"
+                    }
+                },
+                "eff_2": {
+                    "onAdded": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "parameter": "Level_2",
+                            "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
+                        }
+                    ],
+                    "isLimitedProperties": true,
+                    "properties": {
+                        "Actor_SubHurtDelta": "%LessHurt"
+                    }
+                },
+                "eff_3": {
+                    "onAdded": [
+                        {
+                            "$type": "SendEffectTrigger",
+                            "parameter": "Level_3",
+                            "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
+                        }
+                    ],
+                    "isLimitedProperties": true,
+                    "properties": {
+                        "Actor_SubHurtDelta": "%LessHurt"
+                    }
+                }
+            },
+            "abilitySpecials": {
+                "BurstHeal": 0,
+                "Heal": 0,
+                "WindHurt": 0,
+                "LessHurt": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_DandelionWind_Harm",
+            "onAdded": [],
+            "onFieldEnter": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "target": "Target",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 1.0,
+                            "z": 0.0
+                        }
+                    },
+                    "attackInfo": {
+                        "attackTag": "Elemental_Burst",
+                        "canBeModifiedBy": "OriginOwner",
+                        "attackProperty": {
+                            "damagePercentage": "%InOutHarm",
+                            "elementType": "Wind",
+                            "strikeType": "Default",
+                            "elementDurability": 50,
+                            "elementRank": 3,
+                            "enBreak": 50
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitLevel": "Light",
+                            "hitImpulseX": 200,
+                            "hitImpulseY": 0,
+                            "reboundRatio": 0,
+                            "hitHaltTime": 0.0,
+                            "hitHaltTimeScale": 0.05,
+                            "muteHitText": false
+                        },
+                        "forceCameraShake": false
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "onFieldExit": [
+                {
+                    "$type": "DamageByAttackValue",
+                    "target": "Target",
+                    "born": {
+                        "$type": "ConfigBornByTarget",
+                        "offset": {
+                            "x": 0.0,
+                            "y": 1.0,
+                            "z": 0.0
+                        }
+                    },
+                    "attackInfo": {
+                        "attackTag": "Elemental_Burst",
+                        "canBeModifiedBy": "OriginOwner",
+                        "attackProperty": {
+                            "damagePercentage": "%InOutHarm",
+                            "elementType": "Wind",
+                            "strikeType": "Default",
+                            "elementDurability": 50,
+                            "elementRank": 3,
+                            "enBreak": 50
+                        },
+                        "hitPattern": {
+                            "onHitEffectName": "default",
+                            "hitLevel": "Light",
+                            "hitImpulseX": 200,
+                            "hitImpulseY": 0,
+                            "reboundRatio": 0,
+                            "hitHaltTime": 0.0,
+                            "hitHaltTimeScale": 0.05,
+                            "muteHitText": false
+                        }
+                    },
+                    "predicates": [
+                        {
+                            "$type": "ByEntityTypes",
+                            "entityTypes": [
+                                "Monster"
+                            ]
+                        }
+                    ],
+                    "forceCameraShake": false
+                }
+            ],
+            "abilitySpecials": {
+                "InOutHarm": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_DandelionWind_Push",
+            "onAbilityStart": [
+                {
+                    "$type": "TriggerAttackEvent",
+                    "targetType": "Enemy",
+                    "attackEvent": {
+                        "attackPattern": {
+                            "$type": "ConfigAttackCircle",
+                            "triggerType": "TriggerNoRepeat",
+                            "fanAngle": 360.0,
+                            "radius": 6.0,
+                            "checkHitScene": true,
+                            "born": {
+                                "$type": "ConfigBornBySelf",
+                                "offset": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                }
+                            }
+                        },
+                        "attackInfo": {
+                            "attackTag": "Elemental_Burst",
+                            "attackProperty": {
+                                "damagePercentage": "%Burst_DMG",
+                                "elementType": "Wind",
+                                "strikeType": "Default",
+                                "elementDurability": 50,
+                                "elementRank": 3,
+                                "enBreak": 400
+                            },
+                            "hitPattern": {
+                                "onHitEffectName": "default",
+                                "hitLevel": "Heavy",
+                                "hitImpulseX": 800,
+                                "hitImpulseY": 0,
+                                "retreatType": "ByHitDirection",
+                                "reboundRatio": 0,
+                                "hitHaltTime": 0.0,
+                                "hitHaltTimeScale": 0.05,
+                                "muteHitText": false
+                            },
+                            "forceCameraShake": false,
+                            "cameraShake": {}
+                        }
+                    }
+                },
+                {
+                    "$type": "ActCameraShake",
+                    "cameraShake": {
+                        "shakeType": "CustomVector",
+                        "shakeRange": 0.15,
+                        "shakeTime": 0.12,
+                        "shakeDistance": 30,
+                        "shakeDir": {
+                            "x": 0,
+                            "y": 0,
+                            "z": 1
+                        },
+                        "extension": {
+                            "baseOnCamera": true
+                        }
+                    }
+                }
+            ],
+            "abilitySpecials": {
+                "Burst_DMG": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_SupportTrigger",
+            "abilityMixins": [
+                {
+                    "$type": "TriggerRageSupportMixin",
+                    "minValue": 0,
+                    "maxValue": 100,
+                    "addRatio": 2.0,
+                    "dampRatio": 20
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_SpeedBlur",
+            "abilityMixins": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Fly"
+                    ],
+                    "modifierName": "Blur"
+                }
+            ],
+            "modifiers": {
+                "Blur": {
+                    "onAdded": [
+                        {
+                            "$type": "ActCameraRadialBlur",
+                            "cameraRadialBlur": {
+                                "power": 1,
+                                "blurTime": 0.15,
+                                "fadeTime": 0.3
+                            }
+                        },
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_FlyBlur"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_HinowaSlash",
+            "abilityMixins": [
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "HinowaSlash_Loop"
+                    ],
+                    "modifierName": "Loop"
+                },
+                {
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "HinowaSlash_BS",
+                        "HinowaSlash_Loop",
+                        "HinowaSlash_AS1"
+                    ],
+                    "modifierName": "Inertia"
+                }
+            ],
+            "modifiers": {
+                "Loop": {
+                    "onAdded": [
+                        {
+                            "$type": "AttachEffect",
+                            "effectPattern": "Eff_Avatar_HinowaSlash_Loop"
+                        }
+                    ]
+                },
+                "Inertia": {
+                    "modifierMixins": [
+                        {
+                            "$type": "ApplyInertiaVelocityMixin",
+                            "damping": 0,
+                            "useXZ": true,
+                            "useY": false
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_Stamina_Recover",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "modifierName": "Stamina_Recover",
+                    "target": "Self"
+                }
+            ],
+            "modifiers": {
+                "Stamina_Recover": {
+                    "properties": {
+                        "Actor_RecoverStaminaRatio": "%Rate"
+                    }
+                }
+            },
+            "abilitySpecials": {
+                "Rate": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_GreaterHeal",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "modifierName": "Qin_Talent_HealUp"
+                }
+            ],
+            "modifiers": {
+                "Qin_Talent_HealUp": {
+                    "properties": {
+                        "Actor_HealAddDelta": "%Rate"
+                    }
+                }
+            },
+            "abilitySpecials": {
+                "Rate": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_AttackCritic",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "Check"
+                }
+            ],
+            "modifiers": {
+                "Check": {
+                    "onAttackLanded": [
+                        {
+                            "$type": "Predicated",
+                            "target": "Target",
+                            "targetPredicates": [
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByAttackTags",
+                                    "attackTags": [
+                                        "NormalAttack_01",
+                                        "NormalAttack_02",
+                                        "NormalAttack_03",
+                                        "NormalAttack_04",
+                                        "NormalAttack_05"
+                                    ]
+                                },
+                                {
+                                    "$type": "ByEntityTypes",
+                                    "target": "Target",
+                                    "entityTypes": [
+                                        "Monster"
+                                    ]
+                                }
+                            ],
+                            "successActions": [
+                                {
+                                    "$type": "Randomed",
+                                    "chance": "%Chance",
+                                    "successActions": [
+                                        {
+                                            "$type": "HealHP",
+                                            "amountByCasterAttackRatio": "%HealByAttack",
+                                            "target": "CurTeamAvatars"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "abilitySpecials": {
+                "Chance": 0,
+                "HealByAttack": 0.0,
+                "BonusCritical": 0.0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_TeamSpeedWhenGetElementBall",
+            "abilityMixins": [
+                {
+                    "$type": "DoActionByEnergyChangeMixin",
+                    "elementTypes": [
+                        "Fire",
+                        "Water",
+                        "Grass",
+                        "Electric",
+                        "Ice",
+                        "Rock",
+                        "Wind"
+                    ],
+                    "doWhenEnergyMax": true,
+                    "onGainEnergyByBall": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Team_Speed_Up",
+                            "target": "CurTeamAvatars"
+                        }
+                    ]
+                }
+            ],
+            "modifiers": {
+                "Team_Speed_Up": {
+                    "onAdded": [],
+                    "state": "SpeedUp",
+                    "duration": "%Time",
                     "elementType": "None",
-                    "elementDurability": 100
-                  },
-                  "hitPattern": {
-                    "hitLevel": "Air",
-                    "hitImpulseX": 0,
-                    "hitImpulseY": 800,
-                    "reboundRatio": 0,
-                    "hitHaltTime": 0,
-                    "hitHaltTimeScale": 0.05,
-                    "muteHitText": false
-                  },
-                  "forceCameraShake": true,
-                  "cameraShake": {
-                    "shakeRange": 0.36,
-                    "shakeTime": 0.18
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_CreateWoodWall",
-      "onAbilityStart": [
-        {
-          "$type": "AvatarSkillStart",
-          "skillID": 10016
-        },
-        {
-          "$type": "CreateGadget",
-          "gadgetID": 41003003,
-          "campID": 1001,
-          "campTargetType": "All",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 2
-            }
-          }
-        }
-      ],
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "SupportArrowRain_In",
-            "SupportArrowRain",
-            "SupportArrowRain_Out"
-          ],
-          "modifierName": "SupportInvincible"
-        }
-      ],
-      "modifiers": {
-        "SupportInvincible": {
-          "state": "Invincible"
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_WoodWall_Material",
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "WoodWall_Material",
-          "target": "Self"
-        },
-        {
-          "$type": "AttachEffect",
-          "effectPattern": "Eff_Avatar_WoodWall"
-        }
-      ],
-      "modifiers": {
-        "WoodWall_Material": {
-          "elementType": "Grass",
-          "elementDurability": 50,
-          "thinkInterval": 2,
-          "onThinkInterval": [
-            {
-              "$type": "HealHP",
-              "amount": 35,
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR3",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              }
-            },
-            {
-              "$type": "FireEffect",
-              "effectPattern": "Eff_Avatar_HealingCircle"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_DandelionWind_Camera",
-      "onAbilityStart": [
-        {
-          "$type": "AvatarEnterCameraShot",
-          "cameraMoveCfgPath": "Camera_Qin_DandelionWind",
-          "predicates": [
-            {
-              "$type": "ByAttackNotHitScene",
-              "attackPattern": {
-                "$type": "ConfigAttackCircle",
-                "triggerType": "TriggerNoRepeat",
-                "height": 0.2,
-                "fanAngle": 30,
-                "radius": 0.8,
-                "born": {
-                  "$type": "ConfigBornBySelf",
-                  "offset": {
-                    "x": 0,
-                    "y": 1.2,
-                    "z": 0
-                  }
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "DandelionWind"
-          ],
-          "modifierName": "Tornado_Eff"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "DandelionWind"
-          ],
-          "modifierName": "isGhost"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "DandelionWind"
-          ],
-          "modifierName": "invincible"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "DandelionWind",
-            "DandelionWind_Out"
-          ],
-          "modifierName": "camera"
-        },
-        {
-          "$type": "AttachToNormalizedTimeMixin",
-          "stateID": "DandelionWind",
-          "modifierName": "SetEmission",
-          "normalizeStart": 0.16,
-          "normalizeEnd": 0.95
-        }
-      ],
-      "modifiers": {
-        "isGhost": {
-          "onAdded": [
-            {
-              "$type": "AttachAbilityStateResistance",
-              "resistanceListID": 11002
-            }
-          ]
-        },
-        "invincible": {
-          "state": "Invincible"
-        },
-        "Tornado_Eff": {
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Qin_DandelionWind_SurroundWind"
-            }
-          ],
-          "modifierMixins": [
-            {
-              "$type": "WindZoneMixin",
-              "shapeName": "CircleR2",
-              "strength": -2,
-              "targetType": "All",
-              "predicates": [
-                {
-                  "$type": "ByTargetWeight",
-                  "logic": "LesserOrEqual",
-                  "weight": 100
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ],
-                  "reject": true
-                }
-              ]
-            }
-          ]
-        },
-        "camera": {
-          "onAdded": [
-            {
-              "$type": "ControlEmotion",
-              "toggleBlink": false,
-              "toggleEmoSync": false,
-              "toggleEyeKey": false
-            }
-          ],
-          "modifierMixins": [
-            {
-              "$type": "TriggerWeatherMixin",
-              "type": "Skill",
-              "weatherPattern": "DefaultSkillPreset",
-              "transDuration": 0.3,
-              "duration": 0.99
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "SetEmissionScaler",
-              "materialType": "Weapon",
-              "value": -1,
-              "duration": 0.3
-            },
-            {
-              "$type": "AvatarCameraParam",
-              "lockParam": false,
-              "cameraParam": {
-                "forceRadius": 6,
-                "forceRadiusDuration": 0
-              }
-            },
-            {
-              "$type": "ControlEmotion",
-              "doOffStage": true,
-              "toggleBlink": true,
-              "toggleEmoSync": true,
-              "toggleEyeKey": true
-            },
-            {
-              "$type": "AvatarExitCameraShot",
-              "doOffStage": true
-            }
-          ],
-          "onAvatarOut": [
-            {
-              "$type": "SetEmissionScaler",
-              "materialType": "Weapon",
-              "value": -1,
-              "duration": 0.3
-            },
-            {
-              "$type": "AvatarCameraParam",
-              "lockParam": false,
-              "cameraParam": {
-                "forceRadius": 6,
-                "forceRadiusDuration": 0
-              }
-            },
-            {
-              "$type": "ControlEmotion",
-              "doOffStage": true,
-              "toggleBlink": true,
-              "toggleEmoSync": true,
-              "toggleEyeKey": true
-            },
-            {
-              "$type": "AvatarExitCameraShot",
-              "doOffStage": true
-            }
-          ]
-        },
-        "SetEmission": {
-          "onAdded": [
-            {
-              "$type": "SetEmissionScaler",
-              "materialType": "Weapon",
-              "useDefaultColor": false,
-              "value": 15,
-              "duration": 0.3
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "SetEmissionScaler",
-              "materialType": "Weapon",
-              "value": -1,
-              "duration": 0.6
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_DandelionWind",
-      "onAbilityStart": [
-        {
-          "$type": "AvatarSkillStart",
-          "skillID": 10034
-        },
-        {
-          "$type": "CreateGadget",
-          "gadgetID": 41003004,
-          "campID": 1001,
-          "campTargetType": "Alliance",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 0
-            }
-          }
-        },
-        {
-          "$type": "CreateGadget",
-          "gadgetID": 41003005,
-          "campID": 1001,
-          "campTargetType": "Enemy",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 0
-            }
-          }
-        },
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "RestorEnergy",
-          "predicates": [
-            {
-              "$type": "ByUnlockTalentParam",
-              "talentParam": "RestoreEnergy"
-            }
-          ]
-        }
-      ],
-      "modifiers": {
-        "RestorEnergy": {
-          "duration": 0.15,
-          "modifierMixins": [
-            {
-              "$type": "ReviveElemEnergyMixin",
-              "type": "Both",
-              "period": 0.1,
-              "baseEnergy": "%Rate",
-              "ratio": "%ReviveElemEnergyRatio"
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {
-        "Rate": 0,
-        "ReviveElemEnergyRatio": 1
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_DandelionWind_Heal",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "modifierName": "DandelionWind_Buff"
-        },
-        {
-          "$type": "AttachModifier",
-          "modifierName": "DandelionWind_Field"
-        }
-      ],
-      "modifiers": {
-        "DandelionWind_Field": {
-          "duration": 10,
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Qin_DandelionWind"
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "DandelionWind_Field_UniqueHeal",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "DandelionWind_Field_UniqueHeal",
-              "target": "CurTeamAvatars"
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "UNIQUE_Talent_WindShield",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindShield"
-                }
-              ]
-            },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_QinWindShield_COUNT",
-              "value": 3,
-              "useLimitRange": true,
-              "maxValue": 3,
-              "minValue": 3,
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindShield"
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Time_Slow",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Enemy",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindPressure"
-                }
-              ]
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "FireEffect",
-              "effectPattern": "Eff_Qin_DandelionWind_Splinter"
-            }
-          ]
-        },
-        "DandelionWind_Field_UniqueHeal": {
-          "duration": 0.2,
-          "stacking": "Unique",
-          "onAdded": [
-            {
-              "$type": "HealHP",
-              "amountByCasterMaxHPRatio": "%BurstHeal",
-              "target": "Self",
-              "doOffStage": true
-            }
-          ]
-        },
-        "DandelionWind_Buff": {
-          "duration": 10.5,
-          "thinkInterval": 1,
-          "onThinkInterval": [
-            {
-              "$type": "HealHP",
-              "amountByCasterMaxHPRatio": "%Heal",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "UNIQUE_Talent_WindShield",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindShield"
-                }
-              ]
-            },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_QinWindShield_COUNT",
-              "value": 3,
-              "useLimitRange": true,
-              "maxValue": 3,
-              "minValue": 3,
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindShield"
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Time_Slow",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Enemy",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByUnlockTalentParam",
-                  "target": "Owner",
-                  "talentParam": "WindPressure"
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "UNIQUE_DandelionWind_Buff_WindBuff",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "Time_Slow": {
-          "duration": 1.2,
-          "isLimitedProperties": true,
-          "state": "DefenseDown",
-          "properties": {
-            "Actor_WindSubHurtDelta": "%WindHurt"
-          }
-        },
-        "UNIQUE_DandelionWind_Buff_WindBuff": {
-          "isUnique": true,
-          "stacking": "Refresh",
-          "duration": 0.2,
-          "elementType": "Wind",
-          "elementDurability": 25
-        },
-        "UNIQUE_Talent_WindShield_Timer": {
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
-            }
-          ],
-          "stacking": "Refresh",
-          "isUnique": true,
-          "modifierMixins": [
-            {
-              "$type": "AttachModifierToSelfGlobalValueMixin",
-              "globalValueKey": "_ABILITY_QinWindShield_COUNT",
-              "valueSteps": [
-                -100,
-                0.5,
-                1.5,
-                2.5,
-                3.5
-              ],
-              "defaultGlobalValueOnCreate": 3,
-              "removeAppliedModifier": true,
-              "modifierNameSteps": [
-                "None",
-                "eff_1",
-                "eff_2",
-                "eff_3"
-              ],
-              "actionQueues": [
-                [],
-                [],
-                [],
-                []
-              ]
-            }
-          ]
-        },
-        "UNIQUE_Talent_WindShield": {
-          "onAdded": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "UNIQUE_Talent_WindShield_Timer"
-            }
-          ],
-          "duration": 10,
-          "stacking": "Refresh",
-          "isUnique": true,
-          "onBeingHit": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "_ABILITY_QinWindShield_COUNT",
-              "value": -1,
-              "useLimitRange": true,
-              "maxValue": 3,
-              "minValue": 0,
-              "predicates": [
-                {
-                  "$type": "ByHitDamage",
-                  "damage": 1,
-                  "compareType": "GreaterOrEqual"
-                }
-              ]
-            }
-          ],
-          "onKill": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "_ABILITY_QinWindShield_COUNT",
-              "value": -3,
-              "useLimitRange": true,
-              "maxValue": 0,
-              "minValue": 0,
-              "doOffStage": true
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "_ABILITY_QinWindShield_COUNT",
-              "value": -3,
-              "useLimitRange": true,
-              "maxValue": 0,
-              "minValue": 0,
-              "doOffStage": true
-            }
-          ]
-        },
-        "None": {
-          "onAdded": [
-            {
-              "$type": "SendEffectTrigger",
-              "parameter": "Level_0",
-              "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
-            }
-          ],
-          "thinkInterval": 0.4,
-          "onThinkInterval": [
-            {
-              "$type": "RemoveModifier",
-              "doOffStage": true,
-              "modifierName": "UNIQUE_Talent_WindShield"
-            },
-            {
-              "$type": "RemoveModifier",
-              "doOffStage": true,
-              "modifierName": "UNIQUE_Talent_WindShield_Timer"
-            }
-          ]
-        },
-        "eff_1": {
-          "onAdded": [
-            {
-              "$type": "SendEffectTrigger",
-              "parameter": "Level_1",
-              "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
-            }
-          ],
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_SubHurtDelta": "%LessHurt"
-          }
-        },
-        "eff_2": {
-          "onAdded": [
-            {
-              "$type": "SendEffectTrigger",
-              "parameter": "Level_2",
-              "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
-            }
-          ],
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_SubHurtDelta": "%LessHurt"
-          }
-        },
-        "eff_3": {
-          "onAdded": [
-            {
-              "$type": "SendEffectTrigger",
-              "parameter": "Level_3",
-              "effectPattern": "Eff_Avatar_Lady_Sword_Qin_TalentShield"
-            }
-          ],
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_SubHurtDelta": "%LessHurt"
-          }
-        }
-      },
-      "abilitySpecials": {
-        "BurstHeal": 0,
-        "Heal": 0,
-        "WindHurt": 0,
-        "LessHurt": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_DandelionWind_Harm",
-      "onAdded": [],
-      "onFieldEnter": [
-        {
-          "$type": "DamageByAttackValue",
-          "target": "Target",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 1,
-              "z": 0
-            }
-          },
-          "attackInfo": {
-            "attackTag": "Elemental_Burst",
-            "canBeModifiedBy": "OriginOwner",
-            "attackProperty": {
-              "damagePercentage": "%InOutHarm",
-              "elementType": "Wind",
-              "strikeType": "Default",
-              "elementDurability": 50,
-              "elementRank": 3,
-              "enBreak": 50
-            },
-            "hitPattern": {
-              "onHitEffectName": "default",
-              "hitLevel": "Light",
-              "hitImpulseX": 200,
-              "hitImpulseY": 0,
-              "reboundRatio": 0,
-              "hitHaltTime": 0,
-              "hitHaltTimeScale": 0.05,
-              "muteHitText": false
-            },
-            "forceCameraShake": false
-          },
-          "predicates": [
-            {
-              "$type": "ByEntityTypes",
-              "entityTypes": [
-                "Monster"
-              ]
-            }
-          ]
-        }
-      ],
-      "onFieldExit": [
-        {
-          "$type": "DamageByAttackValue",
-          "target": "Target",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 1,
-              "z": 0
-            }
-          },
-          "attackInfo": {
-            "attackTag": "Elemental_Burst",
-            "canBeModifiedBy": "OriginOwner",
-            "attackProperty": {
-              "damagePercentage": "%InOutHarm",
-              "elementType": "Wind",
-              "strikeType": "Default",
-              "elementDurability": 50,
-              "elementRank": 3,
-              "enBreak": 50
-            },
-            "hitPattern": {
-              "onHitEffectName": "default",
-              "hitLevel": "Light",
-              "hitImpulseX": 200,
-              "hitImpulseY": 0,
-              "reboundRatio": 0,
-              "hitHaltTime": 0,
-              "hitHaltTimeScale": 0.05,
-              "muteHitText": false
-            }
-          },
-          "predicates": [
-            {
-              "$type": "ByEntityTypes",
-              "entityTypes": [
-                "Monster"
-              ]
-            }
-          ],
-          "forceCameraShake": false
-        }
-      ],
-      "abilitySpecials": {
-        "InOutHarm": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_DandelionWind_Push",
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "fanAngle": 360,
-              "radius": 6,
-              "checkHitScene": true,
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": 0,
-                  "z": 0
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Burst",
-              "attackProperty": {
-                "damagePercentage": "%Burst_DMG",
-                "elementType": "Wind",
-                "strikeType": "Default",
-                "elementDurability": 50,
-                "elementRank": 3,
-                "enBreak": 400
-              },
-              "hitPattern": {
-                "onHitEffectName": "default",
-                "hitLevel": "Heavy",
-                "hitImpulseX": 800,
-                "hitImpulseY": 0,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.05,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {}
-            }
-          }
-        },
-        {
-          "$type": "ActCameraShake",
-          "cameraShake": {
-            "shakeType": "CustomVector",
-            "shakeRange": 0.15,
-            "shakeTime": 0.12,
-            "shakeDistance": 30,
-            "shakeDir": {
-              "x": 0,
-              "y": 0,
-              "z": 1
-            },
-            "extension": {
-              "baseOnCamera": true
-            }
-          }
-        }
-      ],
-      "abilitySpecials": {
-        "Burst_DMG": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_SupportTrigger",
-      "abilityMixins": [
-        {
-          "$type": "TriggerRageSupportMixin",
-          "minValue": 0,
-          "maxValue": 100,
-          "addRatio": 2,
-          "dampRatio": 20
-        }
-      ]
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_SpeedBlur",
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "Fly"
-          ],
-          "modifierName": "Blur"
-        }
-      ],
-      "modifiers": {
-        "Blur": {
-          "onAdded": [
-            {
-              "$type": "ActCameraRadialBlur",
-              "cameraRadialBlur": {
-                "power": 1,
-                "blurTime": 0.15,
-                "fadeTime": 0.3
-              }
-            },
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_FlyBlur"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_HinowaSlash",
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "HinowaSlash_Loop"
-          ],
-          "modifierName": "Loop"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "HinowaSlash_BS",
-            "HinowaSlash_Loop",
-            "HinowaSlash_AS1"
-          ],
-          "modifierName": "Inertia"
-        }
-      ],
-      "modifiers": {
-        "Loop": {
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_HinowaSlash_Loop"
-            }
-          ]
-        },
-        "Inertia": {
-          "modifierMixins": [
-            {
-              "$type": "ApplyInertiaVelocityMixin",
-              "damping": 0,
-              "useXZ": true,
-              "useY": false
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_Stamina_Recover",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "modifierName": "Stamina_Recover",
-          "target": "Self"
-        }
-      ],
-      "modifiers": {
-        "Stamina_Recover": {
-          "properties": {
-            "Actor_RecoverStaminaRatio": "%Rate"
-          }
-        }
-      },
-      "abilitySpecials": {
-        "Rate": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_GreaterHeal",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "modifierName": "Qin_Talent_HealUp"
-        }
-      ],
-      "modifiers": {
-        "Qin_Talent_HealUp": {
-          "properties": {
-            "Actor_HealAddDelta": "%Rate"
-          }
-        }
-      },
-      "abilitySpecials": {
-        "Rate": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_AttackCritic",
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "Check"
-        }
-      ],
-      "modifiers": {
-        "Check": {
-          "onAttackLanded": [
-            {
-              "$type": "Predicated",
-              "target": "Target",
-              "targetPredicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "NormalAttack_01",
-                    "NormalAttack_02",
-                    "NormalAttack_03",
-                    "NormalAttack_04",
-                    "NormalAttack_05"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "target": "Target",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "Randomed",
-                  "chance": "%Chance",
-                  "successActions": [
-                    {
-                      "$type": "HealHP",
-                      "amountByCasterAttackRatio": "%HealByAttack",
-                      "target": "CurTeamAvatars"
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "Attack01",
+                                "Attack02",
+                                "Attack03",
+                                "Attack04",
+                                "Attack05",
+                                "Attack06"
+                            ],
+                            "modifierName": "Speed_Up"
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "RemoveModifier",
+                            "modifierName": "Speed_Up",
+                            "doOffStage": true
+                        }
+                    ],
+                    "properties": {
+                        "Animator_MoveSpeedRatio": "%Speed"
                     }
-                  ]
+                },
+                "Speed_Up": {
+                    "duration": 10,
+                    "isLimitedProperties": true,
+                    "properties": {
+                        "Animator_OverallSpeedRatio": "%AtkSpeed"
+                    }
                 }
-              ]
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {
-        "Chance": 0,
-        "HealByAttack": 0,
-        "BonusCritical": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_TeamSpeedWhenGetElementBall",
-      "abilityMixins": [
-        {
-          "$type": "DoActionByEnergyChangeMixin",
-          "elementTypes": [
-            "Fire",
-            "Water",
-            "Grass",
-            "Electric",
-            "Ice",
-            "Rock",
-            "Wind"
-          ],
-          "doWhenEnergyMax": true,
-          "onGainEnergyByBall": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Team_Speed_Up",
-              "target": "CurTeamAvatars"
-            }
-          ]
-        }
-      ],
-      "modifiers": {
-        "Team_Speed_Up": {
-          "onAdded": [],
-          "state": "SpeedUp",
-          "duration": "%Time",
-          "elementType": "None",
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "Attack01",
-                "Attack02",
-                "Attack03",
-                "Attack04",
-                "Attack05",
-                "Attack06"
-              ],
-              "modifierName": "Speed_Up"
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "RemoveModifier",
-              "modifierName": "Speed_Up",
-              "doOffStage": true
-            }
-          ],
-          "properties": {
-            "Animator_MoveSpeedRatio": "%Speed"
-          }
-        },
-        "Speed_Up": {
-          "duration": 10,
-          "isLimitedProperties": true,
-          "properties": {
-            "Animator_OverallSpeedRatio": "%AtkSpeed"
-          }
-        }
-      },
-      "abilitySpecials": {
-        "Time": 0,
-        "AtkSpeed": 0,
-        "Speed": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_NormalAttackDamage",
-      "abilityMixins": [
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "NormalAttack_01"
-          ],
-          "damagePercentage": "%Attack01"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "NormalAttack_02"
-          ],
-          "damagePercentage": "%Attack02"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "NormalAttack_03"
-          ],
-          "damagePercentage": "%Attack03"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "NormalAttack_04"
-          ],
-          "damagePercentage": "%Attack04"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "NormalAttack_05"
-          ],
-          "damagePercentage": "%Attack05"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "attackTags": [
-            "ExtraAttack"
-          ],
-          "damagePercentage": "%ExtraAttack"
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Attack01": 0,
-        "Attack02": 0,
-        "Attack03": 0,
-        "Attack04": 0,
-        "Attack05": 0,
-        "ExtraAttack": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_MengdeTeam",
-      "abilityMixins": [
-        {
-          "$type": "DoActionByTeamStatusMixin",
-          "actions": [
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_Qin_Mengde_Num",
-              "value": 5,
-              "useLimitRange": true,
-              "maxValue": 5,
-              "predicates": [
-                {
-                  "$type": "ByCurTeamHasFeatureTag",
-                  "featureTagIDs": [
-                    1001
-                  ],
-                  "number": 5,
-                  "logic": "GreaterOrEqual"
-                }
-              ]
             },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_Qin_Mengde_Num",
-              "value": 4,
-              "useLimitRange": true,
-              "maxValue": 4,
-              "predicates": [
-                {
-                  "$type": "ByCurTeamHasFeatureTag",
-                  "featureTagIDs": [
-                    1001
-                  ],
-                  "number": 4,
-                  "logic": "Equal"
-                }
-              ]
-            },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_Qin_Mengde_Num",
-              "value": 3,
-              "useLimitRange": true,
-              "maxValue": 3,
-              "predicates": [
-                {
-                  "$type": "ByCurTeamHasFeatureTag",
-                  "featureTagIDs": [
-                    1001
-                  ],
-                  "number": 3,
-                  "logic": "Equal"
-                }
-              ]
-            },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_Qin_Mengde_Num",
-              "value": 2,
-              "useLimitRange": true,
-              "maxValue": 2,
-              "predicates": [
-                {
-                  "$type": "ByCurTeamHasFeatureTag",
-                  "featureTagIDs": [
-                    1001
-                  ],
-                  "number": 2,
-                  "logic": "Equal"
-                }
-              ]
-            },
-            {
-              "$type": "AddGlobalValue",
-              "doOffStage": true,
-              "key": "_ABILITY_Qin_Mengde_Num",
-              "value": 1,
-              "useLimitRange": true,
-              "maxValue": 1,
-              "predicates": [
-                {
-                  "$type": "ByCurTeamHasFeatureTag",
-                  "featureTagIDs": [
-                    1001
-                  ],
-                  "number": 1,
-                  "logic": "Equal"
-                }
-              ]
-            },
-            {
-              "$type": "SetGlobalValueToOverrideMap",
-              "globalValueKey": "_ABILITY_Qin_Mengde_Num",
-              "overrideMapKey": "number"
+            "abilitySpecials": {
+                "Time": 0,
+                "AtkSpeed": 0,
+                "Speed": 0.0
             }
-          ]
-        },
-        {
-          "$type": "AttachModifierToSelfGlobalValueMixin",
-          "globalValueKey": "_ABILITY_Weapon_Catalyst_EnergyMaxElementDamageUp",
-          "valueSteps": [
-            -0.5,
-            0.5,
-            1.5,
-            2.5,
-            3.5,
-            4.5,
-            5.5
-          ],
-          "removeAppliedModifier": true,
-          "modifierNameSteps": [
-            "Blanknk",
-            "MaxHP_UpA",
-            "MaxHP_UpB",
-            "MaxHP_UpA",
-            "MaxHP_UpB",
-            "MaxHP_UpA"
-          ]
         }
-      ],
-      "modifiers": {
-        "Blank": {},
-        "MaxHP_UpA": {
-          "properties": {
-            "Actor_MaxHPRatio": "%Rate*%number"
-          }
-        },
-        "MaxHP_UpB": {
-          "properties": {
-            "Actor_MaxHPRatio": "%Rate*%number"
-          }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_NormalAttackDamage",
+            "abilityMixins": [
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "NormalAttack_01"
+                    ],
+                    "damagePercentage": "%Attack01"
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "NormalAttack_02"
+                    ],
+                    "damagePercentage": "%Attack02"
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "NormalAttack_03"
+                    ],
+                    "damagePercentage": "%Attack03"
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "NormalAttack_04"
+                    ],
+                    "damagePercentage": "%Attack04"
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "NormalAttack_05"
+                    ],
+                    "damagePercentage": "%Attack05"
+                },
+                {
+                    "$type": "ModifyDamageMixin",
+                    "attackTags": [
+                        "ExtraAttack"
+                    ],
+                    "damagePercentage": "%ExtraAttack"
+                }
+            ],
+            "modifiers": {},
+            "abilitySpecials": {
+                "Attack01": 0,
+                "Attack02": 0,
+                "Attack03": 0,
+                "Attack04": 0,
+                "Attack05": 0,
+                "ExtraAttack": 0
+            }
         }
-      },
-      "abilitySpecials": {
-        "Rate": 0,
-        "number": 0
-      }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_MengdeTeam",
+            "abilityMixins": [
+                {
+                    "$type": "DoActionByTeamStatusMixin",
+                    "actions": [
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_Qin_Mengde_Num",
+                            "value": 5,
+                            "useLimitRange": true,
+                            "maxValue": 5,
+                            "predicates": [
+                                {
+                                    "$type": "ByCurTeamHasFeatureTag",
+                                    "featureTagIDs": [
+                                        1001
+                                    ],
+                                    "number": 5,
+                                    "logic": "GreaterOrEqual"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_Qin_Mengde_Num",
+                            "value": 4,
+                            "useLimitRange": true,
+                            "maxValue": 4,
+                            "predicates": [
+                                {
+                                    "$type": "ByCurTeamHasFeatureTag",
+                                    "featureTagIDs": [
+                                        1001
+                                    ],
+                                    "number": 4,
+                                    "logic": "Equal"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_Qin_Mengde_Num",
+                            "value": 3,
+                            "useLimitRange": true,
+                            "maxValue": 3,
+                            "predicates": [
+                                {
+                                    "$type": "ByCurTeamHasFeatureTag",
+                                    "featureTagIDs": [
+                                        1001
+                                    ],
+                                    "number": 3,
+                                    "logic": "Equal"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_Qin_Mengde_Num",
+                            "value": 2,
+                            "useLimitRange": true,
+                            "maxValue": 2,
+                            "predicates": [
+                                {
+                                    "$type": "ByCurTeamHasFeatureTag",
+                                    "featureTagIDs": [
+                                        1001
+                                    ],
+                                    "number": 2,
+                                    "logic": "Equal"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "AddGlobalValue",
+                            "doOffStage": true,
+                            "key": "_ABILITY_Qin_Mengde_Num",
+                            "value": 1,
+                            "useLimitRange": true,
+                            "maxValue": 1,
+                            "predicates": [
+                                {
+                                    "$type": "ByCurTeamHasFeatureTag",
+                                    "featureTagIDs": [
+                                        1001
+                                    ],
+                                    "number": 1,
+                                    "logic": "Equal"
+                                }
+                            ]
+                        },
+                        {
+                            "$type": "SetGlobalValueToOverrideMap",
+                            "globalValueKey": "_ABILITY_Qin_Mengde_Num",
+                            "overrideMapKey": "number"
+                        }
+                    ]
+                },
+                {
+                    "$type": "AttachModifierToSelfGlobalValueMixin",
+                    "globalValueKey": "_ABILITY_Weapon_Catalyst_EnergyMaxElementDamageUp",
+                    "valueSteps": [
+                        -0.5,
+                        0.5,
+                        1.5,
+                        2.5,
+                        3.5,
+                        4.5,
+                        5.5
+                    ],
+                    "removeAppliedModifier": true,
+                    "modifierNameSteps": [
+                        "Blanknk",
+                        "MaxHP_UpA",
+                        "MaxHP_UpB",
+                        "MaxHP_UpA",
+                        "MaxHP_UpB",
+                        "MaxHP_UpA"
+                    ]
+                }
+            ],
+            "modifiers": {
+                "Blank": {},
+                "MaxHP_UpA": {
+                    "properties": {
+                        "Actor_MaxHPRatio": "%Rate*%number"
+                    }
+                },
+                "MaxHP_UpB": {
+                    "properties": {
+                        "Actor_MaxHPRatio": "%Rate*%number"
+                    }
+                }
+            },
+            "abilitySpecials": {
+                "Rate": 0,
+                "number": 0
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Qin_AutoDefend",
+            "abilityMixins": [
+                {
+                    "$type": "AutoDefenceMixin",
+                    "stateIDs": [
+                        "Attack01",
+                        "Attack02",
+                        "Attack03",
+                        "Attack04",
+                        "Attack05",
+                        "AutoDefend",
+                        "NormalStandbyWeapon"
+                    ],
+                    "defendTriggerID": "AutoDefendTrigger",
+                    "defendProbability": 1,
+                    "defendProbabilityDelta": 0,
+                    "defendAngle": 360.0,
+                    "alwaysRecover": true,
+                    "defendTimeInterval": "%Inv",
+                    "defendCountInterval": 0
+                }
+            ],
+            "abilitySpecials": {
+                "Prob": 0.302,
+                "Inv": 9
+            }
+        }
     }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Qin_AutoDefend",
-      "abilityMixins": [
-        {
-          "$type": "AutoDefenceMixin",
-          "stateIDs": [
-            "Attack01",
-            "Attack02",
-            "Attack03",
-            "Attack04",
-            "Attack05",
-            "AutoDefend",
-            "NormalStandbyWeapon"
-          ],
-          "defendTriggerID": "AutoDefendTrigger",
-          "defendProbability": 1,
-          "defendProbabilityDelta": 0,
-          "defendAngle": 360,
-          "alwaysRecover": true,
-          "defendTimeInterval": "%Inv",
-          "defendCountInterval": 0
-        }
-      ],
-      "abilitySpecials": {
-        "Prob": 0.302,
-        "Inv": 9
-      }
-    }
-  }
 ]

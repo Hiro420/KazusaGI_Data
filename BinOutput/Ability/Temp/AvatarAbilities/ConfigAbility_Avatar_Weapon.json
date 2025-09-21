@@ -1,390 +1,390 @@
-﻿[
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Wood_Normal",
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "GrassMaterial"
-        }
-      ],
-      "modifiers": {
-        "GrassMaterial": {
-          "elementType": "Grass",
-          "elementDurability": 150,
-          "onRemoved": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Burned",
-              "doOffStage": true
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Wood_Normal",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "GrassMaterial"
+                }
+            ],
+            "modifiers": {
+                "GrassMaterial": {
+                    "elementType": "Grass",
+                    "elementDurability": 150,
+                    "onRemoved": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Burned",
+                            "doOffStage": true
+                        }
+                    ]
+                },
+                "Burned": {
+                    "elementType": "None",
+                    "duration": 5,
+                    "onRemoved": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "GrassMaterial",
+                            "doOffStage": true
+                        }
+                    ]
+                }
             }
-          ]
-        },
-        "Burned": {
-          "elementType": "None",
-          "duration": 5,
-          "onRemoved": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "GrassMaterial",
-              "doOffStage": true
-            }
-          ]
         }
-      }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Wood_Hard",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "GrassMaterial"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "AntiFireMaterial"
+                }
+            ],
+            "modifiers": {
+                "GrassMaterial": {
+                    "elementType": "Grass",
+                    "elementDurability": 150,
+                    "onRemoved": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "Burned"
+                        }
+                    ]
+                },
+                "AntiFireMaterial": {
+                    "elementType": "AntiFire",
+                    "elementDurability": 100
+                },
+                "Burned": {
+                    "elementType": "None",
+                    "duration": 5,
+                    "onRemoved": [
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "GrassMaterial"
+                        },
+                        {
+                            "$type": "ApplyModifier",
+                            "modifierName": "AntiFireMaterial"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Metal"
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Sword",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Claymore",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Pole",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Catalyst",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Ball",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Weapon_Bow",
+            "onAdded": [
+                {
+                    "$type": "AttachModifier",
+                    "target": "Owner",
+                    "modifierName": "test_modify"
+                }
+            ],
+            "modifiers": {
+                "test_modify": {
+                    "modifierMixins": [
+                        {
+                            "$type": "AttachToStateIDMixin",
+                            "stateIDs": [
+                                "NormalMove",
+                                "SprintBS",
+                                "Jump",
+                                "NormalStandby"
+                            ],
+                            "modifierName": "Weapon_Appear"
+                        },
+                        {
+                            "$type": "AttachToNormalizedTimeMixin",
+                            "stateID": "StandbyPutaway",
+                            "normalizeStart": 0.9,
+                            "modifierName": "Weapon_Appear"
+                        }
+                    ]
+                },
+                "Weapon_Appear": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "otherTargets": {
+                                "$type": "SelectTargetsByEquipParts",
+                                "equipPartNames": [
+                                    "equip01",
+                                    "sheathPoint"
+                                ]
+                            },
+                            "effectPattern": "Eff_Weapon_Rainbow_Appear"
+                        }
+                    ]
+                }
+            }
+        }
     }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Wood_Hard",
-      "onAdded": [
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "GrassMaterial"
-        },
-        {
-          "$type": "ApplyModifier",
-          "modifierName": "AntiFireMaterial"
-        }
-      ],
-      "modifiers": {
-        "GrassMaterial": {
-          "elementType": "Grass",
-          "elementDurability": 150,
-          "onRemoved": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Burned"
-            }
-          ]
-        },
-        "AntiFireMaterial": {
-          "elementType": "AntiFire",
-          "elementDurability": 100
-        },
-        "Burned": {
-          "elementType": "None",
-          "duration": 5,
-          "onRemoved": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "GrassMaterial"
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "AntiFireMaterial"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Metal"
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Sword",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Claymore",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Pole",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Catalyst",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Ball",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Weapon_Bow",
-      "onAdded": [
-        {
-          "$type": "AttachModifier",
-          "target": "Owner",
-          "modifierName": "test_modify"
-        }
-      ],
-      "modifiers": {
-        "test_modify": {
-          "modifierMixins": [
-            {
-              "$type": "AttachToStateIDMixin",
-              "stateIDs": [
-                "NormalMove",
-                "SprintBS",
-                "Jump",
-                "NormalStandby"
-              ],
-              "modifierName": "Weapon_Appear"
-            },
-            {
-              "$type": "AttachToNormalizedTimeMixin",
-              "stateID": "StandbyPutaway",
-              "normalizeStart": 0.9,
-              "modifierName": "Weapon_Appear"
-            }
-          ]
-        },
-        "Weapon_Appear": {
-          "onAdded": [
-            {
-              "$type": "FireEffect",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "effectPattern": "Eff_Weapon_Rainbow_Appear"
-            }
-          ]
-        }
-      }
-    }
-  }
 ]

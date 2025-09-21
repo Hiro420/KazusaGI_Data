@@ -1,1647 +1,293 @@
-﻿[
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ExtraAttack",
-      "abilityMixins": [
-        {
-          "$type": "ButtonHoldChargeMixin",
-          "skillID": 10321,
-          "chargeTime": 0.12,
-          "secondChargeTime": 0.2,
-          "OnBeginUncharged": [
-            {
-              "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill"
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 99
-            },
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            }
-          ],
-          "OnReleaseUncharged": [
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 1
-            }
-          ],
-          "OnBeginCharged": [
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": true
-            }
-          ],
-          "OnReleaseCharged": [
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 1
-            }
-          ],
-          "OnBeginSecondCharged": [
-            {
-              "$type": "SetAnimatorTrigger",
-              "triggerID": "DoSkill",
-              "predicates": [
+[
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_SprintBS_Invincible",
+            "onAbilityStart": [
                 {
-                  "$type": "ByLocalAvatarStamina",
-                  "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
-                  "logic": "GreaterOrEqual"
+                    "$type": "ApplyModifier",
+                    "modifierName": "SprintBS_Invincible",
+                    "target": "Self"
                 }
-              ]
-            },
-            {
-              "$type": "SetAnimatorInt",
-              "intID": "SkillID",
-              "value": 6,
-              "predicates": [
-                {
-                  "$type": "ByLocalAvatarStamina",
-                  "stamina": "%ExtraAttack_Sword_Stamina_Cost+%Flexible_Stamina",
-                  "logic": "GreaterOrEqual"
-                }
-              ]
-            },
-            {
-              "$type": "SetAnimatorBool",
-              "boolID": "IsCharging",
-              "value": false
-            }
-          ],
-          "OnReleaseSecondCharged": [],
-          "chargeStateIDs": [
-            "Attack01",
-            "Attack02",
-            "Attack03",
-            "Attack04",
-            "Run"
-          ]
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "ExtraAttack"
-          ],
-          "modifierName": "ExtraAttack_StaminaCost"
-        }
-      ],
-      "modifiers": {
-        "ExtraAttack_StaminaCost": {
-          "onAdded": [
-            {
-              "$type": "AvatarSkillStart",
-              "skillID": 10001,
-              "costStaminaRatio": "%ExtraAttack_Sword_Stamina_Cost"
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {
-        "ExtraAttack_Sword_Stamina_Cost": 0,
-        "Flexible_Stamina": -2
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_Shake",
-      "onAbilityStart": [
-        {
-          "$type": "ActCameraShake",
-          "cameraShake": {
-            "shakeType": "Center",
-            "shakeRange": 0.3,
-            "shakeTime": 0.09,
-            "shakeDistance": 2,
-            "extension": {
-              "baseCycle": 0.08,
-              "cycleDamping": -0.04
-            }
-          }
-        }
-      ]
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Handler",
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "BennettElementalArt_01",
-            "BennettElementalArt_02",
-            "BennettElementalArt_03",
-            "BennettElementalArt_Strike01",
-            "BennettElementalArt_Strike02",
-            "BennettElementalArt_Strike02_01",
-            "BennettElementalArt_Strike03",
-            "BennettElementalArt_Strike03_01"
-          ],
-          "modifierName": "ElementalArt_CD_Protect"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "BennettElementalArt_Strike01"
-          ],
-          "modifierName": "GenerateElemBall_ElementalArt1"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "BennettElementalArt_Strike02",
-            "BennettElementalArt_Strike02_01"
-          ],
-          "modifierName": "GenerateElemBall_ElementalArt2"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "BennettElementalArt_Strike03",
-            "BennettElementalArt_Strike03_01"
-          ],
-          "modifierName": "GenerateElemBall_ElementalArt3"
-        },
-        {
-          "$type": "AvatarSteerByCameraMixin",
-          "stateIDs": [
-            "BennettElementalArt_Strike02",
-            "BennettElementalArt_Strike02_01",
-            "BennettElementalArt_Strike03",
-            "BennettElementalArt_Strike03_01"
-          ],
-          "angularSpeed": 360
-        },
-        {
-          "$type": "SkillButtonHoldChargeMixin",
-          "skillID": 10322,
-          "beforeStateIDs": [
-            "BennettElementalArt_BS"
-          ],
-          "chargeLoopStateIDs": [
-            "BennettElementalArt_01",
-            "BennettElementalArt_02",
-            "BennettElementalArt_03"
-          ],
-          "chargeLoopDurations": [
-            0.55,
-            1.1,
-            0.3
-          ],
-          "nextLoopTriggerID": "NextLoopTrigger",
-          "endHoldTrigger": "EndHoldTrigger"
-        }
-      ],
-      "modifiers": {
-        "ElementalArt_CD_Protect": {
-          "onAdded": [
-            {
-              "$type": "AttachEffect",
-              "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalArt_ChargeLoop"
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "Predicated",
-              "target": "Self",
-              "targetPredicates": [
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                  "value": 1,
-                  "compareType": "Equal"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 0.5
-                }
-              ],
-              "failActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 1
-                }
-              ]
-            }
-          ]
-        },
-        "ElementalArt_CD_Start": {},
-        "GenerateElemBall_ElementalArt1": {
-          "stacking": "Unique",
-          "onAttackLanded": [
-            {
-              "$type": "Predicated",
-              "target": "Target",
-              "targetPredicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ANIMAL_ENTITY_TYPE",
-                  "value": 0,
-                  "compareType": "NoneOrEqual"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball1",
-                  "target": "Self"
-                },
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball_Extra1",
-                  "target": "Self"
-                }
-              ]
-            }
-          ],
-          "onAdded": [
-            {
-              "$type": "Predicated",
-              "target": "Self",
-              "targetPredicates": [
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                  "value": 1,
-                  "compareType": "Equal"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 0.5
-                }
-              ],
-              "failActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 1
-                }
-              ]
-            }
-          ]
-        },
-        "GenerateElemBall_ElementalArt2": {
-          "stacking": "Unique",
-          "onAttackLanded": [
-            {
-              "$type": "Predicated",
-              "target": "Target",
-              "targetPredicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ANIMAL_ENTITY_TYPE",
-                  "value": 0,
-                  "compareType": "NoneOrEqual"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball2",
-                  "target": "Self"
-                },
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball_Extra2",
-                  "target": "Self"
-                }
-              ]
-            }
-          ],
-          "onAdded": [
-            {
-              "$type": "Predicated",
-              "target": "Self",
-              "targetPredicates": [
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                  "value": 1,
-                  "compareType": "Equal"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 0.75
-                }
-              ],
-              "failActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 1.5
-                }
-              ]
-            }
-          ]
-        },
-        "GenerateElemBall_ElementalArt3": {
-          "stacking": "Unique",
-          "onAttackLanded": [
-            {
-              "$type": "Predicated",
-              "target": "Target",
-              "targetPredicates": [
-                {
-                  "$type": "ByAttackTags",
-                  "attackTags": [
-                    "Elemental_Art"
-                  ]
-                },
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Monster"
-                  ]
-                },
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ANIMAL_ENTITY_TYPE",
-                  "value": 0,
-                  "compareType": "NoneOrEqual"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball2",
-                  "target": "Self"
-                },
-                {
-                  "$type": "ApplyModifier",
-                  "modifierName": "Ball_Extra2",
-                  "target": "Self"
-                }
-              ]
-            }
-          ],
-          "onAdded": [
-            {
-              "$type": "Predicated",
-              "target": "Self",
-              "targetPredicates": [
-                {
-                  "$type": "ByTargetGlobalValue",
-                  "key": "_ABILITY_Talent_Bennett_DonotBlow",
-                  "value": 1,
-                  "compareType": "Equal"
-                }
-              ],
-              "successActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 1
-                }
-              ],
-              "failActions": [
-                {
-                  "$type": "AvatarSkillStart",
-                  "skillID": 10322,
-                  "cdRatio": 2
-                }
-              ]
-            }
-          ]
-        },
-        "Ball1": {
-          "duration": 1,
-          "stacking": "Unique",
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 1,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2017,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "$type": "Randomed",
-              "chance": 0.25,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2017,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "Ball_Extra1": {
-          "duration": 1,
-          "stacking": "MultipleRefreshNoRemove",
-          "stackingOption": {
-            "maxModifierNumForMultipleType": 3
-          },
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 0.417,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2017,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "Ball2": {
-          "duration": 0.1,
-          "stacking": "Unique",
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 0.75,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2017,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "Ball_Extra2": {
-          "duration": 0.1,
-          "stacking": "MultipleRefreshNoRemove",
-          "stackingOption": {
-            "maxModifierNumForMultipleType": 3
-          },
-          "onAdded": [
-            {
-              "$type": "Randomed",
-              "chance": 0.25,
-              "successActions": [
-                {
-                  "$type": "GenerateElemBall",
-                  "configID": 2017,
-                  "baseEnergy": 3,
-                  "ratio": "%GetElementRatio",
-                  "born": {
-                    "$type": "ConfigBornByTarget",
-                    "offset": {
-                      "x": 0,
-                      "y": 0,
-                      "z": 1
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {
-        "GetElementRatio": 1
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike01_01",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "height": 2.5,
-              "fanAngle": 270,
-              "radius": 2.5,
-              "radiusRatio": 0,
-              "massiveAttackRatio": 0.4,
-              "detectDirection": "Counterclockwise",
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": -0.7,
-                  "z": 1
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_01",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 50,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Heavy",
-                "hitImpulseX": 600,
-                "hitImpulseY": 0,
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.09,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.24,
-                "shakeTime": 0.09,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 1,
-                  "y": 0.3,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Strike_01": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike02_01",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "height": 2.5,
-              "fanAngle": 360,
-              "radius": 2.5,
-              "radiusRatio": 0,
-              "massiveAttackRatio": 0.8,
-              "detectDirection": "Counterclockwise",
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": -0.7,
-                  "z": 0.5
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_02_01",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Heavy",
-                "hitImpulseX": 680,
-                "hitImpulseY": 0,
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.09,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.24,
-                "shakeTime": 0.09,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 1,
-                  "y": -0.2,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Strike_02_01": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike02_02",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackBox",
-              "triggerType": "TriggerNoRepeat",
-              "size": {
-                "x": 3,
-                "y": 3,
-                "z": 3
-              },
-              "born": {
-                "$type": "ConfigBornByTarget",
-                "offset": {
-                  "x": 0,
-                  "y": 1.2,
-                  "z": 0
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_02_02",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Air",
-                "hitImpulseX": 300,
-                "hitImpulseY": 900,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.09,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.24,
-                "shakeTime": 0.09,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 0,
-                  "y": -1,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Strike_02_02": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike02_03",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackBox",
-              "triggerType": "TriggerNoRepeat",
-              "size": {
-                "x": 3,
-                "y": 2.5,
-                "z": 4
-              },
-              "born": {
-                "$type": "ConfigBornByTarget",
-                "offset": {
-                  "x": 0,
-                  "y": 1,
-                  "z": -1
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_02_03",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Air",
-                "hitImpulseX": 600,
-                "hitImpulseY": 600,
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.12,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": true,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.35,
-                "shakeTime": 0.24,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 0,
-                  "y": 1,
-                  "z": -1
-                }
-              }
-            }
-          }
-        }
-      ],
-      "abilitySpecials": {
-        "Strike_02_03": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike03_01",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "height": 2.5,
-              "fanAngle": 360,
-              "radius": 2.5,
-              "radiusRatio": 0,
-              "massiveAttackRatio": 0.6,
-              "detectDirection": "Counterclockwise",
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": -0.7,
-                  "z": 0.5
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_03_01",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Heavy",
-                "hitImpulseX": 680,
-                "hitImpulseY": 0,
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.09,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.24,
-                "shakeTime": 0.09,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 1,
-                  "y": -0.2,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Strike_03_01": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Strike03_02",
-      "abilityMixins": [],
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackBox",
-              "triggerType": "TriggerNoRepeat",
-              "size": {
-                "x": 3,
-                "y": 4,
-                "z": 3
-              },
-              "born": {
-                "$type": "ConfigBornByTarget",
-                "offset": {
-                  "x": 0,
-                  "y": 1.5,
-                  "z": 0
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_03_02",
-                "strikeType": "Slash",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 100,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Air",
-                "hitImpulseX": 300,
-                "hitImpulseY": 900,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0.09,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.24,
-                "shakeTime": 0.09,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 0,
-                  "y": -1,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "modifiers": {},
-      "abilitySpecials": {
-        "Strike_03_02": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalArt_Explode",
-      "onAbilityStart": [
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "height": 2.5,
-              "fanAngle": 360,
-              "radius": 3.5,
-              "radiusRatio": 0,
-              "massiveAttackRatio": 0.5,
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": -0.7,
-                  "z": 1
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": "%Strike_03_03",
-                "strikeType": "None",
-                "elementType": "Fire",
-                "elementDurability": 25,
-                "enBreak": 250,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "Eff_Diluc_FireBlade_Hit_01",
-                "hitLevel": "Air",
-                "hitImpulseX": 795,
-                "hitImpulseY": 900,
-                "reboundRatio": 0,
-                "canBeDefenceHalt": true,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": true,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.35,
-                "shakeTime": 0.3,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 0,
-                  "y": 1,
-                  "z": 0
-                }
-              }
-            }
-          }
-        },
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Self",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "height": 2.5,
-              "fanAngle": 360,
-              "radius": 3.5,
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": -0.7,
-                  "z": 1
-                }
-              }
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Art",
-              "attackProperty": {
-                "damagePercentage": 0,
-                "strikeType": "None",
-                "enBreak": 250,
-                "attackType": "Melee"
-              },
-              "hitPattern": {
-                "onHitEffectName": "default",
-                "hitLevel": "Air",
-                "hitImpulseX": 650,
-                "hitImpulseY": 950,
-                "reboundRatio": 0,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": false
-            }
-          },
-          "predicates": [
-            {
-              "$type": "ByTargetGlobalValue",
-              "key": "_ABILITY_Talent_Bennett_DonotBlow",
-              "target": "Self",
-              "value": 0,
-              "compareType": "NoneOrEqual"
-            }
-          ]
-        }
-      ],
-      "abilitySpecials": {
-        "Strike_03_03": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalBurst_Strike",
-      "onAbilityStart": [
-        {
-          "$type": "AvatarSkillStart",
-          "skillID": 10323
-        },
-        {
-          "$type": "FireEffect",
-          "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst"
-        },
-        {
-          "$type": "TriggerAttackEvent",
-          "targetType": "Enemy",
-          "attackEvent": {
-            "attackPattern": {
-              "$type": "ConfigAttackCircle",
-              "triggerType": "TriggerNoRepeat",
-              "fanAngle": 360,
-              "radius": 6,
-              "checkHitScene": true,
-              "born": {
-                "$type": "ConfigBornBySelf",
-                "offset": {
-                  "x": 0,
-                  "y": 0,
-                  "z": 0.5
-                }
-              },
-              "ignoreMassive": true
-            },
-            "attackInfo": {
-              "attackTag": "Elemental_Burst",
-              "attackProperty": {
-                "damagePercentage": "%Burst_DMG",
-                "elementType": "Fire",
-                "strikeType": "Default",
-                "elementDurability": 50,
-                "enBreak": 200
-              },
-              "hitPattern": {
-                "onHitEffectName": "default",
-                "hitLevel": "Heavy",
-                "hitImpulseX": 800,
-                "hitImpulseY": 0,
-                "retreatType": "ByHitDirection",
-                "reboundRatio": 0,
-                "hitHaltTime": 0,
-                "hitHaltTimeScale": 0.01,
-                "muteHitText": false
-              },
-              "forceCameraShake": true,
-              "cameraShake": {
-                "shakeType": "CustomVector",
-                "shakeRange": 0.45,
-                "shakeTime": 0.24,
-                "shakeDistance": 30,
-                "shakeDir": {
-                  "x": 0,
-                  "y": 1,
-                  "z": 0
-                }
-              }
-            }
-          }
-        }
-      ],
-      "abilitySpecials": {
-        "Burst_DMG": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalBurst",
-      "abilityMixins": [
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "WarmField"
-          ],
-          "modifierName": "isGhost"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "WarmField"
-          ],
-          "modifierName": "invincible"
-        },
-        {
-          "$type": "AttachToStateIDMixin",
-          "stateIDs": [
-            "WarmField"
-          ],
-          "modifierName": "WarmField_WeaponFade"
-        }
-      ],
-      "onAbilityStart": [
-        {
-          "$type": "AddGlobalValue",
-          "key": "_ABILITY_Bennett_WarmField_BaseAttack",
-          "value": 1,
-          "useLimitRange": true,
-          "maxValue": "%FIGHT_PROP_BASE_ATTACK",
-          "minValue": "%FIGHT_PROP_BASE_ATTACK"
-        },
-        {
-          "$type": "CreateGadget",
-          "gadgetID": 41032002,
-          "campID": 1001,
-          "campTargetType": "Alliance",
-          "born": {
-            "$type": "ConfigBornByTarget",
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 1.5
-            }
-          }
-        }
-      ],
-      "modifiers": {
-        "isGhost": {
-          "onAdded": [
-            {
-              "$type": "AttachAbilityStateResistance",
-              "resistanceListID": 11002
-            }
-          ]
-        },
-        "invincible": {
-          "state": "Invincible"
-        },
-        "WarmField_WeaponFade": {
-          "onAdded": [
-            {
-              "$type": "TriggerHideWeapon",
-              "visible": false,
-              "partNames": [
-                "equip01",
-                "sheathPoint"
-              ]
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "TriggerHideWeapon",
-              "visible": true,
-              "partNames": [
-                "equip01",
-                "sheathPoint"
-              ]
-            }
-          ]
-        }
-      },
-      "abilitySpecials": {}
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_ElementalBurst_Gadget",
-      "onAdded": [
-        {
-          "$type": "SetGlobalValueToOverrideMap",
-          "isFromOwner": true,
-          "globalValueKey": "_ABILITY_Bennett_WarmField_BaseAttack",
-          "overrideMapKey": "Bennett_WarmField_BaseAttack"
-        },
-        {
-          "$type": "SetGlobalValueToOverrideMap",
-          "globalValueKey": "_ABILITY_Bennett_WarmField_BaseAttack",
-          "overrideMapKey": "Bennett_WarmField_BaseAttack2"
-        },
-        {
-          "$type": "AttachModifier",
-          "modifierName": "WarmField_Handler"
-        },
-        {
-          "$type": "AttachEffect",
-          "effectPattern": "Eff_Avatar_Boy_Sword_Bennett_ElementalBurst_Field"
-        }
-      ],
-      "modifiers": {
-        "WarmField_Handler": {
-          "duration": 10.5,
-          "thinkInterval": 1,
-          "onThinkInterval": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "WarmField_Modifier",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "UNIQUE_WarmField_FireBuff",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            },
-            {
-              "$type": "HealHP",
-              "amountByCasterMaxHPRatio": "%HealMaxHpRatio",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                },
-                {
-                  "$type": "ByTargetHPRatio",
-                  "HPRatio": "%HPTreshhold",
-                  "logic": "LesserOrEqual"
-                }
-              ]
-            }
-          ],
-          "onAdded": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "WarmField_Modifier",
-              "otherTargets": {
-                "$type": "SelectTargetsByShape",
-                "shapeName": "CircleR6",
-                "centerBasedOn": "Self",
-                "campTargetType": "Alliance",
-                "campBasedOn": "Self"
-              },
-              "predicates": [
-                {
-                  "$type": "ByEntityTypes",
-                  "entityTypes": [
-                    "Avatar"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "WarmField_Modifier": {
-          "duration": 0.5,
-          "onAdded": [
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "WarmField_AttackUp",
-              "predicates": [
-                {
-                  "$type": "ByAny",
-                  "predicates": [
-                    {
-                      "$type": "ByTargetHPRatio",
-                      "HPRatio": "%AttackTreshhold",
-                      "logic": "Greater"
+            ],
+            "modifiers": {
+                "SprintBS_Invincible": {
+                    "duration": 0.3,
+                    "stacking": "Multiple",
+                    "stackingOption": {
+                        "maxModifierNumForMultipleType": 2
                     },
-                    {
-                      "$type": "ByUnlockTalentParam",
-                      "talentParam": "Unlock_AttackUp"
+                    "onAdded": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "hitBoxNames": [
+                                "HitBox"
+                            ],
+                            "setEnable": false
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "EnableHitBoxByName",
+                            "hitBoxNames": [
+                                "HitBox"
+                            ],
+                            "setEnable": true
+                        }
+                    ],
+                    "properties": {
+                        "Actor_EndureDelta": 0
                     }
-                  ]
                 }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "Talent_Avatar_FireUp",
-              "predicates": [
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_BeHit_Gauge",
+            "abilityMixins": [
                 {
-                  "$type": "ByUnlockTalentParam",
-                  "talentParam": "Unlock_FireEnhance"
+                    "$type": "HitLevelGaugeMixin",
+                    "fromHitLevel": "Shake",
+                    "toHitLevel": "Light",
+                    "maxCharge": 100,
+                    "minChargeDelta": 20,
+                    "maxChargeDelta": 30,
+                    "fadeTime": 0.1
                 }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "otherTargets": {
-                "$type": "SelectTargetsByEquipParts",
-                "equipPartNames": [
-                  "equip01",
-                  "sheathPoint"
-                ]
-              },
-              "modifierName": "Talent_Weapon_FireEnhanced",
-              "predicates": [
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Freeze_Duration_Reducer",
+            "onAdded": [
                 {
-                  "$type": "ByUnlockTalentParam",
-                  "talentParam": "Unlock_FireEnhance"
+                    "$type": "AttachAbilityStateResistance",
+                    "resistanceListID": 14002,
+                    "durationRatio": 0.4
+                }
+            ]
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Girl_Catalyst_HitFallToGround_Hide",
+            "abilityMixins": [
+                {
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "stateID": "Hit_Throw_Ground",
+                    "modifierName": "Girl_Catalyst_HitFallToGround_Visible_Handler",
+                    "normalizeStart": 0.155,
+                    "normalizeEnd": 0.272
                 },
                 {
-                  "$type": "ByAvatarWeaponType",
-                  "target": "Self",
-                  "weaponTypes": [
-                    "WEAPON_SWORD_ONE_HAND",
-                    "WEAPON_CLAYMORE",
-                    "WEAPON_POLE"
-                  ]
+                    "$type": "AttachToNormalizedTimeMixin",
+                    "stateID": "Hit_Throw_Ground",
+                    "modifierName": "Girl_Catalyst_HitFallToGround_HideSpark",
+                    "normalizeStart": 0.115,
+                    "normalizeEnd": 0.272
                 }
-              ]
-            },
-            {
-              "$type": "ApplyModifier",
-              "modifierName": "WarmField_ElementalArtDonotBlow",
-              "predicates": [
+            ],
+            "modifiers": {
+                "Girl_Catalyst_HitFallToGround_HideSpark": {
+                    "onAdded": [
+                        {
+                            "$type": "FireEffect",
+                            "effectPattern": "Eff_Avatar_Girl_Catalyst_HitFallToGround_HideSpark"
+                        }
+                    ]
+                },
+                "Girl_Catalyst_HitFallToGround_Visible_Handler": {
+                    "onAdded": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "visible": false
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "TriggerSetVisible",
+                            "visible": true,
+                            "doOffStage": true
+                        },
+                        {
+                            "$type": "FireEffect",
+                            "effectPattern": "Eff_Avatar_Girl_Catalyst_HitFallToGround_ShowSpark"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_Bow_Aim_EmoController",
+            "abilityMixins": [
                 {
-                  "$type": "ByUnlockTalentParam",
-                  "talentParam": "Donot_Blow_Self"
+                    "$type": "AttachToStateIDMixin",
+                    "stateIDs": [
+                        "Aim"
+                    ],
+                    "modifierName": "AimLoop_EmoController"
                 }
-              ]
+            ],
+            "modifiers": {
+                "AimLoop_EmoController": {
+                    "onAdded": [
+                        {
+                            "$type": "PlayEmoSync",
+                            "emoSyncAssetPath": "Cutscene/ShortDialog/Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Bow_Fight_Aim"
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "toggleBlink": false
+                        }
+                    ],
+                    "onRemoved": [
+                        {
+                            "$type": "PlayEmoSync",
+                            "emoSyncAssetPath": "Cutscene/ShortDialog/Cs_Emo_Avatar_Simple_Common_Set/Cs_Emo_Avatar_Common_Normal"
+                        },
+                        {
+                            "$type": "ControlEmotion",
+                            "toggleBlink": true
+                        }
+                    ]
+                }
             }
-          ]
-        },
-        "WarmField_AttackUp": {
-          "duration": 2.1,
-          "state": "AttackUp",
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_AttackDelta": "%AttackUpRatio*%Bennett_WarmField_BaseAttack"
-          }
-        },
-        "UNIQUE_WarmField_FireBuff": {
-          "isUnique": true,
-          "duration": 2.1,
-          "stacking": "Refresh",
-          "state": "ElementFire",
-          "elementType": "Fire",
-          "elementDurability": 25
-        },
-        "Talent_Avatar_FireUp": {
-          "duration": 2.1,
-          "properties": {
-            "Actor_FireAddHurtDelta": "%FireUp"
-          }
-        },
-        "Talent_Weapon_FireEnhanced": {
-          "duration": 2.1,
-          "stacking": "Refresh",
-          "overrideWeaponElement": true,
-          "elementType": "Fire",
-          "elementDurability": 25
-        },
-        "WarmField_ElementalArtDonotBlow": {
-          "duration": 2.1,
-          "stacking": "Refresh",
-          "onAdded": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "_ABILITY_Talent_Bennett_DonotBlow",
-              "value": 1,
-              "useLimitRange": true,
-              "maxValue": 1,
-              "minValue": 1
-            }
-          ],
-          "onRemoved": [
-            {
-              "$type": "AddGlobalValue",
-              "key": "_ABILITY_Talent_Bennett_DonotBlow",
-              "value": 0,
-              "useLimitRange": true,
-              "maxValue": 0,
-              "minValue": 0,
-              "doOffStage": true
-            }
-          ]
         }
-      },
-      "abilitySpecials": {
-        "HealMaxHpRatio": 0,
-        "HPTreshhold": 0.7,
-        "AttackTreshhold": 0.7,
-        "AttackUpRatio": 0,
-        "FireUp": 0,
-        "Bennett_WarmField_BaseAttack": 0,
-        "Bennett_WarmField_BaseAttack2": 1
-      }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "Avatar_RockGadget_Summon_Detect",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "RockGadget_Summon_Detect"
+                },
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "RockGadget_Summon_Suicide"
+                },
+                {
+                    "$type": "AddGlobalValue",
+                    "key": "_COMMON_GADGET_ISSUMMON",
+                    "value": 1,
+                    "useLimitRange": true,
+                    "maxValue": 1,
+                    "minValue": 0
+                }
+            ],
+            "modifiers": {
+                "RockGadget_Summon_Detect": {
+                    "onAdded": [
+                        {
+                            "$type": "TriggerAttackEvent",
+                            "targetType": "All",
+                            "canHitHead": false,
+                            "attackEvent": {
+                                "attackPattern": {
+                                    "$type": "ConfigAttackBox",
+                                    "triggerType": "TriggerNoRepeat",
+                                    "size": {
+                                        "x": 2.8,
+                                        "y": 4.2,
+                                        "z": 2.8
+                                    },
+                                    "born": {
+                                        "$type": "ConfigBornBySelf",
+                                        "offset": {
+                                            "x": 0.0,
+                                            "y": 2.0,
+                                            "z": -1.4
+                                        }
+                                    }
+                                },
+                                "attackInfo": {
+                                    "attackTag": "Gadget_Summon_Detect",
+                                    "attackProperty": {
+                                        "damagePercentage": 0,
+                                        "elementType": "None",
+                                        "elementDurability": 0,
+                                        "elementRank": 1.0,
+                                        "enBreak": 0
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "RockGadget_Summon_Suicide": {
+                    "onAttackLanded": [
+                        {
+                            "$type": "Predicated",
+                            "target": "Target",
+                            "targetPredicates": [
+                                {
+                                    "$type": "ByTargetIsSelf",
+                                    "isSelf": false
+                                },
+                                {
+                                    "$type": "ByAny",
+                                    "predicates": [
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "key": "_COMMON_GADGET_ISSUMMON",
+                                            "value": 0,
+                                            "compareType": "MoreThan"
+                                        },
+                                        {
+                                            "$type": "ByTargetGlobalValue",
+                                            "key": "_SCENE_GADGET_ISSUMMON",
+                                            "value": 0,
+                                            "compareType": "MoreThan"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "successActions": [
+                                {
+                                    "$type": "KillSelf",
+                                    "target": "Self"
+                                },
+                                {
+                                    "$type": "ActCameraShake",
+                                    "cameraShake": {
+                                        "shakeRange": 0.04,
+                                        "shakeTime": 0.08
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "Default": {
+            "$type": "ConfigAbility",
+            "abilityName": "RocketGadget_WeightRatio",
+            "onAdded": [
+                {
+                    "$type": "ApplyModifier",
+                    "modifierName": "RocketGadget_WeightRatio",
+                    "target": "Self"
+                }
+            ],
+            "modifiers": {
+                "RocketGadget_WeightRatio": {
+                    "properties": {
+                        "Entity_WeightRatio": 2
+                    }
+                }
+            }
+        }
     }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_NormalAttackDamage",
-      "abilityMixins": [
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ATK01"
-          ],
-          "damagePercentage": "%Attack01"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ATK02"
-          ],
-          "damagePercentage": "%Attack02"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ATK03"
-          ],
-          "damagePercentage": "%Attack03"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ATK04"
-          ],
-          "damagePercentage": "%Attack04"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ATK05"
-          ],
-          "damagePercentage": "%Attack05"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ExtraAttack1"
-          ],
-          "damagePercentage": "%ExtraAttack1"
-        },
-        {
-          "$type": "ModifyDamageMixin",
-          "animEventNames": [
-            "ExtraAttack2"
-          ],
-          "damagePercentage": "%ExtraAttack2"
-        }
-      ],
-      "abilitySpecials": {
-        "Attack01": 0,
-        "Attack02": 0,
-        "Attack03": 0,
-        "Attack04": 0,
-        "Attack05": 0,
-        "ExtraAttack1": 0,
-        "ExtraAttack2": 0
-      }
-    }
-  },
-  {
-    "Default": {
-      "$type": "ConfigAbility",
-      "abilityName": "Avatar_Bennett_Talent_Capacitor",
-      "abilityMixins": [
-        {
-          "$type": "AttachModifierToPredicateMixin",
-          "onEvent": "HP",
-          "modifierName": "Capacitor_EnergyGain_Up",
-          "predicates": [
-            {
-              "$type": "ByTargetHPRatio",
-              "HPRatio": "%HPRatio",
-              "logic": "LesserOrEqual"
-            }
-          ]
-        }
-      ],
-      "modifiers": {
-        "Capacitor_EnergyGain_Up": {
-          "isLimitedProperties": true,
-          "properties": {
-            "Actor_ChargeEfficiencyDelta": "%Rate"
-          }
-        }
-      },
-      "abilitySpecials": {
-        "HPRatio": 0,
-        "Rate": 0
-      }
-    }
-  }
 ]
