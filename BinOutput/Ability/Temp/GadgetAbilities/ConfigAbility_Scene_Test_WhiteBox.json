@@ -1594,8 +1594,12 @@
                     ]
                 },
                 "Initial_Lock": {
-                    "$type": "EnableGadgetIntee",
-                    "enable": false
+                    "onAdded": [
+                        {
+                            "$type": "EnableGadgetIntee",
+                            "enable": false
+                        }
+                    ]
                 }
             }
         }
